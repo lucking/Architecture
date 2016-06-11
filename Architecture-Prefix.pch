@@ -12,4 +12,33 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+
+
+/** iOS项目工程中添加.C文件，报错！
+ *
+ *  检查你的*.pch文件，将#import用#ifdef __OBJC__    #endif包裹起来
+ */
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+//#import <Foundation/Foundation.h>
+//#import <CoreData/CoreData.h>
+
+
+// 配置头文件
+#import "AppConfig.h"
+#import "MacroHeader.h"
+#import "AppMacro.h"
+#import "NetworkAPI.h"
+
+
+#import "Common.h"
+#import "SingletonManager.h"
+#endif
+
+
+
+
+
+
 #endif /* Architecture_Prefix_pch */
