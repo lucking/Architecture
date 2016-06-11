@@ -84,7 +84,7 @@
     
     //[self.tabBarController.view addSubview:view];
 
-    [[AppDelegate sharedAppDelegate].window addSubview:view];
+    //[[AppDelegate sharedAppDelegate].window addSubview:view];
     //[view removeFromSuperview];
 
     
@@ -160,71 +160,12 @@
 //	CFRunLoopRun();
 //	[pool release];
 }
-- (void)runLoop
-{
 
-	/**
-	 *  NSRunLoop类声明的编程接口对象管理输入源。
-		NSRunLoop对象处理鼠标和键盘等输入来源来自窗口系统的事件,NSPort对象,NSConnection对象。还一个NSRunLoop对象流程NSTimer事件。您的应用程序不能创建或显式管理NSRunLoop对象。每个NSThread对象,包括应用程序的主线程,有着NSRunLoop对象自动创建它。如果你需要访问当前线程的运行循环,你与类方法currentRunLoop这样做。
-
-	 注意: 从NSRunloop的角度,NSTimer对象不是“输入”是一种特殊类型,和一件事意味着他们不会引起火灾时运行循环返回。
-
-	 警告: NSRunLoop类一般不被认为是线程安全的,其方法应该只被称为当前线程的上下文中。
-	 你不应该打电话给一个NSRunLoop对象的方法在不同的线程中运行,这样做可能会导致意想不到的结果。
-
-
-	 NSTimer 在子线程中应该手动创建NSRunLoop ，否则不能循环执行。
-
-	 模式（NSRunLoop）:
-	 NSDefaultRunLoopMode：默认的运行模式，用于大部分操作，除了NSConnection对象事件。
-	 NSRunLoopCommonModes
-
-	 NSConnectionReplyMode：用来监控NSConnection对象的回复的，很少能够用到。
-	 NSModalPanelRunLoopMode：用于标明和Mode Panel相关的事件。
-	 NSEventTrackingRunLoopMode：用于跟踪触摸事件触发的模式（例如UIScrollView上下滚动）。
-	 NSRunLoopCommonModes：是一个模式集合，当绑定一个事件源到这个模式集合的时候就相当于
-
-	 绑定到了集合内的每一个模式。
-	 Cocoa应用默认包含Default、Panel、Event Tracking模式，
-	 Core Foundation只包含Default模式，我们可以通过CFRunLoopAddCommonMode添加模式。
-	 
-
-	 模式（MainRunLoop）:
-	 UITrackingRunLoopMode
-
-	 */
-	[[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-
-	// [NSRunLoop currentRunLoop] acceptInputForMode:<#(nonnull NSString *)#> beforeDate:<#(nonnull NSDate *)#>];
-
-
-
-	//我们在使用NSTimer的时候，可能会接触到runloop的概念，下面是一个简单的例子：
-
-	timer= [NSTimer timerWithTimeInterval:1 target:self selector:@selector(changeTimeAtTimedisplay) userInfo:nil repeats:YES];
-
-	//必须手动加入到当前循环中去
-	NSRunLoop *runloop = [NSRunLoop currentRunLoop];
-	[runloop addTimer:timer forMode:NSDefaultRunLoopMode];
-	// 同上
-	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-
-	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-
-
-
-
-	//此方法默认添加到当前NSRunLoop中
-	[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeTimeAtTimedisplay) userInfo:nil repeats:YES];
-
-}
 
 - (void)changeTimeAtTimedisplay {
 
 //	NSArray *sortDescriptors= [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"forcatsProfitRate" ascending:YES]];
 //	
-//
-//
 //	myMutableArr= (NSMutableArray*)[myMutableArr sortedArrayUsingDescriptors:sortDescriptors];
 //	NSLog(@"--->排序后：%@",myMutableArr);
 
