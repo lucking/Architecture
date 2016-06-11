@@ -51,6 +51,7 @@
 		987E96AF1D0C3B5A00D44CE9 /* ArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		987E96B31D0C3B5A00D44CE9 /* ArchitectureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArchitectureUITests.m; sourceTree = "<group>"; };
 		987E96B51D0C3B5A00D44CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		987E96C11D0C3CF300D44CE9 /* Architecture-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Architecture-Prefix.pch"; path = "../../../../zm/Desktop/Architecture/Architecture-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 			children = (
 				987E968F1D0C3B5900D44CE9 /* main.m */,
 				987E969F1D0C3B5900D44CE9 /* Info.plist */,
+				987E96C11D0C3CF300D44CE9 /* Architecture-Prefix.pch */,
 				987E969C1D0C3B5900D44CE9 /* LaunchScreen.storyboard */,
 				987E96971D0C3B5900D44CE9 /* Main.storyboard */,
 			);
@@ -415,6 +417,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Architecture-Prefix.pch";
 				INFOPLIST_FILE = Architecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zm.Architecture;
@@ -426,6 +430,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Architecture-Prefix.pch";
 				INFOPLIST_FILE = Architecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zm.Architecture;
