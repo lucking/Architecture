@@ -87,6 +87,25 @@ Singleton_Instance_method_Impl(MBProgress)
 	_hudView = hud;
 }
 
+// 普通：提示信息
+- (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay
+{
+    [_hudView hide:NO];
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
+    [window addSubview:hud];
+    hud.customView     = [[UIView alloc] initWithFrame:CGRectZero];
+    hud.mode           = MBProgressHUDModeCustomView;
+    hud.delegate       = self;
+    hud.labelText      = message;
+    
+    [hud show:YES];
+    [hud hide:YES afterDelay:delay];
+    _hudView = hud;
+}
+
+
 //自定义停止时间
 - (void)hudHidden:(NSTimeInterval)delay{	[_hudView hide:YES afterDelay:delay];	}
 // 0.5秒后停止

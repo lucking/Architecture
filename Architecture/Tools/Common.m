@@ -10,10 +10,7 @@
 
 @implementation Common
 
-
-
 //======================="  特殊判断  "=================================
-
 #pragma mark 判断中文
 + (BOOL)isChinese:(NSString*)mystring
 {                                                       //点
@@ -225,30 +222,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     
     [myLabel setAttributedText:noteStr];
 }
-#pragma mark //字间距：UITextField
-+ (void)characterSpaceTextField:(UITextField *)mytextField Space:(long)mySpaceNum
-{
-    //字间距
-    CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&mySpaceNum);
-    
-    NSMutableAttributedString *noteStr =[[NSMutableAttributedString alloc]initWithString:mytextField.text];
-    NSRange textRang = [[noteStr string] rangeOfString:mytextField.text];
-    NSRange Range = NSMakeRange(textRang.location, textRang.length);
-    [noteStr addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:Range];
-    [mytextField setAttributedText:noteStr];
-}
-#pragma mark //字间距：UILabel
-+ (void)characterSpaceLabel:(UILabel *)mylabel Space:(long)mySpaceNum
-{
-    //字间距
-    CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&mySpaceNum);
-    
-    NSMutableAttributedString *noteStr =[[NSMutableAttributedString alloc]initWithString:mylabel.text];
-    NSRange textRang = [[noteStr string] rangeOfString:mylabel.text];
-    NSRange Range = NSMakeRange(textRang.location, textRang.length);
-    [noteStr addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:Range];
-    [mylabel setAttributedText:noteStr];
-}
 
 #pragma mark 改变label分割开的字符 为一种颜色
 + (void)changeTextColorLab:(UILabel *)myLabel color:(UIColor *)myColor{
@@ -289,7 +262,31 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 + (UIFont *)fontOfSize:(CGFloat)fontSize {
 	return [UIFont fontWithName:@"STHeitiSC-Light" size:fontSize];
 }
+#pragma mark //字间距：UILabel
++ (void)characterSpaceLabel:(UILabel *)mylabel Space:(long)mySpaceNum
+{
+    //字间距
+    CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&mySpaceNum);
+    
+    NSMutableAttributedString *noteStr =[[NSMutableAttributedString alloc]initWithString:mylabel.text];
+    NSRange textRang = [[noteStr string] rangeOfString:mylabel.text];
+    NSRange Range = NSMakeRange(textRang.location, textRang.length);
+    [noteStr addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:Range];
+    [mylabel setAttributedText:noteStr];
+}
 
+#pragma mark //字间距：UITextField
++ (void)characterSpaceTextField:(UITextField *)mytextField Space:(long)mySpaceNum
+{
+    //字间距
+    CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&mySpaceNum);
+    
+    NSMutableAttributedString *noteStr =[[NSMutableAttributedString alloc]initWithString:mytextField.text];
+    NSRange textRang = [[noteStr string] rangeOfString:mytextField.text];
+    NSRange Range = NSMakeRange(textRang.location, textRang.length);
+    [noteStr addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:Range];
+    [mytextField setAttributedText:noteStr];
+}
 
 
 //-----------------------"  UIButton  "---------------------------------

@@ -11,6 +11,9 @@
 #import "ZMNavController.h"
 #import "SDWebImageManager.h"
 
+#import "CatchCrash.h"
+#import "UncaughtExceptionHandler.h"
+
 @interface AppDelegate ()
 
 @end
@@ -59,6 +62,13 @@ static AppDelegate *_singleInstance;
 
 - (void)BaseSetting {
     
+    // 沙盒文件 路径
+    NSSLog(@"HomeDirectoryPath = %@ \n \n ",HomeDirectoryPath);
+    
+    // IPHONE尺寸
+    [Common ISIPHONEXX];
+    
+    
     //1. 让启动画面停留更长时间
     [NSThread sleepForTimeInterval:1.0];
     
@@ -73,11 +83,10 @@ static AppDelegate *_singleInstance;
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, NotificationLock, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, NotificationChange, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
     
-    // 沙盒文件 路径
-    NSSLog(@"HomeDirectoryPath = %@ \n \n ",HomeDirectoryPath);
+    //5.注册消息处理函数的处理方法
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
-    // IPHONE尺寸
-    [Common ISIPHONEXX];
+    
     
     NSString* ssssa = @"魏一平";
     [NSString isChineseString:ssssa];
@@ -109,24 +118,16 @@ static AppDelegate *_singleInstance;
     NSLog(@"---> 2.挂起：即将失去活动状态的时候调用(失去焦点, 不可交互)：挂起 (Resign：放弃) ");
     
 }
-
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     NSLog(@"---> 3.系统进入后台 ");
     
-    GesturePwdViewController *gestureVC = [[GesturePwdViewController alloc] init];
-    BOOL isSave = [KeychainData isSave]; //是否有保存
-    NSSLog(@"是否有保存 = %d",isSave);
-    self.baseTabBarVC = [[ZMMainTabBarController alloc] init];
-    [self.baseTabBarVC presentViewController:gestureVC animated:YES completion:^{
-        
-    }];
 }
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    NSLog(@"---> 4.进入前台 \n ");//应用程序即将进入“ 前台 ”的时候调用：一般在该方法中恢复应用程序的数据,以及状态
+    NSLog(@"---> 4.进入前台 \n ");      //应用程序即将进入“ 前台 ”的时候调用：一般在该方法中恢复应用程序的数据,以及状态
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    NSLogline(@"---> 5.重新启动 \n ");//重新获取焦点(能够和用户交互)
+    NSLogline(@"---> 5.重新启动 \n ");  //重新获取焦点(能够和用户交互)
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

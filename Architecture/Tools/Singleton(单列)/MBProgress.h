@@ -27,6 +27,8 @@ Singleton_Instance_method_Interface(MBProgress)
 
 - (void)hudShowError:(NSString *)message;
 
+- (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay;
+
 - (void)hudHidden;
 
 - (void)hudHidden:(NSTimeInterval)delay;

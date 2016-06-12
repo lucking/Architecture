@@ -96,8 +96,8 @@
                                  bbNavRootVC,
                                  ccNavRootVC,
                                  ddNavRootVC];
-    //[self setViewControllers:viewControllers animated:YES];
     self.viewControllers = viewControllers;
+    //[self setViewControllers:viewControllers animated:YES];
 
 //    aaVC.view.backgroundColor = Color_E91E63;
 //    bbVC.view.backgroundColor = Color_2196F3;

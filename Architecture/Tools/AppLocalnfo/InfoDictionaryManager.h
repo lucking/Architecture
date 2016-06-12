@@ -18,7 +18,7 @@ Singleton_Instance_method_Interface(InfoDictionaryManager);
 /**
  *  方便在基类中处理公共逻辑，例如猿题库的：数据版本号信息就统一在基类中处理。
  */
-@property (nonatomic, readonly) NSString *appVersion;		//版本号
+@property (nonatomic, readonly) NSString *appVersion;		//版本号：获取当前系统的版本号
 @property (nonatomic, readonly) NSString *appName;			//app名称
 @property (nonatomic, readonly) NSString *appId;			//appId
 
@@ -64,6 +64,16 @@ Singleton_Instance_method_Interface(InfoDictionaryManager);
 @property (nonatomic, readonly) NSArray *UISupportedInterfaceOrientations;	//数组
 
 @property (nonatomic, readonly) NSString *app;
+
+
+
+
+#pragma mark 获取系统配置文件
+- (NSDictionary *)getInfoDictionary;
+// 根据key 获取对应的配置信息
++(NSObject *)getValueOfInfoDict:(NSString *)key;
+
+
 
 
 /**

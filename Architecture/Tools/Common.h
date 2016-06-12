@@ -46,7 +46,6 @@ typedef enum{
 //1.验证手机号_简单的判断方法
 + (BOOL)validatePhone:(NSString *)phone;
 //2.验证手机号_详细的判断方法
-+ (BOOL)validateMyPhone:(NSString *)phone;
 
 //身份证识别2 准确
 +(BOOL)checkIDCardNum:(NSString*)cardNo;
@@ -69,21 +68,19 @@ typedef enum{
 
 //改变文本的 两种颜色
 + (void)changeTextColorLab:(UILabel *)myLabel textA:(NSString *)textA  colorA:(UIColor *)colorA  textB:(NSString *)textB  color:(UIColor *)colorB;
-
 //改变文本的 一种颜色、字体大小
 + (void)changeTextColorAndFontLab:(UILabel *)myLabel text:(NSString *)text color:(UIColor *)color font:(float)font;
-
-//字间距：UITextField
-+ (void)characterSpaceTextField:(UITextField *)mytextField Space:(long)mySpaceNum;
-
-//字间距：UILabel
-+ (void)characterSpaceLabel:(UILabel *)mylabel Space:(long)mySpaceNum;
-
 //改变label分割开的字符 为一种颜色
 + (void)changeTextColorLab:(UILabel *)myLabel color:(UIColor *)myColor;
 
-//UILabel：给一段文本，添加下划线、改变颜色
+//给一段文本，添加下划线、改变颜色
 + (void)addUnderlineToLab:(UILabel *)myLabel withText:(NSString *)text color:(UIColor *)myColor;
+
+//字间距：UILabel
++ (void)characterSpaceLabel:(UILabel *)mylabel Space:(long)mySpaceNum;
+//字间距：UITextField
++ (void)characterSpaceTextField:(UITextField *)mytextField Space:(long)mySpaceNum;
+
 
 //字体：STHeitiSC-Light
 + (UIFont *)fontOfSize:(CGFloat)fontSize;
@@ -91,7 +88,6 @@ typedef enum{
 
 
 #pragma mark //==========================="   UIButton   "================================
-
 //UIButton：给一段文本，添加下划线、改变颜色
 + (void)addUnderlineToButton:(UIButton *)myBtn withText:(NSString *)text color:(UIColor *)myColor;
 

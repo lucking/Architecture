@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		984AFDC81D0CF081003E03FB /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDC71D0CF081003E03FB /* UncaughtExceptionHandler.m */; };
+		984AFDCB1D0CF34C003E03FB /* CatchCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDCA1D0CF34C003E03FB /* CatchCrash.m */; };
 		987E96901D0C3B5900D44CE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E968F1D0C3B5900D44CE9 /* main.m */; };
 		987E96931D0C3B5900D44CE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96921D0C3B5900D44CE9 /* AppDelegate.m */; };
 		987E96991D0C3B5900D44CE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987E96971D0C3B5900D44CE9 /* Main.storyboard */; };
@@ -310,6 +312,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		984AFDC61D0CF081003E03FB /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UncaughtExceptionHandler.h; path = ../../../../zm/Desktop/Architecture/Architecture/UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		984AFDC71D0CF081003E03FB /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UncaughtExceptionHandler.m; path = ../../../../zm/Desktop/Architecture/Architecture/UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		984AFDC91D0CF34C003E03FB /* CatchCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CatchCrash.h; path = ../../../../zm/Desktop/Architecture/Architecture/CatchCrash.h; sourceTree = "<group>"; };
+		984AFDCA1D0CF34C003E03FB /* CatchCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CatchCrash.m; path = ../../../../zm/Desktop/Architecture/Architecture/CatchCrash.m; sourceTree = "<group>"; };
 		987E968B1D0C3B5900D44CE9 /* Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987E968F1D0C3B5900D44CE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		987E96911D0C3B5900D44CE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -500,8 +506,8 @@
 		987E98071D0C3F5000D44CE9 /* UIViewController+ZMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZMAdd.m"; sourceTree = "<group>"; };
 		987E98081D0C3F5000D44CE9 /* UIWindow+ZMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+ZMAdd.h"; sourceTree = "<group>"; };
 		987E98091D0C3F5000D44CE9 /* UIWindow+ZMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+ZMAdd.m"; sourceTree = "<group>"; };
-		987E980A1D0C3F5000D44CE9 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		987E980B1D0C3F5000D44CE9 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		987E980A1D0C3F5000D44CE9 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Tools/Common.h; sourceTree = "<group>"; };
+		987E980B1D0C3F5000D44CE9 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Tools/Common.m; sourceTree = "<group>"; };
 		987E980D1D0C3F5000D44CE9 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
 		987E980E1D0C3F5000D44CE9 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 		987E98121D0C3F5000D44CE9 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
@@ -930,6 +936,12 @@
 				987E9A561D0C3FBE00D44CE9 /* Headers */,
 				987E98821D0C3F5B00D44CE9 /* Opensources */,
 				987E97CC1D0C3F5000D44CE9 /* Tools */,
+				984AFDC61D0CF081003E03FB /* UncaughtExceptionHandler.h */,
+				984AFDC71D0CF081003E03FB /* UncaughtExceptionHandler.m */,
+				984AFDC91D0CF34C003E03FB /* CatchCrash.h */,
+				984AFDCA1D0CF34C003E03FB /* CatchCrash.m */,
+				987E980A1D0C3F5000D44CE9 /* Common.h */,
+				987E980B1D0C3F5000D44CE9 /* Common.m */,
 				987E96CB1D0C3F0300D44CE9 /* MainArchitecture */,
 				987E96911D0C3B5900D44CE9 /* AppDelegate.h */,
 				987E96921D0C3B5900D44CE9 /* AppDelegate.m */,
@@ -975,14 +987,14 @@
 		987E96CB1D0C3F0300D44CE9 /* MainArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				987E96CC1D0C3F0300D44CE9 /* ZMBarButton.h */,
-				987E96CD1D0C3F0300D44CE9 /* ZMBarButton.m */,
 				987E96CE1D0C3F0300D44CE9 /* ZMMainTabBarController.h */,
 				987E96CF1D0C3F0300D44CE9 /* ZMMainTabBarController.m */,
 				987E96D01D0C3F0300D44CE9 /* ZMNavController.h */,
 				987E96D11D0C3F0300D44CE9 /* ZMNavController.m */,
 				987E96D21D0C3F0300D44CE9 /* ZMTabBar.h */,
 				987E96D31D0C3F0300D44CE9 /* ZMTabBar.m */,
+				987E96CC1D0C3F0300D44CE9 /* ZMBarButton.h */,
+				987E96CD1D0C3F0300D44CE9 /* ZMBarButton.m */,
 			);
 			path = MainArchitecture;
 			sourceTree = "<group>";
@@ -1472,8 +1484,6 @@
 				987E97DE1D0C3F5000D44CE9 /* BllManager */,
 				987E97E11D0C3F5000D44CE9 /* BlockKit */,
 				987E97E31D0C3F5000D44CE9 /* Category_类别 */,
-				987E980A1D0C3F5000D44CE9 /* Common.h */,
-				987E980B1D0C3F5000D44CE9 /* Common.m */,
 				987E980C1D0C3F5000D44CE9 /* DataManager_数据管理 */,
 				987E98141D0C3F5000D44CE9 /* EncodeDecode */,
 				987E981B1D0C3F5000D44CE9 /* Extension */,
@@ -1482,8 +1492,6 @@
 				987E98241D0C3F5000D44CE9 /* FlieUpDownLown */,
 				987E98321D0C3F5000D44CE9 /* Network_网络 */,
 				987E98371D0C3F5000D44CE9 /* Singleton(单列) */,
-				987E984F1D0C3F5000D44CE9 /* Store */,
-				987E98501D0C3F5000D44CE9 /* Utils */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1743,6 +1751,8 @@
 		987E98371D0C3F5000D44CE9 /* Singleton(单列) */ = {
 			isa = PBXGroup;
 			children = (
+				987E98411D0C3F5000D44CE9 /* SingletonBase */,
+				987E98461D0C3F5000D44CE9 /* ThreadQueue */,
 				987E983E1D0C3F5000D44CE9 /* NetworkBase */,
 				987E98381D0C3F5000D44CE9 /* FileManager.h */,
 				987E98391D0C3F5000D44CE9 /* FileManager.m */,
@@ -1752,8 +1762,6 @@
 				987E983D1D0C3F5000D44CE9 /* MBProgress.m */,
 				987E983F1D0C3F5000D44CE9 /* Notification.h */,
 				987E98401D0C3F5000D44CE9 /* Notification.m */,
-				987E98411D0C3F5000D44CE9 /* SingletonBase */,
-				987E98461D0C3F5000D44CE9 /* ThreadQueue */,
 				987E984D1D0C3F5000D44CE9 /* UserDefaults.h */,
 				987E984E1D0C3F5000D44CE9 /* UserDefaults.m */,
 			);
@@ -1789,20 +1797,6 @@
 				987E984C1D0C3F5000D44CE9 /* ZMThread.m */,
 			);
 			path = ThreadQueue;
-			sourceTree = "<group>";
-		};
-		987E984F1D0C3F5000D44CE9 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		987E98501D0C3F5000D44CE9 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		987E98821D0C3F5B00D44CE9 /* Opensources */ = {
@@ -2646,6 +2640,7 @@
 				987E97321D0C3F3300D44CE9 /* MoreViewController.m in Sources */,
 				987E99F81D0C3F5B00D44CE9 /* MJProperty.m in Sources */,
 				987E9A471D0C3F5B00D44CE9 /* UIView+YYAdd.m in Sources */,
+				984AFDC81D0CF081003E03FB /* UncaughtExceptionHandler.m in Sources */,
 				987E99FA1D0C3F5B00D44CE9 /* MJPropertyType.m in Sources */,
 				987E98801D0C3F5000D44CE9 /* ZMThread.m in Sources */,
 				987E986D1D0C3F5000D44CE9 /* YTKKeyValueStore.m in Sources */,
@@ -2657,6 +2652,7 @@
 				987E98701D0C3F5000D44CE9 /* Operation.m in Sources */,
 				987E98771D0C3F5000D44CE9 /* NetworkSession.m in Sources */,
 				987E9A2C1D0C3F5B00D44CE9 /* NSData+YYAdd.m in Sources */,
+				984AFDCB1D0CF34C003E03FB /* CatchCrash.m in Sources */,
 				987E98571D0C3F5000D44CE9 /* BaseViewController.m in Sources */,
 				987E9A2D1D0C3F5B00D44CE9 /* NSDate+YYAdd.m in Sources */,
 				987E9A491D0C3F5B00D44CE9 /* YYFrameImage.m in Sources */,
