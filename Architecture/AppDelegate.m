@@ -40,6 +40,24 @@ static AppDelegate *_singleInstance;
     
     [self BaseSetting];
     
+    
+    
+//    // 测试
+//    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:nil okAction:^{
+//        NSLog(@"---> 确定");
+//        
+//        // 主题
+//        _baseTabBarVC = [[ZMMainTabBarController alloc] init];
+//        self.window.rootViewController = _baseTabBarVC;
+//    }  cancelAction:^{
+//        NSLog(@"---> 取消");
+//        
+//    } completion:^{
+//        NSLog(@"---> 弹出时");
+//        
+//    }];
+
+    
     //[UserDefaults removeObjectKey:@"firstLaunch"];
     //判断用户是否第一次进入这个页面
     if ([UserDefaults getBoolStorageWithKey:@"firstLaunch"]) {
@@ -56,6 +74,9 @@ static AppDelegate *_singleInstance;
     
     return YES;
 }
+
+
+
 
 - (void)BaseSetting {
     

@@ -157,58 +157,6 @@
 }
 
 
-#pragma mark - AlertView1
-//- (void)showAlertMessage:(NSString *)message
-//{
-//	UIAlertView *alter= [[UIAlertView alloc]initWithTitle:@"温馨提示" message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//	[alter show];
-//}
-#pragma mark - AlertView2
-- (void)showAlertMessage:(NSString *)message
-{
-	UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-	UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-	[alertVC addAction:okAction];
-
-	[self.view.window.rootViewController presentViewController:alertVC animated:NO completion:^{
-
-	}];
-}
-#pragma mark - AlertController
-- (void)showAlertTitle:(NSString *)titlet message:(NSString *)message okTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okAction:(void (^)(void))okActe cancelAction:(void (^)(void))cancelActe completion:(void (^)(void))complete
-{
-	UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:titlet message:message preferredStyle:UIAlertControllerStyleAlert];
-
-	// okAction
-	if ((okTitle != nil) && ![okTitle isEqualToString:@""] && okActe != nil) {
-
-		UIAlertAction *okAction = [UIAlertAction actionWithTitle:okTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-			okActe();//有回调
-		}];
-		[alertVC addAction:okAction];
-	}
-
-	// cancelAction
-	if ((cancelTitle != nil) && ![cancelTitle isEqualToString:@""] && cancelActe != nil) {
-		UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-			cancelActe();//有回调
-		}];
-		[alertVC addAction:cancelAction];
-	}
-
-
-	UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-	if (complete != nil) {
-		[window.rootViewController presentViewController:alertVC animated:NO completion:^{
-			complete();//有回调
-		}];
-	}else{
-		[window.rootViewController presentViewController:alertVC animated:NO completion:nil];
-	}
-}
-
-
-
 
 // 添加按钮：UIButton
 -(void)addBtnTitle:(NSString*)title Tag:(int)tag X:(float)xx Y:(float)yy Width:(float)myWidth Height:(float)myHeight

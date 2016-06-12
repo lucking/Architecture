@@ -14,6 +14,8 @@
 #import "UIWindow+ZMAdd.h"
 #import "LoginViewController.h"
 
+#import "AppDelegate.h"
+
 // 验证邮箱、手机号、身份证、qq
 typedef enum{
 	VALIDATE_CHECK_EMAIL    =1,
@@ -90,6 +92,16 @@ typedef enum{
 #pragma mark //==========================="   UIButton   "================================
 //UIButton：给一段文本，添加下划线、改变颜色
 + (void)addUnderlineToButton:(UIButton *)myBtn withText:(NSString *)text color:(UIColor *)myColor;
+
+
+
+
+#pragma mark //==========================="   AlertView、AlertController   "================================
+
+#pragma mark - AlertView
+- (void)showAlertMessage:(NSString *)message;
+#pragma mark - AlertController
++ (void)showAlertTitle:(NSString *)titlet message:(NSString *)message okTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okAction:(void (^)(void))okActe cancelAction:(void (^)(void))cancelActe completion:(void (^)(void))complete;
 
 
 

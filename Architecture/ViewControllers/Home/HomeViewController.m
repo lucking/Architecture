@@ -88,6 +88,19 @@
     //[view removeFromSuperview];
 
     
+    // 测试
+    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:@"取消" okAction:^{
+        NSLog(@"---> 确定");
+        
+    }  cancelAction:^{
+        NSLog(@"---> 取消");
+        
+    } completion:^{
+        NSLog(@"---> 弹出时");
+        
+    }];
+
+    
 }
 
 

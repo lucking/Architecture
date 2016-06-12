@@ -309,6 +309,61 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 
 
 
+
+
+
+//#pragma mark - AlertView2
+//- (void)showAlertMessage:(NSString *)message
+//{
+//    UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+//    [alertVC addAction:okAction];
+//    
+//    [self.view.window.rootViewController presentViewController:alertVC animated:NO completion:^{
+//        
+//    }];
+//}
+#pragma mark - AlertController
++ (void)showAlertTitle:(NSString *)titlet message:(NSString *)message okTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okAction:(void (^)(void))okActe cancelAction:(void (^)(void))cancelActe completion:(void (^)(void))complete
+{
+    UIAlertController* alertVC = [UIAlertController alertControllerWithTitle:titlet message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    // okAction
+    if ((okTitle != nil) && ![okTitle isEqualToString:@""] && okActe != nil) {
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:okTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            okActe();//有回调
+        }];
+        [alertVC addAction:okAction];
+    }
+    
+    // cancelAction
+    if ((cancelTitle != nil) && ![cancelTitle isEqualToString:@""] && cancelActe != nil) {
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            cancelActe();//有回调
+        }];
+        [alertVC addAction:cancelAction];
+    }
+    
+    
+//    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+//    if (complete != nil) {
+//        [window.rootViewController presentViewController:alertVC animated:NO completion:^{
+//            complete();//有回调
+//        }];
+//    }else{
+//        [window.rootViewController presentViewController:alertVC animated:NO completion:nil];
+//    }
+//    
+//    [AppDelegate GetInstance].window.rootViewController = alertVC;
+    
+    
+    [[AppDelegate GetInstance].window.rootViewController presentViewController:alertVC animated:NO completion:nil];
+
+}
+
+
+
 //==========================="   系统   "================================
 
 #pragma mark 获取当前系统的版本号
@@ -535,6 +590,7 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 
 	return currentVC;
 }
+
 
 
 

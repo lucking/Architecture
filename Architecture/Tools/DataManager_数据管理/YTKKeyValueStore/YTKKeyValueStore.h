@@ -20,7 +20,7 @@
 @interface YTKKeyValueStore : NSObject
 
 // 单列
-//+ (YTKKeyValueItem *)singleton;
++ (YTKKeyValueItem *)singleton;
 
 
 - (id)initDBWithName:(NSString *)dbName;
@@ -88,7 +88,7 @@
 - (BOOL)isExistTableWithName:(NSString *)tableName;
 
 /**
- *  --------------------------"  删除  "----------------------
+ *  -----------------------"  删除  "------------------------
  */
 //ZM_Add  删除表
 - (BOOL)deleteTable:(NSString *)tableName;
@@ -100,5 +100,3 @@
 - (NSString *)getDBPath;
 
 @end
-
-

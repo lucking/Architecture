@@ -45,12 +45,6 @@
 //手势绑定的事件
 -(void)tapGestureClick;
 
-#pragma mark - AlertView
-- (void)showAlertMessage:(NSString *)message;
-#pragma mark - AlertController
-- (void)showAlertTitle:(NSString *)titlet message:(NSString *)message okTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okAction:(void (^)(void))okActe cancelAction:(void (^)(void))cancelActe completion:(void (^)(void))complete;
-
-
 
 
 // 添加按钮：UIButton

@@ -85,7 +85,7 @@
 
 	NSString* 	_message = @"你有账户现在有 2亿 金额！";
 	// 测试
-	[self showAlertTitle:nil message:_message okTitle:@"确定" cancelTitle:nil okAction:^{
+	[Common showAlertTitle:nil message:_message okTitle:@"确定" cancelTitle:nil okAction:^{
 		NSLog(@"---> 确定");
 
 	}  cancelAction:^{

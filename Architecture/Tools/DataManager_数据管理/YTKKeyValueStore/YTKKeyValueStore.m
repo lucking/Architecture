@@ -68,15 +68,15 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 
 
 // 单列：2016.3.12 添加
-//+ (YTKKeyValueItem *)singleton
-//{
-//	static YTKKeyValueItem *instance = nil;
-//	static dispatch_once_t onceToken;
-//	dispatch_once(&onceToken, ^{
-//		instance = [[self alloc] initDBWithName:@"TangDi.db"];
-//	});
-//	return instance;
-//}
++ (YTKKeyValueItem *)singleton
+{
+	static YTKKeyValueItem *instance = nil;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		instance = [[self alloc] initDBWithName:@"TangDi.db"];
+	});
+	return instance;
+}
 
 
 
@@ -97,7 +97,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
     if (self) {
         NSString * dbPath = [PATH_OF_DOCUMENT stringByAppendingPathComponent:dbName];
 		_dbPath = dbPath;
-        debugLog(@"dbPath = %@", dbPath);
+        debugLog(@"---> dbPath = %@", dbPath);
         if (_dbQueue) {
             [self close];
         }
@@ -110,7 +110,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
     self = [super init];
     if (self) {
 		_dbPath = dbPath;
-        debugLog(@"dbPath = %@", dbPath);
+        debugLog(@"---> dbPath = %@", dbPath);
         if (_dbQueue) {
             [self close];
         }
@@ -347,6 +347,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
     _dbQueue = nil;
 }
 
+
 #pragma mark//======================="  ZM_Add 添加更多可使用方法  "=================================
 
 //ZM_Add >> 存入单个模型
@@ -391,7 +392,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 - (id)getModelObjectById:(NSString *)objectId className:(Class)className fromTable:(NSString *)tableName
 {
     NSDictionary *dic = [self getObjectById:objectId fromTable:tableName];
-    return [className objectWithKeyValues:dic];
+    return [className objectWithKeyValues:dic]; // 字典 -> 模型
     
 }
 //ZM_Add << 根据一个表名取出一个数组模型对象
@@ -432,14 +433,14 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 		}
 		[rs close];
 	}];
-	// parse json string to object
+	// json解析为 object
 	NSError * error;
 	for (YTKKeyValueItem * item in result) {
 		error = nil;
 		id object = [NSJSONSerialization JSONObjectWithData:[item.itemObject dataUsingEncoding:NSUTF8StringEncoding]
 													options:(NSJSONReadingAllowFragments) error:&error];
 		if (error) {
-			debugLog(@"ERROR, faild to prase to json.");
+			debugLog(@"错误,json解析失败");
 		} else {
 			item.itemObject = object;
 		}
@@ -472,7 +473,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 		NSString *sqlstr = [NSString stringWithFormat:@"DROP TABLE %@", tableName];
 		if (![db executeUpdate:sqlstr])
 		{
-			debugLog(@"Delete table error!");
+			debugLog(@"删除表错误!");
 			result = NO;
 		}
 		result = YES;
@@ -487,14 +488,14 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 
-	// delete the old db.
+	// 删除旧数据库文件信息
 	if ([fileManager fileExistsAtPath:DBName])
 		{
 		[_dbQueue inDatabase:^(FMDatabase *db) {
 			[db close];
 			success = [fileManager removeItemAtPath:DBName error:&error];
 			if (!success) {
-				NSAssert1(0, @"Failed to delete old database file with message '%@'.", [error localizedDescription]);
+				NSAssert1(0, @"旧数据库文件信息删除失败 '%@'.", [error localizedDescription]);
 			}
 		}];
 		}
