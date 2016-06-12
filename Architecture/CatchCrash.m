@@ -23,27 +23,18 @@ void uncaughtExceptionHandler(NSException*exception)
     //异常名称
     NSString *name      = [exception name];
     
-    
     NSString *exceptionInfo = [NSString stringWithFormat:@"================异常崩溃报告================\n name:\n%@\n reason:\n%@\n callStackSymbols:\n%@",name,reason,[stackArray componentsJoinedByString:@"\n"]];
     NSLog(@"exceptionInfo: %@",exceptionInfo);
     
 
-    // 保存到本地：可以选择写到应用下的某个文件，通过后续处理将信息发送到服务器
+    // 保存到本地
     [CatchCrash saveAsText:exceptionInfo];
-    // 发送邮件：到指定的邮件地址
+    // 发送邮件
     [CatchCrash sendEmail:exceptionInfo];
     
 }
 
-NSString *applicationDocumentsDirectory() {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-
--(NSString *)applicationDocumentsDirectory {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-
-
+//注册异常处理函数
 +(void)setExceptionHandler{
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 }
@@ -52,12 +43,14 @@ NSString *applicationDocumentsDirectory() {
     return NSGetUncaughtExceptionHandler();
 }
 
+// 保存到本地：可以选择写到应用下的某个文件，通过后续处理将信息发送到服务器
 +(void)saveAsText:(NSString *)exceptionInfo{
 
     NSString *path=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Exception.txt"];
     [exceptionInfo writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
+// 发送邮件：到指定的邮件地址
 +(void)sendEmail:(NSString *)exceptionInfo{
 
     NSString *appName=(NSString *)[InfoDictionaryManager getValueOfInfoDict:@"CFBundleDisplayName"];
@@ -69,8 +62,6 @@ NSString *applicationDocumentsDirectory() {
     [[UIApplication sharedApplication] openURL:url];
     
 }
-
-
 
 
 - (void)aaa {

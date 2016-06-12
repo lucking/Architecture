@@ -13,6 +13,7 @@
 		984AFDDB1D0D0448003E03FB /* ZMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD51D0D0448003E03FB /* ZMDownloadManager.m */; };
 		984AFDDC1D0D0448003E03FB /* ZMSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD71D0D0448003E03FB /* ZMSessionModel.m */; };
 		984AFDDD1D0D0448003E03FB /* ZMSessionTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD91D0D0448003E03FB /* ZMSessionTask.m */; };
+		984AFDE01D0D06E8003E03FB /* NetworkAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDDF1D0D06E8003E03FB /* NetworkAPIManager.m */; };
 		987E96901D0C3B5900D44CE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E968F1D0C3B5900D44CE9 /* main.m */; };
 		987E96931D0C3B5900D44CE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96921D0C3B5900D44CE9 /* AppDelegate.m */; };
 		987E96991D0C3B5900D44CE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987E96971D0C3B5900D44CE9 /* Main.storyboard */; };
@@ -326,6 +327,8 @@
 		984AFDD71D0D0448003E03FB /* ZMSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSessionModel.m; sourceTree = "<group>"; };
 		984AFDD81D0D0448003E03FB /* ZMSessionTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSessionTask.h; sourceTree = "<group>"; };
 		984AFDD91D0D0448003E03FB /* ZMSessionTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSessionTask.m; sourceTree = "<group>"; };
+		984AFDDE1D0D06E8003E03FB /* NetworkAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkAPIManager.h; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/APIManager/NetworkAPIManager.h; sourceTree = "<group>"; };
+		984AFDDF1D0D06E8003E03FB /* NetworkAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkAPIManager.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/APIManager/NetworkAPIManager.m; sourceTree = "<group>"; };
 		987E968B1D0C3B5900D44CE9 /* Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987E968F1D0C3B5900D44CE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		987E96911D0C3B5900D44CE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1539,6 +1542,8 @@
 		987E97CD1D0C3F5000D44CE9 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				984AFDDE1D0D06E8003E03FB /* NetworkAPIManager.h */,
+				984AFDDF1D0D06E8003E03FB /* NetworkAPIManager.m */,
 				987E97CE1D0C3F5000D44CE9 /* APIManager.h */,
 				987E97CF1D0C3F5000D44CE9 /* APIManager.m */,
 			);
@@ -2776,6 +2781,7 @@
 				987E972B1D0C3F3300D44CE9 /* AccountViewController.m in Sources */,
 				987E9A351D0C3F5B00D44CE9 /* NSString+YYAdd.m in Sources */,
 				987E99CA1D0C3F5B00D44CE9 /* AFHTTPSessionManager.m in Sources */,
+				984AFDE01D0D06E8003E03FB /* NetworkAPIManager.m in Sources */,
 				987E97981D0C3F3B00D44CE9 /* ZMProgressView.m in Sources */,
 				987E979D1D0C3F3B00D44CE9 /* ZMSpaceLabel.m in Sources */,
 				987E99DD1D0C3F5B00D44CE9 /* FMDatabaseQueue.m in Sources */,

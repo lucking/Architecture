@@ -52,6 +52,15 @@ Singleton_Instance_method_Impl(FileManager);
 
 }
 
+NSString *applicationDocumentsDirectory() {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+-(NSString *)applicationDocumentsDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+
 #pragma mark  创建文件夹
 - (void)createImageFile{
 

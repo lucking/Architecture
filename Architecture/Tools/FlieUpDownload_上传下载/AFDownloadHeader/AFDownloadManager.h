@@ -11,10 +11,6 @@
 #import "AFDownloadHeader.h"
 
 typedef NSURLSessionDownloadTask ZMURLSessionTask;
-//typedef void(^DownloadProgressBlock)(CGFloat progress, CGFloat totalMBRead, CGFloat totalMBExpectedToRead);
-//typedef void(^DownloadSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
-//typedef void(^DownloadFailureBlock)(AFHTTPRequestOperation *operation, NSError *error);
-
 
 @interface AFDownloadManager : NSObject
 {
@@ -23,7 +19,6 @@ typedef NSURLSessionDownloadTask ZMURLSessionTask;
 @property (nonatomic, strong) NSURLSessionDownloadTask *downloadTask;
 
 + (AFDownloadManager *)ShareDownloadManager;
-
 
 // 下载文件
 - (void)downFileOfUrlStr:(NSString *)urlStr fileName:(NSString *)fileName;
@@ -37,7 +32,6 @@ typedef NSURLSessionDownloadTask ZMURLSessionTask;
 // 文件路径_URL
 - (NSURL *)filePathURLOfFileName:(NSString *)fileName;
 
-
 //延缓，推迟；暂停
 - (void)suspend;
 
@@ -45,10 +39,8 @@ typedef NSURLSessionDownloadTask ZMURLSessionTask;
 - (void)resume;
 
 
-
 #pragma mark  判断文件是否存在
 - (BOOL)isExistFilePath:(NSString *)Path;
-
 
 #pragma mark  删除文件
 - (void)removeFilePath:(NSString *)Path;

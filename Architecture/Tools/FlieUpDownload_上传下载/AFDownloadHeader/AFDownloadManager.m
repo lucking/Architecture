@@ -37,12 +37,9 @@
         NSURL *URL = [NSURL URLWithString:urlStr];
         NSURLRequest *request = [NSURLRequest requestWithURL:URL];
         
-        
         _downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
             
             NSLog(@"---> progress = %f \n ",downloadProgress.fractionCompleted);
-            //NSLog(@"---> progress: %@", downloadProgress);
-            
             if (downloadProgress.fractionCompleted == 1.0000000) {
                 NSLog(@"---> finished_download");
             }

@@ -123,7 +123,7 @@ static NetworkManager *_singleInstance;
  */
 + (void)upLoadPOST:(NSDictionary *)params fileData:(NSData *)data fileDic:(NSDictionary *)fileDic withURL:(NSString *)URL success:(void (^)(id data))success failure:(void (^)(NSError * error))failure {
 
-	URL = [HOSURL stringByAppendingFormat:@"%@",URL];
+	URL = [API_URL stringByAppendingFormat:@"%@",URL];
 	[[NetworkSession sharedSessionManager] POST:URL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
 
 		/*	此方法参数

@@ -12,7 +12,6 @@
 #import "SDWebImageManager.h"
 
 #import "CatchCrash.h"
-#import "UncaughtExceptionHandler.h"
 
 @interface AppDelegate ()
 
@@ -83,9 +82,8 @@ static AppDelegate *_singleInstance;
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, NotificationLock, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, NotificationChange, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
     
-    //5.注册消息处理函数的处理方法
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
+    //5.注册异常处理函数
+    [CatchCrash setExceptionHandler];
     
     
     NSString* ssssa = @"魏一平";

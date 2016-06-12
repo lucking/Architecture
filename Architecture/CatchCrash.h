@@ -15,9 +15,7 @@
 void uncaughtExceptionHandler(NSException*exception);
 
 
-
 +(void)setExceptionHandler;
-
 +(NSUncaughtExceptionHandler *)getExceptionHandler;
 
 +(void)saveAsText:(NSString *)exceptionInfo;
