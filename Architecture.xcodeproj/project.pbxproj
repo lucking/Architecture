@@ -123,10 +123,6 @@
 		987E986F1D0C3F5000D44CE9 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98191D0C3F5000D44CE9 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		987E98701D0C3F5000D44CE9 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98201D0C3F5000D44CE9 /* Operation.m */; };
 		987E98711D0C3F5000D44CE9 /* OperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98221D0C3F5000D44CE9 /* OperationFactory.m */; };
-		987E98721D0C3F5000D44CE9 /* AFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98281D0C3F5000D44CE9 /* AFDownloadManager.m */; };
-		987E98731D0C3F5000D44CE9 /* ZMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E982D1D0C3F5000D44CE9 /* ZMDownloadManager.m */; };
-		987E98741D0C3F5000D44CE9 /* ZMSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E982F1D0C3F5000D44CE9 /* ZMSessionModel.m */; };
-		987E98751D0C3F5000D44CE9 /* ZMSessionTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98311D0C3F5000D44CE9 /* ZMSessionTask.m */; };
 		987E98761D0C3F5000D44CE9 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98341D0C3F5000D44CE9 /* NetworkManager.m */; };
 		987E98771D0C3F5000D44CE9 /* NetworkSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98361D0C3F5000D44CE9 /* NetworkSession.m */; };
 		987E98781D0C3F5000D44CE9 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E98391D0C3F5000D44CE9 /* FileManager.m */; };
@@ -522,16 +518,6 @@
 		987E98201D0C3F5000D44CE9 /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
 		987E98211D0C3F5000D44CE9 /* OperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationFactory.h; sourceTree = "<group>"; };
 		987E98221D0C3F5000D44CE9 /* OperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactory.m; sourceTree = "<group>"; };
-		987E98261D0C3F5000D44CE9 /* AFDownloadHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadHeader.h; sourceTree = "<group>"; };
-		987E98271D0C3F5000D44CE9 /* AFDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadManager.h; sourceTree = "<group>"; };
-		987E98281D0C3F5000D44CE9 /* AFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDownloadManager.m; sourceTree = "<group>"; };
-		987E982A1D0C3F5000D44CE9 /* UpDownHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDownHeader.h; sourceTree = "<group>"; };
-		987E982C1D0C3F5000D44CE9 /* ZMDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDownloadManager.h; sourceTree = "<group>"; };
-		987E982D1D0C3F5000D44CE9 /* ZMDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDownloadManager.m; sourceTree = "<group>"; };
-		987E982E1D0C3F5000D44CE9 /* ZMSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSessionModel.h; sourceTree = "<group>"; };
-		987E982F1D0C3F5000D44CE9 /* ZMSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSessionModel.m; sourceTree = "<group>"; };
-		987E98301D0C3F5000D44CE9 /* ZMSessionTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSessionTask.h; sourceTree = "<group>"; };
-		987E98311D0C3F5000D44CE9 /* ZMSessionTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSessionTask.m; sourceTree = "<group>"; };
 		987E98331D0C3F5000D44CE9 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		987E98341D0C3F5000D44CE9 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		987E98351D0C3F5000D44CE9 /* NetworkSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkSession.h; sourceTree = "<group>"; };
@@ -1478,6 +1464,8 @@
 		987E97CC1D0C3F5000D44CE9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				987E98371D0C3F5000D44CE9 /* Singleton(单列) */,
+				987E98321D0C3F5000D44CE9 /* Network_网络 */,
 				987E97CD1D0C3F5000D44CE9 /* APIManager */,
 				987E97D01D0C3F5000D44CE9 /* AppLocalnfo */,
 				987E97D31D0C3F5000D44CE9 /* BaseKit_基础类 */,
@@ -1488,10 +1476,6 @@
 				987E98141D0C3F5000D44CE9 /* EncodeDecode */,
 				987E981B1D0C3F5000D44CE9 /* Extension */,
 				987E981D1D0C3F5000D44CE9 /* Factory */,
-				987E98231D0C3F5000D44CE9 /* FileDownload */,
-				987E98241D0C3F5000D44CE9 /* FlieUpDownLown */,
-				987E98321D0C3F5000D44CE9 /* Network_网络 */,
-				987E98371D0C3F5000D44CE9 /* Singleton(单列) */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1687,54 +1671,6 @@
 				987E98221D0C3F5000D44CE9 /* OperationFactory.m */,
 			);
 			path = "计算器";
-			sourceTree = "<group>";
-		};
-		987E98231D0C3F5000D44CE9 /* FileDownload */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FileDownload;
-			sourceTree = "<group>";
-		};
-		987E98241D0C3F5000D44CE9 /* FlieUpDownLown */ = {
-			isa = PBXGroup;
-			children = (
-				987E98251D0C3F5000D44CE9 /* AFDownloadHeader */,
-				987E98291D0C3F5000D44CE9 /* MD5 */,
-				987E982A1D0C3F5000D44CE9 /* UpDownHeader.h */,
-				987E982B1D0C3F5000D44CE9 /* ZMDownloadManager */,
-			);
-			path = FlieUpDownLown;
-			sourceTree = "<group>";
-		};
-		987E98251D0C3F5000D44CE9 /* AFDownloadHeader */ = {
-			isa = PBXGroup;
-			children = (
-				987E98261D0C3F5000D44CE9 /* AFDownloadHeader.h */,
-				987E98271D0C3F5000D44CE9 /* AFDownloadManager.h */,
-				987E98281D0C3F5000D44CE9 /* AFDownloadManager.m */,
-			);
-			path = AFDownloadHeader;
-			sourceTree = "<group>";
-		};
-		987E98291D0C3F5000D44CE9 /* MD5 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MD5;
-			sourceTree = "<group>";
-		};
-		987E982B1D0C3F5000D44CE9 /* ZMDownloadManager */ = {
-			isa = PBXGroup;
-			children = (
-				987E982C1D0C3F5000D44CE9 /* ZMDownloadManager.h */,
-				987E982D1D0C3F5000D44CE9 /* ZMDownloadManager.m */,
-				987E982E1D0C3F5000D44CE9 /* ZMSessionModel.h */,
-				987E982F1D0C3F5000D44CE9 /* ZMSessionModel.m */,
-				987E98301D0C3F5000D44CE9 /* ZMSessionTask.h */,
-				987E98311D0C3F5000D44CE9 /* ZMSessionTask.m */,
-			);
-			path = ZMDownloadManager;
 			sourceTree = "<group>";
 		};
 		987E98321D0C3F5000D44CE9 /* Network_网络 */ = {
@@ -2598,7 +2534,6 @@
 				987E97A41D0C3F3B00D44CE9 /* ZMTradeField.m in Sources */,
 				987E99D31D0C3F5B00D44CE9 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				987E9A191D0C3F5B00D44CE9 /* SDWebImageDecoder.m in Sources */,
-				987E98721D0C3F5000D44CE9 /* AFDownloadManager.m in Sources */,
 				987E987B1D0C3F5000D44CE9 /* Notification.m in Sources */,
 				987E97311D0C3F3300D44CE9 /* HMProductModel.m in Sources */,
 				987E9A391D0C3F5B00D44CE9 /* YYCGUtilities.m in Sources */,
@@ -2708,10 +2643,8 @@
 				987E972D1D0C3F3300D44CE9 /* TestViewController.m in Sources */,
 				987E99E61D0C3F5B00D44CE9 /* UIView+HandyAutoLayout.m in Sources */,
 				987E99E31D0C3F5B00D44CE9 /* KeychainItemWrapper.m in Sources */,
-				987E98751D0C3F5000D44CE9 /* ZMSessionTask.m in Sources */,
 				987E99DC1D0C3F5B00D44CE9 /* FMDatabasePool.m in Sources */,
 				987E972E1D0C3F3300D44CE9 /* HomeViewController.m in Sources */,
-				987E98741D0C3F5000D44CE9 /* ZMSessionModel.m in Sources */,
 				987E99F41D0C3F5B00D44CE9 /* MBProgressHUD.m in Sources */,
 				987E97331D0C3F3300D44CE9 /* GuideCollectionCell.m in Sources */,
 				987E98781D0C3F5000D44CE9 /* FileManager.m in Sources */,
@@ -2754,7 +2687,6 @@
 				987E9A3F1D0C3F5B00D44CE9 /* UIDevice+YYAdd.m in Sources */,
 				987E99D21D0C3F5B00D44CE9 /* AFImageDownloader.m in Sources */,
 				987E9A301D0C3F5B00D44CE9 /* NSNotificationCenter+YYAdd.m in Sources */,
-				987E98731D0C3F5000D44CE9 /* ZMDownloadManager.m in Sources */,
 				987E9A4D1D0C3F5B00D44CE9 /* _YYWebImageSetter.m in Sources */,
 				987E973C1D0C3F3300D44CE9 /* GuidepageViewController.m in Sources */,
 				987E9A151D0C3F5B00D44CE9 /* MKAnnotationView+WebCache.m in Sources */,
