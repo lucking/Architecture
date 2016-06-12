@@ -15,11 +15,11 @@
 void uncaughtExceptionHandler(NSException*exception);
 
 
-+(void)setExceptionHandler;
-+(NSUncaughtExceptionHandler *)getExceptionHandler;
++ (void)setExceptionHandler;
++ (NSUncaughtExceptionHandler *)getExceptionHandler;
 
-+(void)saveAsText:(NSString *)exceptionInfo;
-+(void)sendEmail:(NSString *)exceptionInfo;
++ (void)saveAsText:(NSString *)exceptionInfo;
++ (void)sendEmail:(NSString *)exceptionInfo;
     
     
 @end

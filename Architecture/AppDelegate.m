@@ -22,8 +22,7 @@
 
 static AppDelegate *_singleInstance;
 
-+(AppDelegate *)GetInstance
-{
++(AppDelegate *)GetInstance{
     return _singleInstance;
 }
 + (AppDelegate*)sharedAppDelegate
@@ -38,7 +37,6 @@ static AppDelegate *_singleInstance;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    self.window.backgroundColor = [UIColor redColor];
     
     [self BaseSetting];
     
@@ -147,7 +145,6 @@ static AppDelegate *_singleInstance;
     [[SDImageCache sharedImageCache] clearMemory];
     // 清理硬盘
     [[SDImageCache sharedImageCache] clearDisk];
-    
     
     // 清理webview 缓存
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];

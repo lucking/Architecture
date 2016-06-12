@@ -35,23 +35,23 @@ void uncaughtExceptionHandler(NSException*exception)
 }
 
 //注册异常处理函数
-+(void)setExceptionHandler{
++ (void)setExceptionHandler{
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 }
 
-+(NSUncaughtExceptionHandler *)getExceptionHandler{
++ (NSUncaughtExceptionHandler *)getExceptionHandler{
     return NSGetUncaughtExceptionHandler();
 }
 
 // 保存到本地：可以选择写到应用下的某个文件，通过后续处理将信息发送到服务器
-+(void)saveAsText:(NSString *)exceptionInfo{
++ (void)saveAsText:(NSString *)exceptionInfo{
 
     NSString *path=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Exception.txt"];
     [exceptionInfo writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
 // 发送邮件：到指定的邮件地址
-+(void)sendEmail:(NSString *)exceptionInfo{
++ (void)sendEmail:(NSString *)exceptionInfo{
 
     NSString *appName=(NSString *)[InfoDictionaryManager getValueOfInfoDict:@"CFBundleDisplayName"];
     NSString *version=(NSString *)[InfoDictionaryManager getValueOfInfoDict:@"CFBundleVersion"];

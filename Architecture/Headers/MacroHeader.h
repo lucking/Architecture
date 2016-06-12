@@ -42,9 +42,6 @@
 #define     AlertView(mmessage)    UIAlertView* AlertView =  [[UIAlertView alloc]initWithTitle:@"温馨提示" message:mmessage delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];\
 [AlertView show]
 
-#define     AlertView1(mmessage)      [[UIAlertView alloc]initWithTitle:@"警告" message:mmessage delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil]
-
-
 
 #define     AlertViewDelegate(mmessage)    UIAlertView* AlertView =  [[UIAlertView alloc]initWithTitle:@"温馨提示" message:mmessage delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];\
 [AlertView show]
@@ -58,13 +55,6 @@ alertView.tag = _tag;\
 #define     AlertViewDelegateTagOK(_message,_tag)    UIAlertView* alertView =  [[UIAlertView alloc]initWithTitle:@"温馨提示" message:_message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];\
 alertView.tag = _tag;\
 [alertView show]
-
-
-
-
-#define     AlertViewError(mmessage)    UIAlertView* AlertView =  [[UIAlertView alloc]initWithTitle:@"错误提示" message:mmessage delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];\
-[AlertView show]
-
 
 
 

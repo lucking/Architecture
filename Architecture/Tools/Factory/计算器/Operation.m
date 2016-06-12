@@ -79,7 +79,7 @@
 	//判断除数不能为0
 	if (self.firstNum == 0) {
 		NSLog(@"除数不能为0");
-		AlertView1(@"除数不能为0");
+		AlertView(@"除数不能为0");
 	}else{
 		result = self.firstNum / self.secondNum;//"/"
 	}
