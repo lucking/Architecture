@@ -1658,7 +1658,6 @@
 				987E980D1D0C3F5000D44CE9 /* DataHandler.h */,
 				987E980E1D0C3F5000D44CE9 /* DataHandler.m */,
 				987E980F1D0C3F5000D44CE9 /* Store */,
-				987E98101D0C3F5000D44CE9 /* Utils */,
 				987E98111D0C3F5000D44CE9 /* YTKKeyValueStore */,
 			);
 			path = "DataManager_数据管理";
@@ -1669,13 +1668,6 @@
 			children = (
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		987E98101D0C3F5000D44CE9 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		987E98111D0C3F5000D44CE9 /* YTKKeyValueStore */ = {
