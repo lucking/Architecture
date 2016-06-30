@@ -1104,11 +1104,11 @@
 		987E96ED1D0C3F3300D44CE9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				987E96EE1D0C3F3300D44CE9 /* APIManager */,
-				987E96F11D0C3F3300D44CE9 /* Controller */,
-				987E96F21D0C3F3300D44CE9 /* HomeOtherVC */,
 				987E96F51D0C3F3300D44CE9 /* HomeViewController.h */,
 				987E96F61D0C3F3300D44CE9 /* HomeViewController.m */,
+				987E96F21D0C3F3300D44CE9 /* HomeOtherVC */,
+				987E96EE1D0C3F3300D44CE9 /* APIManager */,
+				987E96F11D0C3F3300D44CE9 /* Controller */,
 				987E96F71D0C3F3300D44CE9 /* Model */,
 			);
 			path = Home;
@@ -1742,7 +1742,6 @@
 			children = (
 				987E98411D0C3F5000D44CE9 /* SingletonBase */,
 				987E98461D0C3F5000D44CE9 /* ThreadQueue */,
-				987E983E1D0C3F5000D44CE9 /* NetworkBase */,
 				987E98381D0C3F5000D44CE9 /* FileManager.h */,
 				987E98391D0C3F5000D44CE9 /* FileManager.m */,
 				987E983A1D0C3F5000D44CE9 /* KVOManager.h */,
@@ -1755,13 +1754,6 @@
 				987E984E1D0C3F5000D44CE9 /* UserDefaults.m */,
 			);
 			path = "Singleton(单列)";
-			sourceTree = "<group>";
-		};
-		987E983E1D0C3F5000D44CE9 /* NetworkBase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkBase;
 			sourceTree = "<group>";
 		};
 		987E98411D0C3F5000D44CE9 /* SingletonBase */ = {
