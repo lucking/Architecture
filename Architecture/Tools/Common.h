@@ -118,7 +118,6 @@ typedef enum{
 
 
 #pragma mark //==========================="   空数据处理   "================================
-
 // 判断是否为空
 +(BOOL)isNull:(id)object;
 // 判断字符串是否为空
@@ -130,6 +129,16 @@ typedef enum{
 // 转换空串 金额
 +(NSString*)convertNulltoMoney:(id)object;
 
+#pragma mark //==========================="   getURl 验证签名：密钥加密  "================================
+// 字典不排序_拼接url
++ (NSString *)getURlStringOfIP:(NSString *)url params:(NSDictionary *)params;
+// 字典排序_拼接url
++ (NSString *)getURlStringOfIP:(NSString *)url sortParams:(NSDictionary *)params;
+// 验证签名：密钥加密
++ (NSString *)getSign:(NSDictionary *)params;
+// 转变为json数据格式：params 传参
++ (NSDictionary *)JsonParameters:(NSDictionary *)params;
+
 
 #pragma mark //==========================="   动画   "================================
 // 导航视图 动画
@@ -138,16 +147,12 @@ typedef enum{
 +(void)flipView:(UIView *)myView Rect:(CGRect)myRect forView:(UIView *)view timeInterval:(NSTimeInterval)myTime;
 
 
-
 // 判断手机型号
 + (NSString *)ISIPHONEXX;
 // 判断屏幕类型，普通还是视网膜
 + (float)scale;
 // 判断是否是模拟器
 + (BOOL)isSimulator;
-
-
-
 
 #pragma mark //==========================="   UIViewController   "================================
 

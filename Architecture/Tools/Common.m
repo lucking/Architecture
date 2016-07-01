@@ -7,6 +7,11 @@
 //
 
 #import "Common.h"
+#import "JSONKit.h"
+#import "EncodeDecode.h"
+
+// 加密密钥
+#define  Sign_Key  @"192006250b4c09247ec02edce69f6a2d"
 
 @implementation Common
 
@@ -497,6 +502,110 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 	}
 	return object;
 }
+
+//==========================="   getURl   "================================
+//字典不排序_拼接url
++ (NSString *)getURlStringOfIP:(NSString *)url params:(NSDictionary *)params {
+    
+    if (params !=nil) {
+        NSArray *keysArray = [params allKeys]; //获取allKeys
+        NSString *keyValue = @"", *urlStr = @"";
+        for (int i=0; i<keysArray.count; i++) {
+            
+            keyValue = [NSString stringWithFormat:@"%@=%@",keysArray[i],params[keysArray[i]]];
+            urlStr = [NSString stringWithFormat:@"%@&%@",urlStr,keyValue];
+        }
+        NSMutableString* mutStr = [[NSMutableString alloc] initWithString:urlStr];
+        [mutStr deleteCharactersInRange:NSMakeRange(0,1)];
+        mutStr = [NSMutableString stringWithFormat:@"%@?%@",url,mutStr];
+        
+        return mutStr;
+    }else {
+        return url;
+    }
+}
+// 字典排序_拼接url
++ (NSString *)getURlStringOfIP:(NSString *)url sortParams:(NSDictionary *)params {
+    
+    if (params ==nil) {
+        return @"";
+    }else {
+        NSArray *keysArray = [params allKeys];
+        NSArray *sortedArray = [keysArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+            return [obj1 compare:obj2 options:NSNumericSearch]; //allKeys排列顺序
+        }];
+        
+        NSMutableString* tempStr= [[NSMutableString alloc] initWithString:@""];
+        for (NSString *key in sortedArray) {
+            NSString *value = [params objectForKey: key];
+            tempStr = [NSMutableString stringWithFormat:@"%@&%@=%@",tempStr,key,value];
+        }
+        [tempStr deleteCharactersInRange:NSMakeRange(0,1)]; //删除字符串：(开始位置，删除个数)
+        tempStr = [NSMutableString stringWithFormat:@"%@?%@",url,tempStr];
+        //NSLog(@"---> tempStr: %@ \n ",tempStr);
+        return tempStr;
+    }
+}
+
+
+// 验证签名：密钥加密
++ (NSString *)getSign:(NSDictionary *)params {
+    
+    if (params ==nil) {
+        return @"";
+    }else {
+        
+        NSArray *keysArray = [params allKeys];//获取所有键存到数组
+        NSArray *sortedArray = [keysArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+            
+            return [obj1 compare:obj2 options:NSNumericSearch]; //由于allKeys返回的是无序数组，这里我们要排列它们的顺序
+        }];
+        
+        NSMutableString* tempStr= [[NSMutableString alloc] initWithString:@""];
+        for (NSString *key in sortedArray) {
+            
+            NSString *value = [params objectForKey: key];
+            tempStr = [NSMutableString stringWithFormat:@"%@&%@=%@",tempStr,key,value];
+        }
+        [tempStr deleteCharactersInRange:NSMakeRange(0,1)]; //删除字符串：(开始位置，删除个数)
+        NSString* params_key = [NSString stringWithFormat:@"%@&key=%@",tempStr,Sign_Key];
+        NSLog(@"---> params_key: %@ \n ",params_key);
+        
+        NSString* sign_md5 = [EncodeDecode md5:params_key]; // 9A0A8659F005D6984697E2CA0A9CF3B7
+        NSLog(@"---> sign_md5: %@",sign_md5);
+        
+        return sign_md5;
+    }
+}
+/**
+ *  转变为json数据格式：params 传参
+ *
+ *  @return 请求的json数据格式参数
+ */
++ (NSDictionary *)JsonParameters:(NSDictionary *)params {
+    
+    NSString* mySign = nil;
+    NSDictionary* parameters = nil;
+    if (params ==nil) {
+        parameters = @{@"REQ_BODY":@"",
+                       @"REQ_HEAD":@{@"sign":@""}
+                       };
+    }else{
+        mySign = [Common getSign:params];// 验证签名：密钥加密
+        
+        parameters = @{@"REQ_BODY":params,
+                       @"REQ_HEAD":@{@"sign":mySign}
+                       };
+    }
+    NSDictionary* JSON_Params = @{@"REQ_MESSAGE":[parameters JSONString]};
+    //NSSLog(@"---> JSON_Params: %@ \n ",	JSON_Params);
+    
+    return JSON_Params;
+}
+
+
+
+
 
 //==========================="   动画   "================================
 

@@ -12,8 +12,6 @@
 @implementation EncodeDecode
 
 
-
-
 /**
  *  字符串md5加密
  *
