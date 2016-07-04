@@ -28,7 +28,7 @@
     // 设置导航栏的主题
     UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setBarTintColor:NavBg_COLOR];
-    //navigationBar一下（0，0）开始
+    //navigationBar下（0，0）开始
 	// self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
 
 }
@@ -39,6 +39,8 @@
     //[[UINavigationBar appearance] setTintColor:UIColorWithRGBA(227, 0, 42, 1.0)];
     //self.view.backgroundColor = [UIColor purpleColor];
 
+    //navigationBar下（0，0）开始
+    //self.automaticallyAdjustsScrollViewInsets = NO;
 
 }
 

@@ -293,6 +293,11 @@
 		987E9A771D0C4EBF00D44CE9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987E9A761D0C4EBF00D44CE9 /* CoreFoundation.framework */; };
 		987E9A791D0C4ECD00D44CE9 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 987E9A781D0C4ECD00D44CE9 /* libz.1.1.3.tbd */; };
 		988DEBDB1D0D5CAD00424530 /* NSObject+AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 988DEBDA1D0D5CAD00424530 /* NSObject+AlertView.m */; };
+		9899A8821D29F0BC00CF8DCC /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8771D29F0BC00CF8DCC /* AES.m */; };
+		9899A8831D29F0BC00CF8DCC /* DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8791D29F0BC00CF8DCC /* DES.m */; };
+		9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */; };
+		9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */; };
+		9899A8871D29F0BC00CF8DCC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -868,6 +873,16 @@
 		987E9A781D0C4ECD00D44CE9 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		988DEBD91D0D5CAD00424530 /* NSObject+AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+AlertView.h"; path = "../../../../../../../zm/Desktop/Architecture/Architecture/Tools/Category_类别/NS_Categroy/NSObject+AlertView.h"; sourceTree = "<group>"; };
 		988DEBDA1D0D5CAD00424530 /* NSObject+AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AlertView.m"; path = "../../../../../../../zm/Desktop/Architecture/Architecture/Tools/Category_类别/NS_Categroy/NSObject+AlertView.m"; sourceTree = "<group>"; };
+		9899A8761D29F0BC00CF8DCC /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
+		9899A8771D29F0BC00CF8DCC /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
+		9899A8781D29F0BC00CF8DCC /* DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES.h; sourceTree = "<group>"; };
+		9899A8791D29F0BC00CF8DCC /* DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES.m; sourceTree = "<group>"; };
+		9899A87B1D29F0BC00CF8DCC /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		9899A87D1D29F0BC00CF8DCC /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		9899A87F1D29F0BC00CF8DCC /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -985,13 +1000,13 @@
 		987E968D1D0C3B5900D44CE9 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				987E96CB1D0C3F0300D44CE9 /* MainArchitecture */,
 				987E96D81D0C3F3300D44CE9 /* ViewControllers */,
 				987E97441D0C3F3B00D44CE9 /* Views */,
 				987E97A71D0C3F4100D44CE9 /* Model */,
 				987E9A561D0C3FBE00D44CE9 /* Headers */,
 				987E98821D0C3F5B00D44CE9 /* Opensources */,
 				987E97CC1D0C3F5000D44CE9 /* Tools */,
-				987E96CB1D0C3F0300D44CE9 /* MainArchitecture */,
 				987E96911D0C3B5900D44CE9 /* AppDelegate.h */,
 				987E96921D0C3B5900D44CE9 /* AppDelegate.m */,
 				987E969A1D0C3B5900D44CE9 /* Assets.xcassets */,
@@ -1684,6 +1699,7 @@
 			children = (
 				987E98151D0C3F5000D44CE9 /* EncodeDecode.h */,
 				987E98161D0C3F5000D44CE9 /* EncodeDecode.m */,
+				9899A8751D29F0BC00CF8DCC /* AES_DES_Lib */,
 				987E98171D0C3F5000D44CE9 /* GTMBase64 */,
 			);
 			path = EncodeDecode;
@@ -2390,6 +2406,23 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		9899A8751D29F0BC00CF8DCC /* AES_DES_Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9899A8761D29F0BC00CF8DCC /* AES.h */,
+				9899A8771D29F0BC00CF8DCC /* AES.m */,
+				9899A8781D29F0BC00CF8DCC /* DES.h */,
+				9899A8791D29F0BC00CF8DCC /* DES.m */,
+				9899A87B1D29F0BC00CF8DCC /* NSData+Base64.h */,
+				9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */,
+				9899A87D1D29F0BC00CF8DCC /* NSData+CommonCrypto.h */,
+				9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */,
+				9899A87F1D29F0BC00CF8DCC /* NSString+Base64.h */,
+				9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */,
+			);
+			path = AES_DES_Lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2565,6 +2598,7 @@
 				987E9A091D0C3F5B00D44CE9 /* MJRefreshBackNormalFooter.m in Sources */,
 				987E9A111D0C3F5B00D44CE9 /* UIScrollView+MJRefresh.m in Sources */,
 				987E99E21D0C3F5B00D44CE9 /* KeychainData.m in Sources */,
+				9899A8821D29F0BC00CF8DCC /* AES.m in Sources */,
 				987E979B1D0C3F3B00D44CE9 /* ZMReadButton.m in Sources */,
 				987E97C31D0C3F4100D44CE9 /* DALModelStandard.m in Sources */,
 				987E99F21D0C3F5B00D44CE9 /* View+MASAdditions.m in Sources */,
@@ -2635,6 +2669,7 @@
 				987E98571D0C3F5000D44CE9 /* BaseViewController.m in Sources */,
 				984AFDF21D0D0B4E003E03FB /* CatchCrash.m in Sources */,
 				987E9A2D1D0C3F5B00D44CE9 /* NSDate+YYAdd.m in Sources */,
+				9899A8871D29F0BC00CF8DCC /* NSString+Base64.m in Sources */,
 				987E9A491D0C3F5B00D44CE9 /* YYFrameImage.m in Sources */,
 				987E9A4C1D0C3F5B00D44CE9 /* YYSpriteSheetImage.m in Sources */,
 				987E97C71D0C3F4100D44CE9 /* Finance.m in Sources */,
@@ -2653,6 +2688,7 @@
 				987E9A261D0C3F5B00D44CE9 /* YYCache.m in Sources */,
 				987E987C1D0C3F5000D44CE9 /* Singleton.m in Sources */,
 				987E9A311D0C3F5B00D44CE9 /* NSNumber+YYAdd.m in Sources */,
+				9899A8831D29F0BC00CF8DCC /* DES.m in Sources */,
 				987E979C1D0C3F3B00D44CE9 /* ZMReadProtocolView.m in Sources */,
 				987E99EC1D0C3F5B00D44CE9 /* MASConstraintMaker.m in Sources */,
 				987E9A541D0C3F5B00D44CE9 /* YYWebImageManager.m in Sources */,
@@ -2707,6 +2743,7 @@
 				987E99F11D0C3F5B00D44CE9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				984AFDDB1D0D0448003E03FB /* ZMDownloadManager.m in Sources */,
 				987E987D1D0C3F5000D44CE9 /* SingletonManager.m in Sources */,
+				9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */,
 				987E9A451D0C3F5B00D44CE9 /* UITableView+YYAdd.m in Sources */,
 				987E98631D0C3F5000D44CE9 /* UIDevice+ZMAdd.m in Sources */,
 				984AFDDA1D0D0448003E03FB /* AFDownloadManager.m in Sources */,
@@ -2727,6 +2764,7 @@
 				987E97C11D0C3F4100D44CE9 /* BLLModelStandard.m in Sources */,
 				987E97C91D0C3F4100D44CE9 /* NewsItem.m in Sources */,
 				984AFDF31D0D0B4E003E03FB /* InfoDictionaryManager.m in Sources */,
+				9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */,
 				987E97A51D0C3F3B00D44CE9 /* ZMTradeInputView.m in Sources */,
 				984AFDDC1D0D0448003E03FB /* ZMSessionModel.m in Sources */,
 				987E986B1D0C3F5000D44CE9 /* Common.m in Sources */,
