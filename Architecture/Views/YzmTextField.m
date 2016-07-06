@@ -63,7 +63,6 @@
     //		[self.delegate imageTextField:self BtnClick:Btn];
     //		NSSLog(@"代理_按钮点击了");
     //	}
-    
     _phoneNum = [UserDefaults getObjectStorageWithKey:@"getYzmPhoneNum"];
     if ([Common isNotEmpty:_phoneNum]) {
         if ([Common validatePhone:_phoneNum]) {
@@ -107,7 +106,6 @@
             
         }
     }];
-    
 }
 
 /**

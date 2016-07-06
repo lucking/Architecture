@@ -43,16 +43,14 @@ Singleton_Instance_method_Interface(NetworkManager)
 
 
 
-#pragma mark 检测特定网络
-// 看看网络是不是给力
-+ (BOOL)isConnectionAvailable;
-
 // 弹出网络错误提示框
 + (void)showWithoutNetwork;
 
+#pragma mark 检测特定网络
+// 看看网络是不是给力
++ (BOOL)isConnectionAvailable;
 // 监听网络状态_AFNetworking
 + (BOOL)isReachableViaWiFi;
-
 // 监测网络的可链接性
 + (BOOL)netWorkReachabilityWithURLString:(NSString *) strUrl;
 

@@ -66,9 +66,7 @@
 
 
 
-/**
- *  AES加密算法： ECB模式
- */
+// ============================"  AES加密算法： ECB模式  "==============================
 //加密
 +(NSString *) encryptUseAESText:(NSString *)myText
 {
@@ -88,7 +86,6 @@
                                           buffer,
                                           1024,
                                           &numBytesEncrypted);
-    
     NSString* plainText = nil;
     if (cryptStatus == kCCSuccess) {
         NSData *dataTemp = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];

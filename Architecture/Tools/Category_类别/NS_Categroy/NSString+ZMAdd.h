@@ -13,13 +13,13 @@
 
 }
 // 字符串拼接
-+ (NSString *)getAandB:(NSString *)A with:(NSString *)B;
++ (NSString *)getABwithA:(NSString *)A and:(NSString *)B;
 
 // 去掉空格
 + (NSString *)removeStringEmpty:(NSString *)myStr;
 
 // 判断一个字符串里是否包含了另一个字符串: myString是否包含strA
-+ (BOOL)isContainStringA:(NSString*)strA withStringB:(NSString*)strB;
++ (BOOL)isContainStringA:(NSString*)strA ofStringB:(NSString*)strB;
 
 // 方法三：判断中文
 + (BOOL)isChineseString:(NSString*)mystring;
@@ -43,14 +43,17 @@
 
 
 #pragma mark //==========================="   URL的编码、解码  "============================
-//对URL进行编码
+// URL编码
 + (NSString *)encodeToPercentEscapeString: (NSString *)input;
-//对URL进行解码
+// URL解码
 + (NSString *)decodeFromPercentEscapeString: (NSString *)input;
 
+// 编码：ASCII中文
++ (NSString *)encodingASCIIString:(NSString *)string;
+// 解码：ASCII中文
++ (NSString *)decodeASCIIString:(NSString *)string;
 
-// 字符串md5加密
-+ (NSString *)md5:(NSString *) inPutText;
+
 
 // 判断是否为空
 - (BOOL)isNull:(id)object;

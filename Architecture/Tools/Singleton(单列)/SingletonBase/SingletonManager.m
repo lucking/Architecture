@@ -23,10 +23,6 @@ Singleton_Instance_method_Impl(SingletonManager)
   *  @return <#return value description#>
   */
 
-
-
-
-
 }
 
 
@@ -46,9 +42,6 @@ Singleton_Instance_method_Impl(SingletonManager)
 	return [UserDefaults instance];
 }
 
-//- (Notification *)notification {
-//	return [Notification instance];
-//}
 
 - (FileManager *)fileManager {
 	return [FileManager instance];
@@ -57,6 +50,11 @@ Singleton_Instance_method_Impl(SingletonManager)
 - (MBProgress *)MBProgressHUD {
 	return [MBProgress instance];
 }
+
+
+//- (Notification *)notification {
+//	return [Notification instance];
+//}
 
 
 

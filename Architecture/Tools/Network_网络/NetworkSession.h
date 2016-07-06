@@ -10,12 +10,9 @@
 
 @interface NetworkSession : AFHTTPSessionManager
 
-
-+ (instancetype)sharedSessionManager ;
-
 /**
  *  AFNetworking 3.0以上
  */
-//+ (instancetype)sharedSessionManager33;
++ (instancetype)sharedSessionManager ;
 
 @end

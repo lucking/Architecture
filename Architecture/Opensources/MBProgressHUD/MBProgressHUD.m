@@ -248,8 +248,8 @@
     self = [super initWithFrame:frame];
 	if (self) {
 //        self.top -= 30.0f; //iwen
-#warning 2016.7.5 更改 原来：self.margin = 20.0f;
-       // self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+#warning 2016.7.5 更改 原来
+        // self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-100, self.frame.size.width, self.frame.size.height);
 
         // Set default values for properties

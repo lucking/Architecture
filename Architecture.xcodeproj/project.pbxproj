@@ -32,7 +32,6 @@
 		987E96D61D0C3F0300D44CE9 /* ZMNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96D11D0C3F0300D44CE9 /* ZMNavController.m */; };
 		987E96D71D0C3F0300D44CE9 /* ZMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96D31D0C3F0300D44CE9 /* ZMTabBar.m */; };
 		987E972B1D0C3F3300D44CE9 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96DD1D0C3F3300D44CE9 /* AccountViewController.m */; };
-		987E972C1D0C3F3300D44CE9 /* HomeDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96F01D0C3F3300D44CE9 /* HomeDataTool.m */; };
 		987E972D1D0C3F3300D44CE9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96F41D0C3F3300D44CE9 /* TestViewController.m */; };
 		987E972E1D0C3F3300D44CE9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96F61D0C3F3300D44CE9 /* HomeViewController.m */; };
 		987E972F1D0C3F3300D44CE9 /* HMAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96F91D0C3F3300D44CE9 /* HMAdModel.m */; };
@@ -300,6 +299,7 @@
 		9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */; };
 		9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */; };
 		9899A8871D29F0BC00CF8DCC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */; };
+		98FA87C61D2CAA79008F9344 /* HomeDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FA87C51D2CAA79008F9344 /* HomeDataTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,8 +370,6 @@
 		987E96D31D0C3F0300D44CE9 /* ZMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTabBar.m; sourceTree = "<group>"; };
 		987E96DC1D0C3F3300D44CE9 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		987E96DD1D0C3F3300D44CE9 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
-		987E96EF1D0C3F3300D44CE9 /* HomeDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataTool.h; sourceTree = "<group>"; };
-		987E96F01D0C3F3300D44CE9 /* HomeDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataTool.m; sourceTree = "<group>"; };
 		987E96F31D0C3F3300D44CE9 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		987E96F41D0C3F3300D44CE9 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		987E96F51D0C3F3300D44CE9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -889,6 +887,8 @@
 		9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		9899A87F1D29F0BC00CF8DCC /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		98FA87C41D2CAA79008F9344 /* HomeDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataTool.h; sourceTree = "<group>"; };
+		98FA87C51D2CAA79008F9344 /* HomeDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1074,10 +1074,9 @@
 			children = (
 				987E96ED1D0C3F3300D44CE9 /* Home */,
 				987E96D91D0C3F3300D44CE9 /* Account */,
-				987E96EC1D0C3F3300D44CE9 /* APIManager */,
 				987E96FF1D0C3F3300D44CE9 /* More */,
-				987E97081D0C3F3300D44CE9 /* OtherVC */,
 				987E97231D0C3F3300D44CE9 /* Transfer */,
+				987E97081D0C3F3300D44CE9 /* OtherVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1085,20 +1084,13 @@
 		987E96D91D0C3F3300D44CE9 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				987E96DC1D0C3F3300D44CE9 /* AccountViewController.h */,
-				987E96DD1D0C3F3300D44CE9 /* AccountViewController.m */,
-				987E96DE1D0C3F3300D44CE9 /* APIManager */,
+				98FA87C71D2CAAA5008F9344 /* RequestManager */,
 				987E96E01D0C3F3300D44CE9 /* Controller */,
 				987E96E21D0C3F3300D44CE9 /* Model */,
+				987E96DC1D0C3F3300D44CE9 /* AccountViewController.h */,
+				987E96DD1D0C3F3300D44CE9 /* AccountViewController.m */,
 			);
 			path = Account;
-			sourceTree = "<group>";
-		};
-		987E96DE1D0C3F3300D44CE9 /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIManager;
 			sourceTree = "<group>";
 		};
 		987E96E01D0C3F3300D44CE9 /* Controller */ = {
@@ -1115,33 +1107,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		987E96EC1D0C3F3300D44CE9 /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIManager;
-			sourceTree = "<group>";
-		};
 		987E96ED1D0C3F3300D44CE9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				987E96F51D0C3F3300D44CE9 /* HomeViewController.h */,
 				987E96F61D0C3F3300D44CE9 /* HomeViewController.m */,
 				987E96F21D0C3F3300D44CE9 /* HomeOtherVC */,
-				987E96EE1D0C3F3300D44CE9 /* APIManager */,
 				987E96F11D0C3F3300D44CE9 /* Controller */,
 				987E96F71D0C3F3300D44CE9 /* Model */,
+				98FA87C31D2CAA79008F9344 /* RequestManager */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		987E96EE1D0C3F3300D44CE9 /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-				987E96EF1D0C3F3300D44CE9 /* HomeDataTool.h */,
-				987E96F01D0C3F3300D44CE9 /* HomeDataTool.m */,
-			);
-			path = APIManager;
 			sourceTree = "<group>";
 		};
 		987E96F11D0C3F3300D44CE9 /* Controller */ = {
@@ -1176,20 +1152,13 @@
 		987E96FF1D0C3F3300D44CE9 /* More */ = {
 			isa = PBXGroup;
 			children = (
-				987E97011D0C3F3300D44CE9 /* APIManager */,
+				98FA87C91D2CAB68008F9344 /* RequestManager */,
 				987E97021D0C3F3300D44CE9 /* Controller */,
 				987E97031D0C3F3300D44CE9 /* Model */,
 				987E97051D0C3F3300D44CE9 /* MoreViewController.h */,
 				987E97061D0C3F3300D44CE9 /* MoreViewController.m */,
 			);
 			path = More;
-			sourceTree = "<group>";
-		};
-		987E97011D0C3F3300D44CE9 /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIManager;
 			sourceTree = "<group>";
 		};
 		987E97021D0C3F3300D44CE9 /* Controller */ = {
@@ -1262,20 +1231,13 @@
 		987E97231D0C3F3300D44CE9 /* Transfer */ = {
 			isa = PBXGroup;
 			children = (
-				987E97241D0C3F3300D44CE9 /* APIManager */,
+				98FA87C81D2CAAE1008F9344 /* RequestManager */,
 				987E97251D0C3F3300D44CE9 /* Controller */,
 				987E97261D0C3F3300D44CE9 /* Model */,
 				987E97291D0C3F3300D44CE9 /* TransferViewController.h */,
 				987E972A1D0C3F3300D44CE9 /* TransferViewController.m */,
 			);
 			path = Transfer;
-			sourceTree = "<group>";
-		};
-		987E97241D0C3F3300D44CE9 /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIManager;
 			sourceTree = "<group>";
 		};
 		987E97251D0C3F3300D44CE9 /* Controller */ = {
@@ -2433,6 +2395,40 @@
 			path = AES_DES_Lib;
 			sourceTree = "<group>";
 		};
+		98FA87C31D2CAA79008F9344 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				98FA87C41D2CAA79008F9344 /* HomeDataTool.h */,
+				98FA87C51D2CAA79008F9344 /* HomeDataTool.m */,
+			);
+			name = RequestManager;
+			path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/RequestManager;
+			sourceTree = "<group>";
+		};
+		98FA87C71D2CAAA5008F9344 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RequestManager;
+			path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Account/RequestManager;
+			sourceTree = "<group>";
+		};
+		98FA87C81D2CAAE1008F9344 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RequestManager;
+			path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Transfer/RequestManager;
+			sourceTree = "<group>";
+		};
+		98FA87C91D2CAB68008F9344 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RequestManager;
+			path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/More/RequestManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2771,6 +2767,7 @@
 				987E9A031D0C3F5B00D44CE9 /* MJRefreshFooter.m in Sources */,
 				987E97881D0C3F3B00D44CE9 /* FinanceCell.m in Sources */,
 				987E9A2B1D0C3F5B00D44CE9 /* NSBundle+YYAdd.m in Sources */,
+				98FA87C61D2CAA79008F9344 /* HomeDataTool.m in Sources */,
 				987E98561D0C3F5000D44CE9 /* BaseTextField.m in Sources */,
 				987E97C11D0C3F4100D44CE9 /* BLLModelStandard.m in Sources */,
 				987E97C91D0C3F4100D44CE9 /* NewsItem.m in Sources */,
@@ -2782,7 +2779,6 @@
 				987E9A371D0C3F5B00D44CE9 /* NSTimer+YYAdd.m in Sources */,
 				987E9A0C1D0C3F5B00D44CE9 /* MJRefreshNormalHeader.m in Sources */,
 				987E99FB1D0C3F5B00D44CE9 /* NSObject+MJClass.m in Sources */,
-				987E972C1D0C3F3300D44CE9 /* HomeDataTool.m in Sources */,
 				987E9A3F1D0C3F5B00D44CE9 /* UIDevice+YYAdd.m in Sources */,
 				987E99D21D0C3F5B00D44CE9 /* AFImageDownloader.m in Sources */,
 				987E9A301D0C3F5B00D44CE9 /* NSNotificationCenter+YYAdd.m in Sources */,

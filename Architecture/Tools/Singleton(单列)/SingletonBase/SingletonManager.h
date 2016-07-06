@@ -36,11 +36,12 @@
 #define NNetworkManager			([SingletonManager instance].networkManager)	//网络管理
 #define LLoginManager			([SingletonManager instance].loginManager)		//登录
 #define UUserDefaults			([SingletonManager instance].userDefaults)		//保存信息
-//#define NNotification			([SingletonManager instance].notification)		//通知中心
 #define FFileManager			([SingletonManager instance].fileManager)		//文件管理
-//#define IInfoDicManager			([SingletonManager instance].InfoDicManager)	//app信息管理
 #define MMBProgress				([SingletonManager instance].MBProgressHUD)		//请求菊花
 
+
+//#define IInfoDicManager			([SingletonManager instance].InfoDicManager)	//app信息管理
+//#define NNotification             ([SingletonManager instance].notification)		//通知中心
 
 //#define OOperation				([SingletonManager instance].zmOperation)		//线程操作
 //#define OOperationQueue			([SingletonManager instance].zmOperationQueue)	//线程操作队列
@@ -58,15 +59,13 @@ Singleton_Instance_method_Interface(SingletonManager)
 
 @property (nonatomic, readonly) UserDefaults *userDefaults;				//保存信息
 
-//@property (nonatomic, readonly) Notification *notification;				//通知中心
-
 @property (nonatomic, readonly) FileManager *fileManager;				//文件管理
-
-//@property (nonatomic, readonly) InfoDictionaryManager *InfoDicManager;	//app信息管理
 
 @property (nonatomic, readonly) MBProgress *MBProgressHUD;				//请求菊花
 
 
+//@property (nonatomic, readonly) InfoDictionaryManager *InfoDicManager;	//app信息管理
+//@property (nonatomic, readonly) Notification *notification;				//通知中心
 
 //@property (nonatomic, readonly) ZMOperation *zmOperation;				//线程操作管理
 //@property (nonatomic, readonly) ZMOperationQueue *zmOperationQueue;		//线程操作队列

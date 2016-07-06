@@ -18,17 +18,15 @@
 
 
 	NSLog(@"\n \n \n ");
-
 	NSString* aa = @"SDFADF",   *bb = @"s dfa sf_aff_sfag";
-
-	NSLog(@"字符串拼接 = %@",[NSString getAandB:aa with:bb]);
+	NSLog(@"字符串拼接 = %@",[NSString getABwithA:aa and:bb]);
 
 	NSLog(@"去掉空格后 = %@",[NSString removeStringEmpty:bb]);
 
 	// 判断一个字符串里是否包含了另一个字符串: myString是否包含strA
 	NSString* string = @"HomeDirectoryPath holle world girls";
 	NSString* strA = @"girlds";
-	NSLog(@" isContainStringA = %d",[NSString isContainStringA:strA withStringB:string]);
+	NSLog(@" isContainStringA = %d",[NSString isContainStringA:strA ofStringB:string]);
 
 
 }
@@ -163,7 +161,7 @@
 
 #pragma mark 字符串拼接
 #pragma
-+ (NSString *)getAandB:(NSString *)A with:(NSString *)B
++ (NSString *)getABwithA:(NSString *)A and:(NSString *)B
 {
 	return [A stringByAppendingString:B];
 }
@@ -184,10 +182,9 @@
  *  @param strA     被包含的字符串
  *  @param strB		原字符串
  */
-+ (BOOL)isContainStringA:(NSString*)strA withStringB:(NSString*)strB
++ (BOOL)isContainStringA:(NSString*)strA ofStringB:(NSString*)strB
 {
-	if ([strB rangeOfString:strA].location != NSNotFound)
-	{
+	if ([strB rangeOfString:strA].location != NSNotFound) {
 		return YES;
 	}
 	return NO;
@@ -253,8 +250,7 @@
 	NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
 	NSError *err;
 	NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-														options:NSJSONReadingMutableContainers
-														  error:&err];
+														options:NSJSONReadingMutableContainers error:&err];
 	if(err) {
 		NSLog(@"json解析失败：%@",err);
 		return nil;
@@ -266,13 +262,10 @@
 {
 	NSError *parseError = nil;
 	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic
-													   options:NSJSONWritingPrettyPrinted
-														 error:&parseError];
+													   options:NSJSONWritingPrettyPrinted error:&parseError];
 
 	return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-
 }
-
 
 
 // 对URL进行编码
@@ -301,7 +294,7 @@
 
 
 // 编码：ASCII中文
-- (NSString *)encodingASCIIString:(NSString *)string {
++ (NSString *)encodingASCIIString:(NSString *)string {
 
 	//string = @"湖南省岳阳市岳阳楼区High";
 	NSData *encodeData = [string dataUsingEncoding:NSNonLossyASCIIStringEncoding];
@@ -311,7 +304,7 @@
 	return encodeStr;
 }
 // 解码：ASCII中文
-- (NSString *)decodeASCIIString:(NSString *)string {
++ (NSString *)decodeASCIIString:(NSString *)string {
 
 	NSData *decodeData = [string dataUsingEncoding:NSUTF8StringEncoding];
 	NSString *decodeStr = [[NSString alloc] initWithData:decodeData encoding:NSNonLossyASCIIStringEncoding];
@@ -320,24 +313,6 @@
 	return decodeStr;
 }
 
-
-
-
-//字符串md5加密
-+ (NSString *)md5:(NSString *) inPutText
-{
-	const char *cStr = [inPutText UTF8String];
-	unsigned char result[CC_MD5_DIGEST_LENGTH];
-
-	CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
-
-	return [[NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
-			 result[0], result[1], result[2], result[3],
-			 result[4], result[5], result[6], result[7],
-			 result[8], result[9], result[10], result[11],
-			 result[12], result[13], result[14], result[15]
-			 ] lowercaseString]; // 小写
-}
 
 
 // 判断是否为空
@@ -363,7 +338,7 @@
  *  判断字符串是否为空
  *
  *  为空：@return NO
- *  不空：@return YES
+ *  不为空：@return YES
  */
 - (BOOL)isNotEmpty:(NSString *)object {
 
@@ -485,7 +460,6 @@
 	}
 	return YES;
 }
-
 // 是否包含数字：含有数字，返回YES,否则返回NO
 - (BOOL)isContainNum {
 
@@ -496,13 +470,12 @@
 	}
 	return NO;
 }
-
 // 是否包含特殊符号：包含特殊符号，返回YES,否则返回NO
 - (BOOL)isContainSpecialString {
 
 	NSString *notSecureStr = @"~!@#$%^&*()_+[{]}\\|;:'\",<.>/?";
 
-	for (int i = 0; i < [notSecureStr length]; i++) {
+    for (int i = 0; i < [notSecureStr length]; i++) {
 		for (int j = 0; j < [self length]; j++) {
 			if ([self characterAtIndex:j] == [notSecureStr characterAtIndex:i]) {
 				return YES;
@@ -511,26 +484,20 @@
 	}
 	return NO;
 }
-
 // 是否含有数字 或 特殊字符： 不含数字或者不含特殊字符，返回NO,否则返回YES
 						//(既含有数字又含有特殊字符返回YES，否则返回NO)
                         //违法的\不正常的
 - (BOOL)isIllegalString {
-
 	if (![self isContainNum] || ![self isContainSpecialString]) {
 		return NO;
 	}else{
 		return YES;
 	}
-
 }
-
 //忽略大小写比较字符串是否相等：相等返回YES,否则返回NO
 - (BOOL)isIgnoreCaseEqualsToStr:(NSString *)str {
-
     return [self compare:str options:NSCaseInsensitiveSearch] == NSOrderedSame;
 }
-
 
 #pragma mark //==========================="   特殊判断  "================================
 //验证邮箱
@@ -726,7 +693,6 @@
     }
     return nil;
 }
-
 // 银行卡号空格
 - (NSMutableString *)getBankNumEmpty:(NSString *)kaostring
 {

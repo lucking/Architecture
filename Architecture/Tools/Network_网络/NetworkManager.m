@@ -75,7 +75,7 @@ static NetworkManager *_singleInstance;
 			[MMBProgress hudHidden];
 			[self errorDealWithLocalError:error];
 
-		}] resume]; //重新开始;
+        }] resume]; //重新开始;
 
 	}else{
 		[MMBProgress hudHidden];
@@ -91,7 +91,6 @@ static NetworkManager *_singleInstance;
 	NSLog(@"--->请求url: %@",URL);
 	NSLog(@"--->请求参数: %@ \n ",params);
 
-	//判断网络状况（有链接：执行请求；无链接：弹出提示）
 	if ([self isReachableViaWiFi]) {
 
 		[[NetworkSession sharedSessionManager] GET:URL parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -109,11 +108,11 @@ static NetworkManager *_singleInstance;
 
 		} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 			[MMBProgress hudHidden];
-			[self errorDealWithLocalError:error]; //请求_处理错误
+			[self errorDealWithLocalError:error];
 		}];
 	}else{
 		[MMBProgress hudHidden];
-		[self showWithoutNetwork]; //网络错误了
+		[self showWithoutNetwork]; 
 	}
 }
 
@@ -182,7 +181,6 @@ static NetworkManager *_singleInstance;
 	return error;
 }
 
-
 //弹出网络错误提示框
 + (void)showWithoutNetwork{
 	[MMBProgress hudShowError:@"网络异常，请检查网络连接"];
@@ -229,8 +227,6 @@ static NetworkManager *_singleInstance;
 	return netState;
 }
 
-
-
 // 查看网络状态是否给力
 + (BOOL)isConnectionAvailable
 {
@@ -259,8 +255,6 @@ static NetworkManager *_singleInstance;
 
 
 
-
-
 /***********************  数据请求：线程处理，使用方法   ***********************
  */
 - (void)howToUse {
@@ -278,6 +272,4 @@ static NetworkManager *_singleInstance;
     NSLog(@"retFlag = %@",retFlag);
 }
 
-
 @end
-

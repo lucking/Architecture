@@ -24,7 +24,6 @@ Singleton_Instance_method_Impl(MBProgress)
 //}
 
 
-
 #pragma mark ------------------"  MBProgressHUD Delegate  "------------------
 #pragma
 - (void)hudShowLoading:(NSString *)message
@@ -105,7 +104,6 @@ Singleton_Instance_method_Impl(MBProgress)
     _hudView = hud;
 }
 
-
 //自定义停止时间
 - (void)hudHidden:(NSTimeInterval)delay{	[_hudView hide:YES afterDelay:delay];	}
 // 0.5秒后停止
@@ -134,8 +132,5 @@ Singleton_Instance_method_Impl(MBProgress)
 		}
 	}
 }
-
-
-
 
 @end
