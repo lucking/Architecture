@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9800C9601D2B57C0002E85E1 /* YzmTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9800C95F1D2B57C0002E85E1 /* YzmTextField.m */; };
+		9800C9691D2B9FA2002E85E1 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9800C9681D2B9FA2002E85E1 /* Toast+UIView.m */; };
 		9809C2BB1D0DB91900FBCDE5 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9809C2BA1D0DB91900FBCDE5 /* YTKKeyValueStore.m */; };
 		984AFDDA1D0D0448003E03FB /* AFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD01D0D0448003E03FB /* AFDownloadManager.m */; };
 		984AFDDB1D0D0448003E03FB /* ZMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD51D0D0448003E03FB /* ZMDownloadManager.m */; };
@@ -318,6 +320,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9800C95E1D2B57C0002E85E1 /* YzmTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YzmTextField.h; path = ../../../../../zm/Desktop/Architecture/Architecture/Views/YzmTextField.h; sourceTree = "<group>"; };
+		9800C95F1D2B57C0002E85E1 /* YzmTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YzmTextField.m; path = ../../../../../zm/Desktop/Architecture/Architecture/Views/YzmTextField.m; sourceTree = "<group>"; };
+		9800C9671D2B9FA2002E85E1 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		9800C9681D2B9FA2002E85E1 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		9809C2B91D0DB91900FBCDE5 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
 		9809C2BA1D0DB91900FBCDE5 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
 		984AFDCE1D0D0448003E03FB /* AFDownloadHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadHeader.h; sourceTree = "<group>"; };
@@ -1293,6 +1299,8 @@
 				987E974E1D0C3F3B00D44CE9 /* CustomView */,
 				987E97861D0C3F3B00D44CE9 /* ViewStandard.h */,
 				987E97871D0C3F3B00D44CE9 /* ViewStandard.m */,
+				9800C95E1D2B57C0002E85E1 /* YzmTextField.h */,
+				9800C95F1D2B57C0002E85E1 /* YzmTextField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1355,6 +1363,7 @@
 		987E975A1D0C3F3B00D44CE9 /* ZMViewlibs */ = {
 			isa = PBXGroup;
 			children = (
+				987E97791D0C3F3B00D44CE9 /* ZMTradeField */,
 				987E975B1D0C3F3B00D44CE9 /* ZMAdView */,
 				987E975D1D0C3F3B00D44CE9 /* ZMCollectionViewWaterfallLayout */,
 				987E975E1D0C3F3B00D44CE9 /* ZMCycleScrollView */,
@@ -1363,7 +1372,6 @@
 				987E976F1D0C3F3B00D44CE9 /* ZMReadProtocol */,
 				987E97771D0C3F3B00D44CE9 /* ZMSpaceLabel.h */,
 				987E97781D0C3F3B00D44CE9 /* ZMSpaceLabel.m */,
-				987E97791D0C3F3B00D44CE9 /* ZMTradeField */,
 			);
 			path = ZMViewlibs;
 			sourceTree = "<group>";
@@ -1663,6 +1671,8 @@
 				987E98071D0C3F5000D44CE9 /* UIViewController+ZMAdd.m */,
 				987E98081D0C3F5000D44CE9 /* UIWindow+ZMAdd.h */,
 				987E98091D0C3F5000D44CE9 /* UIWindow+ZMAdd.m */,
+				9800C9671D2B9FA2002E85E1 /* Toast+UIView.h */,
+				9800C9681D2B9FA2002E85E1 /* Toast+UIView.m */,
 			);
 			path = UI_Categroy;
 			sourceTree = "<group>";
@@ -2659,6 +2669,7 @@
 				987E99FA1D0C3F5B00D44CE9 /* MJPropertyType.m in Sources */,
 				987E98801D0C3F5000D44CE9 /* ZMThread.m in Sources */,
 				987E9A481D0C3F5B00D44CE9 /* YYAnimatedImageView.m in Sources */,
+				9800C9601D2B57C0002E85E1 /* YzmTextField.m in Sources */,
 				987E98791D0C3F5000D44CE9 /* KVOManager.m in Sources */,
 				987E9A4B1D0C3F5B00D44CE9 /* YYImageCoder.m in Sources */,
 				987E986F1D0C3F5000D44CE9 /* GTMBase64.m in Sources */,
@@ -2788,6 +2799,7 @@
 				987E9A181D0C3F5B00D44CE9 /* SDWebImageCompat.m in Sources */,
 				987E99E51D0C3F5B00D44CE9 /* GesturePwdViewController.m in Sources */,
 				987E9A0B1D0C3F5B00D44CE9 /* MJRefreshGifHeader.m in Sources */,
+				9800C9691D2B9FA2002E85E1 /* Toast+UIView.m in Sources */,
 				987E9A0A1D0C3F5B00D44CE9 /* MJRefreshBackStateFooter.m in Sources */,
 				987E99E91D0C3F5B00D44CE9 /* JSONKit.m in Sources */,
 				987E9A461D0C3F5B00D44CE9 /* UITextField+YYAdd.m in Sources */,

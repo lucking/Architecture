@@ -45,6 +45,8 @@
 
 //陈阳
 #define  API_URL			@"http://192.168.0.17:8080/MPWEB"
+//获取验证码
+#define		SmsCode         @"user/smsCode.json"
 // 注册
 #define		Register		@"/auth/register.do"
 // 登录

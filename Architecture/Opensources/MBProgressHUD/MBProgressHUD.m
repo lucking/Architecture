@@ -248,7 +248,10 @@
     self = [super initWithFrame:frame];
 	if (self) {
 //        self.top -= 30.0f; //iwen
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+#warning 2016.7.5 更改 原来：self.margin = 20.0f;
+       // self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y-100, self.frame.size.width, self.frame.size.height);
+
         // Set default values for properties
         self.animationType = MBProgressHUDAnimationFade;
         self.mode = MBProgressHUDModeIndeterminate;
@@ -260,7 +263,8 @@
         self.xOffset = 0.0f;
         self.yOffset = 0.0f;
 		self.dimBackground = NO;
-		self.margin = 20.0f;
+#warning 2016.7.5 更改 原来：self.margin = 20.0f;
+		self.margin = 10.0f;
 		self.graceTime = 0.0f;
 		self.minShowTime = 0.0f;
 		self.removeFromSuperViewOnHide = NO;

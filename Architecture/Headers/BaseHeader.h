@@ -57,8 +57,6 @@ static NSString const *HSCoder33 = @"字符串33";
 static NSString * const HSCoder44 = @"字符串44";
 
 
-
-
 #define RRect(a,b,c,d) CGRectMake(a,b,c,d)
 
 #define RMaxX(frame)    CGRectGetMaxX(frame)
@@ -127,7 +125,10 @@ static NSString * const HSCoder44 = @"字符串44";
 
 
 //标准绿色
-#define  GreenColor				UIColorWithRGB(5,111,0)
+#define  GreenColor         UIColorWithRGB(5,111,0)
+//
+#define  Green_COLOR        [UIColor colorWithRed:0.123 green:0.811 blue:0.744 alpha:1.000]
+
 //背景
 //淡灰色
 #define  BgColor				UIColorWithRGB(238,243,249)

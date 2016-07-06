@@ -11,6 +11,9 @@
 #import "ZMReadProtocolView.h"
 #import "SuccessViewController.h"
 
+#define  ValidTime      10
+#define  RefreshTime    1.0 //5.0
+
 @interface RegisterViewController ()<UITextFieldDelegate,ZMReadProtocolViewDelegate,ImageTextFieldDelegate>
 {
 	UIButton* nextBtn;
@@ -171,11 +174,11 @@
 
 -(void)imageTextField:(ImageTextField *)ITView BtnClick:(UIButton *)Btn{
 
-	secondsCountDown=10;//设定原始时间
+	secondsCountDown = ValidTime;//设定原始时间
 	//不允许点击
 	_yzmText.rightBtn.userInteractionEnabled = NO;
 	//NStimer 到计时
-	timers= [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeFireMethods) userInfo:nil repeats:YES];
+	timers= [NSTimer scheduledTimerWithTimeInterval:RefreshTime target:self selector:@selector(timeFireMethods) userInfo:nil repeats:YES];
 }
 //到计时
 -(void)timeFireMethods
@@ -195,7 +198,7 @@
 			timers=nil;
 			NSSLog(@"--->释放后_isValid: %d",[timers isValid]);
 		}
-		secondsCountDown=10;//恢复时间
+		secondsCountDown = ValidTime;//恢复时间
 		[_yzmText.rightBtn setTitle:@"重新发送" forState:UIControlStateNormal];
 		[_yzmText.rightBtn setUserInteractionEnabled:YES];//允许点击
 	}

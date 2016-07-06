@@ -29,7 +29,7 @@
     UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setBarTintColor:NavBg_COLOR];
     //navigationBar下（0，0）开始
-	// self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
+    //self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
 
 }
 
@@ -39,11 +39,14 @@
     //[[UINavigationBar appearance] setTintColor:UIColorWithRGBA(227, 0, 42, 1.0)];
     //self.view.backgroundColor = [UIColor purpleColor];
 
+    //导航栏下的起始坐标设置为(0,0)
+    //   self.edgesForExtendedLayout = UIRectEdgeNone;
+
     //navigationBar下（0，0）开始
-    //self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
+    
 }
-
 /**
  *  设置navigationBar样式
  */
