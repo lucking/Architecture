@@ -89,19 +89,46 @@
 
     
     // 测试
-    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:@"取消" okAction:^{
-        NSLog(@"---> 确定");
-        
-    }  cancelAction:^{
-        NSLog(@"---> 取消");
-        
-    } completion:^{
-        NSLog(@"---> 弹出时");
-        
-    }];
-
-    [UIColor cyanColor];
+//    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:@"取消" okAction:^{
+//        NSLog(@"---> 确定");
+//        
+//    }  cancelAction:^{
+//        NSLog(@"---> 取消");
+//        
+//    } completion:^{
+//        NSLog(@"---> 弹出时");
+//        
+//    }];
     
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 70, 250, 100)];
+    label.backgroundColor = [UIColor yellowColor];
+    label.font = [UIFont systemFontOfSize:18];
+    label.text = @"hello,girl,boy";
+    label.textColor = [UIColor redColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+
+    
+    [self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]];
+    
+    
+    [label setAttributedText:[self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]]];
+    
+    
+    [label setAttributedText:[self setLabelParaStr:@"boy" AllStr:label.text WithColor:[UIColor greenColor]]];
+
+
+}
+
+#pragma mark  改变一种文本的颜色
+- (NSMutableAttributedString *)setLabelParaStr:(NSString *)rangeStr AllStr:(NSString *)allStr WithColor:(UIColor *)color
+{
+    NSRange range = [allStr rangeOfString:rangeStr];
+    NSMutableAttributedString *attribute = [[NSMutableAttributedString alloc]initWithString:allStr];
+    [attribute addAttributes:@{NSForegroundColorAttributeName:color} range:range];
+    
+    return attribute;
 }
 
 
@@ -109,26 +136,22 @@
 
 	NSString *labelText = CompanyTopText;
 
-
 	//自定义的Label视图
 	ZMSpaceLabel *readNewsLable =[[ZMSpaceLabel alloc] initWithFrame:CGRectZero];
 	readNewsLable.textColor = MAIN_BASE_GRAY_COLOR;
 	readNewsLable.lineBreakMode = NSLineBreakByWordWrapping;
 	readNewsLable.backgroundColor = [UIColor yellowColor];
 	readNewsLable.font = [UIFont fontWithName:contentFontName size:14];
-	[readNewsLable setText:labelText];
-
-	// readNewsLable.characterSpacing = 1.0f;
-	readNewsLable.linesSpace = 4.4f;
-
+    readNewsLable.text = labelText;
+    readNewsLable.numberOfLines = 0;
+    [self.view addSubview:readNewsLable];
+    
 	int height = [readNewsLable getAttributedStringHeightWidthValue:SSWIDTH];
 	NSLog(@"Label高度是多少？ %i", height);
-
 	/*设置label的frame值*/
+    // readNewsLable.characterSpacing = 1.0f;
+    readNewsLable.linesSpace = 4.4f;
 	readNewsLable.frame = CGRectMake(0, 20, SSWIDTH, height);
-	readNewsLable.numberOfLines = 0;
-	[self.view addSubview:readNewsLable];
-
 
 }
 

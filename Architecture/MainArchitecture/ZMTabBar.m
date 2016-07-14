@@ -89,7 +89,6 @@
 	}
 
 }
-
 #pragma mark - /************************  按钮点下方法  **************************/
 - (void)btnClick:(ZMBarButton *)btn
 {
@@ -105,6 +104,4 @@
     btn.enabled = NO;
 }
 
-
 @end
-

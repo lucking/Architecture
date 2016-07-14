@@ -22,19 +22,23 @@ typedef NS_ENUM (NSUInteger, MessageSendStrategy)
 	MessageSendStrategyVideo = 3
 };
 
+
+
 @interface MessageSender : NSObject
 {
 
 }
 @property (nonatomic, strong) NSArray *strategyList;
+
 @property (nonatomic, weak) id<MessageSenderDelegate> delegate;
+
 @end
 
 
 
 
 /**
- *  MessageSenderDelegate、PieChartViewDataSource
+ *  MessageSenderDelegate、MessageSenderDataSource
  */
 #pragma mark ---" Delegate "---
 @protocol MessageSenderDelegate<NSObject>
@@ -50,7 +54,6 @@ typedef NS_ENUM (NSUInteger, MessageSendStrategy)
 
 #pragma mark ---" DataSource "---
 @protocol MessageSenderDataSource <NSObject>
-
 @required//1.需求方法
 
 @optional//2.可选方法

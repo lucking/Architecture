@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ZMNavController.h"
 #import "SDWebImageManager.h"
-
 #import "CatchCrash.h"
 
 @interface AppDelegate ()
@@ -18,7 +16,6 @@
 @end
 
 @implementation AppDelegate
-
 
 static AppDelegate *_singleInstance;
 
@@ -40,24 +37,6 @@ static AppDelegate *_singleInstance;
     
     [self BaseSetting];
     
-    
-    
-//    // 测试
-//    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:nil okAction:^{
-//        NSLog(@"---> 确定");
-//        
-//        // 主题
-//        _baseTabBarVC = [[ZMMainTabBarController alloc] init];
-//        self.window.rootViewController = _baseTabBarVC;
-//    }  cancelAction:^{
-//        NSLog(@"---> 取消");
-//        
-//    } completion:^{
-//        NSLog(@"---> 弹出时");
-//        
-//    }];
-
-    
     //[UserDefaults removeObjectKey:@"firstLaunch"];
     //判断用户是否第一次进入这个页面
     if ([UserDefaults getBoolStorageWithKey:@"firstLaunch"]) {
@@ -66,9 +45,9 @@ static AppDelegate *_singleInstance;
         self.window.rootViewController = _baseTabBarVC;
         
     }else{
-        NSSLog(@"第一次进入");
+        NSSLog(@"第一次进入_开始：引导页");
         [UserDefaults storageBool:YES Key:@"firstLaunch"];                      //第一次进入：保存进入标识
-        GuidepageViewController *GuideVC= [[GuidepageViewController alloc]init];//进入：引导页
+        GuidepageViewController *GuideVC= [[GuidepageViewController alloc]init];
         self.window.rootViewController = GuideVC;
     }
     
@@ -76,16 +55,13 @@ static AppDelegate *_singleInstance;
 }
 
 
-
-
 - (void)BaseSetting {
     
     // 沙盒文件 路径
-    NSSLog(@"HomeDirectoryPath = %@ \n \n ",HomeDirectoryPath);
+    NSLog(@"HomeDirectoryPath = %@ \n \n ",HomeDirectoryPath);
     
     // IPHONE尺寸
     [Common ISIPHONEXX];
-    
     
     //1. 让启动画面停留更长时间
     [NSThread sleepForTimeInterval:1.0];
@@ -119,7 +95,6 @@ static AppDelegate *_singleInstance;
     NSSLog(@"---> isIllegalString = %d \n \n ",[str1 isIllegalString]);
     
     
-    
 }
 
 #pragma mark 进入主页
@@ -133,28 +108,30 @@ static AppDelegate *_singleInstance;
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     NSLog(@"---> 2.挂起：即将失去活动状态的时候调用(失去焦点, 不可交互)：挂起 (Resign：放弃) ");
-    
+
 }
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     NSLog(@"---> 3.系统进入后台 ");
     
 }
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    NSLog(@"---> 4.进入前台 \n ");      //应用程序即将进入“ 前台 ”的时候调用：一般在该方法中恢复应用程序的数据,以及状态
+    NSLog(@"---> 4.进入前台 \n ");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    NSLogline(@"---> 5.重新启动 \n ");  //重新获取焦点(能够和用户交互)
+    NSLogline(@"---> 5.重新启动 \n ");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    NSLogline(@"---> 6.程序将终止 \n ");//当应用程序将终止。如果适当的保存数据。看到也applicationDidEnterBackground:
+    NSLogline(@"---> 6.程序将终止 \n "); //当应用程序将终止。如果适当的保存数据。看到也applicationDidEnterBackground:
     
 }
 
-
-// 当收到Received memory warning.会调用此方法
-// 一般缓存的内容比较多了就需要进行清空缓存、清除SDWebImage的内存和硬盘时，可以同时清除session 和 cookie的缓存。
+/**
+ *  当收到Received memory warning.会调用此方法
+ *
+ *  一般缓存的内容比较多了就需要进行：清空缓存、清除SDWebImage的内存和硬盘时，可以同时清除session 和 cookie的缓存。
+ */
 -(void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
     
     SDWebImageManager *SDImgManager = [SDWebImageManager sharedManager];
@@ -175,8 +152,6 @@ static AppDelegate *_singleInstance;
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     [config.URLCache removeAllCachedResponses];
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    
-    
 }
 
 #pragma mark -- 锁屏退出：锁屏进入后台

@@ -8,9 +8,7 @@
 
 #ifndef NetworkAPI_h
 #define NetworkAPI_h
-
-
-#pragma mark ======================="  网络请求_异常处理  "=========================
+// #pragma mark ======================="  网络请求_异常处理  "=========================
 // 请求超时
 #define LocalError_timedOut		@"The request timed out."
 
@@ -22,8 +20,6 @@
 
 // 没有网络的错误码
 #define WithoutNetworkErrorCode		1001
-
-
 
 
 #pragma mark ======================="  IP 环境  "=========================
@@ -42,10 +38,9 @@
 #define     News_URl        @"/MP0006.json"
 
 
-
-//陈阳
+// 陈阳
 #define  API_URL			@"http://192.168.0.17:8080/MPWEB"
-//获取验证码
+// 获取验证码
 #define		SmsCode         @"user/smsCode.json"
 // 注册
 #define		Register		@"/auth/register.do"

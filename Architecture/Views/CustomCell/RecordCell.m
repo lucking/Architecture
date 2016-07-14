@@ -37,10 +37,7 @@
 		self.signLab.textAlignment = NSTextAlignmentRight;
 
 		self.line.backgroundColor =  Gray_bbbbbb;
-
-
 	}
-
 	return self;
 }
 

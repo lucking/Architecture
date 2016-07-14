@@ -35,7 +35,6 @@
     //self.view.backgroundColor = [UIColor cyanColor];
 	// self.hidesBottomBarWhenPushed = YES;
 	// self.tabBar.hidden = YES;
-	//self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
     // 装载子视图控制器
     [self loadViewControllers];
   
@@ -105,7 +104,6 @@
 //    ddVC.view.backgroundColor = Color_FFC107;
 
 }
-
 // 自定义tabBar视图
 - (void)customTabBarView{
 
@@ -126,6 +124,3 @@
 
 
 @end
-
-
-

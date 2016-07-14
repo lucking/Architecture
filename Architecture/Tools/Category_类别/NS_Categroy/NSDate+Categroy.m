@@ -122,7 +122,14 @@
 	}
 }
 
-
+// 时间戳 转换为 日期时间
++ (NSString *)changeToStandardTime:(NSTimeInterval)timeInterval
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *time = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
+    return time;
+}
 
 
 

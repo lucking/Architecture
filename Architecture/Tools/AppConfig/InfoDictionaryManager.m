@@ -58,7 +58,9 @@ Singleton_Instance_method_Impl(InfoDictionaryManager);
 	NSString *appId = [[self getInfoDictionary] objectForKey:@"CFBundleIdentifier"];
 	return appId;
 }
-
+/**
+ *  ......
+ */
 
 
 @end

@@ -15,19 +15,8 @@
 
 @implementation Common
 
+
 //======================="  特殊判断  "=================================
-#pragma mark 判断中文
-+ (BOOL)isChinese:(NSString*)mystring
-{                                                       //点
-// NSString *regex = @"[\u4e00-\u9fa5][\u4e00-\u9fa5][\u00b7]+";
-    NSString *regex = @"([\u4e00-\u9fa5][\u4e00-\u9fa5]+)|([\u00b7])";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    if([pred evaluateWithObject:mystring]){
-        return YES;
-    }else{
-        return NO;
-    }
-}
 
 #pragma mark 判断登录密码格式
 + (BOOL)isCharAndNumber:(NSString*)mystring
@@ -126,7 +115,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     NSDictionary* checkCodeDic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"1",@"0",@"X",@"9",@"8",@"7",@"6",@"5",@"4",@"3",@"2", nil]  forKeys:[NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil]];
     
     NSScanner* scan = [NSScanner scannerWithString:[cardNo substringToIndex:17]];
-    
     int val;
     BOOL isNum = [scan scanInt:&val] && [scan isAtEnd];
     if (!isNum) {
@@ -148,7 +136,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 
 
 //==========================="   尺寸   "================================
-
 #pragma mark 计算字符串的尺寸高度_height：宽度固定
 + (float)getTextSizeHeight:(NSString*)string Font:(UIFont*)myfont Width:(float)width
 {
@@ -227,6 +214,17 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     
     [myLabel setAttributedText:noteStr];
 }
+
+//#pragma mark  改变一种文本的颜色
+//+ (NSMutableAttributedString *)setLabelParaStr:(NSString *)rangeStr AllStr:(NSString *)allStr WithColor:(UIColor *)color
+//{
+//    NSRange range = [allStr rangeOfString:rangeStr];
+//    NSMutableAttributedString *attribute = [[NSMutableAttributedString alloc]initWithString:allStr];
+//    [attribute addAttributes:@{NSForegroundColorAttributeName:color} range:range];
+//    
+//    return attribute;
+//}
+
 
 #pragma mark 改变label分割开的字符 为一种颜色
 + (void)changeTextColorLab:(UILabel *)myLabel color:(UIColor *)myColor{
@@ -362,11 +360,8 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 //    
 //    [AppDelegate GetInstance].window.rootViewController = alertVC;
     
-    
     [[AppDelegate GetInstance].window.rootViewController presentViewController:alertVC animated:NO completion:nil];
-
 }
-
 
 
 //==========================="   系统   "================================
@@ -718,7 +713,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 	UIWindow *window = [[UIApplication sharedApplication] keyWindow];
 	UIViewController *currentVC = [window visibleViewController];
 	//NNSLog(@"------> common_currentVC = %@ \n ",currentVC);
-
 	return currentVC;
 }
 

@@ -54,14 +54,19 @@ Singleton_Instance_method_Interface(FileManager);
 
 #pragma mark  判断文件是否存在
 - (BOOL)isExistFilePath:(NSString *)Path;
+
 #pragma mark  读取文件
 - (NSData *)getFileWithPath:(NSString *)path;
+
 #pragma mark  移动文件
 - (BOOL)moveFileAtPath:(NSString *)atPath toPath:(NSString *)toPath;
+
 #pragma mark  复制文件
 - (BOOL)copyFileAtPath:(NSString *)atPath toPath:(NSString *)toPath;
+
 #pragma mark  删除文件
 - (void)removeFilePath:(NSString *)Path;
+
 // 将文件写入指定路径
 + (void) writeNewFileToPath:(id) file WithPath:(NSString *) filePath WithFileName:(NSString *) fileName;
 

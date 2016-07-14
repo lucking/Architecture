@@ -80,7 +80,7 @@ Singleton_Instance_method_Impl(LoginManager)
 				UUserDefaults.userImgURLStr = userMode.custPortriat;
 				UUserDefaults.userType		= userMode.userType;
 
-				// 取数据
+				// 取数据：全局可用
 				NSSLog(@"userName	= %@",LLoginManager.userName);
 				NSSLog(@"userPwd	= %@",LLoginManager.userPwd);
 				NSSLog(@"userId	    = %@ \n ",LLoginManager.userId);

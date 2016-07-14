@@ -140,12 +140,12 @@
 /**
  *  输入框
  */
-- (BaseTextField *)mainText
+- (UITextField *)mainText
 {
 	if (_mainText==nil) {
 
 		float textWidth = myWidth-ImgvWidth-BtnWidth-20;
-		_mainText = [[BaseTextField alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_leftImgView.frame)+5, 0, textWidth, myHeight)];
+		_mainText = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_leftImgView.frame)+5, 0, textWidth, myHeight)];
 		// [_mainText becomeFirstResponder]; //页面出现时：就显示keyboard
 		_mainText.clearButtonMode = UITextFieldViewModeWhileEditing;
 		[self addSubview:_mainText];

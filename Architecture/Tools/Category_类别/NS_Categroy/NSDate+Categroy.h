@@ -46,6 +46,10 @@ typedef NS_ENUM(NSInteger,DateFormatStatus) {
 +(BOOL)isEqualDate1:(NSDate *)Date1 WithDate2:(NSDate *)Date2;
 
 
+// 时间戳 转换为 日期时间
++ (NSString *)changeToStandardTime:(NSTimeInterval)timeInterval;
+
 
 
 @end
+

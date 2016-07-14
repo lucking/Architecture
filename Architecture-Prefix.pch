@@ -27,7 +27,6 @@
 
 // 配置头文件
 #import "AppConfig.h"
-#import "MacroHeader.h"
 #import "AppMacro.h"
 #import "NetworkAPI.h"
 

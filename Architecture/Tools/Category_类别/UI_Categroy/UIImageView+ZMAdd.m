@@ -10,7 +10,6 @@
 
 #import "UIImage+ZMAdd.h"
 #import "UIImageView+WebCache.h"
-#import "CAHeader.h"
 #import "YYWebImage.h"
 
 @implementation UIImageView (ZMAdd)
@@ -32,27 +31,27 @@
 
 	CATransition *tranAn = [CATransition animation];
 	tranAn.duration = duration;
-	if (animationType == Cube_An ) {					tranAn.type = Cube;
+	if (animationType == Cube_An ) {					tranAn.type = @"cube";
 	}
-	else if (animationType == SuckEffect_An)			tranAn.type = SuckEffect;
-	else if (animationType == RippleEffect_An)			tranAn.type = RippleEffect; // 水波抖动
-	else if (animationType == PageCurl_An)				tranAn.type = PageCurl;
-	else if (animationType == PageUnCurl_An)			tranAn.type = PageUnCurl;
-	else if (animationType == OglFlip_An)				tranAn.type = OglFlip;
-	else if (animationType == CameraIrisHollowOpen_An)	tranAn.type = CameraIrisHollowOpen;
-	else if (animationType == CameraIrisHollowClose_An)	tranAn.type = CameraIrisHollowClose;
+	else if (animationType == SuckEffect_An)			tranAn.type = @"suckEffect";
+	else if (animationType == RippleEffect_An)			tranAn.type = @"suckEffect"; // 水波抖动
+	else if (animationType == PageCurl_An)				tranAn.type = @"pageCurl";
+	else if (animationType == PageUnCurl_An)			tranAn.type = @"pageUnCurl";
+	else if (animationType == OglFlip_An)				tranAn.type = @"oglFlip";
+	else if (animationType == CameraIrisHollowOpen_An)	tranAn.type = @"cameraIrisHollowOpen";
+	else if (animationType == CameraIrisHollowClose_An)	tranAn.type = @"cameraIrisHollowClose";
 
 	// 以下API效果请慎用
-	else if (animationType == SpewEffect_An)			tranAn.type = SpewEffect;
-	else if (animationType == GenieEffect_An)			tranAn.type = GenieEffect;
-	else if (animationType == UnGenieEffect_An)			tranAn.type = UnGenieEffect;
-	else if (animationType == Twist_An)					tranAn.type = Twist;
-	else if (animationType == Tubey_An)					tranAn.type = Tubey;
-	else if (animationType == Swirl_An)					tranAn.type = Swirl;
-	else if (animationType == CharminUltra_An)			tranAn.type = CharminUltra;
-	else if (animationType == ZoomyIn_An)				tranAn.type = ZoomyIn;
-	else if (animationType == ZoomyOut_An)				tranAn.type = ZoomyOut;
-	else if (animationType == OglApplicationSuspend_An)	tranAn.type = OglApplicationSuspend;
+	else if (animationType == SpewEffect_An)			tranAn.type = @"spewEffect";
+	else if (animationType == GenieEffect_An)			tranAn.type = @"genieEffect";
+	else if (animationType == UnGenieEffect_An)			tranAn.type = @"unGenieEffect";
+	else if (animationType == Twist_An)					tranAn.type = @"twist";
+	else if (animationType == Tubey_An)					tranAn.type = @"tubey";
+	else if (animationType == Swirl_An)					tranAn.type = @"swirl";
+	else if (animationType == CharminUltra_An)			tranAn.type = @"charminUltra";
+	else if (animationType == ZoomyIn_An)				tranAn.type = @"zoomyIn";
+	else if (animationType == ZoomyOut_An)				tranAn.type = @"zoomyOut";
+	else if (animationType == OglApplicationSuspend_An)	tranAn.type = @"oglApplicationSuspend";
 
 	[self.layer addAnimation:tranAn forKey:nil];
 }

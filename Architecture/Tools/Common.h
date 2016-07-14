@@ -30,8 +30,6 @@ typedef enum{
 
 
 //======================="  特殊判断  "=================================
-#pragma mark 判断中文
-+ (BOOL)isChinese:(NSString*)mystring;
 
 #pragma mark 判断登录密码格式
 + (BOOL)isCharAndNumber:(NSString*)mystring;//只能由8～18数字和字符混合组
@@ -99,7 +97,8 @@ typedef enum{
 #pragma mark //==========================="   AlertView、AlertController   "================================
 
 #pragma mark - AlertView
-- (void)showAlertMessage:(NSString *)message;
+//- (void)showAlertMessage:(NSString *)message;
+
 #pragma mark - AlertController
 + (void)showAlertTitle:(NSString *)titlet message:(NSString *)message okTitle:(NSString *)okTitle cancelTitle:(NSString *)cancelTitle okAction:(void (^)(void))okActe cancelAction:(void (^)(void))cancelActe completion:(void (^)(void))complete;
 

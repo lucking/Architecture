@@ -10,18 +10,16 @@
 
 #import "ZMMainTabBarController.h"
 #import "ZMNavController.h"
-
 #import "Common.h"
 #import "GuidepageViewController.h"
-#import <notify.h>
-#define NotificationLock	CFSTR("com.apple.springboard.lockcomplete")
-#define NotificationChange	CFSTR("com.apple.springboard.lockstate")
-#define NotificationPwdUI	CFSTR("com.apple.springboard.hasBlankedScreen")
-
 #import "GesturePwdViewController.h"
 
 #import "NSArray+Categroy.h"
 #import "NSString+ZMAdd.h"
+#import <notify.h>
+#define NotificationLock	CFSTR("com.apple.springboard.lockcomplete")
+#define NotificationChange	CFSTR("com.apple.springboard.lockstate")
+#define NotificationPwdUI	CFSTR("com.apple.springboard.hasBlankedScreen")
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>

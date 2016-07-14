@@ -28,21 +28,23 @@
     // 设置导航栏的主题
     UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setBarTintColor:NavBg_COLOR];
+    // 没有效果
+    //[[UINavigationBar appearance] setTintColor:NavBg_COLOR];//UIColorWithRGBA(227, 0, 42, 1.0)
+
+    //iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     //navigationBar下（0，0）开始
-    //self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
-
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    //[[UINavigationBar appearance] setTintColor:UIColorWithRGBA(227, 0, 42, 1.0)];
-    //self.view.backgroundColor = [UIColor purpleColor];
+    // self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
 
     //导航栏下的起始坐标设置为(0,0)
-    //   self.edgesForExtendedLayout = UIRectEdgeNone;
+    // self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    //navigationBar下（0，0）开始
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    //self.view.backgroundColor = [UIColor purpleColor];
+
+    //自适应
     self.automaticallyAdjustsScrollViewInsets = NO;
 
     

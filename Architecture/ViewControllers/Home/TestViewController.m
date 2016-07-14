@@ -7,9 +7,12 @@
 //
 
 #import "TestViewController.h"
+#import "Common.h"
 
 @interface TestViewController ()
-
+{
+    
+}
 @end
 
 @implementation TestViewController
@@ -30,6 +33,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //返回按钮颜色
+    self.navigationController.navigationBar.tintColor = Green_COLOR;
+    
+    //navBar 的背景颜色
+    //self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    
+    //navBar 的标题属性
+    //self.navigationController.navigationBar.titleTextAttributes =  [NSDictionary dictionaryWithObjectsAndKeys: FFont(14), NSFontAttributeName, nil];
+    
+
+    
+    
 //	NSSLog(@"mainScreen_width  = %f",[UIScreen mainScreen].bounds.size.width);
 //	NSSLog(@"mainScreen_height = %f \n ",[UIScreen mainScreen].bounds.size.height);
 //	NSSLog(@"bounds_width  = %f",self.view.bounds.size.width);
@@ -43,7 +58,6 @@
 	// 获取不同格式的时间
 //	[self dateFormat];
 
-
 	NNSLog(@"---> getCurrentVC_Test = %@ \n ",[Common getCurrentVC]);
 
 
@@ -52,8 +66,16 @@
 - (void)test {
 
 
-
-
+    // 测试
+    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:nil okAction:^{
+        NSLog(@"---> 确定");
+        
+    }  cancelAction:^{
+        NSLog(@"---> 取消");
+        
+    } completion:^{
+        NSLog(@"---> 弹出时");
+    }];
 }
 
 

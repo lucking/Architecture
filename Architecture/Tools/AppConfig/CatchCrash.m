@@ -24,9 +24,8 @@ void uncaughtExceptionHandler(NSException*exception)
     NSString *name      = [exception name];
     
     NSString *exceptionInfo = [NSString stringWithFormat:@"================异常崩溃报告================\n name:\n%@\n reason:\n%@\n callStackSymbols:\n%@ \n \n ",name,reason,[stackArray componentsJoinedByString:@"\n"]];
-    NSLog(@"exceptionInfo: %@",exceptionInfo);
+    NSLog(@"---> exceptionInfo: %@",exceptionInfo);
     
-
     // 保存到本地
     [CatchCrash saveAsText:exceptionInfo];
     // 发送邮件
@@ -65,7 +64,6 @@ void uncaughtExceptionHandler(NSException*exception)
 
 
 - (void)aaa {
-
     //常见异常1---不存在方法引用
     //[self performSelector:@selector(thisMthodDoesNotExist) withObject:nil];
     

@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseTextField.h"
-
 
 typedef void (^ImageTextFieldBlock) (NSString *pswString);
 
@@ -36,7 +34,7 @@ typedef void (^ImageTextFieldBlock) (NSString *pswString);
 /*
  * 输入框
  */
-@property(nonatomic,strong)BaseTextField* mainText;
+@property(nonatomic,strong)UITextField* mainText;
 /*
  * 右图按钮
  */

@@ -11,8 +11,6 @@
 
 //获取当前系统的版本号
 #define FLOATVALUE [[[UIDevice currentDevice] systemVersion] floatValue]
-
-
 //------------------"  手机尺寸类型  "---------------
 //isRetina
 #define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -21,28 +19,25 @@
 //Pad
 #define isiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-
-
 #define  IS_IPHONE45    (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
 #define  IS_IPHONE4    (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
 #define  IS_IPHONE5    (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
 #define  IS_IPHONE6    (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
 #define  IS_IPHONE6p   (([[UIScreen mainScreen] bounds].size.width-414)?NO:YES)
 
-
 //------------------"  尺寸  "---------------
 // 屏幕bounds
 #define SScreenBounds [UIScreen mainScreen].bounds
 // 屏幕的size
 #define SScreenSize [UIScreen mainScreen].bounds.size
-//宽度
+// 宽度
 #define SSWIDTH ([UIScreen mainScreen].bounds.size.width)
-//高度
+// 高度
 #define SSHEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #define SSVCHeight (SSHEIGHT-64)
-//#define SSExtraHeight (64+49)
 #define SSPureHeight (SSHEIGHT-64-49)
+//#define SSExtraHeight (64+49)
 //#define SSPureHeight45 (568-64-49)
 
 // 数字常量
@@ -55,7 +50,6 @@ static const NSString *HSCoder11 = @"字符串11";
 static const NSString *HSCoder22 = @"字符串22";
 static NSString const *HSCoder33 = @"字符串33";
 static NSString * const HSCoder44 = @"字符串44";
-
 
 #define RRect(a,b,c,d) CGRectMake(a,b,c,d)
 
@@ -74,7 +68,6 @@ static NSString * const HSCoder44 = @"字符串44";
 
 #define FFHelveticaFont(font)		[UIFont fontWithName:@"Helvetica" size:font];
 #define FFHelveticaBoldFont(font)	[UIFont fontWithName:@"Helvetica-Bold" size:font];
-
 /**
  方正兰亭黑for ios8，四种字重，字形更饱满，更清晰，完美替换原生华文黑体，
  即：
@@ -106,24 +99,18 @@ static NSString * const HSCoder44 = @"字符串44";
 #define     Red_COLOR			[UIColor redColor]
 
 
-
 //---------------------"   橙色、黄色   "-------------------
 // 导航栏
 //#define	 NavBg_COLOR			UIColorWithRGB(255,120,2)
 #define	 NavBg_COLOR			UIColorWithRGB(33,150,243)
-//
 #define  Orange_ff7800			UIColorWithRGB(255,120,0)
-//
 #define  Orange_AA				UIColorWithRGB(255,187,6)
-//
 #define  Orange_BB				UIColorWithRGB(255,180,70)
 
 //TabBar按钮
 #define Color_normal     UIColorWithRGB(255,255,255) //默认：标题颜色
 #define Color_select     UIColorWithRGB(255,87,34)   //选中：标题颜色
 #define Color_tabBar     UIColorWithRGB(239,239,239) //tabBar颜色
-
-
 //标准绿色
 #define  GreenColor         UIColorWithRGB(5,111,0)
 //
@@ -137,7 +124,6 @@ static NSString * const HSCoder44 = @"字符串44";
 #define  BgGrayColorAA			UIColorWithRGB(223,223,223)
 #define  BgGrayColorBB			UIColorWithRGB(206,206,206)
 #define  BgGrayColorCC			UIColorWithRGB(189,189,189)
-
 //
 #define  GrayColor_Text			UIColorWithRGB(245,245,245)
 //
@@ -202,41 +188,25 @@ static NSString * const HSCoder44 = @"字符串44";
 
 /************"  部分Material Design的配色颜色值规范  "*************/
 
-//红色   #F44336
-#define Color_F44336   UIColorWithRGB(244,67,54)
-//深红   #E91E63
-#define Color_E91E63   UIColorWithRGB(233,30,99)
-//紫色   #9C27B0
-#define Color_9C27B0   UIColorWithRGB(156,39,176)
-//深紫   #673AB7
-#define Color_673AB7   UIColorWithRGB(103,58,183)
+#define Color_F44336   UIColorWithRGB(244,67,54)    //红色   #F44336
+#define Color_E91E63   UIColorWithRGB(233,30,99)    //深红   #E91E63
+#define Color_9C27B0   UIColorWithRGB(156,39,176)   //紫色   #9C27B0
+#define Color_673AB7   UIColorWithRGB(103,58,183)   //深紫   #673AB7
 
-//湛蓝   #3F51B5
-#define Color_3F51B5   UIColorWithRGB(63,81,181)
-//深蓝   #2196F3
-#define Color_2196F3   UIColorWithRGB(33,150,243)
-//蓝色   #03A9F4
-#define Color_03A9F4   UIColorWithRGB(3,169,244)
-//浅蓝   #00BCD4
-#define Color_00BCD4   UIColorWithRGB(0,188,212)
+#define Color_3F51B5   UIColorWithRGB(63,81,181)    //湛蓝   #3F51B5
+#define Color_2196F3   UIColorWithRGB(33,150,243)   //深蓝   #2196F3
+#define Color_03A9F4   UIColorWithRGB(3,169,244)    //蓝色   #03A9F4
+#define Color_00BCD4   UIColorWithRGB(0,188,212)    //浅蓝   #00BCD4
 
-//深绿   #009988
-#define Color_009988   UIColorWithRGB(0,150,136)
-//绿色   #5AB963
-#define Color_5AB963   UIColorWithRGB(90,185,99)
-//浅绿   #8BC34A
-#define Color_8BC34A   UIColorWithRGB(139,195,74)
-//黄绿   #CDDC39
-#define Color_CDDC39   UIColorWithRGB(205,220,57)
+#define Color_009988   UIColorWithRGB(0,150,136)    //深绿   #009988
+#define Color_5AB963   UIColorWithRGB(90,185,99)    //绿色   #5AB963
+#define Color_8BC34A   UIColorWithRGB(139,195,74)   //浅绿   #8BC34A
+#define Color_CDDC39   UIColorWithRGB(205,220,57)   //黄绿   #CDDC39
 
-//浅黄   #FFEB3B
-#define Color_FFEB3B   UIColorWithRGB(255,235,59)
-//黄色   #FFC107
-#define Color_FFC107   UIColorWithRGB(255,193,7)
-//橘黄   #FF9800
-#define Color_FF9800  UIColorWithRGB(255,152,0)
-//浅红   #FF5722
-#define Color_FF5722   UIColorWithRGB(255,87,34)
+#define Color_FFEB3B   UIColorWithRGB(255,235,59)   //浅黄   #FFEB3B
+#define Color_FFC107   UIColorWithRGB(255,193,7)    //黄色   #FFC107
+#define Color_FF9800  UIColorWithRGB(255,152,0)     //橘黄   #FF9800
+#define Color_FF5722   UIColorWithRGB(255,87,34)    //浅红   #FF5722
 
 
 //NSLog 分割线    //使用  NSLog(@"----->:%@",message);
@@ -267,6 +237,7 @@ static NSString * const HSCoder44 = @"字符串44";
 #else
 	#define NNSLog(...)
 #endif
+
 
 
 

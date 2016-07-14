@@ -23,10 +23,8 @@
 @implementation LoginViewController
 
 - (void)viewDidAppear:(BOOL)animated{
-	//隐藏tabBar
-	[self tabBarHidden:YES];
-	//返回
-	[self returnViewWhite];
+	[self tabBarHidden:YES];//隐藏tabBar
+	[self returnViewWhite]; //返回
 	//标题
 	[self setTitle:@"用户登录" TitleColor:[UIColor whiteColor]];
 	self.navigationController.navigationBar.hidden = NO;
@@ -37,7 +35,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 
 	[self initUI];
 
@@ -64,6 +61,7 @@
 		NSSLog(@"--->str= %@",_phoneText.mainText.text);
 	}
 
+    
 	_pwdText = [[ImageTextField alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(_phoneText.frame)+10, SSWIDTH-40, 35)];
 	_pwdText.leftImgView.image = [UIImage imageNamed:@"mail_icon"];
 	_pwdText.mainText.placeholder = @"请输入密码";
@@ -108,7 +106,6 @@
 
 		}
 	}];
-	
 
 	//注册按钮
 	_phoneText.rightBtnBlock = ^(NSString *backStr){
@@ -122,7 +119,7 @@
 
 }
 // 登录
-- (void)loginBtnClick{
+- (void)loginBtnClick {
 
 	
 }
