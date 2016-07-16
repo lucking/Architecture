@@ -59,7 +59,7 @@ Singleton_Instance_method_Impl(LoginManager)
 	[NetworkManager requestGetURl:Login_URL withParameters:params success:^(id data) {
 
 		NSSLog(@"-----> 登录_data = %@",data);
-		if (![Common isNull:data]) {
+		if ([Common isNotEmpty:data]) {
 			NSDictionary* dicdata = (NSDictionary *)data;
 			// 删除储存的信息
 			[UUserDefaults removeAllObject];
@@ -108,7 +108,7 @@ Singleton_Instance_method_Impl(LoginManager)
 	[NetworkManager requestGetURl:Logout_URL withParameters:nil success:^(id data) {
 
 		NSSLog(@"-----> 退出登录_data = %@",data);
-		if (![Common isNull:data]) {
+		if ([Common isNotEmpty:data]) {
 			UUserDefaults.isLogin = NO; // 退出登录：标志
 		}
 

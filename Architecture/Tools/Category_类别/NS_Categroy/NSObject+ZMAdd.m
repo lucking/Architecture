@@ -36,7 +36,7 @@
 	if ((NSNull *)element == [NSNull null]) {
 
 	}
-	[Common isNull:element];
+	[Common isNotEmpty:element];
 	//	NSMutableArray* Array  = [NSMutableArray array];
 	//	NSMutableDictionary* dic=[NSMutableDictionary dictionary];
 	// NSArray *arrayy = [NSArray new];

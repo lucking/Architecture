@@ -30,10 +30,15 @@
 #define SScreenBounds [UIScreen mainScreen].bounds
 // 屏幕的size
 #define SScreenSize [UIScreen mainScreen].bounds.size
-// 宽度
+// 全屏宽度
 #define SSWIDTH ([UIScreen mainScreen].bounds.size.width)
-// 高度
+// 全屏高度
 #define SSHEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+//宽度
+#define WWIDTH  (self.view.frame.size.width)
+//高度
+#define HHEIGHT (self.view.frame.size.height)
 
 #define SSVCHeight (SSHEIGHT-64)
 #define SSPureHeight (SSHEIGHT-64-49)

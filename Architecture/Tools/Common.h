@@ -118,9 +118,9 @@ typedef enum{
 
 #pragma mark //==========================="   空数据处理   "================================
 // 判断是否为空
-+(BOOL)isNull:(id)object;
++(BOOL)isNotEmpty:(id)object;
 // 判断字符串是否为空
-+ (BOOL)isNotEmpty:(NSString *)object;
++ (BOOL)isNotEmptyString:(NSString *)object;
 // 转换为空串
 +(NSString*)convertNull:(id)object;
 // 转换为 --

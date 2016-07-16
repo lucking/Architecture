@@ -64,7 +64,7 @@
     //		NSSLog(@"代理_按钮点击了");
     //	}
     _phoneNum = [UserDefaults getObjectStorageWithKey:@"getYzmPhoneNum"];
-    if ([Common isNotEmpty:_phoneNum]) {
+    if ([Common isNotEmptyString:_phoneNum]) {
         if ([Common validatePhone:_phoneNum]) {
             
             secondsCountDown = 10;//设定原始
@@ -86,7 +86,7 @@
                              };
     [NetworkManager requestGetURl:SmsCode withParameters:params success:^(id data) {
         NSSLog(@"-----> 验证码_data = %@",data);
-        if (![Common isNull:data]) {
+        if ([Common isNotEmpty:data]) {
             NSDictionary* dicdata = (NSDictionary *)data;
             //把数据传回到主线程
             NSString *RSPMSG = dicdata[@"REP_HEAD"][@"TRAN_RSPMSG"];

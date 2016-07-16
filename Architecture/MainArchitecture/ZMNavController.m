@@ -33,20 +33,40 @@
 
     //iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    //navigationBar下（0，0）开始
-    // self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
-
-    //导航栏下的起始坐标设置为(0,0)
-    // self.edgesForExtendedLayout = UIRectEdgeNone;
-
+   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.view.backgroundColor = [UIColor purpleColor];
+    
+    //1.navigationBar下（0，0）开始
+    // self.navigationController.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
+    
+    //2.导航栏下的起始坐标设置为(0,0)
+    // self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    //自适应
+    //3.自适应
     self.automaticallyAdjustsScrollViewInsets = NO;
 
+    
+    /**
+     *  UIWebView、UIScrollView 使用1和3 （不是1或3）：因为 SSHEIGHT 的高度是全屏的高度
+     *
+     * 方式一：
+     *  //navigationBar下（0，0）开始
+        self.navigationController.navigationBar.translucent = YES;// navigationBar的毛玻璃效果
+        //自适应
+        self.automaticallyAdjustsScrollViewInsets = NO;
+        wwebView = [[UIWebView alloc] initWithFrame:CGRectMake(5,70, SSWIDTH-10, SSHEIGHT-80)];
+     
+     * 方式二：
+     *  //navigationBar下（0，0）开始
+        self.navigationController.navigationBar.translucent = NO;// navigationBar的毛玻璃效果
+        //自适应
+        self.automaticallyAdjustsScrollViewInsets = NO;
+        wwebView = [[UIWebView alloc] initWithFrame:CGRectMake(5,10, SSWIDTH-10, SSHEIGHT-80)];
+     *
+     */
     
 }
 /**
