@@ -291,6 +291,8 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     [mytextField setAttributedText:noteStr];
 }
 
+// UILabel设置行间距等属性:
+
 
 //-----------------------"  UIButton  "---------------------------------
 
@@ -421,9 +423,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 + (BOOL)isNotEmptyString:(NSString *)object {
     
     if (!object) {
-        return NO;
-    }
-    else if ([object isEqualToString:@""]) {
         return NO;
     }
     else if (object.length == 0) {

@@ -192,7 +192,6 @@
             configuration(textField,i);
         }];
     }
-    
     // button
     [others enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (idx == (others.count-1))

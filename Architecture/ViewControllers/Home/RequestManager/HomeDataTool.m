@@ -16,7 +16,12 @@
 @implementation HomeDataTool
 
 
-
+/**
+ *  请求数据
+ *
+ *  @param params 参数
+ *  @param block  数据回调
+ */
 -(void)getDataWithParameters:(NSDictionary *)params dataBlock:(void (^)(id data,id param))block {
     
     

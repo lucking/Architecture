@@ -18,8 +18,13 @@ static NSMutableArray *fields = nil;
 {
     
 }
-
+/**
+ *  AlertController
+ *
+ *  @return 提示view
+ */
 #pragma mark - AlertController
+
 - (void)showAlertTitle:(NSString *)titlet
                message:(NSString *)message
                okTitle:(NSString *)okTitle
@@ -52,8 +57,6 @@ static NSMutableArray *fields = nil;
                   configuration:(configuration )configuration
                        animated:(BOOL )animated
                          action:(clickHaveField )click;
-
-
 
 @end
 

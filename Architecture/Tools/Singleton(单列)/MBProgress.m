@@ -50,7 +50,14 @@ Singleton_Instance_method_Impl(MBProgress)
 			//NSLog(@"MBProgressHUD 已存在");
 		}
 	}
+    //延时
+    [self performSelector:@selector(NoResponse) withObject:@"无响应" afterDelay:30.0f];
 }
+
+- (void)NoResponse {
+    [MMBProgress hudShowMessage:@"网络无响应" afterDelay:2.0f];
+}
+
 // 成功时：提示信息
 - (void)hudShowSucceed:(NSString *)message
 {
@@ -68,6 +75,7 @@ Singleton_Instance_method_Impl(MBProgress)
 	[hud hide:YES afterDelay:1.5f];
 	_hudView = hud;
 }
+
 // 错误时：提示信息
 - (void)hudShowError:(NSString *)message
 {
@@ -103,6 +111,25 @@ Singleton_Instance_method_Impl(MBProgress)
     [hud hide:YES afterDelay:delay];
     _hudView = hud;
 }
+
+// 普通：菊花旋转
+- (void)hudShowAfterDelay:(NSTimeInterval)delay
+{
+    [_hudView hide:NO];
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
+    [window addSubview:hud];
+    hud.customView     = [[UIView alloc] initWithFrame:CGRectZero];
+    hud.mode           = MBProgressHUDModeIndeterminate;
+    hud.animationType  = MBProgressHUDAnimationFade;
+    hud.delegate       = self;
+    
+    [hud show:YES];
+    [hud hide:YES afterDelay:delay];
+    _hudView = hud;
+}
+
 
 //自定义停止时间
 - (void)hudHidden:(NSTimeInterval)delay{	[_hudView hide:YES afterDelay:delay];	}

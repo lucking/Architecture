@@ -85,6 +85,13 @@
 }
 
 
+- (UIImage *)bundlepathForResource:(nullable NSString *)imageName  {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:imageName ofType:@"png"];
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    return image;
+}
+
 #pragma mark ------------------"  UIImage 保存\读取_本地沙盒Path"---------------------------------
 // 保存图片
 - (void)storageImage:(UIImage *)Image withImagePath:(NSString *)ImgPath{
