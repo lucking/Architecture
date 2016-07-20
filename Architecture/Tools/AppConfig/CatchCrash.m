@@ -7,7 +7,7 @@
 //
 
 #import "CatchCrash.h"
-#import "InfoDictionaryManager.h"
+#import "APPInfoManager.h"
 
 
 #define CatchCrash_Email  @"mailto:whfandtank@163.com"
@@ -52,8 +52,8 @@ void uncaughtExceptionHandler(NSException*exception)
 // 发送邮件：到指定的邮件地址
 + (void)sendEmail:(NSString *)exceptionInfo{
 
-    NSString *appName=(NSString *)[InfoDictionaryManager getValueOfInfoDict:@"CFBundleDisplayName"];
-    NSString *version=(NSString *)[InfoDictionaryManager getValueOfInfoDict:@"CFBundleVersion"];
+    NSString *appName=(NSString *)[APPInfoManager getValueOfInfoDict:@"CFBundleDisplayName"];
+    NSString *version=(NSString *)[APPInfoManager getValueOfInfoDict:@"CFBundleVersion"];
     
     NSString *urlStr = [NSString stringWithFormat:@"mailto:whfandtank@163.com?subject=嗯,遇到麻烦了...%@&body=%@%@发生未捕捉异常错误,希望发送bug至技术支持邮箱,我们会尽快修复该bug,感谢您的配合!<br><br><br>"
                         "错误详情:%@",[NSDate date],appName,version,exceptionInfo];

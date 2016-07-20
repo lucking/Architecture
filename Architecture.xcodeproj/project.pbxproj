@@ -11,13 +11,14 @@
 		9800C9691D2B9FA2002E85E1 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9800C9681D2B9FA2002E85E1 /* Toast+UIView.m */; };
 		98017E361D2D040A00F33322 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98017E351D2D040A00F33322 /* RequestManager.m */; };
 		9809C2BB1D0DB91900FBCDE5 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9809C2BA1D0DB91900FBCDE5 /* YTKKeyValueStore.m */; };
+		98379F321D3F573B00B5701F /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 98379F311D3F573B00B5701F /* DeviceInfo.m */; };
+		98379F351D3F58B800B5701F /* APPInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98379F341D3F58B800B5701F /* APPInfoManager.m */; };
 		984AFDDA1D0D0448003E03FB /* AFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD01D0D0448003E03FB /* AFDownloadManager.m */; };
 		984AFDDB1D0D0448003E03FB /* ZMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD51D0D0448003E03FB /* ZMDownloadManager.m */; };
 		984AFDDC1D0D0448003E03FB /* ZMSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD71D0D0448003E03FB /* ZMSessionModel.m */; };
 		984AFDDD1D0D0448003E03FB /* ZMSessionTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD91D0D0448003E03FB /* ZMSessionTask.m */; };
 		984AFDE01D0D06E8003E03FB /* NetworkAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDDF1D0D06E8003E03FB /* NetworkAPIManager.m */; };
 		984AFDF21D0D0B4E003E03FB /* CatchCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */; };
-		984AFDF31D0D0B4E003E03FB /* InfoDictionaryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDF11D0D0B4E003E03FB /* InfoDictionaryManager.m */; };
 		987E96901D0C3B5900D44CE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E968F1D0C3B5900D44CE9 /* main.m */; };
 		987E96931D0C3B5900D44CE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96921D0C3B5900D44CE9 /* AppDelegate.m */; };
 		987E96991D0C3B5900D44CE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987E96971D0C3B5900D44CE9 /* Main.storyboard */; };
@@ -327,6 +328,10 @@
 		98017E351D2D040A00F33322 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
 		9809C2B91D0DB91900FBCDE5 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
 		9809C2BA1D0DB91900FBCDE5 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		98379F301D3F573B00B5701F /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfo.h; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/DeviceInfo.h; sourceTree = "<group>"; };
+		98379F311D3F573B00B5701F /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInfo.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/DeviceInfo.m; sourceTree = "<group>"; };
+		98379F331D3F58B800B5701F /* APPInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APPInfoManager.h; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/APPInfoManager.h; sourceTree = "<group>"; };
+		98379F341D3F58B800B5701F /* APPInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APPInfoManager.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/APPInfoManager.m; sourceTree = "<group>"; };
 		984AFDCE1D0D0448003E03FB /* AFDownloadHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadHeader.h; sourceTree = "<group>"; };
 		984AFDCF1D0D0448003E03FB /* AFDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadManager.h; sourceTree = "<group>"; };
 		984AFDD01D0D0448003E03FB /* AFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDownloadManager.m; sourceTree = "<group>"; };
@@ -341,8 +346,6 @@
 		984AFDDF1D0D06E8003E03FB /* NetworkAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkAPIManager.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/APIManager/NetworkAPIManager.m; sourceTree = "<group>"; };
 		984AFDEE1D0D0B4E003E03FB /* CatchCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatchCrash.h; sourceTree = "<group>"; };
 		984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchCrash.m; sourceTree = "<group>"; };
-		984AFDF01D0D0B4E003E03FB /* InfoDictionaryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoDictionaryManager.h; sourceTree = "<group>"; };
-		984AFDF11D0D0B4E003E03FB /* InfoDictionaryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoDictionaryManager.m; sourceTree = "<group>"; };
 		987E968B1D0C3B5900D44CE9 /* Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987E968F1D0C3B5900D44CE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		987E96911D0C3B5900D44CE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -972,8 +975,10 @@
 		984AFDED1D0D0B4E003E03FB /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
-				984AFDF01D0D0B4E003E03FB /* InfoDictionaryManager.h */,
-				984AFDF11D0D0B4E003E03FB /* InfoDictionaryManager.m */,
+				98379F331D3F58B800B5701F /* APPInfoManager.h */,
+				98379F341D3F58B800B5701F /* APPInfoManager.m */,
+				98379F301D3F573B00B5701F /* DeviceInfo.h */,
+				98379F311D3F573B00B5701F /* DeviceInfo.m */,
 				984AFDEE1D0D0B4E003E03FB /* CatchCrash.h */,
 				984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */,
 			);
@@ -2675,6 +2680,7 @@
 				987E9A311D0C3F5B00D44CE9 /* NSNumber+YYAdd.m in Sources */,
 				9899A8831D29F0BC00CF8DCC /* DES.m in Sources */,
 				987E979C1D0C3F3B00D44CE9 /* ZMReadProtocolView.m in Sources */,
+				98379F351D3F58B800B5701F /* APPInfoManager.m in Sources */,
 				987E99EC1D0C3F5B00D44CE9 /* MASConstraintMaker.m in Sources */,
 				987E9A541D0C3F5B00D44CE9 /* YYWebImageManager.m in Sources */,
 				987E985A1D0C3F5000D44CE9 /* NSData+Category.m in Sources */,
@@ -2748,7 +2754,6 @@
 				98FA87C61D2CAA79008F9344 /* HomeDataTool.m in Sources */,
 				987E97C11D0C3F4100D44CE9 /* BLLModelStandard.m in Sources */,
 				987E97C91D0C3F4100D44CE9 /* NewsItem.m in Sources */,
-				984AFDF31D0D0B4E003E03FB /* InfoDictionaryManager.m in Sources */,
 				9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */,
 				987E97A51D0C3F3B00D44CE9 /* ZMTradeInputView.m in Sources */,
 				984AFDDC1D0D0448003E03FB /* ZMSessionModel.m in Sources */,
@@ -2763,6 +2768,7 @@
 				987E973C1D0C3F3300D44CE9 /* GuidepageViewController.m in Sources */,
 				987E9A151D0C3F5B00D44CE9 /* MKAnnotationView+WebCache.m in Sources */,
 				987E96931D0C3B5900D44CE9 /* AppDelegate.m in Sources */,
+				98379F321D3F573B00B5701F /* DeviceInfo.m in Sources */,
 				987E9A531D0C3F5B00D44CE9 /* YYImageCache.m in Sources */,
 				987E97411D0C3F3300D44CE9 /* RegisterViewController.m in Sources */,
 				987E985B1D0C3F5000D44CE9 /* NSDate+Categroy.m in Sources */,

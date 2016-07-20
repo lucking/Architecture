@@ -1,19 +1,19 @@
 //
-//  InfoDictionaryManager.h
-//  HuiFang
+//  APPInfoManager.h
+//  Architecture
 //
-//  Created by tangdi on 15/12/22.
-//  Copyright © 2015年 TD. All rights reserved.
+//  Created by ZM on 16/7/20.
+//  Copyright © 2016年 ZM. All rights reserved.
 //
 
 #import "Singleton.h"
 
-@interface InfoDictionaryManager : Singleton
+@interface APPInfoManager : Singleton
 {
-
+    
 }
 //创建实例
-Singleton_Instance_method_Interface(InfoDictionaryManager);
+Singleton_Instance_method_Interface(APPInfoManager);
 
 /**
  *  方便在基类中处理公共逻辑，例如猿题库的：数据版本号信息就统一在基类中处理。
@@ -26,11 +26,11 @@ Singleton_Instance_method_Interface(InfoDictionaryManager);
 @property (nonatomic, readonly) NSString *BuildMachineOSBuild;
 @property (nonatomic, readonly) NSString *CFBundleDevelopmentRegion;
 @property (nonatomic, readonly) NSString *CFBundleExecutable;
-@property (nonatomic, readonly) NSString *CFBundleIdentifier;				//appId - - -
+@property (nonatomic, readonly) NSString *CFBundleIdentifier;				//AppId
 @property (nonatomic, readonly) NSString *CFBundleInfoDictionaryVersion;
 
 @property (nonatomic, readonly) NSString *CFBundleInfoPlistURL;
-@property (nonatomic, readonly) NSString *CFBundleName;						//app名称 - - -
+@property (nonatomic, readonly) NSString *CFBundleName;						//App名称
 @property (nonatomic, readonly) NSString *CFBundleNumericVersion;
 @property (nonatomic, readonly) NSString *CFBundlePackageType;
 
@@ -39,7 +39,7 @@ Singleton_Instance_method_Interface(InfoDictionaryManager);
 
 @property (nonatomic, readonly) NSArray *CFBundleSupportedPlatforms;		//数组
 
-@property (nonatomic, readonly) NSString *CFBundleVersion;					//版本号 - - -
+@property (nonatomic, readonly) NSString *CFBundleVersion;					//版本号
 @property (nonatomic, readonly) NSString *DTCompiler;
 
 @property (nonatomic, readonly) NSString *DTPlatformBuild;
@@ -55,10 +55,8 @@ Singleton_Instance_method_Interface(InfoDictionaryManager);
 
 @property (nonatomic, readonly) NSArray *NSAppTransportSecurity;			//数组
 @property (nonatomic, readonly) NSArray *UIDeviceFamily;					//数组
-
 @property (nonatomic, readonly) NSString *UILaunchImageFile;
-@property (nonatomic, readonly) NSArray *UILaunchImages;					//数组
-
+@property (nonatomic, readonly) NSArray  *UILaunchImages;					//数组
 @property (nonatomic, readonly) NSString *UIMainStoryboardFile;
 @property (nonatomic, readonly) NSArray *UIRequiredDeviceCapabilities;		//数组
 @property (nonatomic, readonly) NSArray *UISupportedInterfaceOrientations;	//数组
@@ -66,10 +64,9 @@ Singleton_Instance_method_Interface(InfoDictionaryManager);
 @property (nonatomic, readonly) NSString *app;
 
 
-
-
 #pragma mark 获取系统配置文件
 - (NSDictionary *)getInfoDictionary;
+
 // 根据key 获取对应的配置信息
 +(NSObject *)getValueOfInfoDict:(NSString *)key;
 
@@ -78,8 +75,8 @@ Singleton_Instance_method_Interface(InfoDictionaryManager);
 
 /**
  *   数据版本号信息
-
-infoDictionary = {
+ 
+ infoDictionary = {
 	BuildMachineOSBuild = 14F27;
 	CFBundleDevelopmentRegion = en;
 	CFBundleExecutable = HuiFang;
@@ -92,8 +89,8 @@ infoDictionary = {
 	CFBundleShortVersionString = "1.0";
 	CFBundleSignature = "????";
 	CFBundleSupportedPlatforms =     (
-									  iPhoneSimulator
-									  );
+ iPhoneSimulator
+ );
 	CFBundleVersion = 1;
 	DTCompiler = "com.apple.compilers.llvm.clang.1_0";
 	DTPlatformBuild = "";
@@ -106,42 +103,42 @@ infoDictionary = {
 	LSRequiresIPhoneOS = 1;
 	MinimumOSVersion = "8.0";
 	NSAppTransportSecurity =     {
-		NSAllowsArbitraryLoads = 1;
+ NSAllowsArbitraryLoads = 1;
 	};
 	UIDeviceFamily =     (
-        1
-						  );
+ 1
+ );
 	UILaunchImageFile = LaunchImage;
 	UILaunchImages =     (
-						  {
-						  UILaunchImageMinimumOSVersion = "8.0";
-						  UILaunchImageName = "LaunchImage-800-Portrait-736h";
-						  UILaunchImageOrientation = Portrait;
-						  UILaunchImageSize = "{414, 736}";
-        },
-						  {
-						  UILaunchImageMinimumOSVersion = "8.0";
-						  UILaunchImageName = "LaunchImage-800-667h";
-						  UILaunchImageOrientation = Portrait;
-						  UILaunchImageSize = "{375, 667}";
-        },
-						  {
-						  UILaunchImageMinimumOSVersion = "7.0";
-						  UILaunchImageName = "LaunchImage-700-568h";
-						  UILaunchImageOrientation = Portrait;
-						  UILaunchImageSize = "{320, 568}";
-        }
-						  );
+ {
+ UILaunchImageMinimumOSVersion = "8.0";
+ UILaunchImageName = "LaunchImage-800-Portrait-736h";
+ UILaunchImageOrientation = Portrait;
+ UILaunchImageSize = "{414, 736}";
+ },
+ {
+ UILaunchImageMinimumOSVersion = "8.0";
+ UILaunchImageName = "LaunchImage-800-667h";
+ UILaunchImageOrientation = Portrait;
+ UILaunchImageSize = "{375, 667}";
+ },
+ {
+ UILaunchImageMinimumOSVersion = "7.0";
+ UILaunchImageName = "LaunchImage-700-568h";
+ UILaunchImageOrientation = Portrait;
+ UILaunchImageSize = "{320, 568}";
+ }
+ );
 	UIMainStoryboardFile = Main;
 	UIRequiredDeviceCapabilities =     (
-										armv7
-										);
+ armv7
+ );
 	UISupportedInterfaceOrientations =     (
-											UIInterfaceOrientationPortrait,
-											UIInterfaceOrientationLandscapeLeft,
-											UIInterfaceOrientationLandscapeRight
-											);
-}
+ UIInterfaceOrientationPortrait,
+ UIInterfaceOrientationLandscapeLeft,
+ UIInterfaceOrientationLandscapeRight
+ );
+ }
  */
 
 

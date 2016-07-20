@@ -393,9 +393,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 }
 
 
-
-
-
 // 判断是否为空
 +(BOOL)isNotEmpty:(id)object
 {
@@ -445,28 +442,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     }
     return YES;
 }
-
-//// 判断是否为空字符串
-//+(BOOL)isNullString:(id)object
-//{
-//    if (!object) {
-//        return YES;
-//    }
-//    else if ([object isEqualToString:@""]){
-//        return YES;
-//    }
-//    else if (object && [object isEqual:[NSNull null]]){
-//        return YES;
-//    }
-//    else if ([object isKindOfClass:[NSNull class]]){
-//        return YES;
-//    }
-//    else if (object == nil) {
-//        return YES;
-//    }
-//    return NO;
-//}
-
 
 // 转换为空串
 +(NSString*)convertNull:(id)object
