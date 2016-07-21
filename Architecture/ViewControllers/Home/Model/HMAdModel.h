@@ -13,10 +13,10 @@
 //@property (nonatomic,copy, readonly) NSString *Name;
 //@property (nonatomic,assign,readonly) NSInteger age;
 
-PProperty(imgURL);      //图片网址
-PProperty(imgName);     //图片名称
-PProperty(imgWidth);    //宽度
-PProperty(imgHeight);   //高度
+PPropertyString(imgURL);      //图片网址
+PPropertyString(imgName);     //图片名称
+PPropertyString(imgWidth);    //宽度
+PPropertyString(imgHeight);   //高度
 /**
  *  ......
  */

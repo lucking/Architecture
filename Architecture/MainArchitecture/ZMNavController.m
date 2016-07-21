@@ -68,15 +68,57 @@
      *
      */
     
+    
+    
+    /**
+     *  iOS 改变UINavigationBar的颜色
+     */
+    //    UIImage *BgImg = [UIImage imageNamed:@"BgImg"];
+    //    UIImage *ShadowImg = [UIImage imageNamed:@"ShadowImg"];
+    
+    // UINavigationController 使用
+    //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    //    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    
+    // UIViewController 使用
+    //    [self.navigationController.navigationBar setBackgroundImage:BgImg forBarMetrics:UIBarMetricsDefault];
+    //    [self.navigationController.navigationBar setShadowImage:ShadowImg];
+    
+    //    [self.navigationController.navigationBar.layer setBorderWidth:2.0];
+    //    [self.navigationController.navigationBar.layer setBorderColor:[[UIColor redColor] CGColor]];
+    
+    //例：改变10个像素宽度的线的图像：
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"blue1.png"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"pink.png"]]; //显示真实的图片高度
+
+    
+    /**
+     *  UIViewController 测试的一下
+     */
+    // 设置导航栏的背景颜色
+    //self.navigationController.navigationBar.backgroundColor = BlueColor; //没有作用
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"blue1.png"] forBarMetrics:UIBarMetricsDefault];
+    //[self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    // 设置导航栏的标题颜色
+    //self.navigationController.navigationBar.tintColor = [UIColor whiteColor]; //没有作用
+    //标题颜色
+    //NSDictionary *titleAttributesDic = [NSDictionary dictionaryWithObjectsAndKeys:
+    //                                    [UIColor whiteColor],NSForegroundColorAttributeName,
+    //                                    [UIFont boldSystemFontOfSize:18],NSFontAttributeName, nil];
+    //[self.navigationController.navigationBar setTitleTextAttributes:titleAttributesDic];
+
+
+    
+    
 }
 /**
  *  设置navigationBar样式
  */
 
 - (void)setUpNavigationBarAppearance {
+    
     UINavigationBar *navBar = [UINavigationBar appearance];
-    
-    
     if (FLOATVALUE<=6.1) {
         //自定义背景图片
         if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {

@@ -23,6 +23,7 @@ Singleton_Instance_method_Interface(APPInfoManager);
 @property (nonatomic, readonly) NSString *appId;			//appId
 
 
+
 @property (nonatomic, readonly) NSString *BuildMachineOSBuild;
 @property (nonatomic, readonly) NSString *CFBundleDevelopmentRegion;
 @property (nonatomic, readonly) NSString *CFBundleExecutable;
@@ -36,9 +37,7 @@ Singleton_Instance_method_Interface(APPInfoManager);
 
 @property (nonatomic, readonly) NSString *CFBundleShortVersionString;		//
 @property (nonatomic, readonly) NSString *CFBundleSignature;
-
 @property (nonatomic, readonly) NSArray *CFBundleSupportedPlatforms;		//数组
-
 @property (nonatomic, readonly) NSString *CFBundleVersion;					//版本号
 @property (nonatomic, readonly) NSString *DTCompiler;
 

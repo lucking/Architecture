@@ -13,9 +13,9 @@
 
 @interface Finance : BaseObject
 
-PProperty(retCode);      //返回码
-PProperty(retFlag);      //返回正确、错误的标志
-PProperty(retMsg);       //返回信息
+PPropertyString(retCode);      //返回码
+PPropertyString(retFlag);      //返回正确、错误的标志
+PPropertyString(retMsg);       //返回信息
 //PPropertyObject(Finance, finance);//可用也可不用
 
 //模型：mapLogo
@@ -39,24 +39,24 @@ PPropertyObject(PageBean, pageBean);
 //------------------  新类：MapLogo   ------------------
 @interface MapLogo : BaseObject
 
-PProperty(borrow_type);
-PProperty(details);
-PProperty(ID); //id
-PProperty(imagpath);
-PProperty(mark);
-PProperty(name);
-PProperty(nid);
-PProperty(status);
+PPropertyString(borrow_type);
+PPropertyString(details);
+PPropertyString(ID); //id
+PPropertyString(imagpath);
+PPropertyString(mark);
+PPropertyString(name);
+PPropertyString(nid);
+PPropertyString(status);
 @end
 
 //------------------  新类：PageBean   ------------------
 @interface PageBean : BaseObject
 
-PProperty(pageNum);
-PProperty(pageSize);
-PProperty(startOfPage);
-PProperty(totalNum);
-PProperty(totalPageNum);
+PPropertyString(pageNum);
+PPropertyString(pageSize);
+PPropertyString(startOfPage);
+PPropertyString(totalNum);
+PPropertyString(totalPageNum);
 /**
  *  里面是Page模型
  */
@@ -66,44 +66,44 @@ PProperty(totalPageNum);
 //------------------  新类：Page   ------------------
 @interface Page : BaseObject
 
-PProperty(annualRate);
-PProperty(auditStatus);
-PProperty(borrowAmount);
-PProperty(borrowLogo);
-PProperty(borrowShow);
+PPropertyString(annualRate);
+PPropertyString(auditStatus);
+PPropertyString(borrowAmount);
+PPropertyString(borrowLogo);
+PPropertyString(borrowShow);
 
-PProperty(borrowStatus);
-PProperty(borrowTitle);
-PProperty(borrowWay);
-PProperty(credit);
-PProperty(creditrating);
-PProperty(deadline);
-PProperty(excitationSum);
-PProperty(excitationType);
+PPropertyString(borrowStatus);
+PPropertyString(borrowTitle);
+PPropertyString(borrowWay);
+PPropertyString(credit);
+PPropertyString(creditrating);
+PPropertyString(deadline);
+PPropertyString(excitationSum);
+PPropertyString(excitationType);
 
-PProperty(hasPWD);
-PProperty(idstan);
-PProperty(imgPath);
-PProperty(investNum);
-PProperty(isDayThe);
+PPropertyString(hasPWD);
+PPropertyString(idstan);
+PPropertyString(imgPath);
+PPropertyString(investNum);
+PPropertyString(isDayThe);
 
-PProperty(minTenderedSum);
-PProperty(purpose);
-PProperty(schedules);
-PProperty(t_b_region);
-PProperty(username);
-PProperty(vip);
-PProperty(vipStatus);
+PPropertyString(minTenderedSum);
+PPropertyString(purpose);
+PPropertyString(schedules);
+PPropertyString(t_b_region);
+PPropertyString(username);
+PPropertyString(vip);
+PPropertyString(vipStatus);
 @end
 
 //------------------  新类：ProvinceList   ------------------
 @interface ProvinceList : BaseObject
 
-PProperty(agencyId);
-PProperty(parentId);
-PProperty(regionId);
-PProperty(regionName);
-PProperty(regionType);
+PPropertyString(agencyId);
+PPropertyString(parentId);
+PPropertyString(regionId);
+PPropertyString(regionName);
+PPropertyString(regionType);
 @end
 
 

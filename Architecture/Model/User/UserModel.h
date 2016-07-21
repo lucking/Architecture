@@ -12,16 +12,16 @@
 {
 
 }
-PProperty(custId);		// 用户id
-PProperty(custName);	// 用户名
-PProperty(custPwd);		// 密码
-PProperty(custPhone);	// 手机号
-PProperty(custMail);	// 邮箱
+PPropertyString(custId);		// 用户id
+PPropertyString(custName);	// 用户名
+PPropertyString(custPwd);		// 密码
+PPropertyString(custPhone);	// 手机号
+PPropertyString(custMail);	// 邮箱
 
-PProperty(custPortriat);// 头像
-PProperty(userType);		// 部门
-PProperty(custGender);	// 性别
-PProperty(custPosition);// 职位
+PPropertyString(custPortriat);// 头像
+PPropertyString(userType);		// 部门
+PPropertyString(custGender);	// 性别
+PPropertyString(custPosition);// 职位
 
 
 @end

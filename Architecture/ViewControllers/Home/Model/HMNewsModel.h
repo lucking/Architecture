@@ -10,9 +10,9 @@
 
 @interface HMNewsModel : BaseObject
 
-PProperty(retFlag); //请求是否正确
-PProperty(retCode); //反馈码
-PProperty(retMsg);  //返回信息
+PPropertyString(retFlag); //请求是否正确
+PPropertyString(retCode); //反馈码
+PPropertyString(retMsg);  //返回信息
 
 PPropertyMutArray(newsList);
 @end
@@ -21,7 +21,7 @@ PPropertyMutArray(newsList);
 
 @interface NewsListModel : BaseObject
 
-PProperty(newsId);		// 新闻编号
-PProperty(newsTitle);	// 新闻标题
-PProperty(newsImgUrl);	// 新闻广告图地址
+PPropertyString(newsId);		// 新闻编号
+PPropertyString(newsTitle);	// 新闻标题
+PPropertyString(newsImgUrl);	// 新闻广告图地址
 @end

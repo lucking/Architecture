@@ -12,10 +12,10 @@
 {
 
 }
-PProperty(firstName);	// 姓名
-PProperty(lastName);	// 姓名
-PProperty(age);			// 年龄
-PProperty(month);		// 月份
+PPropertyString(firstName);	// 姓名
+PPropertyString(lastName);	// 姓名
+PPropertyString(age);			// 年龄
+PPropertyString(month);		// 月份
 
 
 @property (nonatomic,weak) NSString* name;

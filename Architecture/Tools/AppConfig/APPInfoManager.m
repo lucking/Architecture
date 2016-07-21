@@ -41,23 +41,25 @@ Singleton_Instance_method_Impl(APPInfoManager);
 
 
 
-// 获取当前系统的版本号
+// Version
 - (NSString *)appVersion{
     
     NSString *Versionid = [[self getInfoDictionary] objectForKey:@"CFBundleVersion"];
     return Versionid;
 }
-// App名称
+// AppName
 - (NSString *)appName{
-    
-    NSString *name = [[self getInfoDictionary] objectForKey:@"CFBundleName"];
-    return name;
+    return [[self getInfoDictionary] objectForKey:@"CFBundleName"];
 }
 // AppId
 - (NSString *)appId{
-    
-    NSString *appId = [[self getInfoDictionary] objectForKey:@"CFBundleIdentifier"];
-    return appId;
+    return [[self getInfoDictionary] objectForKey:@"CFBundleIdentifier"];
+}
+
+
+// CFBundleInfoPlistURL
+- (NSString *)CFBundleInfoPlistURL{
+    return [[self getInfoDictionary] objectForKey:@"CFBundleInfoPlistURL"];
 }
 /**
  *  ......

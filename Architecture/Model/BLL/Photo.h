@@ -12,8 +12,8 @@
 {
 
 }
-PProperty(name);
-PProperty(age);
+PPropertyString(name);
+PPropertyString(age);
 
 
 

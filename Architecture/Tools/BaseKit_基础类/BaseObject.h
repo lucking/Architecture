@@ -16,9 +16,8 @@
 #define PPropertyArray(Array)				@property (nonatomic, strong) NSArray *Array
 // NSMutableArray
 #define PPropertyMutArray(mutArray)			@property (nonatomic, strong) NSMutableArray *mutArray
-
 // NSString：字符串
-#define PProperty(string)					@property (nonatomic, copy) NSString* string
+#define PPropertyString(string)					@property (nonatomic, copy) NSString* string
 // NSNumber：类
 #define PPropertyNumber(_number)			@property (nonatomic, assign) NSNumber *_number
 // CGFloat
