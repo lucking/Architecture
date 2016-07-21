@@ -101,13 +101,17 @@
     //[self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     
     // 设置导航栏的标题颜色
-    //self.navigationController.navigationBar.tintColor = [UIColor whiteColor]; //没有作用
-    //标题颜色
-    //NSDictionary *titleAttributesDic = [NSDictionary dictionaryWithObjectsAndKeys:
-    //                                    [UIColor whiteColor],NSForegroundColorAttributeName,
-    //                                    [UIFont boldSystemFontOfSize:18],NSFontAttributeName, nil];
-    //[self.navigationController.navigationBar setTitleTextAttributes:titleAttributesDic];
+//    //self.navigationController.navigationBar.tintColor = [UIColor whiteColor]; //没有作用
+//    //标题颜色
+//    NSDictionary *titleAttributesDic = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                        [UIColor whiteColor],NSForegroundColorAttributeName,
+//                                        [UIFont boldSystemFontOfSize:18],NSFontAttributeName, nil];
+//    [self.navigationController.navigationBar setTitleTextAttributes:titleAttributesDic];
 
+    
+    //修改 NavBar 返回键的颜色
+//    self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+//    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
     
     
