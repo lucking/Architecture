@@ -13,6 +13,7 @@
 		9809C2BB1D0DB91900FBCDE5 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9809C2BA1D0DB91900FBCDE5 /* YTKKeyValueStore.m */; };
 		98379F321D3F573B00B5701F /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 98379F311D3F573B00B5701F /* DeviceInfo.m */; };
 		98379F351D3F58B800B5701F /* APPInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98379F341D3F58B800B5701F /* APPInfoManager.m */; };
+		983897211D40CF2E00553100 /* BaseTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 983897201D40CF2E00553100 /* BaseTextField.m */; };
 		984AFDDA1D0D0448003E03FB /* AFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD01D0D0448003E03FB /* AFDownloadManager.m */; };
 		984AFDDB1D0D0448003E03FB /* ZMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD51D0D0448003E03FB /* ZMDownloadManager.m */; };
 		984AFDDC1D0D0448003E03FB /* ZMSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD71D0D0448003E03FB /* ZMSessionModel.m */; };
@@ -332,6 +333,8 @@
 		98379F311D3F573B00B5701F /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInfo.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/DeviceInfo.m; sourceTree = "<group>"; };
 		98379F331D3F58B800B5701F /* APPInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APPInfoManager.h; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/APPInfoManager.h; sourceTree = "<group>"; };
 		98379F341D3F58B800B5701F /* APPInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APPInfoManager.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/APPInfoManager.m; sourceTree = "<group>"; };
+		9838971F1D40CF2E00553100 /* BaseTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTextField.h; path = "../../../../../../zm/Desktop/Architecture/Architecture/Tools/BaseKit_基础类/BaseTextField.h"; sourceTree = "<group>"; };
+		983897201D40CF2E00553100 /* BaseTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTextField.m; path = "../../../../../../zm/Desktop/Architecture/Architecture/Tools/BaseKit_基础类/BaseTextField.m"; sourceTree = "<group>"; };
 		984AFDCE1D0D0448003E03FB /* AFDownloadHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadHeader.h; sourceTree = "<group>"; };
 		984AFDCF1D0D0448003E03FB /* AFDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadManager.h; sourceTree = "<group>"; };
 		984AFDD01D0D0448003E03FB /* AFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDownloadManager.m; sourceTree = "<group>"; };
@@ -1547,6 +1550,8 @@
 				987E97D71D0C3F5000D44CE9 /* BaseTableController.m */,
 				987E97D81D0C3F5000D44CE9 /* BaseTableView.h */,
 				987E97D91D0C3F5000D44CE9 /* BaseTableView.m */,
+				9838971F1D40CF2E00553100 /* BaseTextField.h */,
+				983897201D40CF2E00553100 /* BaseTextField.m */,
 				987E97DC1D0C3F5000D44CE9 /* BaseViewController.h */,
 				987E97DD1D0C3F5000D44CE9 /* BaseViewController.m */,
 			);
@@ -2707,6 +2712,7 @@
 				987E97CA1D0C3F4100D44CE9 /* Person.m in Sources */,
 				987E9A1A1D0C3F5B00D44CE9 /* SDWebImageDownloader.m in Sources */,
 				987E97971D0C3F3B00D44CE9 /* ZMCircleProgressView.m in Sources */,
+				983897211D40CF2E00553100 /* BaseTextField.m in Sources */,
 				987E98621D0C3F5000D44CE9 /* UIColor+ZMAdd.m in Sources */,
 				987E97C51D0C3F4100D44CE9 /* MJExtensionConfig.m in Sources */,
 				987E98551D0C3F5000D44CE9 /* BaseTableView.m in Sources */,

@@ -47,6 +47,9 @@
     }else return NO;
     
 }
+
+
+
 //========="  验证邮箱、手机号、身份证、qq  "=================================
 
 static NSString *emailRegex=@"^([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$";
@@ -125,7 +128,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     for (int i =0; i<17; i++) {
         sumValue+=[[cardNo substringWithRange:NSMakeRange(i , 1) ] intValue]* [[codeArray objectAtIndex:i] intValue];
     }
-    
     NSString* strlast = [checkCodeDic objectForKey:[NSString stringWithFormat:@"%d",sumValue%11]];
     
     if ([strlast isEqualToString: [[cardNo substringWithRange:NSMakeRange(17, 1)]uppercaseString]]) {
@@ -654,6 +656,22 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 	}
 	return @"IS_IPHONExx未知";
 }
+
++ (CGFloat)getWidth:(NSInteger)width {
+    if (IS_IPHONE45)     {  return (width*(SSWIDTH/320));
+    }else if (IS_IPHONE6){  return (width*(SSWIDTH/375));
+    }else {                 return (width*(SSWIDTH/414));
+    }
+}
+
++ (CGFloat)getHeight:(NSInteger)height {
+    if (IS_IPHONE4)      {  return (height*(SSWIDTH/480));
+    }else if (IS_IPHONE5){  return (height*(SSWIDTH/568));
+    }else if (IS_IPHONE6){  return (height*(SSWIDTH/667));
+    }else {                 return (height*(SSWIDTH/736));
+    }
+}
+
 // 判断屏幕类型，普通还是视网膜
 + (float)scale {
 	float scale = [[UIScreen mainScreen] scale];

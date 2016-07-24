@@ -148,6 +148,11 @@ typedef enum{
 
 // 判断手机型号
 + (NSString *)ISIPHONEXX;
+// 适配屏幕_宽度
++ (CGFloat)getWidth:(NSInteger)width;
+// 适配屏幕_高度
++ (CGFloat)getHeight:(NSInteger)height;
+
 // 判断屏幕类型，普通还是视网膜
 + (float)scale;
 // 判断是否是模拟器

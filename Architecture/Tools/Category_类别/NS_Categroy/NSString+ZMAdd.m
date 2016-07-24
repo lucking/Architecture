@@ -99,7 +99,9 @@
 	[str8 deleteCharactersInRange:NSMakeRange(2,5)];
 	NSLog(@"--->8: 删除字符串: %@ \n ",str8);
 
+    [str8 deleteCharactersInRange:NSMakeRange(str8.length,1)];
 
+    
 
 #pragma mark 9.在已有字符串所指定的位置中 插入字符串
 #pragma mark
@@ -176,6 +178,31 @@
 	}
 	return nil;
 }
+
+
+// 从最后一位开始删除：num 删除的位数
+- (NSString *)deleteCharactersOfString:(NSString *)myString num:(int)num
+{
+    NSMutableString* mutStr= [[NSMutableString alloc] initWithString:myString];
+    [mutStr deleteCharactersInRange:NSMakeRange(mutStr.length-num,num)];
+    return mutStr;
+}
+
+
+// 判断是否全是数字
+- (BOOL)isCharAndNumber:(NSString*)mystring
+{
+    NSCharacterSet *CharSet1= [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+    NSRange Range = [mystring rangeOfCharacterFromSet:CharSet1];
+    
+    if (Range.location == NSNotFound) {
+        return YES;
+    }else
+        return NO;
+}
+
+
+
 
 // 判断一个字符串里是否包含了另一个字符串: strB是否包含strA
 /**
@@ -363,7 +390,7 @@
     else if ([object isEqualToString:@"<null>"]){
         return NO;
     }
-    else if ([[self lowercaseString] isEqualToString:@"null"]){
+    else if ([[object lowercaseString] isEqualToString:@"null"]){
         return NO;
     }
     return YES;
@@ -731,7 +758,6 @@
         [returnString appendString:@""];
         return returnString;
     }
-    
     NSString *temp = nil;
     if ([idCard isKindOfClass:[NSString class]]) {
         temp = (NSString *)idCard;

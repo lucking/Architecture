@@ -19,31 +19,90 @@
 //Pad
 #define isiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-#define  IS_IPHONE45    (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
-#define  IS_IPHONE4    (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
-#define  IS_IPHONE5    (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
-#define  IS_IPHONE6    (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
-#define  IS_IPHONE6p   (([[UIScreen mainScreen] bounds].size.width-414)?NO:YES)
 
 //------------------"  尺寸  "---------------
 // 屏幕bounds
 #define SScreenBounds [UIScreen mainScreen].bounds
 // 屏幕的size
 #define SScreenSize [UIScreen mainScreen].bounds.size
-// 全屏宽度
+// 全屏宽度、高度
 #define SSWIDTH ([UIScreen mainScreen].bounds.size.width)
-// 全屏高度
 #define SSHEIGHT ([UIScreen mainScreen].bounds.size.height)
-
-//宽度
+//宽度、高度
 #define WWIDTH  (self.view.frame.size.width)
-//高度
 #define HHEIGHT (self.view.frame.size.height)
 
 #define SSVCHeight (SSHEIGHT-64)
 #define SSPureHeight (SSHEIGHT-64-49)
 //#define SSExtraHeight (64+49)
 //#define SSPureHeight45 (568-64-49)
+
+
+
+/**
+ *  配置信息
+ */
+//----------------控件比例------
+
+#define iPhone4_4S ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960),\
+[[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone5_5s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136),\
+[[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone6_6s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334),\
+[[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone6_6sPlus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1920, 1080),\
+[[UIScreen mainScreen] currentMode].size) : NO)
+
+
+#define DesignHeight    1334.0
+#define DesignWidth     750.0
+#define aaaaa           375.0
+//#define GetWidth(width) (width)/DesignWidth*WIDTH
+////判断是不是4s如果是则高度和5s一样的比例
+//#define GetHeight(height) (HEIGHT > 568 ? (height)/DesignHeight*HEIGHT : (height)/DesignHeight*568)
+
+
+#define GetWidth(width)   (iPhone4_4S || iPhone5_5s ? ((width)  / 2) : (width)/DesignWidth*SSWIDTH )
+#define GetHeight(height) (iPhone4_4S || iPhone5_5s ? ((height) / 2) : ((SSHEIGHT > 568 ? (height)/DesignHeight*SSHEIGHT : (height)/DesignHeight*568)))
+#define Getall(height)((height/2)/aaaaa*SSWIDTH)
+
+
+#define GetSSWidth(width)   (iPhone4_4S || iPhone5_5s ? (width) : (width)/DesignWidth*SSWIDTH )
+#define GetSSHeight(height) (iPhone4_4S || iPhone5_5s ? (height) : ((SSHEIGHT > 568 ? (height)/DesignHeight*SSHEIGHT : (height)/DesignHeight*568)))
+#define GetSSAll(height)((height)/aaaaa*SSWIDTH)
+
+
+#define  IS_IPHONE45   (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
+#define  IS_IPHONE4    (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
+#define  IS_IPHONE5    (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+#define  IS_IPHONE6    (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
+#define  IS_IPHONE6p   (([[UIScreen mainScreen] bounds].size.width-414)?NO:YES)
+
+//#if   (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
+//    #define  GetSSWidth(width)  (width*(SSWIDTH/320))
+//#elif (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
+//    #define  GetSSWidth(width)  (width*(SSWIDTH/375))
+//#else
+//    #define  GetSSWidth(width)  (width*(SSWIDTH/414))
+//#endif
+
+
+//#if   IS_IPHONE4
+//    #define  GetSSHeight(height)  (height*(SSHEIGHT/480))
+//#elif IS_IPHONE5
+//    #define  GetSSHeight(height)  (height*(SSHEIGHT/568))
+//#elif IS_IPHONE6
+//    #define  GetSSHeight(height)  (height*(SSHEIGHT/667))
+//#else
+//    #define  GetSSHeight(height)  (height*(SSHEIGHT/736))
+//#endif
+
+
+
+
 
 // 数字常量
 static const  int   top = 20;
@@ -245,6 +304,35 @@ static NSString * const HSCoder44 = @"字符串44";
 
 
 
+
+//#define  GetWidth(width)  if (IS_IPHONE45)  {   return (width*(SSWIDTH/320));   }   \
+//                        else if (IS_IPHONE6){   return (width*(SSWIDTH/375));   }   \
+//                        else {                  return (width*(SSWIDTH/414));   }   \
+//
+//
+//
+//#define  GetHeight(height)   if (IS_IPHONE4){   return (height*(SSWIDTH/480));  }   \
+//                        else if (IS_IPHONE5){   return (height*(SSWIDTH/568));  }   \
+//                        else if (IS_IPHONE6){   return (height*(SSWIDTH/667));  }   \
+//                        else {                  return (height*(SSWIDTH/736));  }   \
+
+//- (CGFloat)getSSWidth:(NSInteger)width {
+//    if (IS_IPHONE45) {
+//        return (width*(SSWIDTH/320));
+//    }else if (IS_IPHONE6){
+//        return (width*(SSWIDTH/375));
+//    }else {
+//        return (width*(SSWIDTH/414));
+//    }
+//}
+//
+//- (CGFloat)getSSHeight:(NSInteger)height {
+//    if (IS_IPHONE4) {       return (height*(SSWIDTH/480));
+//    }else if (IS_IPHONE5){  return (height*(SSWIDTH/568));
+//    }else if (IS_IPHONE6){  return (height*(SSWIDTH/667));
+//    }else { return (height*(SSWIDTH/736));
+//    }
+//}
 
 #endif
 

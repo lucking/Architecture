@@ -18,6 +18,13 @@
 // 去掉空格
 + (NSString *)removeStringEmpty:(NSString *)myStr;
 
+// 从最后一位开始删除： num 删除的位数
+- (NSString *)deleteCharactersOfString:(NSString *)myString num:(int)num;
+
+// 判断是否全是数字
+- (BOOL)isCharAndNumber:(NSString*)mystring;
+
+
 // 判断一个字符串里是否包含了另一个字符串: myString是否包含strA
 + (BOOL)isContainStringA:(NSString*)strA ofStringB:(NSString*)strB;
 
