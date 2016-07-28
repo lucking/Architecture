@@ -791,4 +791,32 @@
 }
 
 
+
+//字典排序_拼接url
++ (NSString *)getURlStringOfIP:(NSString *)url sortParams:(NSDictionary *)params {
+    
+    if (params ==nil) {
+        return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }else {
+        NSArray *keysArray = [params allKeys];
+        NSArray *sortedArray = [keysArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+            return [obj1 compare:obj2 options:NSNumericSearch]; //allKeys排列顺序
+        }];
+        
+        NSMutableString* tempStr= [[NSMutableString alloc] initWithString:@""];
+        for (NSString *key in sortedArray) {
+            NSString *value = [params objectForKey: key];
+            tempStr = [NSMutableString stringWithFormat:@"%@&%@=%@",tempStr,key,value];
+        }
+        [tempStr deleteCharactersInRange:NSMakeRange(0,1)]; //删除字符串：(开始位置，删除个数)
+        
+        NSString *urlStr = (NSString *)[NSMutableString stringWithFormat:@"%@?%@",url,tempStr];
+        //NSLog(@"---> urlStr = %@ \n ",urlStr);
+        
+        return [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+}
+
+
+
 @end

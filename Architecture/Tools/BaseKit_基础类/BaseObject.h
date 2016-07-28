@@ -18,6 +18,9 @@
 #define PPropertyNumber(_number)			@property (nonatomic, assign) NSNumber *_number
 // CGFloat：浮点数
 #define PPropertyFloat(_float)				@property (nonatomic, assign) CGFloat *_float
+// BOOL
+#define PPropertyBOOL(_bool)                @property (nonatomic, assign) BOOL _bool
+
 // NSArray
 #define PPropertyArray(Array)				@property (nonatomic, strong) NSArray *Array
 // NSMutableArray
@@ -28,7 +31,6 @@
 {
 
 }
-
 
 
 @end

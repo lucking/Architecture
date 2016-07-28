@@ -26,14 +26,14 @@
 // 屏幕的size
 #define SScreenSize [UIScreen mainScreen].bounds.size
 // 全屏宽度、高度
-#define SSWIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SSHEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define SSWIDTH     ([UIScreen mainScreen].bounds.size.width)
+#define SSHEIGHT    ([UIScreen mainScreen].bounds.size.height)
 //宽度、高度
-#define WWIDTH  (self.view.frame.size.width)
-#define HHEIGHT (self.view.frame.size.height)
+#define WWIDTH      (self.view.frame.size.width)
+#define HHEIGHT     (self.view.frame.size.height)
 
-#define SSVCHeight (SSHEIGHT-64)
-#define SSPureHeight (SSHEIGHT-64-49)
+#define SSVCHeight      (SSHEIGHT-64)
+#define SSPureHeight    (SSHEIGHT-64-49)
 //#define SSExtraHeight (64+49)
 //#define SSPureHeight45 (568-64-49)
 
@@ -80,6 +80,8 @@
 #define  IS_IPHONE5    (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
 #define  IS_IPHONE6    (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
 #define  IS_IPHONE6p   (([[UIScreen mainScreen] bounds].size.width-414)?NO:YES)
+
+
 
 //#if   (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
 //    #define  GetSSWidth(width)  (width*(SSWIDTH/320))
@@ -145,22 +147,15 @@ static NSString * const HSCoder44 = @"字符串44";
 
 #define UIColorWithRGB(r,g,b)  [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.0f]
 #define UIColorWithRGBA(r,g,b,a)  [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:(a)]
-// 透明色
-#define     Clear_COLOR         [UIColor clearColor]
-// 白色
-#define     White_COLOR         [UIColor whiteColor]
-// 黑色
-#define     Black_COLOR         [UIColor blackColor]
-// 灰色
-#define     Gray_COLOR			[UIColor grayColor]
-// 亮灰色
-#define     LightGray_COLOR     [UIColor lightGrayColor]
-// 靛蓝
-#define     Cyan_COLOR			[UIColor cyanColor]
-// 黄色
-#define     Yellow_COLOR		[UIColor yellowColor]
-// 红色
-#define     Red_COLOR			[UIColor redColor]
+
+#define     Clear_COLOR         [UIColor clearColor]    // 透明色
+#define     White_COLOR         [UIColor whiteColor]    // 白色
+#define     Black_COLOR         [UIColor blackColor]    // 黑色
+#define     Gray_COLOR			[UIColor grayColor]     // 灰色
+#define     LightGray_COLOR     [UIColor lightGrayColor]// 亮灰色
+#define     Cyan_COLOR			[UIColor cyanColor]     // 靛蓝
+#define     Yellow_COLOR		[UIColor yellowColor]   // 黄色
+#define     Red_COLOR			[UIColor redColor]      // 红色
 
 
 //---------------------"   橙色、黄色   "-------------------
@@ -304,7 +299,6 @@ static NSString * const HSCoder44 = @"字符串44";
 
 
 
-
 //#define  GetWidth(width)  if (IS_IPHONE45)  {   return (width*(SSWIDTH/320));   }   \
 //                        else if (IS_IPHONE6){   return (width*(SSWIDTH/375));   }   \
 //                        else {                  return (width*(SSWIDTH/414));   }   \
@@ -316,23 +310,6 @@ static NSString * const HSCoder44 = @"字符串44";
 //                        else if (IS_IPHONE6){   return (height*(SSWIDTH/667));  }   \
 //                        else {                  return (height*(SSWIDTH/736));  }   \
 
-//- (CGFloat)getSSWidth:(NSInteger)width {
-//    if (IS_IPHONE45) {
-//        return (width*(SSWIDTH/320));
-//    }else if (IS_IPHONE6){
-//        return (width*(SSWIDTH/375));
-//    }else {
-//        return (width*(SSWIDTH/414));
-//    }
-//}
-//
-//- (CGFloat)getSSHeight:(NSInteger)height {
-//    if (IS_IPHONE4) {       return (height*(SSWIDTH/480));
-//    }else if (IS_IPHONE5){  return (height*(SSWIDTH/568));
-//    }else if (IS_IPHONE6){  return (height*(SSWIDTH/667));
-//    }else { return (height*(SSWIDTH/736));
-//    }
-//}
 
 #endif
 

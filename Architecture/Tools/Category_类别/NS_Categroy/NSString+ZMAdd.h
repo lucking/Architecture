@@ -146,4 +146,7 @@
 - (NSString *)convertIDCard:(id)idCard;
 
 
+//字典排序_拼接url
++ (NSString *)getURlStringOfIP:(NSString *)url sortParams:(NSDictionary *)params;
+
 @end

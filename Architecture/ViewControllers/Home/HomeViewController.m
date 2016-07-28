@@ -76,7 +76,7 @@
     
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SSWIDTH, SSHEIGHT)];
     //iOS设置父视图透明度而不影响子视图
-    view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    view.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
 
     //[self.view addSubview:view];
 

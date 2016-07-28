@@ -22,9 +22,7 @@
 		984AFDF21D0D0B4E003E03FB /* CatchCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */; };
 		987E96901D0C3B5900D44CE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E968F1D0C3B5900D44CE9 /* main.m */; };
 		987E96931D0C3B5900D44CE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96921D0C3B5900D44CE9 /* AppDelegate.m */; };
-		987E96991D0C3B5900D44CE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987E96971D0C3B5900D44CE9 /* Main.storyboard */; };
 		987E969B1D0C3B5900D44CE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987E969A1D0C3B5900D44CE9 /* Assets.xcassets */; };
-		987E969E1D0C3B5900D44CE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987E969C1D0C3B5900D44CE9 /* LaunchScreen.storyboard */; };
 		987E96A91D0C3B5A00D44CE9 /* ArchitectureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96A81D0C3B5A00D44CE9 /* ArchitectureTests.m */; };
 		987E96B41D0C3B5A00D44CE9 /* ArchitectureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96B31D0C3B5A00D44CE9 /* ArchitectureUITests.m */; };
 		987E96C51D0C3DD500D44CE9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 987E96C21D0C3DD500D44CE9 /* Default-568h@2x.png */; };
@@ -353,9 +351,7 @@
 		987E968F1D0C3B5900D44CE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		987E96911D0C3B5900D44CE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		987E96921D0C3B5900D44CE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		987E96981D0C3B5900D44CE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		987E969A1D0C3B5900D44CE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		987E969D1D0C3B5900D44CE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		987E969F1D0C3B5900D44CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		987E96A41D0C3B5A00D44CE9 /* ArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		987E96A81D0C3B5A00D44CE9 /* ArchitectureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArchitectureTests.m; sourceTree = "<group>"; };
@@ -1034,8 +1030,6 @@
 				987E968F1D0C3B5900D44CE9 /* main.m */,
 				987E969F1D0C3B5900D44CE9 /* Info.plist */,
 				987E96C11D0C3CF300D44CE9 /* Architecture-Prefix.pch */,
-				987E969C1D0C3B5900D44CE9 /* LaunchScreen.storyboard */,
-				987E96971D0C3B5900D44CE9 /* Main.storyboard */,
 				987E96C21D0C3DD500D44CE9 /* Default-568h@2x.png */,
 				987E96C31D0C3DD500D44CE9 /* Default-667h@2x.png */,
 				987E96C41D0C3DD500D44CE9 /* Default-736h@3x.png */,
@@ -2529,7 +2523,6 @@
 				987E97361D0C3F3300D44CE9 /* welcome-1-2-568h.png in Resources */,
 				987E97951D0C3F3B00D44CE9 /* 2.png in Resources */,
 				987E99E41D0C3F5B00D44CE9 /* gestureBg.png in Resources */,
-				987E969E1D0C3B5900D44CE9 /* LaunchScreen.storyboard in Resources */,
 				987E99D01D0C3F5B00D44CE9 /* LICENSE in Resources */,
 				987E97C81D0C3F4100D44CE9 /* Finance.rtf in Resources */,
 				987E97341D0C3F3300D44CE9 /* welcome-1-1-568h.png in Resources */,
@@ -2542,7 +2535,6 @@
 				987E97941D0C3F3B00D44CE9 /* 1.png in Resources */,
 				987E97901D0C3F3B00D44CE9 /* Advertise.jpg in Resources */,
 				987E969B1D0C3B5900D44CE9 /* Assets.xcassets in Resources */,
-				987E96991D0C3B5900D44CE9 /* Main.storyboard in Resources */,
 				987E99F31D0C3F5B00D44CE9 /* 37x-Checkmark.png in Resources */,
 				987E973B1D0C3F3300D44CE9 /* welcome-1-4.png in Resources */,
 				987E97931D0C3F3B00D44CE9 /* 0.png in Resources */,
@@ -2856,25 +2848,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		987E96971D0C3B5900D44CE9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				987E96981D0C3B5900D44CE9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		987E969C1D0C3B5900D44CE9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				987E969D1D0C3B5900D44CE9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		987E96B61D0C3B5A00D44CE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2913,7 +2886,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2952,7 +2925,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2964,10 +2937,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Architecture-Prefix.pch";
 				INFOPLIST_FILE = Architecture/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zm.Architecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2978,10 +2952,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Architecture-Prefix.pch";
 				INFOPLIST_FILE = Architecture/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zm.Architecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";

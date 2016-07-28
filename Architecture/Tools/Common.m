@@ -657,20 +657,30 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 	return @"IS_IPHONExx未知";
 }
 
+
 + (CGFloat)getWidth:(NSInteger)width {
-    if (IS_IPHONE45)     {  return (width*(SSWIDTH/320));
-    }else if (IS_IPHONE6){  return (width*(SSWIDTH/375));
-    }else {                 return (width*(SSWIDTH/414));
+    if (IS_IPHONE45){
+        return (width*(SSWIDTH/320));
+    }else if (IS_IPHONE6){
+        return (width*(SSWIDTH/375));
+    }else {
+        return (width*(SSWIDTH/414));
     }
 }
 
 + (CGFloat)getHeight:(NSInteger)height {
-    if (IS_IPHONE4)      {  return (height*(SSWIDTH/480));
-    }else if (IS_IPHONE5){  return (height*(SSWIDTH/568));
-    }else if (IS_IPHONE6){  return (height*(SSWIDTH/667));
-    }else {                 return (height*(SSWIDTH/736));
+    if (IS_IPHONE4){
+        return (height*(SSHEIGHT/480));
+    }else if (IS_IPHONE5){
+        return (height*(SSHEIGHT/568));
+    }else if (IS_IPHONE6){
+        return (height*(SSHEIGHT/667));
+    }else {
+        return (height*(SSHEIGHT/736));
     }
 }
+
+
 
 // 判断屏幕类型，普通还是视网膜
 + (float)scale {
