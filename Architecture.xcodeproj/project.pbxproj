@@ -287,8 +287,6 @@
 		987E9A791D0C4ECD00D44CE9 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 987E9A781D0C4ECD00D44CE9 /* libz.1.1.3.tbd */; };
 		9880F6261D5839F00048E42F /* YSLocalizationString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9880F6251D5839F00048E42F /* YSLocalizationString.m */; };
 		988DEBDB1D0D5CAD00424530 /* NSObject+AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 988DEBDA1D0D5CAD00424530 /* NSObject+AlertView.m */; };
-		9890E6091D59AFD200ABCBCB /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9890E6061D59AFD200ABCBCB /* APIManager.m */; };
-		9890E60A1D59AFD200ABCBCB /* NetworkAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9890E6081D59AFD200ABCBCB /* NetworkAPIManager.m */; };
 		9899A8821D29F0BC00CF8DCC /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8771D29F0BC00CF8DCC /* AES.m */; };
 		9899A8831D29F0BC00CF8DCC /* DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8791D29F0BC00CF8DCC /* DES.m */; };
 		9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */; };
@@ -868,10 +866,6 @@
 		9880F6251D5839F00048E42F /* YSLocalizationString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSLocalizationString.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/YSLocalizationString.m; sourceTree = "<group>"; };
 		988DEBD91D0D5CAD00424530 /* NSObject+AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+AlertView.h"; path = "../../../../../../../zm/Desktop/Architecture/Architecture/Tools/Category_类别/NS_Categroy/NSObject+AlertView.h"; sourceTree = "<group>"; };
 		988DEBDA1D0D5CAD00424530 /* NSObject+AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AlertView.m"; path = "../../../../../../../zm/Desktop/Architecture/Architecture/Tools/Category_类别/NS_Categroy/NSObject+AlertView.m"; sourceTree = "<group>"; };
-		9890E6051D59AFD200ABCBCB /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
-		9890E6061D59AFD200ABCBCB /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
-		9890E6071D59AFD200ABCBCB /* NetworkAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAPIManager.h; sourceTree = "<group>"; };
-		9890E6081D59AFD200ABCBCB /* NetworkAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAPIManager.m; sourceTree = "<group>"; };
 		9899A8761D29F0BC00CF8DCC /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
 		9899A8771D29F0BC00CF8DCC /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
 		9899A8781D29F0BC00CF8DCC /* DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES.h; sourceTree = "<group>"; };
@@ -1508,7 +1502,6 @@
 		987E97CC1D0C3F5000D44CE9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				9890E6041D59AFCC00ABCBCB /* APIManager */,
 				987E98371D0C3F5000D44CE9 /* Singleton(单列) */,
 				987E98321D0C3F5000D44CE9 /* Network_网络 */,
 				984AFDED1D0D0B4E003E03FB /* AppConfig */,
@@ -2352,18 +2345,6 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		9890E6041D59AFCC00ABCBCB /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-				9890E6051D59AFD200ABCBCB /* APIManager.h */,
-				9890E6061D59AFD200ABCBCB /* APIManager.m */,
-				9890E6071D59AFD200ABCBCB /* NetworkAPIManager.h */,
-				9890E6081D59AFD200ABCBCB /* NetworkAPIManager.m */,
-			);
-			name = APIManager;
-			path = ../../../../../zm/Desktop/Architecture/Architecture/Tools/APIManager;
-			sourceTree = "<group>";
-		};
 		9899A8751D29F0BC00CF8DCC /* AES_DES_Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -2729,7 +2710,6 @@
 				987E9A291D0C3F5B00D44CE9 /* YYMemoryCache.m in Sources */,
 				987E98711D0C3F5000D44CE9 /* OperationFactory.m in Sources */,
 				987E9A401D0C3F5B00D44CE9 /* UIFont+YYAdd.m in Sources */,
-				9890E60A1D59AFD200ABCBCB /* NetworkAPIManager.m in Sources */,
 				987E987F1D0C3F5000D44CE9 /* ZMOperationQueue.m in Sources */,
 				987E9A511D0C3F5B00D44CE9 /* UIImage+YYWebImage.m in Sources */,
 				987E99FF1D0C3F5B00D44CE9 /* NSString+MJExtension.m in Sources */,
@@ -2764,7 +2744,6 @@
 				9880F6261D5839F00048E42F /* YSLocalizationString.m in Sources */,
 				987E9A0C1D0C3F5B00D44CE9 /* MJRefreshNormalHeader.m in Sources */,
 				987E99FB1D0C3F5B00D44CE9 /* NSObject+MJClass.m in Sources */,
-				9890E6091D59AFD200ABCBCB /* APIManager.m in Sources */,
 				987E9A3F1D0C3F5B00D44CE9 /* UIDevice+YYAdd.m in Sources */,
 				987E99D21D0C3F5B00D44CE9 /* AFImageDownloader.m in Sources */,
 				987E9A301D0C3F5B00D44CE9 /* NSNotificationCenter+YYAdd.m in Sources */,
