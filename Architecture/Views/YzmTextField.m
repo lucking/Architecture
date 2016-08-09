@@ -81,14 +81,13 @@
 }
 - (void)goYanZhengMa {
     __weak typeof(self) weakSelf = self;
-    NSSLog(@"-----> phoneNum = %@",_phoneNum);
     NSDictionary *params = @{@"phoneNum":_phoneNum
                              };
     [NetworkManager requestGetURl:SmsCode withParameters:params success:^(id data) {
-        NSSLog(@"-----> 验证码_data = %@",data);
+        NSSLog(@"-----> 获取验证码_data = %@",data);
         if ([Common isNotEmpty:data]) {
             NSDictionary* dicdata = (NSDictionary *)data;
-            //把数据传回到主线程
+
             NSString *RSPMSG = dicdata[@"REP_HEAD"][@"TRAN_RSPMSG"];
             NSString *CODE = dicdata[@"REP_HEAD"][@"TRAN_CODE"];
             
@@ -114,7 +113,6 @@
 - (UITextField *)mainText
 {
     if (_mainText==nil) {
-        
         float textWidth = myWidth-20-BtnWidth-20;
         _mainText = [[UITextField alloc]initWithFrame:CGRectMake(20, 0, textWidth, myHeight)];
         _mainText.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -147,7 +145,6 @@
     NSString* BtnTitle= [NSString stringWithFormat:@"%d秒后重新发送",secondsCountDown];
     _rightBtn.backgroundColor = Gray_999999;
     [_rightBtn setTitle:BtnTitle forState:UIControlStateNormal];
-    
     if(secondsCountDown==0){
         //恢复
         [self renew];
