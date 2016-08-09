@@ -34,6 +34,7 @@ static AppDelegate *_singleInstance;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    //UIWindow *rootWindow =  [AppDelegate GetInstance].window;
     
     [self BaseSetting];
     
@@ -56,14 +57,12 @@ static AppDelegate *_singleInstance;
 
 
 - (void)BaseSetting {
-    
     // 沙盒文件 路径
-    NSLog(@"HomeDirectoryPath = %@ \n \n ",HomeDirectoryPath);
-    
-    // IPHONE尺寸
+    NSLog(@"---> HomeDirectoryPath = %@ \n \n ",HomeDirectoryPath);
+    // 判断手机型号：IPHONE尺寸
     [Common ISIPHONEXX];
     
-    //1. 让启动画面停留更长时间
+    //1.改变启动画面停留的时间
     [NSThread sleepForTimeInterval:1.0];
     
     //2.AppDelegate
@@ -71,7 +70,6 @@ static AppDelegate *_singleInstance;
     
     //3.监控网络状态
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    
     
     //4.锁屏通知：锁屏退出 //锁屏：command＋L
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, NotificationLock, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);

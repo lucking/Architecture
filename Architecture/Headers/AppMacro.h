@@ -45,7 +45,15 @@
 
 
 // ============================"   屏幕尺寸  "==============================
-
+// 数字常量
+static const  int   top = 20;
+static const  float SSExtraHeight   = (64+49);
+static const  float SSPureHeight45  = (568-64-49);
+// 字符串常量
+static const NSString *HSCoder11 = @"字符串11";
+static const NSString *HSCoder22 = @"字符串22";
+static NSString const *HSCoder33 = @"字符串33";
+static NSString * const HSCoder44 = @"字符串44";
 
 
 

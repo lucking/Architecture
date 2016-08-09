@@ -47,7 +47,7 @@
 	self.sscrollview.contentSize = CGSizeMake(SSWIDTH,SSHEIGHT);
 	self.sscrollview.showsVerticalScrollIndicator = NO;
 	self.sscrollview.showsHorizontalScrollIndicator= NO;
-	self.sscrollview.delegate= self;
+	//self.sscrollview.delegate= self;
 	[self.view addSubview:self.sscrollview];
 
 }
@@ -55,7 +55,6 @@
 #pragma mark 导航标题 navigationTitle
 -(void)setTitle:(NSString*)title TitleColor:(UIColor*)color
 {
-    
     UILabel *titleLab= [[UILabel alloc]init];
     titleLab.frame= CGRectMake(0, 0, 100, 30);
     titleLab.textColor = color;
@@ -93,6 +92,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
 #pragma mark  设置tabBar的颜色
 - (void)setTabBarColor:(UIColor *)color
 {
@@ -111,6 +111,41 @@
     
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    [appDelegate.LeftSlideVC setPanEnabled:enabled];
+}
+
+
+//使用系统的 BarButtonSystemItem
+- (void)addBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target
+                        action:(SEL)action
+                     tintColor:(UIColor *)tintColor
+                   isRightItem:(BOOL)isRightItem
+{
+    if (isRightItem) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:target action:action];
+        self.navigationItem.rightBarButtonItem.tintColor = tintColor;
+        
+    }else {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:target action:action];
+        self.navigationItem.leftBarButtonItem.tintColor = tintColor;
+        
+    }
+}
+//添加图片的 BarButtonItem
+- (void)addBarButtonImageItemImgName:(NSString *)imgName
+                              action:(SEL)action
+                           tintColor:(UIColor *)tintColor
+                         isRightItem:(BOOL)isRightItem
+{
+    if (isRightItem) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imgName] style:UIBarButtonItemStylePlain target:self action:action];
+        self.navigationItem.rightBarButtonItem.tintColor = tintColor;
+        
+    }else {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imgName] style:UIBarButtonItemStylePlain target:self action:action];
+        self.navigationItem.leftBarButtonItem.tintColor = tintColor;
+
+        
+    }
 }
 
 

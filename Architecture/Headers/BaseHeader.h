@@ -13,12 +13,25 @@
 #define FLOATVALUE [[[UIDevice currentDevice] systemVersion] floatValue]
 //------------------"  手机尺寸类型  "---------------
 //isRetina
-#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+//#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 //iPhone5
-#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+//#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 //Pad
 #define isiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
+
+#define CurrentMode  [UIScreen instancesRespondToSelector:@selector(currentMode)]
+
+#define iPhone4 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 960),  [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone5 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6p (CurrentMode ? CGSizeEqualToSize(CGSizeMake(1920, 1080),[[UIScreen mainScreen] currentMode].size) : NO)
+
+#define  IS_IPHONE45   (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
+#define  IS_IPHONE4    (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
+#define  IS_IPHONE5    (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+#define  IS_IPHONE6    (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
+#define  IS_IPHONE6p   (([[UIScreen mainScreen] bounds].size.width-414)?NO:YES)
 
 //------------------"  尺寸  "---------------
 // 屏幕bounds
@@ -37,87 +50,27 @@
 //#define SSExtraHeight (64+49)
 //#define SSPureHeight45 (568-64-49)
 
-
-
 /**
  *  配置信息
  */
-//----------------控件比例------
-
-#define iPhone4_4S ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960),\
-[[UIScreen mainScreen] currentMode].size) : NO)
-
-#define iPhone5_5s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136),\
-[[UIScreen mainScreen] currentMode].size) : NO)
-
-#define iPhone6_6s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334),\
-[[UIScreen mainScreen] currentMode].size) : NO)
-
-#define iPhone6_6sPlus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1920, 1080),\
-[[UIScreen mainScreen] currentMode].size) : NO)
-
+//----------------控件比例----------------
 
 #define DesignHeight    1334.0
 #define DesignWidth     750.0
 #define aaaaa           375.0
-//#define GetWidth(width) (width)/DesignWidth*WIDTH
-////判断是不是4s如果是则高度和5s一样的比例
-//#define GetHeight(height) (HEIGHT > 568 ? (height)/DesignHeight*HEIGHT : (height)/DesignHeight*568)
-
-
-#define GetWidth(width)   (iPhone4_4S || iPhone5_5s ? ((width)  / 2) : (width)/DesignWidth*SSWIDTH )
-#define GetHeight(height) (iPhone4_4S || iPhone5_5s ? ((height) / 2) : ((SSHEIGHT > 568 ? (height)/DesignHeight*SSHEIGHT : (height)/DesignHeight*568)))
-#define Getall(height)((height/2)/aaaaa*SSWIDTH)
-
+//判断是不是4s如果是则高度和5s一样的比例
 
 #define GetSSWidth(width)   (iPhone4_4S || iPhone5_5s ? (width) : (width)/DesignWidth*SSWIDTH )
 #define GetSSHeight(height) (iPhone4_4S || iPhone5_5s ? (height) : ((SSHEIGHT > 568 ? (height)/DesignHeight*SSHEIGHT : (height)/DesignHeight*568)))
 #define GetSSAll(height)((height)/aaaaa*SSWIDTH)
 
-
-#define  IS_IPHONE45   (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
-#define  IS_IPHONE4    (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
-#define  IS_IPHONE5    (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
-#define  IS_IPHONE6    (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
-#define  IS_IPHONE6p   (([[UIScreen mainScreen] bounds].size.width-414)?NO:YES)
+//屏幕自动适配
+#define GetWidth(width)   (iPhone4 || iPhone5 ? (width)  : ((width) *SSWIDTH/320)   )
+#define GetHeight(height) (iPhone4 || iPhone5 ? (height) : ((height)*SSHEIGHT/568)  )
 
 
 
-//#if   (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
-//    #define  GetSSWidth(width)  (width*(SSWIDTH/320))
-//#elif (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
-//    #define  GetSSWidth(width)  (width*(SSWIDTH/375))
-//#else
-//    #define  GetSSWidth(width)  (width*(SSWIDTH/414))
-//#endif
-
-
-//#if   IS_IPHONE4
-//    #define  GetSSHeight(height)  (height*(SSHEIGHT/480))
-//#elif IS_IPHONE5
-//    #define  GetSSHeight(height)  (height*(SSHEIGHT/568))
-//#elif IS_IPHONE6
-//    #define  GetSSHeight(height)  (height*(SSHEIGHT/667))
-//#else
-//    #define  GetSSHeight(height)  (height*(SSHEIGHT/736))
-//#endif
-
-
-
-
-
-// 数字常量
-static const  int   top = 20;
-static const  float SSExtraHeight   = (64+49);
-static const  float SSPureHeight45  = (568-64-49);
-
-// 字符串常量
-static const NSString *HSCoder11 = @"字符串11";
-static const NSString *HSCoder22 = @"字符串22";
-static NSString const *HSCoder33 = @"字符串33";
-static NSString * const HSCoder44 = @"字符串44";
-
-#define RRect(a,b,c,d) CGRectMake(a,b,c,d)
+#define RRect(a,b,c,d)  CGRectMake(a,b,c,d)
 
 #define RMaxX(frame)    CGRectGetMaxX(frame)
 #define RMaxY(frame)    CGRectGetMaxY(frame)
@@ -125,8 +78,6 @@ static NSString * const HSCoder44 = @"字符串44";
 #define RMinY(frame)    CGRectGetMinY(frame)
 #define RWidth(frame)   CGRectGetWidth(frame)
 #define RHeight(frame)  CGRectGetHeight(frame)
-
-
 //字体大小
 #define FFont(font)			[UIFont systemFontOfSize:font]
 #define FFBoldFont(font)	[UIFont boldSystemFontOfSize:font]
@@ -136,12 +87,10 @@ static NSString * const HSCoder44 = @"字符串44";
 #define FFHelveticaBoldFont(font)	[UIFont fontWithName:@"Helvetica-Bold" size:font];
 /**
  方正兰亭黑for ios8，四种字重，字形更饱满，更清晰，完美替换原生华文黑体，
- 即：
  方正兰亭刊黑替换：		STHeiti-UltraLight.ttc、
  方正兰亭黑替换：		STHeiti-Thin.ttc、
  方正兰亭准黑替换：		STHeiti-Light.ttc、
  方正兰亭中粗黑替换：	STHeiti-Medium.ttc，
-
  */
 //======================="  UIColor  "=================================
 
@@ -155,9 +104,8 @@ static NSString * const HSCoder44 = @"字符串44";
 #define     LightGray_COLOR     [UIColor lightGrayColor]// 亮灰色
 #define     Cyan_COLOR			[UIColor cyanColor]     // 靛蓝
 #define     Yellow_COLOR		[UIColor yellowColor]   // 黄色
+#define     Orange_COLOR        [UIColor orangeColor]   // 橙色
 #define     Red_COLOR			[UIColor redColor]      // 红色
-
-
 //---------------------"   橙色、黄色   "-------------------
 // 导航栏
 //#define	 NavBg_COLOR			UIColorWithRGB(255,120,2)
@@ -296,6 +244,14 @@ static NSString * const HSCoder44 = @"字符串44";
 #else
 	#define NNSLog(...)
 #endif
+
+
+//#ifndef __OPTIMIZE__
+//#define NSLog(...) NSLog(__VA_ARGS__)
+//#else
+//#define NSLog(...) {}
+//#endif
+
 
 
 

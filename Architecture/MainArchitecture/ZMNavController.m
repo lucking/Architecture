@@ -108,12 +108,12 @@
     
     // 设置导航栏的标题颜色
     //self.navigationController.navigationBar.tintColor = [UIColor whiteColor]; //没有作用
-    //标题颜色
     NSDictionary *titleAttributesDic = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [UIColor whiteColor],NSForegroundColorAttributeName,
-                                        [UIFont boldSystemFontOfSize:18],NSFontAttributeName, nil];
+                                        [UIFont boldSystemFontOfSize:16],NSFontAttributeName, nil];
     [self.navigationController.navigationBar setTitleTextAttributes:titleAttributesDic];
-    
+    //self.navigationController.navigationBar.titleTextAttributes = titleAttributesDic;
+
     
     //修改 NavBar 返回键的颜色
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
@@ -121,9 +121,45 @@
 
     
     
+    /**
+     *  修改 NavigationItem 的颜色
+     */
+    self.navigationItem.title = @"旺旺";
+    UIColor *color = [UIColor greenColor];
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+
+    
+    /**
+     *  修改系统 NavigationItem 的 BarButtonItem 的颜色
+     */
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:@"通讯录" style:UIBarButtonItemStylePlain target:self action:@selector(contactMenu)];
+    self.navigationItem.rightBarButtonItem = right;
+    //方式一
+    //self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    //方式二
+    NSDictionary *titleAttributesDic2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        [UIColor whiteColor],NSForegroundColorAttributeName,
+                                        [UIFont boldSystemFontOfSize:16],NSFontAttributeName, nil];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:titleAttributesDic2 forState:UIControlStateNormal];
+
+    
+    //返回
+    //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backItem)];
+    //    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
+    // 添加联系人: 加号+
+    //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(systemItemBtn)];
+    //    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    
+
+
 }
 
-
+- (void)contactMenu {
+    
+    
+}
 
 
 /**

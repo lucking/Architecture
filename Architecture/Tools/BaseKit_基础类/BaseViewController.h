@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController < UIScrollViewDelegate >
+@interface BaseViewController : UIViewController //< UIScrollViewDelegate >
 {
     
 }
@@ -31,6 +31,17 @@
 - (void)tabBarHidden:(BOOL)hidden;
 #pragma mark 是否允许左边菜单侧滑
 - (void)leftSlideVCsetPanEnabled:(BOOL)enabled;
+
+//使用系统的 BarButtonSystemItem
+- (void)addBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target
+                        action:(SEL)action
+                     tintColor:(UIColor *)tintColor
+                   isRightItem:(BOOL)isRightItem;
+//添加图片的 BarButtonItem
+- (void)addBarButtonImageItemImgName:(NSString *)imgName
+                              action:(SEL)action
+                           tintColor:(UIColor *)tintColor
+                         isRightItem:(BOOL)isRightItem;
 
 
 #pragma mark  清除UITableView底部多余的分割线

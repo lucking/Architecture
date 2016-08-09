@@ -22,7 +22,7 @@
 	[super viewWillAppear:YES];
 
 	[self tabBarHidden:YES];//隐藏tabBar
-	[self returnViewWhite]; //返回
+	//[self returnViewWhite]; //返回
 	//标题
 	[self setTitle:@"TestVC" TitleColor:[UIColor whiteColor]];
 	//显示navBar
@@ -32,9 +32,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     //返回按钮颜色
     self.navigationController.navigationBar.tintColor = Green_COLOR;
+    
+    //使用系统返回按钮
+    [self addBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backItem) tintColor:[UIColor whiteColor] isRightItem:NO];
+    
     
     //navBar 的背景颜色
     //self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
@@ -43,28 +46,20 @@
     //self.navigationController.navigationBar.titleTextAttributes =  [NSDictionary dictionaryWithObjectsAndKeys: FFont(14), NSFontAttributeName, nil];
     
 
-    
-    
-//	NSSLog(@"mainScreen_width  = %f",[UIScreen mainScreen].bounds.size.width);
-//	NSSLog(@"mainScreen_height = %f \n ",[UIScreen mainScreen].bounds.size.height);
-//	NSSLog(@"bounds_width  = %f",self.view.bounds.size.width);
-//	NSSLog(@"bounds_height = %f \n ",self.view.bounds.size.height);
-//	NSSLog(@"frame_width = %f",self.view.frame.size.width);
-//	NSSLog(@"frame_height= %f",self.view.frame.size.height);
-
 	// 子视图
 //	[self subviews];
 
 	// 获取不同格式的时间
 //	[self dateFormat];
-
 	NNSLog(@"---> getCurrentVC_Test = %@ \n ",[Common getCurrentVC]);
 
 
 }
 
+- (void)backItem {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)test {
-
 
     // 测试
     [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:nil okAction:^{
@@ -78,6 +73,32 @@
     }];
 }
 
+- (void)sizeTest {
+    
+    NSSLog(@"mainScreen_width  = %f",[UIScreen mainScreen].bounds.size.width);
+    NSSLog(@"mainScreen_height = %f \n ",[UIScreen mainScreen].bounds.size.height);
+    NSSLog(@"bounds_width  = %f",self.view.bounds.size.width);
+    NSSLog(@"bounds_height = %f \n ",self.view.bounds.size.height);
+    NSSLog(@"frame_width = %f",self.view.frame.size.width);
+    NSSLog(@"frame_height= %f \n  \n ",self.view.frame.size.height);
+    
+    
+    NSLog(@"SSPureHeight45 = %f",SSPureHeight45);
+    
+    float aa =  SSPureHeight45;
+    float bb =  SSPureHeight45;
+    float cc =  SSHEIGHT;
+    float dd =  SSHEIGHT;
+    NSLog(@"aa = %p",&aa);
+    NSLog(@"bb = %p",&bb);
+    NSLog(@"cc = %p",&cc);
+    NSLog(@"dd = %p",&dd);
+    
+    
+    NSLog(@"aa = %f",aa);
+    NSLog(@"bb = %f \n \n ",bb);
+
+}
 
 #pragma mark -----------------------"  获取不同格式的时间  "---------------------------------
 - (void)dateFormat {

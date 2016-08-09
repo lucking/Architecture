@@ -48,6 +48,17 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ChangSelIndex:) name:@"BackToThree" object:@"2"];
 
 }
+- (BOOL)shouldAutorotate {
+    
+    return YES;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    
+//    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskAll;
+}
+
+
 // 跳到指定模块
 - (void)ChangSelIndex:(NSNotification *)notify {
     

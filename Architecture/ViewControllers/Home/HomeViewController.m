@@ -11,6 +11,7 @@
 #import "Finance.h"
 #import "NSString+ZMAdd.h"
 #import "AppDelegate.h"
+#import "TestViewController.h"
 
 #define CompanyTopText	@"		上海棠棣信息科技有限公司（股票代码833777，简称“棠棣信息”）是得到了国家信息产业部、上海市各级政府认可的高新技术企业，专业为国际国内各类银行、互联网金融企业等金融机构以及智慧社区、医疗机构等提供行业一流软件产品和系统集成服务。\n		棠棣信息2009年成立，总部位于中国上海“张江高科技园区”，是上海市科技小巨人培育企业、上海市高新技术企业，拥有数十项软件著作权。在北京、福州、广州、合肥等地设有分公司，技术服务站点遍及全国各大城市。\n		棠棣信息的发展始终放眼于全球范围内信息化、智能化发展的前沿进程，紧随全球“工业4.0”的步伐，棠棣信息也投入了大量的研发力量，使产品及服务始终保持行业领先水平。"
 
@@ -19,11 +20,19 @@
 #define MAIN_BASE_GRAY_COLOR    [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0]
 #define contentFontName  @"FZLanTingHei-L-GBK"
 
+#import "CallBottomView.h"
+#import "YuEView.h"
 
-@interface HomeViewController ()
+
+@interface HomeViewController ()<CallBottomViewDelegate>
 {
 	NSTimer* timer;
+    Ivar aa;
+
 }
+@property (nonatomic, weak) CallBottomView *callBottomView;
+@property (nonatomic, weak) YuEView *yuEView;
+
 @end
 
 @implementation HomeViewController
@@ -37,89 +46,166 @@
 	//显示tabBar
 //	[self tabBarHidden:NO];
 
-
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess) name:@"loginSuccess" object:nil];
 	// 初始化UI
-	[self initUI];
+//	[self initUI];
+    
 
-//	[self aaaaa];
-
-//	[self bbbbb];
-//	[self testZMSpaceLabel];
-
-
-    NSSLog(@"mainScreen_width  = %f",[UIScreen mainScreen].bounds.size.width);
-    NSSLog(@"mainScreen_height = %f \n ",[UIScreen mainScreen].bounds.size.height);
-    NSSLog(@"bounds_width  = %f",self.view.bounds.size.width);
-    NSSLog(@"bounds_height = %f \n ",self.view.bounds.size.height);
-    NSSLog(@"frame_width = %f",self.view.frame.size.width);
-    NSSLog(@"frame_height= %f \n  \n ",self.view.frame.size.height);
-
-
-    NSLog(@"SSPureHeight45 = %f",SSPureHeight45);
-
-    float aa =  SSPureHeight45;
-    float bb =  SSPureHeight45;
-    float cc =  SSHEIGHT;
-    float dd =  SSHEIGHT;
-    NSLog(@"aa = %p",&aa);
-    NSLog(@"bb = %p",&bb);
-    NSLog(@"cc = %p",&cc);
-    NSLog(@"dd = %p",&dd);
+    [self test];
+    
+    // 添加联系人: 加号+
+    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
     
     
-    NSLog(@"aa = %f",aa);
-    NSLog(@"bb = %f \n \n ",bb);
+    
+    [self tabBarHidden:YES];
+    // 底部打电话
+    CallBottomView *callBottomView = [[CallBottomView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    callBottomView.delegate = self;
+    [self.view addSubview:callBottomView];
+    self.callBottomView = callBottomView;
+    // 余额
+    YuEView *yuEView = [[YuEView alloc] initWithFrame:CGRectMake(0, 70, SSWIDTH, 200)];
+    [self.view addSubview:yuEView];
+    self.yuEView = yuEView;
+    [ self.yuEView.chongzhiBtn addTarget:self action:@selector(chongzhiBtnClick) forControlEvents:UIControlEventTouchUpInside];
 
+    
+}
+- (void)chongzhiBtnClick {
+    NSLog(@"---> chongzhiBtnClick ");
+
+}
+- (void)callBottomView:(CallBottomView *)callBottomView BtnClick:(UIButton *)Btn
+{
+    NSLog(@"---> callBtnClick_Btn.tag = %ld",(long)Btn.tag);
+    if (Btn.tag==111) {
+        [self tabBarHidden:NO];
+    }
+
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+//    显示
+    [self.callBottomView showCallBottomView];
+    [self tabBarHidden:YES];
+
+}
+
+- (void)addItem {
+    NSLog(@"---> addItem");
+
+}
+
+- (void)loginSuccess {
+    NSLog(@"---> loginSuccess");
+
+}
+
+- (void)autoSize {
+    
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 70, GetHeight(150), 100)];
+    label.backgroundColor = [UIColor yellowColor];
+    label.font = [UIFont systemFontOfSize:15];
+    label.text = @"hello,girl";
+    label.textColor = [UIColor redColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    [window addSubview:label];
+
+    
+}
+
+- (void)test {
+    
+    //	[self aaaaa];
+    
+    //	[self bbbbb];
+    //	[self testZMSpaceLabel];
+    
     
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SSWIDTH, SSHEIGHT)];
     //iOS设置父视图透明度而不影响子视图
     view.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
-
+    
     //[self.view addSubview:view];
-
+    
     //[self.navigationController.view addSubview:view];
     
     //[self.tabBarController.view addSubview:view];
-
+    
     //[[AppDelegate sharedAppDelegate].window addSubview:view];
     //[view removeFromSuperview];
-
+    
     
     // 测试
-//    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:@"取消" okAction:^{
-//        NSLog(@"---> 确定");
-//        
-//    }  cancelAction:^{
-//        NSLog(@"---> 取消");
-//        
-//    } completion:^{
-//        NSLog(@"---> 弹出时");
-//        
-//    }];
+    //    [Common showAlertTitle:nil message:@"第一次进入" okTitle:@"确定" cancelTitle:@"取消" okAction:^{
+    //        NSLog(@"---> 确定");
+    //
+    //    }  cancelAction:^{
+    //        NSLog(@"---> 取消");
+    //
+    //    } completion:^{
+    //        NSLog(@"---> 弹出时");
+    //    }];
     
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 70, 250, 100)];
-    label.backgroundColor = [UIColor yellowColor];
-    label.font = [UIFont systemFontOfSize:18];
-    label.text = @"hello,girl,boy";
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 380, 200, 60)];
+    label.backgroundColor = BgColor;
+    label.font = [UIFont systemFontOfSize:16];
+    label.text = @"Hello, girl, Boy, money";
     label.textColor = [UIColor redColor];
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
+    
+    
+//    [self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]];
+//    [label setAttributedText:[self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]]];
+//    [label setAttributedText:[self setLabelParaStr:@"boy" AllStr:label.text WithColor:[UIColor greenColor]]];
 
     
-    [self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]];
+    NSArray *colorArray = @[[UIColor greenColor],[UIColor blueColor],Orange_COLOR];
+    [self changeTextColorLab:label stringArray:@[@"Hello",@"Boy",@"money"] colorArray:colorArray fontArray:@[@"18",@"20"]];
     
-    
-    [label setAttributedText:[self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]]];
-    
-    
-    [label setAttributedText:[self setLabelParaStr:@"boy" AllStr:label.text WithColor:[UIColor greenColor]]];
-
-
 }
+
+#pragma mark 改变label的文本的 两种颜色
+- (void)changeTextColorLab:(UILabel *)myLabel
+               stringArray:(NSArray *)strArray
+                colorArray:(NSArray *)colorArray
+                 fontArray:(NSArray *)fontArray {
+    
+    NSMutableAttributedString *mutAttStr = [[NSMutableAttributedString alloc] initWithString:myLabel.text];
+
+    NSString* _str = nil;
+    UIFont*  _font = nil;
+    NSRange _range = NSMakeRange(0, 0);
+    
+    for (int i=0; i<strArray.count; i++) {
+        NSLog(@"---> strArray.count = %ld",strArray.count);
+        _str = strArray[i];
+        NSUInteger location = [[mutAttStr string] rangeOfString:_str].location;
+        NSUInteger length   = [[mutAttStr string] rangeOfString:_str].length;
+        _range = NSMakeRange(location, length);
+        // 改变颜色
+        if (colorArray.count >= (i+1)) {
+            [mutAttStr addAttribute:NSForegroundColorAttributeName value:colorArray[i] range:_range];
+        }
+        // 改变字体大小
+        if (fontArray.count >= (i+1)) {
+            _font = [UIFont systemFontOfSize:[fontArray[i] floatValue]];
+            [mutAttStr addAttribute:NSFontAttributeName value:_font range:_range];
+        }
+    }
+    [myLabel setAttributedText:mutAttStr];
+}
+
+
 
 #pragma mark  改变一种文本的颜色
 - (NSMutableAttributedString *)setLabelParaStr:(NSString *)rangeStr AllStr:(NSString *)allStr WithColor:(UIColor *)color
@@ -130,8 +216,6 @@
     
     return attribute;
 }
-
-
 - (void)testZMSpaceLabel {
 
 	NSString *labelText = CompanyTopText;
@@ -198,7 +282,6 @@
 //	[pool release];
 }
 
-
 - (void)changeTimeAtTimedisplay {
 
 //	NSArray *sortDescriptors= [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"forcatsProfitRate" ascending:YES]];
@@ -228,7 +311,8 @@
 	[self.view endEditing:YES];
 
 	if (Btn.tag==101) {    //
-
+        TestViewController* pushVC= [[TestViewController alloc] init];
+        [self.navigationController pushViewController:pushVC animated:YES];
     }
 	else if (Btn.tag==102){//
 
