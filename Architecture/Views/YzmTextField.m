@@ -51,10 +51,6 @@
     }
     return self;
 }
-- (void)reloadUIwithDic:(NSDictionary *)parameter withType:(NSString *)type
-{
-    NSSLog(@"type= %@ ",type);
-}
 
 - (void)ImageTextFieldBtnClick:(UIButton *)Btn{
     

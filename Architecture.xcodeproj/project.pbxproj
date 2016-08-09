@@ -1329,7 +1329,6 @@
 			children = (
 				987E97791D0C3F3B00D44CE9 /* ZMTradeField */,
 				987E975B1D0C3F3B00D44CE9 /* ZMAdView */,
-				987E975D1D0C3F3B00D44CE9 /* ZMCollectionViewWaterfallLayout */,
 				987E975E1D0C3F3B00D44CE9 /* ZMCycleScrollView */,
 				987E97621D0C3F3B00D44CE9 /* ZMiCarouselAd */,
 				987E976A1D0C3F3B00D44CE9 /* ZMProgressView */,
@@ -1353,13 +1352,6 @@
 			children = (
 			);
 			path = AdViewImage;
-			sourceTree = "<group>";
-		};
-		987E975D1D0C3F3B00D44CE9 /* ZMCollectionViewWaterfallLayout */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ZMCollectionViewWaterfallLayout;
 			sourceTree = "<group>";
 		};
 		987E975E1D0C3F3B00D44CE9 /* ZMCycleScrollView */ = {

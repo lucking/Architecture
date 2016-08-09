@@ -42,6 +42,4 @@ typedef void (^YzmTextFieldBlock) (NSString *pswString);
 // 设置代理
 @property (nonatomic,weak) id<ImageTextFieldDelegate> delegate;
 
-- (void)reloadUIwithDic:(NSDictionary *)parameter withType:(NSString *)type;
-
 @end
