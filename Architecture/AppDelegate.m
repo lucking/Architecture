@@ -79,18 +79,18 @@ static AppDelegate *_singleInstance;
     [CatchCrash setExceptionHandler];
     
     
-    NSString* ssssa = @"魏一平";
-    [NSString isChineseString:ssssa];
-    NSString* str1 = @"魏 一 平ads2  ,.,[sadf";
-    
-    NSSLog(@"---> trim = %@",[str1 trim]);
-    NSSLog(@"---> isAllLetter = %d",[@"asdfia  bjJASDFAJN" isAllLetter]);
-    
-    NSSLog(@"---> isAllNum = %d",[@"112344,3" isAllNum]);
-    NSSLog(@"---> isContainNum = %d",[str1 isContainNum]);
-    
-    NSSLog(@"---> isContainSpecialString = %d",[str1 isContainSpecialString]);
-    NSSLog(@"---> isIllegalString = %d \n \n ",[str1 isIllegalString]);
+//    NSString* ssssa = @"魏一平";
+//    [NSString isChineseString:ssssa];
+//    NSString* str1 = @"魏 一 平ads2  ,.,[sadf";
+//    
+//    NSSLog(@"---> trim = %@",[str1 trim]);
+//    NSSLog(@"---> isAllLetter = %d",[@"asdfia  bjJASDFAJN" isAllLetter]);
+//    
+//    NSSLog(@"---> isAllNum = %d",[@"112344,3" isAllNum]);
+//    NSSLog(@"---> isContainNum = %d",[str1 isContainNum]);
+//    
+//    NSSLog(@"---> isContainSpecialString = %d",[str1 isContainSpecialString]);
+//    NSSLog(@"---> isIllegalString = %d \n \n ",[str1 isIllegalString]);
     
     
 }
@@ -117,7 +117,7 @@ static AppDelegate *_singleInstance;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    NSLogline(@"---> 5.重新启动 \n ");
+    NSLog(@"---> 5.重新启动 \n ");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

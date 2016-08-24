@@ -12,6 +12,7 @@
 #import "NSString+ZMAdd.h"
 #import "AppDelegate.h"
 #import "TestViewController.h"
+#import "TestAAViewController.h"
 
 #define CompanyTopText	@"		上海棠棣信息科技有限公司（股票代码833777，简称“棠棣信息”）是得到了国家信息产业部、上海市各级政府认可的高新技术企业，专业为国际国内各类银行、互联网金融企业等金融机构以及智慧社区、医疗机构等提供行业一流软件产品和系统集成服务。\n		棠棣信息2009年成立，总部位于中国上海“张江高科技园区”，是上海市科技小巨人培育企业、上海市高新技术企业，拥有数十项软件著作权。在北京、福州、广州、合肥等地设有分公司，技术服务站点遍及全国各大城市。\n		棠棣信息的发展始终放眼于全球范围内信息化、智能化发展的前沿进程，紧随全球“工业4.0”的步伐，棠棣信息也投入了大量的研发力量，使产品及服务始终保持行业领先水平。"
 
@@ -40,38 +41,44 @@
 {
 	[super viewWillAppear:animated];
 	//隐藏navBar
-	self.navigationController.navigationBar.hidden = NO;
+//	self.navigationController.navigationBar.hidden = NO;
 //	[self.navigationController setNavigationBarHidden:YES animated:TRUE];
 //	[self.navigationController setToolbarHidden:YES animated:TRUE];
 	//显示tabBar
 //	[self tabBarHidden:NO];
+//    [self backBtnWhiteHidden:YES];
+    
+//    self.backBtn.hidden = YES;
+    
+
 
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess) name:@"loginSuccess" object:nil];
+        
 	// 初始化UI
-//	[self initUI];
+	[self initUI];
     
 
-    [self test];
+//    [self test];
     
-    // 添加联系人: 加号+
-    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
-    
-    
-    
-    [self tabBarHidden:YES];
-    // 底部打电话
-    CallBottomView *callBottomView = [[CallBottomView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    callBottomView.delegate = self;
-    [self.view addSubview:callBottomView];
-    self.callBottomView = callBottomView;
-    // 余额
-    YuEView *yuEView = [[YuEView alloc] initWithFrame:CGRectMake(0, 70, SSWIDTH, 200)];
-    [self.view addSubview:yuEView];
-    self.yuEView = yuEView;
-    [ self.yuEView.chongzhiBtn addTarget:self action:@selector(chongzhiBtnClick) forControlEvents:UIControlEventTouchUpInside];
+//    // 添加联系人: 加号+
+//    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
+//    
+//    
+//    
+//    [self tabBarHidden:YES];
+//    // 底部打电话
+//    CallBottomView *callBottomView = [[CallBottomView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+//    callBottomView.delegate = self;
+//    [self.view addSubview:callBottomView];
+//    self.callBottomView = callBottomView;
+//    // 余额
+//    YuEView *yuEView = [[YuEView alloc] initWithFrame:CGRectMake(0, 70, SSWIDTH, 200)];
+//    [self.view addSubview:yuEView];
+//    self.yuEView = yuEView;
+//    [ self.yuEView.chongzhiBtn addTarget:self action:@selector(chongzhiBtnClick) forControlEvents:UIControlEventTouchUpInside];
 
     
 }
@@ -90,8 +97,8 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 //    显示
-    [self.callBottomView showCallBottomView];
-    [self tabBarHidden:YES];
+//    [self.callBottomView showCallBottomView];
+//    [self tabBarHidden:YES];
 
 }
 
@@ -293,7 +300,7 @@
 
 - (void)initUI
 {
-	titleArrayAA = @[@"HomeManager",@"RequestVC",@"TestVC",@"StroeDataVC",@"TestTableVC",@"RegisterVC",@"77",@"88",@"99"];
+	titleArrayAA = @[@"TestVC",@"TestAAVC",@"TestBBVC",@"StroeDataVC",@"TestTableVC",@"RegisterVC",@"77",@"88",@"99"];
 	float top = 80;
 	for (int i=0; i<titleArrayAA.count; i++) {
 		int _tag = 101+i;
@@ -315,6 +322,8 @@
         [self.navigationController pushViewController:pushVC animated:YES];
     }
 	else if (Btn.tag==102){//
+        TestAAViewController* pushVC= [[TestAAViewController alloc] init];
+        [self.navigationController pushViewController:pushVC animated:YES];
 
 	}
 	else if (Btn.tag==103){//

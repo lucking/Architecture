@@ -714,7 +714,7 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 
 	UIWindow *window = [[UIApplication sharedApplication] keyWindow];
 	UIViewController *currentVC = [window visibleViewController];
-	//NNSLog(@"------> common_currentVC = %@ \n ",currentVC);
+	//NSLog(@"------> common_currentVC = %@ \n ",currentVC);
 	return currentVC;
 }
 

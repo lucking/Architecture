@@ -13,8 +13,7 @@
 #import "BaseHeader.h"
 
 
-
-@interface BaseViewController ()
+@interface BaseViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -25,20 +24,41 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-	self.navigationItem.hidesBackButton = YES;
+	//self.navigationItem.hidesBackButton = YES;
 	
 	//导航栏下的起始坐标设置为(0,0)
 	//   self.edgesForExtendedLayout = UIRectEdgeNone;
 
 	// 添加单击手势
 	//   [self addTapGesture];
+    
+    
+    //在此写（在viewDidLoad里写），有3级以上vc，vc消失时，delegate为nil，失去右滑返回功能
+    //self.navigationController.interactivePopGestureRecognizer.delegate = self;
 
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
-	//[self.navigationController.navigationBar setBarTintColor:NavBg_COLOR];
+    [super viewWillAppear:animated];
+    //[self.navigationController.navigationBar setBarTintColor:NavBg_COLOR];
+    //在此写（在viewWillAppear里写），有3级以上vc，vc消失时，delegate为重新代理，依然支持右滑返回功能
+    //self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
+    
+}
+- (void)viewDidAppear:(BOOL)animated {
+    //    self.backBtn.hidden = YES;
+    
+}
 
+//系统方法：右滑返回
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    
+    NSLog(@"---> self.navVC.childVCs.count = %ld ",self.navigationController.childViewControllers.count);
+    NSLog(@"---> self.childVCs.count = %ld \n ",self.childViewControllers.count);
+    return self.navigationController.childViewControllers.count > 1;
+    //或
+//    return YES;
 }
 
 - (void)addScrollView{
@@ -83,12 +103,16 @@
 {	//隐藏系统的
     self.navigationItem.hidesBackButton = YES;
     //返回按钮
-	UIButton *returnBtn= [[UIButton alloc] initWithFrame:CGRectMake(0,0,15, 20)];
-    [returnBtn setImage:[UIImage imageNamed:@"backarrow26-44"] forState:UIControlStateNormal];
+	UIButton *returnBtn= [[UIButton alloc] initWithFrame:CGRectMake(20,5,15, 20)];
+    [returnBtn setImage:[UIImage imageNamed:@"backarrow26-44.png"] forState:UIControlStateNormal];
     [returnBtn addTarget:self action:@selector(UpInsidedemo) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.navigationBar addSubview:returnBtn];
+    
     UIBarButtonItem *BarBtn= [[UIBarButtonItem alloc]initWithCustomView:returnBtn];
     self.navigationItem.leftBarButtonItem= BarBtn;
 }
+
+
 -(void)UpInsidedemo{
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -28,7 +28,7 @@
     
 }
 @property (strong, nonatomic) UIWindow *window;
-@property (retain, nonatomic) ZMMainTabBarController* baseTabBarVC;//主控制器
+@property (strong, nonatomic) ZMMainTabBarController* baseTabBarVC;//主控制器
 
 
 + (AppDelegate *)GetInstance;

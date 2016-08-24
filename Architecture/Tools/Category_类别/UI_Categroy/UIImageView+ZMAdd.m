@@ -59,7 +59,7 @@
 
 - (void)setImgName:(NSString *)imgName {
 
-	//NNSLog(@"---> imgName = %@",imgName);
+	//NSLog(@"---> imgName = %@",imgName);
 	//[self sd_setImageWithURL:[NSURL URLWithString:imgName] placeholderImage:[UIImage imageNamed:@"placeholderImg"]];
 	// self.image = [UIImage imageNamed:imageName];
 

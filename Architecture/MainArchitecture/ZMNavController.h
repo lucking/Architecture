@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMNavController : UINavigationController
+{
+    
+}
+@property (nonatomic, strong) UIButton *backBtn;
 
 @end

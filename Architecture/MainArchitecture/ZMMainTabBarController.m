@@ -101,6 +101,26 @@
     MoreViewController *ddVC = [[MoreViewController alloc] init];
     ZMNavController* ddNavRootVC = [[ZMNavController alloc] initWithRootViewController:ddVC];
     [ddVC setTitle:@"更多" TitleColor:[UIColor whiteColor]];
+    
+    
+//    //1.
+//    HomeViewController  *aaVC =[[HomeViewController alloc] init];
+//    UINavigationController* aaNavRootVC= [[UINavigationController alloc] initWithRootViewController:aaVC];
+//    [aaVC setTitle:@"首页" TitleColor:[UIColor whiteColor]];
+//    //2.
+//    TransferViewController *bbVC= [[TransferViewController alloc] init];
+//    UINavigationController* bbNavRootVC = [[UINavigationController alloc] initWithRootViewController:bbVC];
+//    [bbVC setTitle:@"模拟" TitleColor:[UIColor whiteColor]];
+//    //3.
+//    AccountViewController *ccVC= [[AccountViewController alloc] init];
+//    UINavigationController* ccNavRootVC = [[UINavigationController alloc] initWithRootViewController:ccVC];
+//    [ccVC setTitle:@"我的账户" TitleColor:[UIColor whiteColor]];
+//    //4.
+//    MoreViewController *ddVC = [[MoreViewController alloc] init];
+//    UINavigationController* ddNavRootVC = [[UINavigationController alloc] initWithRootViewController:ddVC];
+//    [ddVC setTitle:@"更多" TitleColor:[UIColor whiteColor]];
+    
+    
 
     NSArray *viewControllers = @[aaNavRootVC,
                                  bbNavRootVC,

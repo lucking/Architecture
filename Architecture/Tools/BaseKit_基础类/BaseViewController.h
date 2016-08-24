@@ -12,7 +12,8 @@
 {
     
 }
-@property(nonatomic,strong) UIScrollView* sscrollview;
+@property(nonatomic, strong) UIScrollView* sscrollview;
+
 - (void)addScrollView;
 
 
@@ -24,6 +25,8 @@
 -(void)returnViewBlack;
 #pragma mark 自定义返回按钮：白色箭头
 -(void)returnViewWhite;
+
+
 
 #pragma mark  设置tabBar的颜色
 - (void)setTabBarColor:(UIColor *)color;

@@ -75,7 +75,7 @@
         NSData *dataTemp = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
         plainText = [GTMBase64 stringByEncodingData:dataTemp];
     }else{
-        NNSLog(@"DES加密失败");
+        NSLog(@"DES加密失败");
     }
     return plainText;
 }

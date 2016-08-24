@@ -44,4 +44,5 @@ typedef NS_ENUM(NSInteger, MyUITableViewStyle) {
 	UIScrollView* sscrollView;
 	float HHeight;
 }
+
 @end

@@ -292,6 +292,7 @@
 		9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */; };
 		9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */; };
 		9899A8871D29F0BC00CF8DCC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */; };
+		98BB4DD71D6DED07007E7962 /* TestAAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB4DD61D6DED07007E7962 /* TestAAViewController.m */; };
 		98F61FA41D52DDD2007D9034 /* CallBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F61FA31D52DDD2007D9034 /* CallBottomView.m */; };
 		98F61FA61D52E8E7007D9034 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F61FA51D52E8E7007D9034 /* call.png */; };
 		98F61FA91D52E925007D9034 /* CallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F61FA81D52E925007D9034 /* CallButton.m */; };
@@ -876,6 +877,8 @@
 		9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		9899A87F1D29F0BC00CF8DCC /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		98BB4DD51D6DED07007E7962 /* TestAAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestAAViewController.h; path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/TestAAViewController.h; sourceTree = "<group>"; };
+		98BB4DD61D6DED07007E7962 /* TestAAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestAAViewController.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/TestAAViewController.m; sourceTree = "<group>"; };
 		98F61FA21D52DDD2007D9034 /* CallBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CallBottomView.h; path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/CallBottomView.h; sourceTree = "<group>"; };
 		98F61FA31D52DDD2007D9034 /* CallBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CallBottomView.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/CallBottomView.m; sourceTree = "<group>"; };
 		98F61FA51D52E8E7007D9034 /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call.png; sourceTree = "<group>"; };
@@ -1115,6 +1118,8 @@
 				987E96F61D0C3F3300D44CE9 /* HomeViewController.m */,
 				98FA87CB1D2CB0C5008F9344 /* TestViewController.h */,
 				98FA87CA1D2CB0C5008F9344 /* TestViewController.m */,
+				98BB4DD51D6DED07007E7962 /* TestAAViewController.h */,
+				98BB4DD61D6DED07007E7962 /* TestAAViewController.m */,
 				98F61FA21D52DDD2007D9034 /* CallBottomView.h */,
 				98F61FA31D52DDD2007D9034 /* CallBottomView.m */,
 				98F61FA71D52E925007D9034 /* CallButton.h */,
@@ -2722,6 +2727,7 @@
 				987E99DB1D0C3F5B00D44CE9 /* FMDatabaseAdditions.m in Sources */,
 				987E99CE1D0C3F5B00D44CE9 /* AFURLResponseSerialization.m in Sources */,
 				987E978B1D0C3F3B00D44CE9 /* RecordCell.m in Sources */,
+				98BB4DD71D6DED07007E7962 /* TestAAViewController.m in Sources */,
 				987E9A031D0C3F5B00D44CE9 /* MJRefreshFooter.m in Sources */,
 				987E97881D0C3F3B00D44CE9 /* FinanceCell.m in Sources */,
 				987E9A2B1D0C3F5B00D44CE9 /* NSBundle+YYAdd.m in Sources */,
