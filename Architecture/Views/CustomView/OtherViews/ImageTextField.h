@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
-
 //============================="  代理协议  "==============================
 @class ImageTextField;
 
@@ -20,11 +17,12 @@
 - (void)imageTextField:(ImageTextField *)ITView BtnClick:(UIButton *)Btn;
 
 @end
-//=============================================================================
 
 
-// block
+//============================="  Block  "==============================
+
 typedef void (^ImageTextFieldBlock) (NSString *pswString, UIButton *Btn, ImageTextField *imgTextField);
+
 
 
 @interface ImageTextField : UIView
