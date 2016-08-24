@@ -144,27 +144,7 @@
 - (void)tradeBtnClick:(UIButton *)Btn
 {
 	NSLog(@"tradeText = %@",self.tradeText.text);
-
-
 	_okBtn.backgroundColor= GrayColor_Login;
-
-//    // 取消按钮
-//    if (Btn.tag == ZMTradeCancleBtn) {
-//        if ([self.delegate respondsToSelector:@selector(tradeInputView:BtnClick:)]) {
-//            [self.delegate tradeInputView:self BtnClick:Btn];
-//        }
-//    }// 确定按钮
-//    else if (Btn.tag == ZMTradeOkBtn) {
-//        if ([self.delegate respondsToSelector:@selector(tradeInputView:BtnClick:)]) {
-//            [self.delegate tradeInputView:self BtnClick:Btn];
-//        }
-//    }// 银行按钮
-//    else if (Btn.tag == ZMTradeBankBtn) {
-//        if ([self.delegate respondsToSelector:@selector(tradeInputView:BtnClick:)]) {
-//            [self.delegate tradeInputView:self BtnClick:Btn];
-//        }
-//    }
-    
     
     if ([self.delegate respondsToSelector:@selector(tradeInputView:BtnClick:)]) {
         [self.delegate tradeInputView:self BtnClick:Btn];

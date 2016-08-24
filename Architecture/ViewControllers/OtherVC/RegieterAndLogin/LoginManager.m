@@ -56,7 +56,7 @@ Singleton_Instance_method_Impl(LoginManager)
 	NSSLog(@"JSON_Params = %@ \n \n ",params);
 	[MMBProgress hudShowLoading:@"请稍候..."];
 
-	[NetworkManager requestGetURl:Login_URL withParameters:params success:^(id data) {
+	[NetworkManager requestGetURl:Login_URL withParameters:params hudShow:YES success:^(id data) {
 
 		NSSLog(@"-----> 登录_data = %@",data);
 		if ([Common isNotEmpty:data]) {
@@ -105,7 +105,7 @@ Singleton_Instance_method_Impl(LoginManager)
 #pragma
 - (void)logout{
 
-	[NetworkManager requestGetURl:Logout_URL withParameters:nil success:^(id data) {
+	[NetworkManager requestGetURl:Logout_URL withParameters:nil hudShow:YES success:^(id data) {
 
 		NSSLog(@"-----> 退出登录_data = %@",data);
 		if ([Common isNotEmpty:data]) {

@@ -31,12 +31,7 @@ typedef enum {
 @protocol ZMTradeInputViewDelegate <NSObject>
 
 @optional
-//#pragma mark 取消按钮
-//- (void)tradeInputView:(ZMTradeInputView *)tradeInputView cancleBtnClick:(UIButton *)cancleBtn;
-//#pragma mark 确定按钮
-//- (void)tradeInputView:(ZMTradeInputView *)tradeInputView okBtnClick:(UIButton *)okBtn;
-//#pragma mark 选择银行按钮
-//- (void)tradeInputView:(ZMTradeInputView *)tradeInputView bankBtnClick:(UIButton *)bankBtn;
+
 #pragma mark 取消、确定、选择银行按钮
 - (void)tradeInputView:(ZMTradeInputView *)tradeInputView BtnClick:(UIButton *)Btn;
 

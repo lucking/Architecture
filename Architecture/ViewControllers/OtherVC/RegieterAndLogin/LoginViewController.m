@@ -108,12 +108,12 @@
 	}];
 
 	//注册按钮
-	_phoneText.rightBtnBlock = ^(NSString *backStr){
+	_phoneText.rightBtnBlock = ^(NSString *backStr, UIButton *Btn, ImageTextField *imgTextField){
 
 
 	};
 	//忘记密码按钮
-	_pwdText.rightBtnBlock = ^(NSString *backStr){
+	_pwdText.rightBtnBlock = ^(NSString *backStr, UIButton *Btn, ImageTextField *imgTextField){
 
 	};
 

@@ -28,9 +28,10 @@ static NetworkManager *_singleInstance;
 #pragma mark =========================="   NetworkSession   "===================================
 
 #pragma  网络请求Get方式
-+ (void)requestGetURl:(NSString *)URL withParameters:(NSDictionary *)params success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
++ (void)requestGetURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
 {
-	//[MMBProgress hudShowLoading:@"请稍候..."];
+    //[MMBProgress hudShowLoading:@"请稍候..."];
+    __weak __typeof(self)weakSelf = self;
 	URL = [API_URL stringByAppendingFormat:@"%@",URL];
     
 	//判断网络状况（有链接：执行请求；无链接：弹出提示）
@@ -42,13 +43,13 @@ static NetworkManager *_singleInstance;
 		} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 			//NSLog(@"---> responseObject: %@", responseObject);
 
-			[MMBProgress hudHidden];
+            [weakSelf hudHidden];
 			if (responseObject){
-				success(responseObject);		 //请求成功返回数据
+				success(responseObject);//请求成功返回数据
 			}
             
 		} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-			[MMBProgress hudHidden];
+            [weakSelf hudHidden];
 			[self errorDealWithLocalError:error];//处理_请求错误
 		}];
 
@@ -59,8 +60,9 @@ static NetworkManager *_singleInstance;
 }
 
 #pragma mark POST方式
-+(void)requestPostURl:(NSString *)URL withParameters:(NSDictionary *)params success:(void (^)(id data))success failure:(void (^)(NSError * error))failure
++(void)requestPostURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure
 {
+    __weak __typeof(self)weakSelf = self;
 	URL = [API_URL stringByAppendingFormat:@"%@",URL];
 	//判断网络状况（有链接：执行请求；无链接：弹出提示）
 	if ([self isReachableViaWiFi]) {
@@ -68,25 +70,27 @@ static NetworkManager *_singleInstance;
 		[[[NetworkSession sharedSessionManager] POST:URL parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
 
 		} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [weakSelf hudHidden];
 			if (responseObject){
 				success(responseObject);
 			}
 		} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-			[MMBProgress hudHidden];
+            [weakSelf hudHidden];
 			[self errorDealWithLocalError:error];
 
         }] resume]; //重新开始;
 
 	}else{
 		[MMBProgress hudHidden];
-		[self showWithoutNetwork];//网络错误提示
+		[self showWithoutNetwork];
 	}
 }
 
 #pragma mark ======================="   数据请求：线程处理法   "=================================
 #pragma
-+(void)requestThreadSessionPOSTURl:(NSString *)URL withParameters:(NSDictionary *)params Target:(id)_target select:(SEL)selectName failure:(void (^)(NSError * error))failure
++(void)requestThreadSessionPOSTURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow Target:(id)_target select:(SEL)selectName failure:(void (^)(NSError * error))failure
 {
+    __weak __typeof(self)weakSelf = self;
 	URL = [API_URL stringByAppendingFormat:@"%@",URL];
 	NSLog(@"--->请求url: %@",URL);
 	NSLog(@"--->请求参数: %@ \n ",params);
@@ -97,7 +101,7 @@ static NetworkManager *_singleInstance;
 
 		} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
-			[MMBProgress hudHidden];
+            [weakSelf hudHidden];
 			//返回调用处数据
 			if ([_target respondsToSelector:selectName]) {
 
@@ -107,7 +111,7 @@ static NetworkManager *_singleInstance;
 			}
 
 		} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-			[MMBProgress hudHidden];
+            [weakSelf hudHidden];
 			[self errorDealWithLocalError:error];
 		}];
 	}else{
@@ -120,7 +124,7 @@ static NetworkManager *_singleInstance;
 /**
  *  文件上传 POST
  */
-+ (void)upLoadPOST:(NSDictionary *)params fileData:(NSData *)data fileDic:(NSDictionary *)fileDic withURL:(NSString *)URL success:(void (^)(id data))success failure:(void (^)(NSError * error))failure {
++ (void)upLoadPOST:(NSDictionary *)params fileData:(NSData *)data fileDic:(NSDictionary *)fileDic withURL:(NSString *)URL hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure {
 
 	URL = [API_URL stringByAppendingFormat:@"%@",URL];
 	[[NetworkSession sharedSessionManager] POST:URL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -252,6 +256,9 @@ static NetworkManager *_singleInstance;
 	BOOL needsConnection = ((flags & kSCNetworkFlagsConnectionRequired) != 0);
 	return (isReachable && !needsConnection) ? YES : NO;
 }
++ (void)hudHidden {
+    [MMBProgress hudHidden];
+}
 
 
 
@@ -262,7 +269,7 @@ static NetworkManager *_singleInstance;
     NSDictionary *parameter= [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"mid",
                               @"2",@"sessionId",nil];
     //调用接口
-    [NetworkManager requestThreadSessionPOSTURl:Register withParameters:parameter Target:self select:@selector(registerAccount:) failure:nil];
+    [NetworkManager requestThreadSessionPOSTURl:Register withParameters:parameter hudShow:YES Target:self select:@selector(registerAccount:) failure:nil];
 }
 // 注册返回数据
 -(void)registerAccount:(id)object{

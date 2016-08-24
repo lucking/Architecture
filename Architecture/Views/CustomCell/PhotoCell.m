@@ -19,8 +19,8 @@
 		myHeight= 60.f;
 //		NSSLog(@"myWidth = %f", myWidth);
 //		NSSLog(@"myHeight= %f", myHeight);
-
-		[self addSubview:self.label];
+        
+        [self addSubview:self.label];
 
 	}
 	return self;
@@ -35,14 +35,10 @@
 	_photoModel = photoModel;
 
 	self.label.text = _photoModel.name;
-
 //	self.label.text = @"高清照相机";
-
 }
 
-/**
- *
- */
+//
 - (UILabel *)label {
 	if (_label==nil) {
 		_label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, myWidth-40, myHeight-20)];
@@ -51,7 +47,5 @@
 	}
 	return _label;
 }
-
-
 
 @end

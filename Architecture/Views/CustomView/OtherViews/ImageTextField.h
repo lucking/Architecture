@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^ImageTextFieldBlock) (NSString *pswString);
+
+
 
 //============================="  代理协议  "==============================
 @class ImageTextField;
@@ -22,30 +23,24 @@ typedef void (^ImageTextFieldBlock) (NSString *pswString);
 //=============================================================================
 
 
+// block
+typedef void (^ImageTextFieldBlock) (NSString *pswString, UIButton *Btn, ImageTextField *imgTextField);
+
+
 @interface ImageTextField : UIView
 {
 	CGFloat myWidth;
 	CGFloat myHeight;
 }
-/*
- * 左图片
- */
+// 左图片
 @property(nonatomic,strong)UIImageView* leftImgView;
-/*
- * 输入框
- */
+// 输入框
 @property(nonatomic,strong)UITextField* mainText;
-/*
- * 右图按钮
- */
+// 右图按钮
 @property(nonatomic,readwrite)UIButton* rightBtn;
-/*
- * 头部的线
- */
+// 头部的线
 @property(nonatomic,strong)UIView* topLine;
-/*
- * 右线
- */
+// 右线
 @property(nonatomic,strong)UIView* rightLine;
 
 /**
@@ -55,7 +50,6 @@ typedef void (^ImageTextFieldBlock) (NSString *pswString);
 
 
 @property (nonatomic,weak) id<ImageTextFieldDelegate> delegate;
-
 
 - (void)reloadUIwithDic:(NSDictionary *)parameter withType:(NSString *)type;
 

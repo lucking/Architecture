@@ -112,6 +112,4 @@
 	return _line;
 }
 
-
-
 @end

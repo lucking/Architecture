@@ -79,7 +79,7 @@
     __weak typeof(self) weakSelf = self;
     NSDictionary *params = @{@"phoneNum":_phoneNum
                              };
-    [NetworkManager requestGetURl:SmsCode withParameters:params success:^(id data) {
+    [NetworkManager requestGetURl:SmsCode withParameters:params hudShow:YES success:^(id data) {
         NSSLog(@"-----> 获取验证码_data = %@",data);
         if ([Common isNotEmpty:data]) {
             NSDictionary* dicdata = (NSDictionary *)data;

@@ -76,6 +76,7 @@
     [returnBtn addTarget:self action:@selector(UpInsidedemo) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *BarBtn= [[UIBarButtonItem alloc]initWithCustomView:returnBtn];
     self.navigationItem.leftBarButtonItem= BarBtn;
+    
 }
 #pragma mark 自定义返回按钮：白色箭头
 -(void)returnViewWhite

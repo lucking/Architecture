@@ -7,7 +7,6 @@
 //
 
 #import "ImageTextField.h"
-//#import "BaseHeader.h"
 
 //#define myWidth		self.frame.size.width
 //#define myHeight	self.frame.size.height
@@ -103,10 +102,18 @@
 	
 }
 
+- (void)ImageTextFieldBtnClick:(UIButton *)Btn{
+    
+//    self.rightBtnBlock(@"按钮点击了",Btn, self);
+    
+    
+    if ([self.delegate respondsToSelector:@selector(imageTextField:BtnClick:)]) {
+        [self.delegate imageTextField:self BtnClick:Btn];
+        NSSLog(@"代理_按钮点击了");
+    }
+}
 
-/**
- *  左图
- */
+//左图
 - (UIImageView *)leftImgView
 {
 	if (_leftImgView==nil) {
@@ -117,9 +124,7 @@
 	}
 	return _leftImgView;
 }
-/**
- *	右图按钮
- */
+//右图按钮
 - (UIButton *)rightBtn
 {
 	if (_rightBtn==nil) {
@@ -129,21 +134,10 @@
 	}
 	return _rightBtn;
 }
-- (void)ImageTextFieldBtnClick:(UIButton *)Btn{
-
-//	self.rightBtnBlock(@"按钮点击了");
-	if ([self.delegate respondsToSelector:@selector(imageTextField:BtnClick:)]) {
-		[self.delegate imageTextField:self BtnClick:Btn];
-		NSSLog(@"代理_按钮点击了");
-	}
-}
-/**
- *  输入框
- */
+//输入框
 - (UITextField *)mainText
 {
 	if (_mainText==nil) {
-
 		float textWidth = myWidth-ImgvWidth-BtnWidth-20;
 		_mainText = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_leftImgView.frame)+5, 0, textWidth, myHeight)];
 		// [_mainText becomeFirstResponder]; //页面出现时：就显示keyboard
@@ -152,9 +146,7 @@
 	}
 	return _mainText;
 }
-/**
- *  竖线
- */
+//竖线
 - (UIView *)rightLine
 {
 	if (_rightLine==nil) {
@@ -165,8 +157,4 @@
 	return _rightLine;
 }
 
-
 @end
-
-
-

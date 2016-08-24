@@ -28,10 +28,10 @@ PPropertyObject(PageBean, pageBean);
 //PPropertyMutArray(pageArray);
 
 #pragma mark -首页产品
-+ (void)getFinance:(NSDictionary *)params success:(void (^)(id data,NSMutableArray* mutArray))successHandle failure:(void (^)(NSError *error))failureHandle;
++ (void)getFinance:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data,NSMutableArray* mutArray))successHandle failure:(void (^)(NSError *error))failureHandle;
 
 #pragma mark -首页产品：返回数组
-+ (void)getFinanceParams:(NSDictionary *)params success:(void (^)(NSMutableArray* Arr11, NSMutableArray* Arr22, NSMutableArray* Arr33))successHandle failure:(void (^)(NSError *error))failureHandle;
++ (void)getFinanceParams:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(NSMutableArray* Arr11, NSMutableArray* Arr22, NSMutableArray* Arr33))successHandle failure:(void (^)(NSError *error))failureHandle;
 
 @end
 

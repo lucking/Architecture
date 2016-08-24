@@ -25,9 +25,8 @@
 
 		myWidth	= self.frame.size.width;
 		myHeight= self.frame.size.height;
-
-		ImgvWidth = 20;	//的宽
-		ImgvHeight=	myHeight;	//的高
+		ImgvWidth = 20;
+		ImgvHeight=	myHeight;
 
 		self.mainText.backgroundColor = Clear_COLOR;
 		self.rightImgView.backgroundColor = Clear_COLOR;
@@ -38,7 +37,6 @@
 
 		self.mainText.font = FFont(14);
 		self.mainText.textColor = Black_COLOR;
-
 
 		// 监听输入框： 开始编辑时
 		[[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidBeginEditingNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notificate){
@@ -55,7 +53,6 @@
 		}];
 
 	}
-
 	return self;
 }
 - (void)reloadUIwithType:(NSString *)type
@@ -79,14 +76,9 @@
 					_rightImgView.hidden = YES;
 			}
 		}];
-
 	}
-
-
 }
-/**
- *  右图
- */
+//右图
 - (UIImageView *)rightImgView
 {
 	if (_rightImgView==nil) {
@@ -95,9 +87,7 @@
 	}
 	return _rightImgView;
 }
-/**
- *  输入框
- */
+//输入框
 - (UITextField *)mainText
 {
 	if (_mainText==nil) {

@@ -25,21 +25,21 @@ Singleton_Instance_method_Interface(NetworkManager)
 
 #pragma mark -----------------------"  NetworkSession  "---------------------------------
 #pragma mark 网络请求Get方式
-+ (void)requestGetURl:(NSString *)URL withParameters:(NSDictionary *)params success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
++ (void)requestGetURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
 
 #pragma mark 网络请求post方式
-+(void)requestPostURl:(NSString *)URL withParameters:(NSDictionary *)params success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
++(void)requestPostURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
 
 
 
 #pragma mark -----------------------"  线程处理法  "---------------------------------
 #pragma
-+(void)requestThreadSessionPOSTURl:(NSString *)URL withParameters:(NSDictionary *)params Target:(id)_target select:(SEL)selectName failure:(void (^)(NSError * error))failure;
++(void)requestThreadSessionPOSTURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow Target:(id)_target select:(SEL)selectName failure:(void (^)(NSError * error))failure;
 
 
 #pragma mark -----------------------"  文件上传  "---------------------------------
 #pragma
-+ (void)upLoadPOST:(NSDictionary *)params fileData:(NSData *)data fileDic:(NSDictionary *)fileDic withURL:(NSString *)URL success:(void (^)(id data))success failure:(void (^)(NSError * error))failure ;
++ (void)upLoadPOST:(NSDictionary *)params fileData:(NSData *)data fileDic:(NSDictionary *)fileDic withURL:(NSString *)URL hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure ;
 
 
 

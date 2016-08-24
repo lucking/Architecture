@@ -18,6 +18,17 @@
 @implementation TestViewController
 
 
+/**
+ *  系统返回按钮
+ */
+- (BOOL)navigationShouldPopOnBackButton {
+    NSLog(@"---> 系统返回按钮_navigationShouldPopOnBackButton");
+    //使用自己的
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    //禁用系统的
+    return NO;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:YES];
 
@@ -54,6 +65,9 @@
 	NNSLog(@"---> getCurrentVC_Test = %@ \n ",[Common getCurrentVC]);
 
 
+    NSLog(@"---> Btn '' @\"\" Click ");
+    NSLog(@"---> sum = %d ",72 * 1500);
+    
 }
 
 - (void)backItem {

@@ -164,7 +164,7 @@
 	}];
 
 	//发送验证按钮
-	_yzmText.rightBtnBlock = ^(NSString *backStr){
+	_yzmText.rightBtnBlock = ^(NSString *backStr, UIButton *Btn, ImageTextField *imgTextField){
 		
 
 	};
