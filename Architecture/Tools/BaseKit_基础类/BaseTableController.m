@@ -114,21 +114,6 @@
 	self.tabBarController.tabBar.hidden = hidden;
 }
 
-#pragma mark 自定义返回按钮：白色箭头
-- (void)returnViewWhite
-{	//隐藏系统的
-	self.navigationItem.hidesBackButton = YES;
-	//返回按钮
-	UIButton *returnBtn= [[UIButton alloc] initWithFrame:CGRectMake(0,0,15, 20)];
-	[returnBtn setImage:[UIImage imageNamed:@"backarrow26-44"] forState:UIControlStateNormal];
-	[returnBtn addTarget:self action:@selector(UpInsidedemo) forControlEvents:UIControlEventTouchUpInside];
-	UIBarButtonItem *BarBtn= [[UIBarButtonItem alloc]initWithCustomView:returnBtn];
-	self.navigationItem.leftBarButtonItem= BarBtn;
-}
-- (void)UpInsidedemo {
-	[self.navigationController popViewControllerAnimated:YES];
-}
-
 #pragma mark 导航标题 navigationTitle
 - (void)setTitle:(NSString*)title TitleColor:(UIColor*)color
 {

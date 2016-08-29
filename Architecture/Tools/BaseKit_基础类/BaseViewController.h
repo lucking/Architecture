@@ -19,17 +19,16 @@
 
 #pragma mark 导航标题 navigationTitle
 -(void)setTitle:(NSString*)title TitleColor:(UIColor*)color;
-//#pragma mark 自定义返回按钮
-//-(void)returnView;
+
 #pragma mark 自定义返回按钮：黑色箭头
--(void)returnViewBlack;
+-(void)backBtnBlackColor;
+
 #pragma mark 自定义返回按钮：白色箭头
--(void)returnViewWhite;
-
-
+-(void)backBtnWhiteColor;
 
 #pragma mark  设置tabBar的颜色
 - (void)setTabBarColor:(UIColor *)color;
+
 #pragma tabBar的显示或隐藏
 - (void)tabBarHidden:(BOOL)hidden;
 #pragma mark 是否允许左边菜单侧滑

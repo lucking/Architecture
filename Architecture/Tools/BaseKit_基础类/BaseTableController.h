@@ -21,8 +21,7 @@
 
 #pragma mark  tabBar的显示或隐藏
 - (void)tabBarHidden:(BOOL)hidden;
-#pragma mark  自定义返回按钮：白色箭头
-- (void)returnViewWhite;
+
 #pragma mark 导航标题 navigationTitle
 - (void)setTitle:(NSString*)title TitleColor:(UIColor*)color;
 

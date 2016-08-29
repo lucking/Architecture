@@ -20,16 +20,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        //创建返回按钮
-//        self.backBtn= [[UIButton alloc] initWithFrame:CGRectMake(20,5,15, 20)];
-//        [self.backBtn setImage:[UIImage imageNamed:@"backarrow26-44.png"] forState:UIControlStateNormal];
-//        [self.backBtn addTarget:self action:@selector(UpInsidedemo) forControlEvents:UIControlEventTouchUpInside];
-//        [self.navigationController.navigationBar addSubview:self.backBtn];
+        
     }
     return self;
-}
--(void)UpInsidedemo{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 + (void)initialize
@@ -40,7 +33,8 @@
     // 没有效果
     //[[UINavigationBar appearance] setTintColor:NavBg_COLOR];//UIColorWithRGBA(227, 0, 42, 1.0)
     //iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
-   
+    //NSLog(@"---> onBack ");
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,8 +49,7 @@
     //3.自适应
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    
-    //右滑返回的代理
+    //4.右滑返回的代理
     self.interactivePopGestureRecognizer.delegate = self;
 
     
@@ -64,15 +57,12 @@
 //系统方法：右滑返回
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     BOOL isBack = YES; // 默认为支持右滑返回
-    //NSLog(@"---> onBack ");
-    //如果继承 BaseViewController 也支持右滑返回 （//其他根据要求另作处理）
+    //如果继承 BaseViewController 也支持右滑返回 （//其他继承，根据要求另作处理）
     if ([self.topViewController isKindOfClass:[BaseViewController class]]) {
         isBack = YES;
     }
     return isBack;
 }
-
-
 
 
 - (void)testSetUI {
@@ -158,15 +148,20 @@
     /**
      *  修改系统 NavigationItem 的 BarButtonItem 的颜色
      */
-    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:@"通讯录" style:UIBarButtonItemStylePlain target:self action:@selector(contactMenu)];
-    self.navigationItem.rightBarButtonItem = right;
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"通讯录" style:UIBarButtonItemStylePlain target:self action:@selector(contactMenu)];
+    self.navigationItem.rightBarButtonItem = rightButton;
     //方式一
     //self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    
     //方式二
     NSDictionary *titleAttributesDic2 = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [UIColor whiteColor],NSForegroundColorAttributeName,
                                         [UIFont boldSystemFontOfSize:16],NSFontAttributeName, nil];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:titleAttributesDic2 forState:UIControlStateNormal];
+    
+    //方式三
+    rightButton.tintColor=[UIColor colorWithRed:74/255.0 green:74/255.0 blue:74/255.0 alpha:1.0];
+
 
     
     //返回
@@ -177,7 +172,7 @@
     //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(systemItemBtn)];
     //    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
     
-
+    
 
 }
 

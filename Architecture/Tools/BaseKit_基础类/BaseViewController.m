@@ -36,6 +36,7 @@
     //在此写（在viewDidLoad里写），有3级以上vc，vc消失时，delegate为nil，失去右滑返回功能
     //self.navigationController.interactivePopGestureRecognizer.delegate = self;
 
+    
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -47,7 +48,7 @@
     
 }
 - (void)viewDidAppear:(BOOL)animated {
-    //    self.backBtn.hidden = YES;
+    // self.backBtn.hidden = YES;
     
 }
 
@@ -85,35 +86,32 @@
 }
 
 #pragma mark 自定义返回按钮：黑色箭头
--(void)returnViewBlack
+-(void)backBtnBlackColor
 {
     //隐藏系统的
     self.navigationItem.hidesBackButton = YES;
     //自定义：返回按钮
     UIButton *returnBtn= [UIButton buttonWithType:UIButtonTypeCustom];
     returnBtn.frame = CGRectMake(0,0,34, 34);
-    [returnBtn setImage:[UIImage imageNamed:@"back_icon"] forState:UIControlStateNormal];
-    [returnBtn addTarget:self action:@selector(UpInsidedemo) forControlEvents:UIControlEventTouchUpInside];
+    [returnBtn setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [returnBtn addTarget:self action:@selector(backNav) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *BarBtn= [[UIBarButtonItem alloc]initWithCustomView:returnBtn];
     self.navigationItem.leftBarButtonItem= BarBtn;
-    
 }
 #pragma mark 自定义返回按钮：白色箭头
--(void)returnViewWhite
+-(void)backBtnWhiteColor
 {	//隐藏系统的
     self.navigationItem.hidesBackButton = YES;
     //返回按钮
 	UIButton *returnBtn= [[UIButton alloc] initWithFrame:CGRectMake(20,5,15, 20)];
     [returnBtn setImage:[UIImage imageNamed:@"backarrow26-44.png"] forState:UIControlStateNormal];
-    [returnBtn addTarget:self action:@selector(UpInsidedemo) forControlEvents:UIControlEventTouchUpInside];
+    [returnBtn addTarget:self action:@selector(backNav) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationController.navigationBar addSubview:returnBtn];
     
     UIBarButtonItem *BarBtn= [[UIBarButtonItem alloc]initWithCustomView:returnBtn];
     self.navigationItem.leftBarButtonItem= BarBtn;
 }
-
-
--(void)UpInsidedemo{
+-(void)backNav{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -121,7 +119,7 @@
 #pragma mark  设置tabBar的颜色
 - (void)setTabBarColor:(UIColor *)color
 {
-//    [self.navigationController.tabBarController.tabBar setBarTintColor:color];
+    //[self.navigationController.tabBarController.tabBar setBarTintColor:color];
     [self.navigationController.navigationBar setBarTintColor:color];
 }
 #pragma mark tabBar的显示或隐藏
@@ -134,8 +132,8 @@
 #pragma mark 是否允许左边菜单侧滑
 - (void)leftSlideVCsetPanEnabled:(BOOL)enabled{
     
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [appDelegate.LeftSlideVC setPanEnabled:enabled];
+// AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+// [appDelegate.LeftSlideVC setPanEnabled:enabled];
 }
 
 
@@ -174,7 +172,7 @@
 }
 
 
-#pragma mark  清除UITableView底部多余的分割线
+// 清除UITableView底部多余的分割线
 - (void)clearTableViewLine:(UITableView *)tabelView{
     
     UIView *View=[UIView new];
@@ -183,7 +181,7 @@
 	[tabelView setTableFooterView:View];
 
 }
-#pragma mark  添加线
+// 添加线 控制：坐标、颜色、透明度
 -(void)addlineBg:(UIView*)view Rect:(CGRect)rect Color:(UIColor*)color Alpha:(float)alpha
 {
     UIView* line1= [[UIView alloc]initWithFrame:rect];
@@ -192,7 +190,7 @@
     line1.alpha= alpha;
     [view addSubview:line1];
 }
-//添加线
+// 添加线 控制：坐标、透明度
 -(void)addlineBg:(UIView*)view X:(float)xx Y:(float)yy Width:(float)width Height:(float)height Alpha:(float)alpha
 {
 	UIView *line1= [[UIView alloc]init];
@@ -203,7 +201,7 @@
 }
 
 
-#pragma mark 添加单击手势：控制键盘
+// 添加单击手势：控制键盘
 - (void)addTapGesture
 {
 	UITapGestureRecognizer * gesture =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureClick)];
@@ -215,7 +213,6 @@
 {
 	[self.view endEditing:YES];
 }
-
 
 
 // 添加按钮：UIButton
@@ -244,6 +241,4 @@
 }
 
 @end
-
-
 

@@ -23,8 +23,8 @@
 @implementation LoginViewController
 
 - (void)viewDidAppear:(BOOL)animated{
-	[self tabBarHidden:YES];//隐藏tabBar
-	[self returnViewWhite]; //返回
+	[self tabBarHidden:YES]; //隐藏tabBar
+	[self backBtnWhiteColor];//返回
 	//标题
 	[self setTitle:@"用户登录" TitleColor:[UIColor whiteColor]];
 	self.navigationController.navigationBar.hidden = NO;
@@ -60,7 +60,6 @@
 		_phoneText.mainText.text =[_phoneText.mainText.text stringByReplacingOccurrencesOfString:str withString:@"****"];
 		NSSLog(@"--->str= %@",_phoneText.mainText.text);
 	}
-
     
 	_pwdText = [[ImageTextField alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(_phoneText.frame)+10, SSWIDTH-40, 35)];
 	_pwdText.leftImgView.image = [UIImage imageNamed:@"mail_icon"];
@@ -72,8 +71,7 @@
 	[self.view addSubview:_pwdText];
 
 
-
-	nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 	nextBtn.frame= CGRectMake(20, CGRectGetMaxY(_pwdText.frame)+20, SSWIDTH-40, 35);
 	nextBtn.backgroundColor= GrayColor_Login;
 	[nextBtn setTitle:@"登录" forState:UIControlStateNormal];
@@ -85,7 +83,7 @@
 	[self.view addSubview:nextBtn];
 
 
-	[[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notificate){
+    [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notificate){
 
 		if ([notificate.object isEqual:_phoneText.mainText] || [notificate.object isEqual:_pwdText.mainText]){
 			if (_phoneText.mainText.text.length > 11) {
@@ -94,22 +92,17 @@
 			if (_pwdText.mainText.text.length > 6) {
 				_pwdText.mainText.text = [_pwdText.mainText.text substringToIndex:6];
 			}
-
 			if (_phoneText.mainText.text.length == 11) {
 
 				if (_pwdText.mainText.text.length == 6) {
 					nextBtn.backgroundColor= NavBg_COLOR;
 					
 				}else nextBtn.backgroundColor= GrayColor_Login;
-
 			}else	nextBtn.backgroundColor= GrayColor_Login;
-
 		}
 	}];
-
 	//注册按钮
 	_phoneText.rightBtnBlock = ^(NSString *backStr, UIButton *Btn, ImageTextField *imgTextField){
-
 
 	};
 	//忘记密码按钮
@@ -123,13 +116,5 @@
 
 	
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 @end

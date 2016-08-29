@@ -18,8 +18,6 @@
 @end
 
 @implementation TestViewController
-
-
 /**
  *  系统返回按钮
  */
@@ -37,37 +35,10 @@
 //    [self backBtnWhiteHidden:NO];
 	//显示navBar
 	//self.navigationController.navigationBar.hidden = NO;
-    
-    
-//    UIBarButtonItem * rightButton = [[UIBarButtonItem alloc]
-//                                     initWithTitle:@"回到首页"
-//                                     style:UIBarButtonItemStyleBordered
-//                                     target:self
-//                                     action:@selector(UpInsidedemo)];
-//    
-//    rightButton.image=[UIImage imageNamed:@"backarrow26-44.png"];
-//    //rightButton.tintColor=[UIColor colorWithRed:74/255.0 green:74/255.0 blue:74/255.0 alpha:1.0];
-//    self.navigationItem.leftBarButtonItem = rightButton;
-
-    
-//    UIButton *returnBtn= [[UIButton alloc] initWithFrame:CGRectMake(20,5,15, 20)];
-//    [returnBtn setImage:[UIImage imageNamed:@"backarrow26-44.png"] forState:UIControlStateNormal];
-//    [returnBtn addTarget:self action:@selector(UpInsidedemo) forControlEvents:UIControlEventTouchUpInside];
-//    [self.navigationController.navigationBar addSubview:returnBtn];
-//    
-//    UIBarButtonItem *BarBtn= [[UIBarButtonItem alloc] initWithCustomView:returnBtn];
-//    self.navigationItem.leftBarButtonItem= BarBtn;
 
     
 
 }
-
-
--(void)UpInsidedemo{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,11 +48,8 @@
     //标题
     [self setTitle:@"TestVC" TitleColor:[UIColor whiteColor]];
     //返回
-    [self returnViewWhite];
+    [self backBtnWhiteColor];
 
-    
-    
-    
     
     titleArrayAA = @[@"TestAAVC",@"TestBBVC"];
     float top = 80;
@@ -141,8 +109,6 @@
     //
     //    NSLog(@"---> Btn '' @\"\" Click ");
     //    NSLog(@"---> sum = %d ",72 * 1500);
-
-    
     
     
     // 测试

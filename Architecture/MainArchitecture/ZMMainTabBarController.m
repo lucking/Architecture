@@ -32,15 +32,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.view.backgroundColor = [UIColor cyanColor];
+    // self.view.backgroundColor = [UIColor cyanColor];
 	// self.hidesBottomBarWhenPushed = YES;
 	// self.tabBar.hidden = YES;
+    
     // 装载子视图控制器
     [self loadViewControllers];
   
     // 自定义tabBar视图
     [self customTabBarView];
-
 
 	// 接受通知：返回首页
 	GetNotificatSelector(ChangSelIndex:, @"BackToFirst",@"0");

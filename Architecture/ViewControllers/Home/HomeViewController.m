@@ -21,19 +21,13 @@
 #define MAIN_BASE_GRAY_COLOR    [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0]
 #define contentFontName  @"FZLanTingHei-L-GBK"
 
-#import "CallBottomView.h"
-#import "YuEView.h"
 
-
-@interface HomeViewController ()<CallBottomViewDelegate>
+@interface HomeViewController ()
 {
 	NSTimer* timer;
     Ivar aa;
 
 }
-@property (nonatomic, weak) CallBottomView *callBottomView;
-@property (nonatomic, weak) YuEView *yuEView;
-
 @end
 
 @implementation HomeViewController
@@ -45,11 +39,7 @@
 //	[self.navigationController setNavigationBarHidden:YES animated:TRUE];
 //	[self.navigationController setToolbarHidden:YES animated:TRUE];
 	//显示tabBar
-//	[self tabBarHidden:NO];
-//    [self backBtnWhiteHidden:YES];
-    
-//    self.backBtn.hidden = YES;
-    
+	[self tabBarHidden:NO];
 
 
 }
@@ -65,35 +55,9 @@
     
 //    // 添加联系人: 加号+
 //    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
-//    
-//    
-//    
-//    [self tabBarHidden:YES];
-//    // 底部打电话
-//    CallBottomView *callBottomView = [[CallBottomView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-//    callBottomView.delegate = self;
-//    [self.view addSubview:callBottomView];
-//    self.callBottomView = callBottomView;
-//    // 余额
-//    YuEView *yuEView = [[YuEView alloc] initWithFrame:CGRectMake(0, 70, SSWIDTH, 200)];
-//    [self.view addSubview:yuEView];
-//    self.yuEView = yuEView;
-//    [ self.yuEView.chongzhiBtn addTarget:self action:@selector(chongzhiBtnClick) forControlEvents:UIControlEventTouchUpInside];
-
     
 }
-- (void)chongzhiBtnClick {
-    NSLog(@"---> chongzhiBtnClick ");
 
-}
-- (void)callBottomView:(CallBottomView *)callBottomView BtnClick:(UIButton *)Btn
-{
-    NSLog(@"---> callBtnClick_Btn.tag = %ld",(long)Btn.tag);
-    if (Btn.tag==111) {
-        [self tabBarHidden:NO];
-    }
-
-}
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 //    显示
@@ -114,7 +78,6 @@
 
 - (void)autoSize {
     
-    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 70, GetHeight(150), 100)];
     label.backgroundColor = [UIColor yellowColor];
     label.font = [UIFont systemFontOfSize:15];
@@ -125,17 +88,14 @@
     
 //    UIWindow *window = [UIApplication sharedApplication].keyWindow;
 //    [window addSubview:label];
-
     
 }
 
 - (void)test {
     
     //	[self aaaaa];
-    
     //	[self bbbbb];
     //	[self testZMSpaceLabel];
-    
     
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SSWIDTH, SSHEIGHT)];
     //iOS设置父视图透明度而不影响子视图
@@ -181,7 +141,7 @@
     
 }
 
-#pragma mark 改变label的文本的 两种颜色
+#pragma mark 改变label的文本的 两种以上颜色及字体
 - (void)changeTextColorLab:(UILabel *)myLabel
                stringArray:(NSArray *)strArray
                 colorArray:(NSArray *)colorArray
@@ -211,7 +171,6 @@
     }
     [myLabel setAttributedText:mutAttStr];
 }
-
 
 
 #pragma mark  改变一种文本的颜色

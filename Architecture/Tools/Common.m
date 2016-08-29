@@ -697,6 +697,7 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 	return scale;
 }
 
+
 // 判断是否是模拟器
 + (BOOL)isSimulator {
 	size_t size;
@@ -719,11 +720,5 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 }
 
 
-
-
-
 @end
-
-
-
 

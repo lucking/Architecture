@@ -30,12 +30,15 @@ static NetworkManager *_singleInstance;
 #pragma  网络请求Get方式
 + (void)requestGetURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
 {
-    //[MMBProgress hudShowLoading:@"请稍候..."];
     __weak __typeof(self)weakSelf = self;
 	URL = [API_URL stringByAppendingFormat:@"%@",URL];
-    
+    NSLog(@"--->请求url: %@",URL);
+    NSLog(@"--->请求参数: %@ \n ",params);
 	//判断网络状况（有链接：执行请求；无链接：弹出提示）
 	if ([self isReachableViaWiFi]) {
+        if (hudShow) {
+            [MMBProgress hudShowLoading:@"请稍候..."];
+        }
 
 		[[NetworkSession sharedSessionManager] GET:URL parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
 			//progress
@@ -54,7 +57,6 @@ static NetworkManager *_singleInstance;
 		}];
 
 	}else{
-		[MMBProgress hudHidden];
 		[self showWithoutNetwork];//网络错误提示
 	}
 }
@@ -66,7 +68,9 @@ static NetworkManager *_singleInstance;
 	URL = [API_URL stringByAppendingFormat:@"%@",URL];
 	//判断网络状况（有链接：执行请求；无链接：弹出提示）
 	if ([self isReachableViaWiFi]) {
-
+        if (hudShow) {
+            [MMBProgress hudShowLoading:@"请稍候..."];
+        }
 		[[[NetworkSession sharedSessionManager] POST:URL parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
 
 		} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -78,10 +82,8 @@ static NetworkManager *_singleInstance;
             [weakSelf hudHidden];
 			[self errorDealWithLocalError:error];
 
-        }] resume]; //重新开始;
-
+        }] resume];
 	}else{
-		[MMBProgress hudHidden];
 		[self showWithoutNetwork];
 	}
 }
@@ -92,11 +94,10 @@ static NetworkManager *_singleInstance;
 {
     __weak __typeof(self)weakSelf = self;
 	URL = [API_URL stringByAppendingFormat:@"%@",URL];
-	NSLog(@"--->请求url: %@",URL);
-	NSLog(@"--->请求参数: %@ \n ",params);
-
 	if ([self isReachableViaWiFi]) {
-
+        if (hudShow) {
+            [MMBProgress hudShowLoading:@"请稍候..."];
+        }
 		[[NetworkSession sharedSessionManager] GET:URL parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
 
 		} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -115,8 +116,7 @@ static NetworkManager *_singleInstance;
 			[self errorDealWithLocalError:error];
 		}];
 	}else{
-		[MMBProgress hudHidden];
-		[self showWithoutNetwork]; 
+		[self showWithoutNetwork];
 	}
 }
 
@@ -125,32 +125,45 @@ static NetworkManager *_singleInstance;
  *  文件上传 POST
  */
 + (void)upLoadPOST:(NSDictionary *)params fileData:(NSData *)data fileDic:(NSDictionary *)fileDic withURL:(NSString *)URL hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure {
+    __weak __typeof(self)weakSelf = self;
+    URL = [API_URL stringByAppendingFormat:@"%@",URL];
 
-	URL = [API_URL stringByAppendingFormat:@"%@",URL];
-	[[NetworkSession sharedSessionManager] POST:URL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    if ([self isReachableViaWiFi]) {
+        if (hudShow) {
+            [MMBProgress hudShowLoading:@"请稍候..."];
+        }
+        
+        [[NetworkSession sharedSessionManager] POST:URL parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            [weakSelf hudHidden];
 
-		/*	此方法参数
-		 1. 要上传的[二进制数据]
-		 2. 对应网站上[upload.php中]处理文件的[字段"file"]
-		 3. 要保存在服务器上的[文件名]
-		 4. 上传文件的[mimeType]	这个方法可以上传图片，如果不用上传图片，可以把这句去掉
-		 [formData appendPartWithFileData :imageDataname:@"1"fileName:@"1.png"mimeType:@"image/jpeg"]	*/
-		// 方法一：上传文件
-		[formData appendPartWithFileData:data name:fileDic[@"name"] fileName:fileDic[@"fileName"] mimeType:fileDic[@"mimeType"]];
+            /*	此方法参数
+             1. 要上传的[二进制数据]
+             2. 对应网站上[upload.php中]处理文件的[字段"file"]
+             3. 要保存在服务器上的[文件名]
+             4. 上传文件的[mimeType]	这个方法可以上传图片，如果不用上传图片，可以把这句去掉
+             [formData appendPartWithFileData :imageDataname:@"1"fileName:@"1.png"mimeType:@"image/jpeg"]	*/
+            // 方法一：上传文件
+            [formData appendPartWithFileData:data name:fileDic[@"name"] fileName:fileDic[@"fileName"] mimeType:fileDic[@"mimeType"]];
+            
+            // 方法二：上传文件地址（在本地中存储的文件地址）
+            //NSURL *filePath = [NSURL fileURLWithPath:self.imagepath];
+            //[formData appendPartWithFileURL:filePath name:@"myfile" error:nil];
+            
+        } progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [weakSelf hudHidden];
 
-		// 方法二：上传文件地址（在本地中存储的文件地址）
-		//NSURL *filePath = [NSURL fileURLWithPath:self.imagepath];
-		//[formData appendPartWithFileURL:filePath name:@"myfile" error:nil];
-
-	} progress:^(NSProgress * _Nonnull uploadProgress) {
-
-	} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-		NSLog(@"Success_responseObject: %@", responseObject);
-
-	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-		//处理_请求错误
-		[self errorDealWithLocalError:error];
-	}];
+            NSLog(@"Success_responseObject: %@", responseObject);
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [weakSelf hudHidden];
+            //处理_请求错误
+            [self errorDealWithLocalError:error];
+        }];
+    }else{
+        [self showWithoutNetwork];
+    }
 }
 
 /**
@@ -178,10 +191,8 @@ static NetworkManager *_singleInstance;
  */
 + (NSError *)createLocalError:(id)obj {
 	NSDictionary *userInfo = @{NSLocalizedDescriptionKey:@"withoutNetwork",
-							   NSUnderlyingErrorKey		:@"error"
-							   };
+							   NSUnderlyingErrorKey		:@"error"};
 	NSError *error = [NSError errorWithDomain:@"domain" code:1001 userInfo:userInfo];
-
 	return error;
 }
 
@@ -198,7 +209,7 @@ static NetworkManager *_singleInstance;
 		return YES;
 	}else if (manager.isReachableViaWWAN) { // 3G花钱
 		return YES;
-	}else {									// 其他，下载小图
+	}else {// 其他，下载小图
 		return NO;
 	}
 }
@@ -227,7 +238,6 @@ static NetworkManager *_singleInstance;
 		}
 	}];
 	[manager.reachabilityManager startMonitoring];
-
 	return netState;
 }
 
@@ -247,11 +257,10 @@ static NetworkManager *_singleInstance;
 	CFRelease(defaultRouteReachability);
 
 	if (!didRetrieveFlags)
-		{
+    {
 		printf("Error. Could not recover network reachability flagsn");
 		return NO;
-		}
-
+    }
 	BOOL isReachable = ((flags & kSCNetworkFlagsReachable) != 0);
 	BOOL needsConnection = ((flags & kSCNetworkFlagsConnectionRequired) != 0);
 	return (isReachable && !needsConnection) ? YES : NO;
@@ -266,8 +275,8 @@ static NetworkManager *_singleInstance;
  */
 - (void)howToUse {
     //拼接参数
-    NSDictionary *parameter= [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"mid",
-                              @"2",@"sessionId",nil];
+    NSDictionary *parameter= @{@"1":@"mid",
+                               @"2":@"sessionId"};
     //调用接口
     [NetworkManager requestThreadSessionPOSTURl:Register withParameters:parameter hudShow:YES Target:self select:@selector(registerAccount:) failure:nil];
 }

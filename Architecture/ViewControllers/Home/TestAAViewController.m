@@ -19,7 +19,7 @@
     //标题
     [self setTitle:@"TestAAVC" TitleColor:[UIColor whiteColor]];
     //返回
-    [self returnViewWhite];
+    [self backBtnWhiteColor];
     
     
 }

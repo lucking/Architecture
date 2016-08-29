@@ -38,7 +38,7 @@
 	//隐藏tabBar
 	[self tabBarHidden:YES];
 	//返回
-	[self returnViewWhite];
+	[self backBtnWhiteColor];
 	//标题
 	[self setTitle:@"用户注册" TitleColor:[UIColor whiteColor]];
 	self.navigationController.navigationBar.hidden = NO;

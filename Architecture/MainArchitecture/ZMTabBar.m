@@ -87,7 +87,6 @@
 		// 绑定tag 便于后面使用
 		btn.tag = i;
 	}
-
 }
 #pragma mark - /************************  按钮点下方法  **************************/
 - (void)btnClick:(ZMBarButton *)btn

@@ -11,13 +11,15 @@
 
 @interface MBProgress : Singleton< MBProgressHUDDelegate >
 {
-	MBProgressHUD *_hudView;
+//	MBProgressHUD *_hudView;
 }
+@property (nonatomic, weak) MBProgressHUD *hudView;
 //创建实例
 Singleton_Instance_method_Interface(MBProgress)
 
 // 单例：同上
-//+ (MBProgress *)singleton;
++ (MBProgress *)singletonShare;
+
 
 
 //数据加载项
