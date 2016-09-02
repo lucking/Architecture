@@ -70,6 +70,14 @@ typedef enum{
 + (void)changeTextColorLab:(UILabel *)myLabel textA:(NSString *)textA  colorA:(UIColor *)colorA  textB:(NSString *)textB  color:(UIColor *)colorB;
 //改变文本的 一种颜色、字体大小
 + (void)changeTextColorAndFontLab:(UILabel *)myLabel text:(NSString *)text color:(UIColor *)color font:(float)font;
+
+#pragma mark 改变label的文本的 两种以上颜色及字体
++ (void)changeTextColorLab:(UILabel *)myLabel
+               stringArray:(NSArray *)strArray
+                colorArray:(NSArray *)colorArray
+                 fontArray:(NSArray *)fontArray;
+
+
 //改变label分割开的字符 为一种颜色
 + (void)changeTextColorLab:(UILabel *)myLabel color:(UIColor *)myColor;
 

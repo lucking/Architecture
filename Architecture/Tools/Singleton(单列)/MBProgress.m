@@ -81,38 +81,34 @@ Singleton_Instance_method_Impl(MBProgress)
 // 普通：提示信息
 - (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay
 {
-    [_hudView hide:NO];
     if (!_hudView) {
         UIWindow * window = [[UIApplication sharedApplication] keyWindow];
         MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
         [window addSubview:hud];
         _hudView = hud;
-    }else {
-        _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
-        _hudView.mode           = MBProgressHUDModeCustomView;
-        _hudView.delegate       = self;
-        _hudView.labelText      = message;
-        [_hudView show:YES];
-        [_hudView hide:YES afterDelay:delay];
     }
+    _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
+    _hudView.mode           = MBProgressHUDModeCustomView;
+    _hudView.delegate       = self;
+    _hudView.labelText      = message;
+    [_hudView show:YES];
+    [_hudView hide:YES afterDelay:delay];
 }
 // 普通：菊花旋转
 - (void)hudShowAfterDelay:(NSTimeInterval)delay
 {
-    
-    [_hudView hide:NO];
     if (!_hudView) {
         UIWindow * window = [[UIApplication sharedApplication] keyWindow];
         MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
         [window addSubview:hud];
         _hudView = hud;
-    }else {
-        _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
-        _hudView.mode           = MBProgressHUDModeIndeterminate;
-        _hudView.animationType  = MBProgressHUDAnimationFade;
-        [_hudView show:YES];
-        [_hudView hide:YES afterDelay:delay];
     }
+    _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
+    _hudView.mode           = MBProgressHUDModeIndeterminate;
+    _hudView.animationType  = MBProgressHUDAnimationFade;
+    [_hudView show:YES];
+    [_hudView hide:YES afterDelay:delay];
+
 }
 
 
@@ -126,12 +122,12 @@ Singleton_Instance_method_Impl(MBProgress)
 - (void)hudWasShow{
     sleep(2);
 }
-#pragma mark 重父视图中移除
+// 重父视图中移除
 - (void)hudRemove {
     [_hudView hide:YES afterDelay:0.0f];
     [_hudView removeFromSuperview];
 }
-//移除
+// 移除
 - (void)removeProgressHud
 {
     [_hudView hide:YES afterDelay:0.0f];

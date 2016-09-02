@@ -42,7 +42,6 @@ Singleton_Instance_method_Impl(Notification);
 	}];
 
 
-
 	// 发出通知
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"BackToFirst" object:@"111"];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"BackToSecond" object:@"222"];
@@ -102,6 +101,3 @@ Singleton_Instance_method_Impl(Notification);
 
 
 @end
-
-
-

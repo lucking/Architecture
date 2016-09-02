@@ -53,11 +53,11 @@ static NetworkManager *_singleInstance;
             
 		} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [weakSelf hudHidden];
-			[self errorDealWithLocalError:error];//处理_请求错误
+			[weakSelf errorDealWithLocalError:error];//处理_请求错误
 		}];
 
 	}else{
-		[self showWithoutNetwork];//网络错误提示
+		[weakSelf showWithoutNetwork];//网络错误提示
 	}
 }
 
@@ -80,7 +80,7 @@ static NetworkManager *_singleInstance;
 			}
 		} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [weakSelf hudHidden];
-			[self errorDealWithLocalError:error];
+			[weakSelf errorDealWithLocalError:error];
 
         }] resume];
 	}else{
@@ -113,7 +113,7 @@ static NetworkManager *_singleInstance;
 
 		} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [weakSelf hudHidden];
-			[self errorDealWithLocalError:error];
+			[weakSelf errorDealWithLocalError:error];
 		}];
 	}else{
 		[self showWithoutNetwork];
@@ -159,13 +159,12 @@ static NetworkManager *_singleInstance;
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [weakSelf hudHidden];
             //处理_请求错误
-            [self errorDealWithLocalError:error];
+            [weakSelf errorDealWithLocalError:error];
         }];
     }else{
         [self showWithoutNetwork];
     }
 }
-
 /**
  *  处理_请求错误
  */

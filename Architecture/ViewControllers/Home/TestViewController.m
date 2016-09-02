@@ -8,7 +8,6 @@
 
 #import "TestViewController.h"
 #import "Common.h"
-#import "TestAAViewController.h"
 
 @interface TestViewController ()<UIGestureRecognizerDelegate>
 {
@@ -67,8 +66,8 @@
     [self.view endEditing:YES];
     
     if (Btn.tag==101) {    //
-        TestAAViewController* pushVC= [[TestAAViewController alloc] init];
-        [self.navigationController pushViewController:pushVC animated:YES];
+//        TestAAViewController* pushVC= [[TestAAViewController alloc] init];
+//        [self.navigationController pushViewController:pushVC animated:YES];
     }
     else if (Btn.tag==102){//
         

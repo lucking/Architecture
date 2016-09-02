@@ -12,7 +12,8 @@
 #import "NSString+ZMAdd.h"
 #import "AppDelegate.h"
 #import "TestViewController.h"
-#import "TestAAViewController.h"
+//#import "TestAAViewController.h"
+#import "ZMCache.h"
 
 #define CompanyTopText	@"		上海棠棣信息科技有限公司（股票代码833777，简称“棠棣信息”）是得到了国家信息产业部、上海市各级政府认可的高新技术企业，专业为国际国内各类银行、互联网金融企业等金融机构以及智慧社区、医疗机构等提供行业一流软件产品和系统集成服务。\n		棠棣信息2009年成立，总部位于中国上海“张江高科技园区”，是上海市科技小巨人培育企业、上海市高新技术企业，拥有数十项软件著作权。在北京、福州、广州、合肥等地设有分公司，技术服务站点遍及全国各大城市。\n		棠棣信息的发展始终放眼于全球范围内信息化、智能化发展的前沿进程，紧随全球“工业4.0”的步伐，棠棣信息也投入了大量的研发力量，使产品及服务始终保持行业领先水平。"
 
@@ -56,7 +57,21 @@
 //    // 添加联系人: 加号+
 //    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
     
+    
+    //获取缓存文件大小
+//    [ZMCache myClearCacheAction];
+    
+    [ZMCache getCachefileSizeTarget:self select:@selector(getCachefileSize:)];
+
 }
+-(void)getCachefileSize:(id)object{
+    
+    NSString *fileSize  = (NSString*)object;
+    NSLog(@"---> getCachefileSize = %@",fileSize);
+}
+
+
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
@@ -137,40 +152,10 @@
 
     
     NSArray *colorArray = @[[UIColor greenColor],[UIColor blueColor],Orange_COLOR];
-    [self changeTextColorLab:label stringArray:@[@"Hello",@"Boy",@"money"] colorArray:colorArray fontArray:@[@"18",@"20"]];
+    [Common changeTextColorLab:label stringArray:@[@"Hello",@"Boy",@"money"] colorArray:colorArray fontArray:@[@"18",@"20"]];
     
 }
 
-#pragma mark 改变label的文本的 两种以上颜色及字体
-- (void)changeTextColorLab:(UILabel *)myLabel
-               stringArray:(NSArray *)strArray
-                colorArray:(NSArray *)colorArray
-                 fontArray:(NSArray *)fontArray {
-    
-    NSMutableAttributedString *mutAttStr = [[NSMutableAttributedString alloc] initWithString:myLabel.text];
-
-    NSString* _str = nil;
-    UIFont*  _font = nil;
-    NSRange _range = NSMakeRange(0, 0);
-    
-    for (int i=0; i<strArray.count; i++) {
-        NSLog(@"---> strArray.count = %ld",strArray.count);
-        _str = strArray[i];
-        NSUInteger location = [[mutAttStr string] rangeOfString:_str].location;
-        NSUInteger length   = [[mutAttStr string] rangeOfString:_str].length;
-        _range = NSMakeRange(location, length);
-        // 改变颜色
-        if (colorArray.count >= (i+1)) {
-            [mutAttStr addAttribute:NSForegroundColorAttributeName value:colorArray[i] range:_range];
-        }
-        // 改变字体大小
-        if (fontArray.count >= (i+1)) {
-            _font = [UIFont systemFontOfSize:[fontArray[i] floatValue]];
-            [mutAttStr addAttribute:NSFontAttributeName value:_font range:_range];
-        }
-    }
-    [myLabel setAttributedText:mutAttStr];
-}
 
 
 #pragma mark  改变一种文本的颜色
@@ -281,8 +266,8 @@
         [self.navigationController pushViewController:pushVC animated:YES];
     }
 	else if (Btn.tag==102){//
-        TestAAViewController* pushVC= [[TestAAViewController alloc] init];
-        [self.navigationController pushViewController:pushVC animated:YES];
+//        TestAAViewController* pushVC= [[TestAAViewController alloc] init];
+//        [self.navigationController pushViewController:pushVC animated:YES];
 
 	}
 	else if (Btn.tag==103){//
