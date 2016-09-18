@@ -1,12 +1,12 @@
 //
-//  AES.m
-//  AES加密
+//  ZMAES.m
+//  ZMArchitecture
 //
-//  Created by tangdi on 16/3/3.
+//  Created by ZM on 16/9/18.
 //  Copyright © 2016年 TD. All rights reserved.
 //
 
-#import "AES.h"
+#import "ZMAES.h"
 
 #import "NSData+Base64.h"
 #import "NSString+Base64.h"
@@ -30,43 +30,46 @@
 	AES  256 cbc模式
 	abcd  对应的加密后的值是 XderyAL/TzQCqiBbfZV3rw==
  
-加密算法：
+ 加密算法：
  kCCAlgorithmAES128 (kCCAlgorithmAES也一样）；
  iv： 设置为nil就可以了。因为ECB方式不需要初始化向量。如果不是采用ECB，那么除了密钥之外，加解密放的初始化向量也必须一致。
  */
-@implementation AES
+
+@implementation ZMAES
 
 // 加密
 + (NSString *)encryptAESwithText:(NSString *)sText
 {
-
-	NSData* keyData = [AES_CBC_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
-	NSData* messageData = [sText dataUsingEncoding:NSUTF8StringEncoding];
-
-	id dataKey = [keyData SHA256Hash];
-	NSData *encryptedData = [messageData AES256EncryptedDataUsingKey:dataKey iV:AES_CBC_PASS_IV error:nil];
+    
+    NSData* keyData = [AES_CBC_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* messageData = [sText dataUsingEncoding:NSUTF8StringEncoding];
+    
+    id dataKey = [keyData SHA256Hash];
+    NSData *encryptedData = [messageData AES256EncryptedDataUsingKey:dataKey iV:AES_CBC_PASS_IV error:nil];
     
     //NSSLog(@"encryptedData = %@ \n \n \n ",encryptedData);
-	NSString *base64EncodStr = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
-
-	return base64EncodStr;
+    NSString *base64EncodStr = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
+    
+    return base64EncodStr;
 }
 // 解密
 + (NSString *)decryptAESwithText:(NSString *)sText {
-
-	NSData *encryptedData = [NSData base64DataFromString:sText];
-
-	NSData* keyData = [AES_CBC_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
-	id dataKey = [keyData SHA256Hash];
-	NSData *decryptedData = [encryptedData decryptedAES256DataUsingKey:dataKey iV:AES_CBC_PASS_IV error:nil];
-
-	return [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+    
+    NSData *encryptedData = [NSData base64DataFromString:sText];
+    
+    NSData* keyData = [AES_CBC_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
+    id dataKey = [keyData SHA256Hash];
+    NSData *decryptedData = [encryptedData decryptedAES256DataUsingKey:dataKey iV:AES_CBC_PASS_IV error:nil];
+    
+    return [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
 }
 
 
 
 
-// ============================"  AES加密算法： ECB模式  "==============================
+/**
+ *  AES加密算法： ECB模式
+ */
 //加密
 +(NSString *) encryptUseAESText:(NSString *)myText
 {
@@ -86,6 +89,7 @@
                                           buffer,
                                           1024,
                                           &numBytesEncrypted);
+    
     NSString* plainText = nil;
     if (cryptStatus == kCCSuccess) {
         NSData *dataTemp = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
@@ -125,5 +129,6 @@
     }
     return plainText;
 }
+
 
 @end

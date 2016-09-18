@@ -285,16 +285,15 @@
 		987E9A771D0C4EBF00D44CE9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987E9A761D0C4EBF00D44CE9 /* CoreFoundation.framework */; };
 		987E9A791D0C4ECD00D44CE9 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 987E9A781D0C4ECD00D44CE9 /* libz.1.1.3.tbd */; };
 		988DEBDB1D0D5CAD00424530 /* NSObject+AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 988DEBDA1D0D5CAD00424530 /* NSObject+AlertView.m */; };
-		9899A8821D29F0BC00CF8DCC /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8771D29F0BC00CF8DCC /* AES.m */; };
-		9899A8831D29F0BC00CF8DCC /* DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8791D29F0BC00CF8DCC /* DES.m */; };
 		9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */; };
 		9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */; };
 		9899A8871D29F0BC00CF8DCC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */; };
 		98A7EA021D87F69600DE8776 /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A7EA011D87F69600DE8776 /* TransferViewController.m */; };
 		98E38E6C1D782A9400A3F071 /* ZMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E38E6B1D782A9400A3F071 /* ZMCache.m */; };
 		98EAC1D81D7438420077AD71 /* YSLocalizationString.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EAC1D71D7438420077AD71 /* YSLocalizationString.m */; };
-		98F61FA61D52E8E7007D9034 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F61FA51D52E8E7007D9034 /* call.png */; };
 		98FA87CC1D2CB0C5008F9344 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FA87CA1D2CB0C5008F9344 /* TestViewController.m */; };
+		98FCA9741D8E80BA00EC0C6C /* ZMAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FCA9711D8E80BA00EC0C6C /* ZMAES.m */; };
+		98FCA9751D8E80BA00EC0C6C /* ZMDES.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FCA9731D8E80BA00EC0C6C /* ZMDES.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -857,10 +856,6 @@
 		987E9A781D0C4ECD00D44CE9 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		988DEBD91D0D5CAD00424530 /* NSObject+AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+AlertView.h"; path = "../../../../../../../zm/Desktop/Architecture/Architecture/Tools/Category_类别/NS_Categroy/NSObject+AlertView.h"; sourceTree = "<group>"; };
 		988DEBDA1D0D5CAD00424530 /* NSObject+AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AlertView.m"; path = "../../../../../../../zm/Desktop/Architecture/Architecture/Tools/Category_类别/NS_Categroy/NSObject+AlertView.m"; sourceTree = "<group>"; };
-		9899A8761D29F0BC00CF8DCC /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
-		9899A8771D29F0BC00CF8DCC /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
-		9899A8781D29F0BC00CF8DCC /* DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES.h; sourceTree = "<group>"; };
-		9899A8791D29F0BC00CF8DCC /* DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DES.m; sourceTree = "<group>"; };
 		9899A87B1D29F0BC00CF8DCC /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		9899A87D1D29F0BC00CF8DCC /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
@@ -873,9 +868,12 @@
 		98E38E6B1D782A9400A3F071 /* ZMCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCache.m; sourceTree = "<group>"; };
 		98EAC1D61D7438420077AD71 /* YSLocalizationString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocalizationString.h; sourceTree = "<group>"; };
 		98EAC1D71D7438420077AD71 /* YSLocalizationString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocalizationString.m; sourceTree = "<group>"; };
-		98F61FA51D52E8E7007D9034 /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call.png; sourceTree = "<group>"; };
 		98FA87CA1D2CB0C5008F9344 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		98FA87CB1D2CB0C5008F9344 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		98FCA9701D8E80BA00EC0C6C /* ZMAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAES.h; sourceTree = "<group>"; };
+		98FCA9711D8E80BA00EC0C6C /* ZMAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAES.m; sourceTree = "<group>"; };
+		98FCA9721D8E80BA00EC0C6C /* ZMDES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDES.h; sourceTree = "<group>"; };
+		98FCA9731D8E80BA00EC0C6C /* ZMDES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDES.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1097,7 +1095,6 @@
 				98FA87CA1D2CB0C5008F9344 /* TestViewController.m */,
 				98EAC1D61D7438420077AD71 /* YSLocalizationString.h */,
 				98EAC1D71D7438420077AD71 /* YSLocalizationString.m */,
-				98F61FA51D52E8E7007D9034 /* call.png */,
 				987E96F11D0C3F3300D44CE9 /* Controller */,
 				987E96F71D0C3F3300D44CE9 /* Model */,
 				98FA87C31D2CAA79008F9344 /* RequestManager */,
@@ -2295,16 +2292,16 @@
 		9899A8751D29F0BC00CF8DCC /* AES_DES_Lib */ = {
 			isa = PBXGroup;
 			children = (
-				9899A8761D29F0BC00CF8DCC /* AES.h */,
-				9899A8771D29F0BC00CF8DCC /* AES.m */,
-				9899A8781D29F0BC00CF8DCC /* DES.h */,
-				9899A8791D29F0BC00CF8DCC /* DES.m */,
+				98FCA9701D8E80BA00EC0C6C /* ZMAES.h */,
+				98FCA9711D8E80BA00EC0C6C /* ZMAES.m */,
+				98FCA9721D8E80BA00EC0C6C /* ZMDES.h */,
+				98FCA9731D8E80BA00EC0C6C /* ZMDES.m */,
+				9899A87F1D29F0BC00CF8DCC /* NSString+Base64.h */,
+				9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */,
 				9899A87B1D29F0BC00CF8DCC /* NSData+Base64.h */,
 				9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */,
 				9899A87D1D29F0BC00CF8DCC /* NSData+CommonCrypto.h */,
 				9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */,
-				9899A87F1D29F0BC00CF8DCC /* NSString+Base64.h */,
-				9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */,
 			);
 			path = AES_DES_Lib;
 			sourceTree = "<group>";
@@ -2498,7 +2495,6 @@
 				987E97A21D0C3F3B00D44CE9 /* prompt_off_icon@2x.png in Resources */,
 				987E96C51D0C3DD500D44CE9 /* Default-568h@2x.png in Resources */,
 				987E973A1D0C3F3300D44CE9 /* welcome-1-4-568h.png in Resources */,
-				98F61FA61D52E8E7007D9034 /* call.png in Resources */,
 				987E973D1D0C3F3300D44CE9 /* gray_idnumber.png in Resources */,
 				987E97901D0C3F3B00D44CE9 /* Advertise.jpg in Resources */,
 				987E969B1D0C3B5900D44CE9 /* Assets.xcassets in Resources */,
@@ -2549,7 +2545,6 @@
 				987E9A091D0C3F5B00D44CE9 /* MJRefreshBackNormalFooter.m in Sources */,
 				987E9A111D0C3F5B00D44CE9 /* UIScrollView+MJRefresh.m in Sources */,
 				987E99E21D0C3F5B00D44CE9 /* KeychainData.m in Sources */,
-				9899A8821D29F0BC00CF8DCC /* AES.m in Sources */,
 				987E979B1D0C3F3B00D44CE9 /* ZMReadButton.m in Sources */,
 				987E97C31D0C3F4100D44CE9 /* DALModelStandard.m in Sources */,
 				983B9A9E1D7E6DF700131A82 /* SetTextView.m in Sources */,
@@ -2584,6 +2579,7 @@
 				987E973F1D0C3F3300D44CE9 /* LoginManager.m in Sources */,
 				987E9A2A1D0C3F5B00D44CE9 /* NSArray+YYAdd.m in Sources */,
 				987E99F91D0C3F5B00D44CE9 /* MJPropertyKey.m in Sources */,
+				98FCA9751D8E80BA00EC0C6C /* ZMDES.m in Sources */,
 				987E978F1D0C3F3B00D44CE9 /* TitleView.m in Sources */,
 				987E99D11D0C3F5B00D44CE9 /* AFAutoPurgingImageCache.m in Sources */,
 				987E99F71D0C3F5B00D44CE9 /* MJFoundation.m in Sources */,
@@ -2594,6 +2590,7 @@
 				987E98681D0C3F5000D44CE9 /* UIView+ZMAdd.m in Sources */,
 				987E9A431D0C3F5B00D44CE9 /* UIScreen+YYAdd.m in Sources */,
 				987E9A3B1D0C3F5B00D44CE9 /* UIBarButtonItem+YYAdd.m in Sources */,
+				98FCA9741D8E80BA00EC0C6C /* ZMAES.m in Sources */,
 				987E99EB1D0C3F5B00D44CE9 /* MASConstraint.m in Sources */,
 				987E9A4A1D0C3F5B00D44CE9 /* YYImage.m in Sources */,
 				987E9A1D1D0C3F5B00D44CE9 /* SDWebImagePrefetcher.m in Sources */,
@@ -2642,7 +2639,6 @@
 				987E9A261D0C3F5B00D44CE9 /* YYCache.m in Sources */,
 				987E987C1D0C3F5000D44CE9 /* Singleton.m in Sources */,
 				987E9A311D0C3F5B00D44CE9 /* NSNumber+YYAdd.m in Sources */,
-				9899A8831D29F0BC00CF8DCC /* DES.m in Sources */,
 				987E979C1D0C3F3B00D44CE9 /* ZMReadProtocolView.m in Sources */,
 				98379F351D3F58B800B5701F /* APPInfoManager.m in Sources */,
 				987E99EC1D0C3F5B00D44CE9 /* MASConstraintMaker.m in Sources */,

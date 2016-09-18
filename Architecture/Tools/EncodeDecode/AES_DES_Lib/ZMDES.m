@@ -1,12 +1,13 @@
 //
-//  DES.m
-//  AES加密
+//  ZMDES.m
+//  ZMArchitecture
 //
-//  Created by tangdi on 16/3/3.
+//  Created by ZM on 16/9/18.
 //  Copyright © 2016年 TD. All rights reserved.
 //
 
-#import "DES.h"
+#import "ZMDES.h"
+
 #import "NSData+Base64.h"
 #import "NSString+Base64.h"
 #import "NSData+CommonCrypto.h"
@@ -19,31 +20,32 @@
 #define DES_PASS_KEY	@"des"
 #define DES_PASS_IV		@"12345678"
 
-@implementation DES
+
+@implementation ZMDES
 
 //加密
 + (NSString *)encryptDESwithText:(NSString *)sText
 {
-	NSData* keyData = [DES_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
-	NSData* messageData = [sText dataUsingEncoding:NSUTF8StringEncoding];
-
-	id dataKey = [keyData SHA256Hash];
-	NSData *encryptedData = [messageData DESEncryptedDataUsingKey:dataKey iV:DES_PASS_IV error:nil];
-	NSString *base64EncodStr = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
-
-	return base64EncodStr;
+    NSData* keyData = [DES_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* messageData = [sText dataUsingEncoding:NSUTF8StringEncoding];
+    
+    id dataKey = [keyData SHA256Hash];
+    NSData *encryptedData = [messageData DESEncryptedDataUsingKey:dataKey iV:DES_PASS_IV error:nil];
+    NSString *base64EncodStr = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
+    
+    return base64EncodStr;
 }
 
 //解密
 + (NSString *)decryptDESwithText:(NSString *)sText
 {
-	NSData *encryptedData = [NSData base64DataFromString:sText];
-
-	NSData* keyData = [DES_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
-	id dataKey = [keyData SHA256Hash];
-	NSData *decryptedData = [encryptedData decryptedDESDataUsingKey:dataKey iV:DES_PASS_IV error:nil];
-
-	return [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+    NSData *encryptedData = [NSData base64DataFromString:sText];
+    
+    NSData* keyData = [DES_PASS_KEY dataUsingEncoding:NSUTF8StringEncoding];
+    id dataKey = [keyData SHA256Hash];
+    NSData *decryptedData = [encryptedData decryptedDESDataUsingKey:dataKey iV:DES_PASS_IV error:nil];
+    
+    return [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
 }
 
 
@@ -51,7 +53,7 @@
 
 
 //加密
-+(NSString *)encryptUseDES:(NSString *)clearText key:(NSString *)key
++(NSString *) encryptUseDES:(NSString *)clearText key:(NSString *)key
 {
     NSData *data= [clearText dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     unsigned char buffer[1024];
@@ -75,12 +77,12 @@
         NSData *dataTemp = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
         plainText = [GTMBase64 stringByEncodingData:dataTemp];
     }else{
-        NSLog(@"DES加密失败");
+        NNSLog(@"DES加密失败");
     }
     return plainText;
 }
 //解密
-+(NSString*)decryptUseDES:(NSString*)cipherText key:(NSString*)key
++(NSString*) decryptUseDES:(NSString*)cipherText key:(NSString*)key
 {
     // 利用 GTMBase64 解碼 Base64 字串
     NSData* cipherData = [GTMBase64 decodeString:cipherText];
@@ -109,6 +111,7 @@
     }
     return plainText;
 }
+
 
 
 @end
