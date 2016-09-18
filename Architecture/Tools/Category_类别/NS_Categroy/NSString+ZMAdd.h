@@ -21,16 +21,36 @@
 // 从最后一位开始删除： num 删除的位数
 - (NSString *)deleteCharactersOfString:(NSString *)myString num:(int)num;
 
-// 判断是否全是数字
-- (BOOL)isCharAndNumber:(NSString*)mystring;
+
+// 判断一个字符串里是否包含了另一个字符串: strA是否包含strB
++ (BOOL)stringA:(NSString*)strA isContainStringB:(NSString*)strB;
 
 
-// 判断一个字符串里是否包含了另一个字符串: myString是否包含strA
-+ (BOOL)isContainStringA:(NSString*)strA ofStringB:(NSString*)strB;
+/**
+ *  截取字符串：从检测到的第一个字符开始截取（可能会有多个相同的字符）
+ *
+ *  @param info      目的字符串
+ *  @param startStr  开始字符 (不是字符串)
+ *  @param endStr    结束字符 (不是字符串)
+ *  @param isContain 是否包含：开始、结束字符
+ *
+ *  @return 截取的字符
+ */
++ (NSString *)cutString:(NSString *)info startString:(NSString *)startStrA endString:(NSString *)endStrB isContain:(BOOL)isContain;
+
 
 // 方法三：判断中文
 + (BOOL)isChineseString:(NSString*)mystring;
 
+
+// 判断是否全是数字
+- (BOOL)isAllNumber:(NSString*)mystring;
+
+// 判断是否全是字符
+- (BOOL)isAllChar:(NSString*)mystring;
+
+// 只能由数字和字符混合组成
+- (BOOL)isCharAndNumber:(NSString*)mystring;
 
 
 #pragma mark //==========================="   计算字符串的尺寸  "===========================

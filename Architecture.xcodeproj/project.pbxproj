@@ -15,10 +15,9 @@
 		98379F321D3F573B00B5701F /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 98379F311D3F573B00B5701F /* DeviceInfo.m */; };
 		98379F351D3F58B800B5701F /* APPInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98379F341D3F58B800B5701F /* APPInfoManager.m */; };
 		983897211D40CF2E00553100 /* BaseTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 983897201D40CF2E00553100 /* BaseTextField.m */; };
-		984AFDDA1D0D0448003E03FB /* AFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD01D0D0448003E03FB /* AFDownloadManager.m */; };
-		984AFDDB1D0D0448003E03FB /* ZMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD51D0D0448003E03FB /* ZMDownloadManager.m */; };
-		984AFDDC1D0D0448003E03FB /* ZMSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD71D0D0448003E03FB /* ZMSessionModel.m */; };
-		984AFDDD1D0D0448003E03FB /* ZMSessionTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDD91D0D0448003E03FB /* ZMSessionTask.m */; };
+		983B9A9E1D7E6DF700131A82 /* SetTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B9A9B1D7E6DF700131A82 /* SetTextView.m */; };
+		983B9AD61D7EA09F00131A82 /* TopBottomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B9AD51D7EA09F00131A82 /* TopBottomTextView.m */; };
+		983B9ADF1D7EB61F00131A82 /* LetfRightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B9ADE1D7EB61F00131A82 /* LetfRightTextView.m */; };
 		984AFDF21D0D0B4E003E03FB /* CatchCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */; };
 		987E96901D0C3B5900D44CE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E968F1D0C3B5900D44CE9 /* main.m */; };
 		987E96931D0C3B5900D44CE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96921D0C3B5900D44CE9 /* AppDelegate.m */; };
@@ -54,7 +53,6 @@
 		987E97401D0C3F3300D44CE9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E971D1D0C3F3300D44CE9 /* LoginViewController.m */; };
 		987E97411D0C3F3300D44CE9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E971F1D0C3F3300D44CE9 /* RegisterViewController.m */; };
 		987E97421D0C3F3300D44CE9 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E97221D0C3F3300D44CE9 /* SuccessViewController.m */; };
-		987E97431D0C3F3300D44CE9 /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E972A1D0C3F3300D44CE9 /* TransferViewController.m */; };
 		987E97881D0C3F3B00D44CE9 /* FinanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E97471D0C3F3B00D44CE9 /* FinanceCell.m */; };
 		987E97891D0C3F3B00D44CE9 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E97491D0C3F3B00D44CE9 /* HomeCell.m */; };
 		987E978A1D0C3F3B00D44CE9 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E974B1D0C3F3B00D44CE9 /* PhotoCell.m */; };
@@ -292,6 +290,7 @@
 		9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87C1D29F0BC00CF8DCC /* NSData+Base64.m */; };
 		9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */; };
 		9899A8871D29F0BC00CF8DCC /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */; };
+		98A7EA021D87F69600DE8776 /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A7EA011D87F69600DE8776 /* TransferViewController.m */; };
 		98E38E6C1D782A9400A3F071 /* ZMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E38E6B1D782A9400A3F071 /* ZMCache.m */; };
 		98EAC1D81D7438420077AD71 /* YSLocalizationString.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EAC1D71D7438420077AD71 /* YSLocalizationString.m */; };
 		98F61FA61D52E8E7007D9034 /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F61FA51D52E8E7007D9034 /* call.png */; };
@@ -332,16 +331,12 @@
 		98379F341D3F58B800B5701F /* APPInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APPInfoManager.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/Tools/AppConfig/APPInfoManager.m; sourceTree = "<group>"; };
 		9838971F1D40CF2E00553100 /* BaseTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTextField.h; path = "../../../../../../zm/Desktop/Architecture/Architecture/Tools/BaseKit_基础类/BaseTextField.h"; sourceTree = "<group>"; };
 		983897201D40CF2E00553100 /* BaseTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTextField.m; path = "../../../../../../zm/Desktop/Architecture/Architecture/Tools/BaseKit_基础类/BaseTextField.m"; sourceTree = "<group>"; };
-		984AFDCE1D0D0448003E03FB /* AFDownloadHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadHeader.h; sourceTree = "<group>"; };
-		984AFDCF1D0D0448003E03FB /* AFDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadManager.h; sourceTree = "<group>"; };
-		984AFDD01D0D0448003E03FB /* AFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDownloadManager.m; sourceTree = "<group>"; };
-		984AFDD21D0D0448003E03FB /* UpDownHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpDownHeader.h; sourceTree = "<group>"; };
-		984AFDD41D0D0448003E03FB /* ZMDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDownloadManager.h; sourceTree = "<group>"; };
-		984AFDD51D0D0448003E03FB /* ZMDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDownloadManager.m; sourceTree = "<group>"; };
-		984AFDD61D0D0448003E03FB /* ZMSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSessionModel.h; sourceTree = "<group>"; };
-		984AFDD71D0D0448003E03FB /* ZMSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSessionModel.m; sourceTree = "<group>"; };
-		984AFDD81D0D0448003E03FB /* ZMSessionTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSessionTask.h; sourceTree = "<group>"; };
-		984AFDD91D0D0448003E03FB /* ZMSessionTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSessionTask.m; sourceTree = "<group>"; };
+		983B9A9A1D7E6DF700131A82 /* SetTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetTextView.h; path = ../../../../../../../zm/Desktop/Architecture/Architecture/Views/CustomView/OtherViews/SetTextView.h; sourceTree = "<group>"; };
+		983B9A9B1D7E6DF700131A82 /* SetTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetTextView.m; path = ../../../../../../../zm/Desktop/Architecture/Architecture/Views/CustomView/OtherViews/SetTextView.m; sourceTree = "<group>"; };
+		983B9AD41D7EA09F00131A82 /* TopBottomTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopBottomTextView.h; path = ../../../../../../../zm/Desktop/Architecture/Architecture/Views/CustomView/OtherViews/TopBottomTextView.h; sourceTree = "<group>"; };
+		983B9AD51D7EA09F00131A82 /* TopBottomTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopBottomTextView.m; path = ../../../../../../../zm/Desktop/Architecture/Architecture/Views/CustomView/OtherViews/TopBottomTextView.m; sourceTree = "<group>"; };
+		983B9ADD1D7EB61F00131A82 /* LetfRightTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LetfRightTextView.h; path = ../../../../../../../zm/Desktop/Architecture/Architecture/Views/CustomView/OtherViews/LetfRightTextView.h; sourceTree = "<group>"; };
+		983B9ADE1D7EB61F00131A82 /* LetfRightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LetfRightTextView.m; path = ../../../../../../../zm/Desktop/Architecture/Architecture/Views/CustomView/OtherViews/LetfRightTextView.m; sourceTree = "<group>"; };
 		984AFDEE1D0D0B4E003E03FB /* CatchCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatchCrash.h; sourceTree = "<group>"; };
 		984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchCrash.m; sourceTree = "<group>"; };
 		987E968B1D0C3B5900D44CE9 /* Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,8 +397,6 @@
 		987E971F1D0C3F3300D44CE9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		987E97211D0C3F3300D44CE9 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
 		987E97221D0C3F3300D44CE9 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
-		987E97291D0C3F3300D44CE9 /* TransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferViewController.h; sourceTree = "<group>"; };
-		987E972A1D0C3F3300D44CE9 /* TransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferViewController.m; sourceTree = "<group>"; };
 		987E97461D0C3F3B00D44CE9 /* FinanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceCell.h; sourceTree = "<group>"; };
 		987E97471D0C3F3B00D44CE9 /* FinanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceCell.m; sourceTree = "<group>"; };
 		987E97481D0C3F3B00D44CE9 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
@@ -874,6 +867,8 @@
 		9899A87E1D29F0BC00CF8DCC /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		9899A87F1D29F0BC00CF8DCC /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		9899A8801D29F0BC00CF8DCC /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		98A7EA001D87F69600DE8776 /* TransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferViewController.h; sourceTree = "<group>"; };
+		98A7EA011D87F69600DE8776 /* TransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferViewController.m; sourceTree = "<group>"; };
 		98E38E6A1D782A9400A3F071 /* ZMCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCache.h; sourceTree = "<group>"; };
 		98E38E6B1D782A9400A3F071 /* ZMCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCache.m; sourceTree = "<group>"; };
 		98EAC1D61D7438420077AD71 /* YSLocalizationString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocalizationString.h; sourceTree = "<group>"; };
@@ -932,35 +927,26 @@
 			path = ../../../../zm/Desktop/Architecture/Architecture/RequestManager;
 			sourceTree = "<group>";
 		};
-		984AFDCC1D0D0448003E03FB /* FlieUpDownload_上传下载 */ = {
+		982BF55F1D824C3200D8DFCF /* FlieUpDownload_上传下载 */ = {
 			isa = PBXGroup;
 			children = (
-				984AFDD21D0D0448003E03FB /* UpDownHeader.h */,
-				984AFDCD1D0D0448003E03FB /* AFDownloadHeader */,
-				984AFDD31D0D0448003E03FB /* ZMDownloadManager */,
+				982BF5601D824C3200D8DFCF /* AFDownloadHeader */,
+				982BF5611D824C3200D8DFCF /* ZMDownloadManager */,
 			);
-			path = "FlieUpDownload_上传下载";
+			name = "FlieUpDownload_上传下载";
+			path = "../../../../../zm/Desktop/Architecture/Architecture/Tools/FlieUpDownload_上传下载";
 			sourceTree = "<group>";
 		};
-		984AFDCD1D0D0448003E03FB /* AFDownloadHeader */ = {
+		982BF5601D824C3200D8DFCF /* AFDownloadHeader */ = {
 			isa = PBXGroup;
 			children = (
-				984AFDCE1D0D0448003E03FB /* AFDownloadHeader.h */,
-				984AFDCF1D0D0448003E03FB /* AFDownloadManager.h */,
-				984AFDD01D0D0448003E03FB /* AFDownloadManager.m */,
 			);
 			path = AFDownloadHeader;
 			sourceTree = "<group>";
 		};
-		984AFDD31D0D0448003E03FB /* ZMDownloadManager */ = {
+		982BF5611D824C3200D8DFCF /* ZMDownloadManager */ = {
 			isa = PBXGroup;
 			children = (
-				984AFDD41D0D0448003E03FB /* ZMDownloadManager.h */,
-				984AFDD51D0D0448003E03FB /* ZMDownloadManager.m */,
-				984AFDD61D0D0448003E03FB /* ZMSessionModel.h */,
-				984AFDD71D0D0448003E03FB /* ZMSessionModel.m */,
-				984AFDD81D0D0448003E03FB /* ZMSessionTask.h */,
-				984AFDD91D0D0448003E03FB /* ZMSessionTask.m */,
 			);
 			path = ZMDownloadManager;
 			sourceTree = "<group>";
@@ -1069,7 +1055,7 @@
 			children = (
 				987E96ED1D0C3F3300D44CE9 /* Home */,
 				987E96D91D0C3F3300D44CE9 /* Account */,
-				987E97231D0C3F3300D44CE9 /* Transfer */,
+				98A7E9FC1D87F66700DE8776 /* Transfer */,
 				987E96FF1D0C3F3300D44CE9 /* More */,
 				987E97081D0C3F3300D44CE9 /* OtherVC */,
 			);
@@ -1218,32 +1204,6 @@
 			path = RegieterAndLogin;
 			sourceTree = "<group>";
 		};
-		987E97231D0C3F3300D44CE9 /* Transfer */ = {
-			isa = PBXGroup;
-			children = (
-				98FA87C81D2CAAE1008F9344 /* RequestManager */,
-				987E97251D0C3F3300D44CE9 /* Controller */,
-				987E97261D0C3F3300D44CE9 /* Model */,
-				987E97291D0C3F3300D44CE9 /* TransferViewController.h */,
-				987E972A1D0C3F3300D44CE9 /* TransferViewController.m */,
-			);
-			path = Transfer;
-			sourceTree = "<group>";
-		};
-		987E97251D0C3F3300D44CE9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		987E97261D0C3F3300D44CE9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		987E97441D0C3F3B00D44CE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1300,6 +1260,8 @@
 		987E97511D0C3F3B00D44CE9 /* OtherViews */ = {
 			isa = PBXGroup;
 			children = (
+				983B9A9A1D7E6DF700131A82 /* SetTextView.h */,
+				983B9A9B1D7E6DF700131A82 /* SetTextView.m */,
 				987E97521D0C3F3B00D44CE9 /* ImageTextField.h */,
 				987E97531D0C3F3B00D44CE9 /* ImageTextField.m */,
 				987E97541D0C3F3B00D44CE9 /* InputTextField.h */,
@@ -1308,6 +1270,10 @@
 				987E97571D0C3F3B00D44CE9 /* NoWiFiView.m */,
 				987E97581D0C3F3B00D44CE9 /* TitleView.h */,
 				987E97591D0C3F3B00D44CE9 /* TitleView.m */,
+				983B9AD41D7EA09F00131A82 /* TopBottomTextView.h */,
+				983B9AD51D7EA09F00131A82 /* TopBottomTextView.m */,
+				983B9ADD1D7EB61F00131A82 /* LetfRightTextView.h */,
+				983B9ADE1D7EB61F00131A82 /* LetfRightTextView.m */,
 			);
 			path = OtherViews;
 			sourceTree = "<group>";
@@ -1482,6 +1448,7 @@
 		987E97CC1D0C3F5000D44CE9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				982BF55F1D824C3200D8DFCF /* FlieUpDownload_上传下载 */,
 				98E38E661D782A3200A3F071 /* Function */,
 				987E98371D0C3F5000D44CE9 /* Singleton(单列) */,
 				987E98321D0C3F5000D44CE9 /* Network_网络 */,
@@ -1489,7 +1456,6 @@
 				987E97D31D0C3F5000D44CE9 /* BaseKit_基础类 */,
 				987E97E31D0C3F5000D44CE9 /* Category_类别 */,
 				987E980C1D0C3F5000D44CE9 /* DataManager_数据管理 */,
-				984AFDCC1D0D0448003E03FB /* FlieUpDownload_上传下载 */,
 				987E97DE1D0C3F5000D44CE9 /* BllManager */,
 				987E97E11D0C3F5000D44CE9 /* BlockKit */,
 				987E98141D0C3F5000D44CE9 /* EncodeDecode */,
@@ -2343,6 +2309,40 @@
 			path = AES_DES_Lib;
 			sourceTree = "<group>";
 		};
+		98A7E9FC1D87F66700DE8776 /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				98A7E9FD1D87F66700DE8776 /* Controller */,
+				98A7E9FE1D87F66700DE8776 /* Model */,
+				98A7E9FF1D87F66700DE8776 /* RequestManager */,
+			);
+			name = Transfer;
+			path = ../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Transfer;
+			sourceTree = "<group>";
+		};
+		98A7E9FD1D87F66700DE8776 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98A7EA001D87F69600DE8776 /* TransferViewController.h */,
+				98A7EA011D87F69600DE8776 /* TransferViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		98A7E9FE1D87F66700DE8776 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98A7E9FF1D87F66700DE8776 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
 		98E38E661D782A3200A3F071 /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -2369,14 +2369,6 @@
 			);
 			name = RequestManager;
 			path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Account/RequestManager;
-			sourceTree = "<group>";
-		};
-		98FA87C81D2CAAE1008F9344 /* RequestManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = RequestManager;
-			path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Transfer/RequestManager;
 			sourceTree = "<group>";
 		};
 		98FA87C91D2CAB68008F9344 /* RequestManager */ = {
@@ -2560,6 +2552,7 @@
 				9899A8821D29F0BC00CF8DCC /* AES.m in Sources */,
 				987E979B1D0C3F3B00D44CE9 /* ZMReadButton.m in Sources */,
 				987E97C31D0C3F4100D44CE9 /* DALModelStandard.m in Sources */,
+				983B9A9E1D7E6DF700131A82 /* SetTextView.m in Sources */,
 				987E99F21D0C3F5B00D44CE9 /* View+MASAdditions.m in Sources */,
 				987E99DF1D0C3F5B00D44CE9 /* AliPayItem.m in Sources */,
 				987E9A161D0C3F5B00D44CE9 /* NSData+ImageContentType.m in Sources */,
@@ -2579,7 +2572,6 @@
 				987E97911D0C3F3B00D44CE9 /* ZMCycleScrollView.m in Sources */,
 				987E99CD1D0C3F5B00D44CE9 /* AFURLRequestSerialization.m in Sources */,
 				987E978A1D0C3F3B00D44CE9 /* PhotoCell.m in Sources */,
-				987E97431D0C3F3300D44CE9 /* TransferViewController.m in Sources */,
 				987E99F51D0C3F5B00D44CE9 /* MJDictionaryCache.m in Sources */,
 				987E99D51D0C3F5B00D44CE9 /* UIButton+AFNetworking.m in Sources */,
 				987E96D61D0C3F0300D44CE9 /* ZMNavController.m in Sources */,
@@ -2606,6 +2598,7 @@
 				987E9A4A1D0C3F5B00D44CE9 /* YYImage.m in Sources */,
 				987E9A1D1D0C3F5B00D44CE9 /* SDWebImagePrefetcher.m in Sources */,
 				987E9A101D0C3F5B00D44CE9 /* UIScrollView+MJExtension.m in Sources */,
+				98A7EA021D87F69600DE8776 /* TransferViewController.m in Sources */,
 				987E97891D0C3F3B00D44CE9 /* HomeCell.m in Sources */,
 				987E99DE1D0C3F5B00D44CE9 /* FMResultSet.m in Sources */,
 				987E9A211D0C3F5B00D44CE9 /* UIImage+WebP.m in Sources */,
@@ -2638,7 +2631,6 @@
 				987E9A1B1D0C3F5B00D44CE9 /* SDWebImageDownloaderOperation.m in Sources */,
 				987E985D1D0C3F5000D44CE9 /* NSObject+Log.m in Sources */,
 				987E96D51D0C3F0300D44CE9 /* ZMMainTabBarController.m in Sources */,
-				984AFDDD1D0D0448003E03FB /* ZMSessionTask.m in Sources */,
 				987E98811D0C3F5000D44CE9 /* UserDefaults.m in Sources */,
 				98017E361D2D040A00F33322 /* RequestManager.m in Sources */,
 				987E9A421D0C3F5B00D44CE9 /* UIImage+YYAdd.m in Sources */,
@@ -2685,6 +2677,8 @@
 				987E97C51D0C3F4100D44CE9 /* MJExtensionConfig.m in Sources */,
 				987E98551D0C3F5000D44CE9 /* BaseTableView.m in Sources */,
 				987E99FC1D0C3F5B00D44CE9 /* NSObject+MJCoding.m in Sources */,
+				983B9ADF1D7EB61F00131A82 /* LetfRightTextView.m in Sources */,
+				983B9AD61D7EA09F00131A82 /* TopBottomTextView.m in Sources */,
 				987E97CB1D0C3F4100D44CE9 /* UserModel.m in Sources */,
 				987E986C1D0C3F5000D44CE9 /* DataHandler.m in Sources */,
 				987E985F1D0C3F5000D44CE9 /* NSRunLoop+PerformBlock.m in Sources */,
@@ -2706,12 +2700,10 @@
 				987E9A511D0C3F5B00D44CE9 /* UIImage+YYWebImage.m in Sources */,
 				987E99FF1D0C3F5B00D44CE9 /* NSString+MJExtension.m in Sources */,
 				987E99F11D0C3F5B00D44CE9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				984AFDDB1D0D0448003E03FB /* ZMDownloadManager.m in Sources */,
 				987E987D1D0C3F5000D44CE9 /* SingletonManager.m in Sources */,
 				9899A8851D29F0BC00CF8DCC /* NSData+Base64.m in Sources */,
 				987E9A451D0C3F5B00D44CE9 /* UITableView+YYAdd.m in Sources */,
 				987E98631D0C3F5000D44CE9 /* UIDevice+ZMAdd.m in Sources */,
-				984AFDDA1D0D0448003E03FB /* AFDownloadManager.m in Sources */,
 				987E98651D0C3F5000D44CE9 /* UIImageView+ZMAdd.m in Sources */,
 				987E9A501D0C3F5B00D44CE9 /* UIButton+YYWebImage.m in Sources */,
 				987E9A551D0C3F5B00D44CE9 /* YYWebImageOperation.m in Sources */,
@@ -2729,7 +2721,6 @@
 				987E97C91D0C3F4100D44CE9 /* NewsItem.m in Sources */,
 				9899A8861D29F0BC00CF8DCC /* NSData+CommonCrypto.m in Sources */,
 				987E97A51D0C3F3B00D44CE9 /* ZMTradeInputView.m in Sources */,
-				984AFDDC1D0D0448003E03FB /* ZMSessionModel.m in Sources */,
 				987E986B1D0C3F5000D44CE9 /* Common.m in Sources */,
 				987E9A371D0C3F5B00D44CE9 /* NSTimer+YYAdd.m in Sources */,
 				987E9A0C1D0C3F5B00D44CE9 /* MJRefreshNormalHeader.m in Sources */,

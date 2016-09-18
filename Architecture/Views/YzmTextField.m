@@ -146,17 +146,16 @@
         [self renew];
     }
 }
+//释放恢复
 - (void)renew {
-    NSSLog(@"--->释放前_isValid: %d",[timers isValid]);
     if ([timers isValid]) {
         [timers invalidate];
         timers=nil;
-        NSSLog(@"--->释放后_isValid: %d",[timers isValid]);
     }
-    secondsCountDown = 10;//恢复时间
+    secondsCountDown = 10;
     _rightBtn.backgroundColor = Green_COLOR;
     [_rightBtn setTitle:@"重新发送" forState:UIControlStateNormal];
-    [_rightBtn setUserInteractionEnabled:YES];//允许点击
+    [_rightBtn setUserInteractionEnabled:YES];
 }
 @end
 

@@ -26,7 +26,7 @@
 	// 判断一个字符串里是否包含了另一个字符串: myString是否包含strA
 	NSString* string = @"HomeDirectoryPath holle world girls";
 	NSString* strA = @"girlds";
-	NSLog(@" isContainStringA = %d",[NSString isContainStringA:strA ofStringB:string]);
+	NSLog(@" isContainStringA = %d",[NSString stringA:strA isContainStringB:string]);
 
 
 }
@@ -138,22 +138,22 @@
 
 
 	//
-	NSString *str12= @"This is a operation string!";
-	NSString *subToString = [str12 substringToIndex:6];
-
-	NSString *subFromString = [str12 substringFromIndex:6];
-
-	NSString *rangeString = [str12 substringWithRange:NSMakeRange(6, 3)];
-
-	// NSString *str12A= @"This is a string";
-	// NSString *str12B= @"string";
-
-	// NSRange range123= [str12A rangeOfString:str12B].location;
-	// NSRange range123= [str12A rangeOfString:str12B];
-
-	NSLog(@"--->12: subToString  ：%@ ",subToString);
-	NSLog(@"--->12: subFromString：%@ ",subFromString);
-	NSLog(@"--->12: rangeString  ：%@ ",rangeString);
+    NSString *str12= @"1234567890ABCDEFGHIJKLMN!";
+    NSString *subToString = [str12 substringToIndex:6];     //从首位到第六位，共截取前六位
+    
+    NSString *subFromString = [str12 substringFromIndex:6]; //从第六后面，第七位开始截取，一直截取到最后一位
+    
+    NSString *rangeString = [str12 substringWithRange:NSMakeRange(6, 3)]; //从第六后面，共截取3位
+    
+    // NSString *str12A= @"This is a string";
+    // NSString *str12B= @"string";
+    
+    // NSRange range123= [str12A rangeOfString:str12B].location;
+    // NSRange range123= [str12A rangeOfString:str12B];
+    
+    NSLog(@"--->12: subToString  ：%@ ",subToString);
+    NSLog(@"--->12: subFromString：%@ ",subFromString);
+    NSLog(@"--->12: rangeString  ：%@ ",rangeString);
 	//    NSLog(@"--->12: range123     ：%@ ",range123);
 
 
@@ -161,15 +161,13 @@
 
 
 
-#pragma mark 字符串拼接
-#pragma
+// 字符串拼接
 + (NSString *)getABwithA:(NSString *)A and:(NSString *)B
 {
 	return [A stringByAppendingString:B];
 }
 
-#pragma mark 去掉空格
-#pragma
+// 去掉空格
 + (NSString *)removeStringEmpty:(NSString *)myStr
 {
 	if (myStr!=nil) {
@@ -189,33 +187,61 @@
 }
 
 
-// 判断是否全是数字
-- (BOOL)isCharAndNumber:(NSString*)mystring
-{
-    NSCharacterSet *CharSet1= [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
-    NSRange Range = [mystring rangeOfCharacterFromSet:CharSet1];
-    
-    if (Range.location == NSNotFound) {
-        return YES;
-    }else
-        return NO;
-}
 
-
-
-
-// 判断一个字符串里是否包含了另一个字符串: strB是否包含strA
+// 判断一个字符串里是否包含了另一个字符串: strA是否包含strB
 /**
- *  @param strA     被包含的字符串
- *  @param strB		原字符串
+ *  @param strB 原字符串
+ *  @param strA 被包含的字符串
  */
-+ (BOOL)isContainStringA:(NSString*)strA ofStringB:(NSString*)strB
++ (BOOL)stringA:(NSString*)strA isContainStringB:(NSString*)strB
 {
-	if ([strB rangeOfString:strA].location != NSNotFound) {
-		return YES;
-	}
-	return NO;
+    if ([strA rangeOfString:strB].location != NSNotFound) {
+        return YES;
+    }
+    return NO;
 }
+
+
+/**
+ *  截取字符串：从检测到的第一个字符开始截取（可能会有多个相同的字符）
+ *
+ *  @param info      目的字符串
+ *  @param startStr  开始字符 (不是字符串)
+ *  @param endStr    结束字符 (不是字符串)
+ *  @param isContain 是否包含：开始、结束字符
+ *
+ *  @return 截取的字符
+ */
++ (NSString *)cutString:(NSString *)info startString:(NSString *)startStrA endString:(NSString *)endStrB isContain:(BOOL)isContain {
+    
+    NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc] initWithString:info];
+    NSRange textRang1 = [[noteStr string] rangeOfString:startStrA];
+    NSRange textRang2 = [[noteStr string] rangeOfString:endStrB];
+    
+    NSRange cutRange;
+    if (isContain) {
+        cutRange = NSMakeRange(textRang1.location, textRang2.location -textRang1.location+1);
+    }else{
+        cutRange = NSMakeRange(textRang1.location+1, textRang2.location -textRang1.location-1);
+    }
+    
+    NSString* backString = nil;
+    if ( [info rangeOfString:startStrA].location == NSNotFound ) {
+        backString = @"目的字符串_找不到_开始截取的字符";
+        
+    }else if ([info rangeOfString:endStrB].location == NSNotFound ){
+        backString = @"目的字符串_找不到_结束截取的字符";
+        
+    }else if ( ([info rangeOfString:startStrA].location == NSNotFound) && [info rangeOfString:endStrB].location == NSNotFound) {
+        backString = @"目的字符串_找不到_开始和结束的字符";
+        
+    }else{
+        backString = [info substringWithRange:cutRange];  //(共截取的范围)
+    }
+    return backString;
+}
+
+
 
 
 
@@ -231,6 +257,65 @@
 		return NO;
 	}
 }
+
+
+// 判断是否全是数字
++ (BOOL)isAllNumber:(NSString*)mystring
+{
+    NSCharacterSet *disallowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+    NSRange Range = [mystring rangeOfCharacterFromSet:disallowedCharacters];
+    
+    if (mystring.length>0) {
+        if (Range.location == NSNotFound){
+            return YES;
+            
+        }else return NO;
+    }else return NO;
+}
+
+
+// 判断是否全是字符
+- (BOOL)isAllChar:(NSString*)mystring
+{
+    NSCharacterSet *CharSet1= [[NSCharacterSet characterSetWithCharactersInString:@"QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm"] invertedSet];
+    NSRange Range = [mystring rangeOfCharacterFromSet:CharSet1];
+    
+    if (mystring.length>0) {
+        if (Range.location == NSNotFound) {
+            return YES;
+            
+        }else return NO;
+    }else return NO;
+}
+
+// 只能由数字和字符混合组成
+- (BOOL)isCharAndNumber:(NSString*)mystring
+{
+    //   NSString *mystring = @"Letter123";
+    // 数字和字符混合组成 (不能有特殊符号，不能有空格)
+    NSCharacterSet *disallowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm"] invertedSet];
+    NSRange Range = [mystring rangeOfCharacterFromSet:disallowedCharacters];
+    // 不能全是数字
+    NSCharacterSet *CharSet1= [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+    NSRange Range1= [mystring rangeOfCharacterFromSet:CharSet1];
+    // 不能全是字母
+    NSCharacterSet *CharSet2 = [[NSCharacterSet characterSetWithCharactersInString:@"QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm"] invertedSet];
+    NSRange Range2= [mystring rangeOfCharacterFromSet:CharSet2];
+    
+    NSLog(@"---> mystring.length：%lu",(unsigned long)mystring.length);
+    if (Range.location == NSNotFound){          //只能由数字和字符混合组成
+        if (Range1.location != NSNotFound) {    //不能全是数字
+            if (Range2.location != NSNotFound) {//不能全是字母
+                
+                return YES;
+                
+            }else return NO;
+        }else return NO;
+    }else return NO;
+}
+
+
+
 
 
 

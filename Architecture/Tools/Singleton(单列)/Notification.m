@@ -39,6 +39,25 @@ Singleton_Instance_method_Impl(Notification);
 		if ([notificate.object isEqual:self]){
 
 		}
+        
+//        if ([notificate.object isEqual:_phoneText.mainText] || [notificate.object isEqual:_pwdText.mainText]){
+//            if (_phoneText.mainText.text.length > 11) {
+//                _phoneText.mainText.text = [_phoneText.mainText.text substringToIndex:11];
+//            }
+//            if (_pwdText.mainText.text.length > 6) {
+//                _pwdText.mainText.text = [_pwdText.mainText.text substringToIndex:6];
+//            }
+//            
+//            if (_phoneText.mainText.text.length == 11) {
+//                
+//                if (_pwdText.mainText.text.length == 6) {
+//                    nextBtn.backgroundColor= NavBg_COLOR;
+//                    
+//                }else nextBtn.backgroundColor= GrayColor_Login;
+//                
+//            }else	nextBtn.backgroundColor= GrayColor_Login;
+//            
+//        }
 	}];
 
 

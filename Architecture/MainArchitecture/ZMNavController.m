@@ -8,6 +8,7 @@
 
 #import "ZMNavController.h"
 #import "BaseHeader.h"
+#import "UIImage+ZMAdd.h"
 
 @interface ZMNavController ()<UIGestureRecognizerDelegate>
 
@@ -46,11 +47,13 @@
     //2.导航栏下的起始坐标设置为(0,0)
     // self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    //3.自适应
+    //3.自适应  （ 去掉：UITableView 、UIScrollView 空白间隙问题 ）
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
     
     //4.右滑返回的代理
     self.interactivePopGestureRecognizer.delegate = self;
+    
 
     
 }
@@ -180,6 +183,40 @@
     
     
 }
+
+
+
+#pragma mark 初始化导航栏主题
+- (void)setNavTheme
+{
+    // 1.设置导航栏背景
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBackgroundImage:[UIImage resizeImage:@"NavigationBar_Background.png"] forBarMetrics:UIBarMetricsDefault];
+    // 状态栏
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    // 2.设置导航栏文字属性
+    NSMutableDictionary *barAttrs = [NSMutableDictionary dictionary];
+    [barAttrs setObject:[UIColor darkGrayColor] forKey:NSForegroundColorAttributeName];
+    [barAttrs setObject:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:NSShadowAttributeName];
+    [bar setTitleTextAttributes:barAttrs];
+    
+    // 3.按钮
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    [item setBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Normal.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [item setBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Pressed.png"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    NSMutableDictionary *itemAttrs = [NSMutableDictionary dictionaryWithDictionary:barAttrs];
+    [itemAttrs setObject:[UIFont boldSystemFontOfSize:13] forKey:NSFontAttributeName];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateHighlighted];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateDisabled];
+    
+    // 4.返回按钮
+    [item setBackButtonBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Back_Normal.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [item setBackButtonBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Back_Pressed.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+}
+
 
 
 /**

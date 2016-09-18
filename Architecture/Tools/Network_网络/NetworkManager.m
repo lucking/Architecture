@@ -25,6 +25,54 @@ static NetworkManager *_singleInstance;
 	return _singleInstance;
 }
 
+
+
+
+
+
+
+
+#pragma  网络请求Get方式
++ (void)requestCallGetURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
+{
+    __weak __typeof(self)weakSelf = self;
+//    URL = [API_URL stringByAppendingFormat:@"%@",URL];
+//    NSLog(@"--->请求url: %@",URL);
+//    NSLog(@"--->请求参数: %@ \n ",params);
+    
+    
+    NSString* urlStr = [Common getCallURlStringOfIP:URL sortParams:[Common getCallJsonParameters:params]];
+    NSLog(@"---> 整体的接口_urlStr = %@ \n ",urlStr);
+    
+    
+    //判断网络状况（有链接：执行请求；无链接：弹出提示）
+    if ([self isReachableViaWiFi]) {
+        if (hudShow) {
+            [MMBProgress hudShowLoading:@"请稍候..."];
+        }
+        
+        [[NetworkSession sharedSessionManager] GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            //progress
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            NSLog(@"---> responseObject: %@", responseObject);
+            
+            [weakSelf hudHidden];
+            if (responseObject){
+                success(responseObject);//请求成功返回数据
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            [weakSelf hudHidden];
+            [weakSelf errorDealWithLocalError:error];//处理_请求错误
+        }];
+    }else{
+        [weakSelf showWithoutNetwork];//网络错误提示
+    }
+}
+
+
 #pragma mark =========================="   NetworkSession   "===================================
 
 #pragma  网络请求Get方式
@@ -201,19 +249,51 @@ static NetworkManager *_singleInstance;
 }
 
 // 监听网络状态_AFNetworking
-+ (BOOL)isReachableViaWiFi {
++ (int)isReachableViaWiFi {
 
 	AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
 	if (manager.isReachableViaWiFi) {		// 在使用Wifi, 下载原图
-		return YES;
+		return 2;
 	}else if (manager.isReachableViaWWAN) { // 3G花钱
-		return YES;
+		return 1;
 	}else {// 其他，下载小图
-		return NO;
+		return 0;
 	}
 }
 
-// 监测网络的可链接性
+// 判断网络状态 
++ (BOOL)netWorkReachabilityStatus {
+    
+    __block BOOL netState = NO;
+
+    //创建网络状态监测管理者
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    //监听状态的改变
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+                
+            case  AFNetworkReachabilityStatusUnknown:
+                netState = NO;
+                break;
+            case AFNetworkReachabilityStatusNotReachable: //没有网络
+                netState = NO;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN: //3G|4G
+                netState = YES;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi: //WiFi
+                netState = YES;
+                break;
+            default:
+                break;
+        }
+    }];
+    [manager startMonitoring];//开始监听
+    return netState;
+}
+
+
+// 监测URL网络的可链接性
 + (BOOL)netWorkReachabilityWithURLString:(NSString *) strUrl
 {
 	__block BOOL netState = NO;

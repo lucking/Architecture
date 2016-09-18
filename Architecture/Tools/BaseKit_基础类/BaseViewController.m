@@ -24,14 +24,12 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-	//self.navigationItem.hidesBackButton = YES;
-	
-	//导航栏下的起始坐标设置为(0,0)
-	//   self.edgesForExtendedLayout = UIRectEdgeNone;
-
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+    [self.navigationController.navigationBar setTintColor:[UIColor clearColor]];
+    
+    
 	// 添加单击手势
 	//   [self addTapGesture];
-    
     
     //在此写（在viewDidLoad里写），有3级以上vc，vc消失时，delegate为nil，失去右滑返回功能
     //self.navigationController.interactivePopGestureRecognizer.delegate = self;

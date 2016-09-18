@@ -12,6 +12,7 @@
 {
 
 }
+
 // kCompressionQuality不要调太低，会出现有时显示出黑图的异常情况 一般 0.3～0.7差不多了
 #pragma mark -----------------------"  压缩_本地图片，不及时释放内存  "--------------------------------
 // 图片压缩：PNG
@@ -64,6 +65,14 @@
  *  @param imgName 图片名
  */
 + (instancetype) resizeImage:(NSString *) imgName;
+
+/**
+ *  返回拉伸好的图片
+ */
++ (UIImage *)stretchableImage:(NSString *)imgName;
+
+- (UIImage *)stretchableImage;
+
 
 /**
  *  图形变圆并加上边框

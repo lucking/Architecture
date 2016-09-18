@@ -14,6 +14,7 @@
 #import "TestViewController.h"
 //#import "TestAAViewController.h"
 #import "ZMCache.h"
+#import "NetworkManager.h"
 
 #define CompanyTopText	@"		上海棠棣信息科技有限公司（股票代码833777，简称“棠棣信息”）是得到了国家信息产业部、上海市各级政府认可的高新技术企业，专业为国际国内各类银行、互联网金融企业等金融机构以及智慧社区、医疗机构等提供行业一流软件产品和系统集成服务。\n		棠棣信息2009年成立，总部位于中国上海“张江高科技园区”，是上海市科技小巨人培育企业、上海市高新技术企业，拥有数十项软件著作权。在北京、福州、广州、合肥等地设有分公司，技术服务站点遍及全国各大城市。\n		棠棣信息的发展始终放眼于全球范围内信息化、智能化发展的前沿进程，紧随全球“工业4.0”的步伐，棠棣信息也投入了大量的研发力量，使产品及服务始终保持行业领先水平。"
 
@@ -63,6 +64,9 @@
     
     [ZMCache getCachefileSizeTarget:self select:@selector(getCachefileSize:)];
 
+    
+    
+    
 }
 -(void)getCachefileSize:(id)object{
     
@@ -79,6 +83,69 @@
 //    [self.callBottomView showCallBottomView];
 //    [self tabBarHidden:YES];
 
+    
+    
+    /**
+     *  --> responseObject: {
+     data={
+     orderid=28266561;
+     showno=;
+     };
+     code=1;
+     }
+
+     ---> responseObject: {
+     data={
+     orderid=28270477;
+     showno=;
+     };
+     code=1;
+     }
+
+     */
+    //app_id：3582
+    //app_key: 32815741
+    // 1.回拨呼叫
+    NSString *urlStr = @"http://api.yaloe.com/webapi.php?act=call";
+    
+    //2.呼叫回调方法
+//    NSString *urlStr = @"http://www.callback.com/";
+
+    //6.用户信息查询
+//    NSString *urlStr = @"http://api.yaloe.com/webapi.php?act=getUserInfo";
+
+    
+    //    NSString *urlStr = @"http://admin.yaloe.com/";
+    //    NSString *urlStr = @"http://api.yaloe.com/";
+    
+    NSDictionary *params = @{@"appid":@"3582",
+                             @"mynumber":@"13022155071",
+                             @"callnumber":@"18205152815",
+                             @"fee_type":@"1",
+                             @"return_url":@"http://www.callback.com/",
+                             @"max":@"6000",
+                             @"params":@"customParams",
+                             };
+    
+//    NSDictionary *params = @{@"orderid":@"28270477",
+//                             @"state":@"1",
+//                             @"fee_time":@"22",
+//                             @"hold_time":@"22",
+////                             @"start_time":@"2016175801",
+////                             @"end_time":@"2016175823",
+//                             @"params":@"customParams",
+//                             };
+
+    NSLog(@"---> params = %@",params);
+        
+    
+    [NetworkManager requestCallGetURl:urlStr withParameters:params hudShow:YES success:^(id data) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    
 }
 
 - (void)addItem {
@@ -271,6 +338,8 @@
 
 	}
 	else if (Btn.tag==103){//
+
+        [MMBProgress hudShowMessage:@"帐户已过期，请充值！" afterDelay:3.0f];
 
 	}
 	else if (Btn.tag==104){//

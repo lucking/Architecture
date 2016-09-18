@@ -42,9 +42,77 @@ Singleton_Instance_method_Impl(MBProgress)
     [_hudView hide:YES afterDelay:30.0f];
     
 }
+
+- (void)hudShowLoading:(NSString *)message afterDelay:(NSTimeInterval)delay
+{
+    if (!_hudView) {
+        UIWindow * windows = [[UIApplication sharedApplication] keyWindow];
+        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:windows];
+        hud.delegate       = self;
+        [windows addSubview:hud];
+        _hudView = hud;
+    }
+    _hudView.mode           = MBProgressHUDModeIndeterminate;
+    _hudView.animationType  = MBProgressHUDAnimationFade;
+    _hudView.labelText = message;
+    [_hudView show:YES];
+    [_hudView hide:YES afterDelay:delay];
+    
+}
+
+// 普通：菊花旋转
+- (void)hudShowLoadingAfterDelay:(NSTimeInterval)delay
+{
+    if (!_hudView) {
+        UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
+        [window addSubview:hud];
+        _hudView = hud;
+    }
+    _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
+    _hudView.mode           = MBProgressHUDModeIndeterminate;
+    _hudView.animationType  = MBProgressHUDAnimationFade;
+    [_hudView show:YES];
+    [_hudView hide:YES afterDelay:delay];
+}
+
+
 //- (void)NoResponse {
 //    [[MBProgress singletonShare] hudShowMessage:@"网络无响应" afterDelay:2.0f];
 //}
+
+// 显示信息、图片
+- (void)hudShowMessage:(NSString *)message imageName:(NSString *)imageName afterDelay:(NSTimeInterval)delay
+{
+    if (!_hudView) {
+        UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
+        [window addSubview:hud];
+        _hudView = hud;
+    }
+    _hudView.customView= [[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName]];
+    _hudView.mode           = MBProgressHUDModeCustomView;
+    _hudView.labelText      = message;
+    [_hudView show:YES];
+    [_hudView hide:YES afterDelay:delay];
+}
+
+// 普通：提示信息
+- (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay
+{
+    if (!_hudView) {
+        UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
+        [window addSubview:hud];
+        _hudView = hud;
+    }
+    _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
+    _hudView.mode           = MBProgressHUDModeCustomView;
+    _hudView.delegate       = self;
+    _hudView.labelText      = message;
+    [_hudView show:YES];
+    [_hudView hide:YES afterDelay:delay];
+}
 
 // 成功时：提示信息
 - (void)hudShowSucceed:(NSString *)message
@@ -78,38 +146,6 @@ Singleton_Instance_method_Impl(MBProgress)
     [_hudView hide:YES afterDelay:2.0f];
 }
 
-// 普通：提示信息
-- (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay
-{
-    if (!_hudView) {
-        UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
-        [window addSubview:hud];
-        _hudView = hud;
-    }
-    _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
-    _hudView.mode           = MBProgressHUDModeCustomView;
-    _hudView.delegate       = self;
-    _hudView.labelText      = message;
-    [_hudView show:YES];
-    [_hudView hide:YES afterDelay:delay];
-}
-// 普通：菊花旋转
-- (void)hudShowAfterDelay:(NSTimeInterval)delay
-{
-    if (!_hudView) {
-        UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithWindow:window];
-        [window addSubview:hud];
-        _hudView = hud;
-    }
-    _hudView.customView     = [[UIView alloc] initWithFrame:CGRectZero];
-    _hudView.mode           = MBProgressHUDModeIndeterminate;
-    _hudView.animationType  = MBProgressHUDAnimationFade;
-    [_hudView show:YES];
-    [_hudView hide:YES afterDelay:delay];
-
-}
 
 
 //自定义停止时间

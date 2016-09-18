@@ -23,6 +23,12 @@ Singleton_Instance_method_Interface(NetworkManager)
 +(NetworkManager *)GetInstance;
 
 
+#pragma  网络请求Get方式
++ (void)requestCallGetURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
+
+
+
+
 #pragma mark -----------------------"  NetworkSession  "---------------------------------
 #pragma mark 网络请求Get方式
 + (void)requestGetURl:(NSString *)URL withParameters:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure;
@@ -46,13 +52,16 @@ Singleton_Instance_method_Interface(NetworkManager)
 // 弹出网络错误提示框
 + (void)showWithoutNetwork;
 
-#pragma mark 检测特定网络
 // 看看网络是不是给力
 + (BOOL)isConnectionAvailable;
+
 // 监听网络状态_AFNetworking
-+ (BOOL)isReachableViaWiFi;
-// 监测网络的可链接性
-+ (BOOL)netWorkReachabilityWithURLString:(NSString *) strUrl;
++ (int)isReachableViaWiFi; //处理图片、视频下载使用
+
++ (BOOL)netWorkReachabilityStatus; // app监听使用
+
+// 监测URL网络的可链接性
++ (BOOL)netWorkReachabilityWithURLString:(NSString *)strUrl;
 
 
 /**

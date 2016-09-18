@@ -197,6 +197,20 @@
 
 }
 
+#pragma mark 返回拉伸好的图片
++ (UIImage *)stretchableImage:(NSString *)imgName {
+    return [[UIImage imageNamed:imgName] stretchableImage];
+}
+
+- (UIImage *)stretchableImage
+{
+    CGFloat leftCap = self.size.width * 0.5f;
+    CGFloat topCap = self.size.height * 0.5f;
+    return [self stretchableImageWithLeftCapWidth:leftCap topCapHeight:topCap];
+}
+
+
+
 /**
  */
 + (instancetype) circleImageWithName:(NSString *) name borderWidth:(CGFloat) borderWidth borderColor:(UIColor *) borderColor

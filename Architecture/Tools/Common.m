@@ -10,6 +10,8 @@
 #import "JSONKit.h"
 #import "EncodeDecode.h"
 
+#import "CommonCrypto/CommonDigest.h" // md5加密：使用
+
 // 加密密钥
 #define  Sign_Key  @"192006250b4c09247ec02edce69f6a2d"
 
@@ -33,19 +35,18 @@
     NSRange Range2= [mystring rangeOfCharacterFromSet:CharSet2];
     
     NSLog(@"---> mystring.length：%lu",(unsigned long)mystring.length);
-    if (mystring.length>=6 && mystring.length<=16) {//6～16
+    if (mystring.length>=6 && mystring.length<=16) {//只能为6～16
         
-        if (Range.location == NSNotFound){          //只能由6～16数字和字符混合组成
+        if (Range.location == NSNotFound){          //只能由数字和字符混合组成
             if (Range1.location != NSNotFound) {    //不能全是数字
                 if (Range2.location != NSNotFound) {//不能全是字母
-
+                    
                     return YES;
-
-				}else return NO;
+                    
+                }else return NO;
             }else return NO;
         }else return NO;
     }else return NO;
-    
 }
 
 
@@ -628,6 +629,99 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     
     return JSON_Params;
 }
+
+
+
+
+
+//============================"  网络电话的 "=============================
+
+//字典排序_拼接url
++ (NSString *)getCallURlStringOfIP:(NSString *)url sortParams:(NSDictionary *)params {
+    
+    if (params ==nil) {
+        return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }else {
+        NSArray *keysArray = [params allKeys];
+        NSArray *sortedArray = [keysArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+            return [obj1 compare:obj2 options:NSNumericSearch]; //allKeys排列顺序
+        }];
+        
+        NSMutableString* tempStr= [[NSMutableString alloc] initWithString:@""];
+        for (NSString *key in sortedArray) {
+            NSString *value = [params objectForKey: key];
+            tempStr = [NSMutableString stringWithFormat:@"%@&%@=%@",tempStr,key,value];
+        }
+        [tempStr deleteCharactersInRange:NSMakeRange(0,1)]; //删除字符串：(开始位置，删除个数)
+        
+        NSString *urlStr = (NSString *)[NSMutableString stringWithFormat:@"%@?%@",url,tempStr];
+        //NSLog(@"---> urlStr = %@ \n ",urlStr);
+        
+        return [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+}
+
+
+// 加密密钥
+#define  callSign_Key  @"32815741"
+
+// 验证签名：密钥加密
++ (NSString *)getSignByCall:(NSDictionary *)params {
+    
+    if (params ==nil) {
+        return @"";
+    }else {
+        NSArray *keysArray = [params allKeys];
+        NSArray *sortedArray = [keysArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+            
+            return [obj1 compare:obj2 options:NSNumericSearch]; //allKeys排列顺序
+        }];
+        NSMutableString* tempStr= [[NSMutableString alloc] initWithString:@""];
+        for (NSString *key in sortedArray) {
+            
+            NSString *value = [params objectForKey: key];
+            tempStr = [NSMutableString stringWithFormat:@"%@&%@=%@",tempStr,key,value];
+        }
+        //        [tempStr deleteCharactersInRange:NSMakeRange(0,1)];
+        tempStr = [NSMutableString stringWithFormat:@"%@%@",tempStr,callSign_Key];
+        NSLog(@"---> paramsSign_key: %@ \n ",tempStr);
+        
+        NSString* sign_md5 = [Common md5:tempStr];
+        //NSLog(@"---> sign_md5: %@  \n ",sign_md5);
+        return sign_md5;
+    }
+}
+// 转变为json数据格式：params 传参 @return 请求的json数据格式参数
++ (NSDictionary *)getCallJsonParameters:(NSDictionary *)params {
+    
+    NSMutableDictionary* mutParams = [[NSMutableDictionary alloc] initWithDictionary:params];
+    NSString* mySign = [Common getSignByCall:params];// 验证签名：密钥加密
+    [mutParams setObject:mySign forKey:@"sign"];
+    
+    NSLog(@"---> mutParams: %@ \n ",mutParams);
+    return mutParams;
+}
+
+/**
+ *  字符串md5加密
+ */
++ (NSString *)md5:(NSString *) inPutText
+{
+    const char *cStr = [inPutText UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
+    
+    return [[NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+             result[0], result[1], result[2], result[3],
+             result[4], result[5], result[6], result[7],
+             result[8], result[9], result[10], result[11],
+             result[12], result[13], result[14], result[15]
+             ] lowercaseString];
+}
+//====================================================================
+
+
+
 
 
 

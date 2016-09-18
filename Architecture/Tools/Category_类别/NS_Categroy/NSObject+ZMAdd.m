@@ -43,6 +43,23 @@
 
 }
 #pragma mark //======================="  以下为可使用方法  "=================================
+
+//获取对应类的：属性列表
+- (NSArray *)propertyNameListClass:(id)object {
+    
+    NSMutableArray* propertyNames = [[NSMutableArray alloc] init];
+    unsigned int count;
+    
+    objc_property_t *propertyList = class_copyPropertyList([object class], &count);
+    for (unsigned int i=0; i<count; i++) {
+        const char *propertyName = property_getName(propertyList[i]);
+        
+        NSString* name = [NSString stringWithUTF8String:propertyName];
+        [propertyNames addObject:name];
+    }
+    return propertyNames;
+}
+
 //获取属性列表
 - (NSArray *)propertyNameList {
 

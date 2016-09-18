@@ -88,9 +88,9 @@
         NSLog(@"---> cachPath ＝ %@",cachPath);
         NSLog(@"---> files :%lu",(unsigned long)[files count]);
         
-        for (NSString *p in files) {
-            NSString *path = [cachPath stringByAppendingPathComponent:p];
-            NSLog(@"aFileSize ＝ %f",[ZMCache fileSizeAtPath:path] );
+        for (NSString *pathName in files) {
+            NSString *path = [cachPath stringByAppendingPathComponent:pathName];
+            //NSLog(@"aFileSize ＝ %f",[ZMCache fileSizeAtPath:path] );
             fileSize = fileSize + [ZMCache fileSizeAtPath:path];
         }
 //        NSLog(@"folderSizeAtPath ＝ %f",[ZMCache folderSizeAtPath:cachPath] );
@@ -110,7 +110,6 @@
     NSFileManager* manager = [NSFileManager defaultManager];
     if ([manager fileExistsAtPath:filePath]){
         
-        //NSLog(@"---> Size = %llu", [[manager attributesOfItemAtPath:filePath error:nil] fileSize]);
         return [[manager attributesOfItemAtPath:filePath error:nil] fileSize] / (1024.0 * 1024.0);
     }
     return 0;
@@ -142,9 +141,8 @@
 
 
 /**
- *  方式一
+ *  清理缓存文件
  */
-//清理缓存文件
 //同样也是利用NSFileManager API进行文件操作，SDWebImage框架自己实现了清理缓存操作，我们可以直接调用。
 + (void)clearCache {
     

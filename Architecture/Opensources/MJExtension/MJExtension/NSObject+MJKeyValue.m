@@ -157,8 +157,18 @@ static NSNumberFormatter *numberFormatter_;
                 }
             }
             
-            // 4.赋值
-            [property setValue:value forObject:self];
+//            // 4.赋值
+//            [property setValue:value forObject:self];
+            
+            if ([self isNotEmpty:value]) {
+                // 4.赋值
+                [property setValue:value forObject:self];
+            } else {
+                // 4.赋值
+                [property setValue:@"" forObject:self];
+            }
+            
+            
         } @catch (NSException *exception) {
             MJExtensionBuildError(error, exception.reason);
             NSLog(@"%@", exception);
@@ -171,6 +181,26 @@ static NSNumberFormatter *numberFormatter_;
     }
     return self;
 }
+
+
+// 判断是否为空
+- (BOOL)isNotEmpty:(id)object
+{
+    if (!object) {
+        return NO;
+    }
+    else if (object && [object isEqual:[NSNull null]]){
+        return NO;
+    }
+    else if ([object isKindOfClass:[NSNull class]]){
+        return NO;
+    }
+    else if (object == nil) {
+        return NO;
+    }
+    return YES;
+}
+
 
 + (instancetype)objectWithKeyValues:(id)keyValues
 {

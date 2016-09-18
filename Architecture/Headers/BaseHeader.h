@@ -12,10 +12,6 @@
 //获取当前系统的版本号
 #define FLOATVALUE [[[UIDevice currentDevice] systemVersion] floatValue]
 //------------------"  手机尺寸类型  "---------------
-//isRetina
-//#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
-//iPhone5
-//#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 //Pad
 #define isiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -47,24 +43,12 @@
 
 #define SSVCHeight      (SSHEIGHT-64)
 #define SSPureHeight    (SSHEIGHT-64-49)
-//#define SSExtraHeight (64+49)
-//#define SSPureHeight45 (568-64-49)
 
 /**
  *  配置信息
  */
 //----------------控件比例----------------
-
-#define DesignHeight    1334.0
-#define DesignWidth     750.0
-#define aaaaa           375.0
-//判断是不是4s如果是则高度和5s一样的比例
-
-#define GetSSWidth(width)   (iPhone4_4S || iPhone5_5s ? (width) : (width)/DesignWidth*SSWIDTH )
-#define GetSSHeight(height) (iPhone4_4S || iPhone5_5s ? (height) : ((SSHEIGHT > 568 ? (height)/DesignHeight*SSHEIGHT : (height)/DesignHeight*568)))
-#define GetSSAll(height)((height)/aaaaa*SSWIDTH)
-
-//屏幕自动适配
+//屏幕自动适配 以5为基准， 4／5一样，6及以上除以5的宽高 ( 判断是不是4s如果是则高度和5s一样的比例 )
 #define GetWidth(width)   (iPhone4 || iPhone5 ? (width)  : ((width) *SSWIDTH/320)   )
 #define GetHeight(height) (iPhone4 || iPhone5 ? (height) : ((height)*SSHEIGHT/568)  )
 
@@ -85,17 +69,21 @@
 
 #define FFHelveticaFont(font)		[UIFont fontWithName:@"Helvetica" size:font];
 #define FFHelveticaBoldFont(font)	[UIFont fontWithName:@"Helvetica-Bold" size:font];
-/**
- 方正兰亭黑for ios8，四种字重，字形更饱满，更清晰，完美替换原生华文黑体，
- 方正兰亭刊黑替换：		STHeiti-UltraLight.ttc、
- 方正兰亭黑替换：		STHeiti-Thin.ttc、
- 方正兰亭准黑替换：		STHeiti-Light.ttc、
- 方正兰亭中粗黑替换：	STHeiti-Medium.ttc，
- */
 //======================="  UIColor  "=================================
 
 #define UIColorWithRGB(r,g,b)  [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.0f]
 #define UIColorWithRGBA(r,g,b,a)  [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:(a)]
+
+
+#define ColorHex(hexValue)  [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 \
+                                            green:((float)((hexValue & 0xFF00) >> 8))/255.0 \
+                                            blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0] \
+
+
+//#define ColorHexString(_hexColor_)   [UIColor colorWithHexString:((__bridge NSString *)CFSTR(#_hexColor_))]
+#define ColorHexString(_hexColor_)   [UIColor colorWithHexString:_hexColor_]
+
+
 
 #define     Clear_COLOR         [UIColor clearColor]    // 透明色
 #define     White_COLOR         [UIColor whiteColor]    // 白色
@@ -164,8 +152,14 @@
 #define  Gray_555555        UIColorWithRGB(85,85,85)
 #define  Gray_666666        UIColorWithRGB(102,102,102)
 //内容字
+//#define  Gray_777777        UIColorWithRGB(119,119,119)
 #define  Gray_888888        UIColorWithRGB(136,136,136)
-#define  Gray_999999        UIColorWithRGB(160,160,160)
+#define  Gray_999999        UIColorWithRGB(153,153,153)
+//#define  Gray_AAAAAA        UIColorWithRGB(170,170,170)
+//#define  Gray_BBBBBB        UIColorWithRGB(187,187,187)
+#define  Gray_DDDDDD        UIColorWithRGB(216,216,216)
+#define  Gray_EEEEEE        UIColorWithRGB(233,233,233)
+
 //浅灰色
 #define  Gray_808080        UIColorWithRGB(128,128,128)
 #define  Gray_909090        UIColorWithRGB(144,144,144)
@@ -252,21 +246,5 @@
 //#define NSLog(...) {}
 //#endif
 
-
-
-
-//#define  GetWidth(width)  if (IS_IPHONE45)  {   return (width*(SSWIDTH/320));   }   \
-//                        else if (IS_IPHONE6){   return (width*(SSWIDTH/375));   }   \
-//                        else {                  return (width*(SSWIDTH/414));   }   \
-//
-//
-//
-//#define  GetHeight(height)   if (IS_IPHONE4){   return (height*(SSWIDTH/480));  }   \
-//                        else if (IS_IPHONE5){   return (height*(SSWIDTH/568));  }   \
-//                        else if (IS_IPHONE6){   return (height*(SSWIDTH/667));  }   \
-//                        else {                  return (height*(SSWIDTH/736));  }   \
-
-
 #endif
-
 

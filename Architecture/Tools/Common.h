@@ -32,7 +32,7 @@ typedef enum{
 //======================="  特殊判断  "=================================
 
 #pragma mark 判断登录密码格式
-+ (BOOL)isCharAndNumber:(NSString*)mystring;//只能由8～18数字和字符混合组
++ (BOOL)isCharAndNumber:(NSString*)mystring;//只能由6～16数字和字符混合组
 
 
 #pragma mark //==================="   验证邮箱、手机号、身份证、qq，银行卡、手机号处理   "=======================
@@ -145,6 +145,30 @@ typedef enum{
 + (NSString *)getSign:(NSDictionary *)params;
 // 转变为json数据格式：params 传参
 + (NSDictionary *)JsonParameters:(NSDictionary *)params;
+
+
+
+
+//============================"  网络电话的 "=============================
+
+//字典排序_拼接url
++ (NSString *)getCallURlStringOfIP:(NSString *)url sortParams:(NSDictionary *)params;
+
+// 验证签名：密钥加密
++ (NSString *)getSignByCall:(NSDictionary *)params;
+
+// 转变为json数据格式：params 传参 @return 请求的json数据格式参数
++ (NSDictionary *)getCallJsonParameters:(NSDictionary *)params;
+/**
+ *  字符串md5加密
+ */
++ (NSString *)md5:(NSString *) inPutText;
+//====================================================================
+
+
+
+
+
 
 
 #pragma mark //==========================="   动画   "================================
