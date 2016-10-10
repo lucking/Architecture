@@ -8,7 +8,8 @@
 
 #import "BaseViewController.h"
 #import "RegisterViewController.h"
-//
+#import "ObjectStringController.h"
+
 //#import "ThreadQueueViewController.h"
 //
 //#import "GTMBase64.h"

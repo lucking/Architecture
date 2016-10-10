@@ -44,7 +44,7 @@
 
 
 // 判断是否全是数字
-- (BOOL)isAllNumber:(NSString*)mystring;
++ (BOOL)isAllNumber:(NSString*)mystring;
 
 // 判断是否全是字符
 - (BOOL)isAllChar:(NSString*)mystring;

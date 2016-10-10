@@ -8,6 +8,18 @@
 
 #import "Singleton.h"
 
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+typedef enum DeviceStyle
+{
+    iPhone4_app,
+    iPhone5_app,
+    iPhone6_app,
+    iPhone6p_app,
+    iPad_app
+}DeviceStyle;
+
+
 @interface APPInfoManager : Singleton
 {
     
@@ -68,6 +80,35 @@ Singleton_Instance_method_Interface(APPInfoManager);
 
 // 根据key 获取对应的配置信息
 +(NSObject *)getValueOfInfoDict:(NSString *)key;
+
+
+
+
+
+//============================"    "=============================
+
+//判断手机型号
++ (int)currentDeviceStyle;
+
+//获取当前系统版本号
++ (NSString *)currentSystemVersion;
+
+//获取当前APP版本号
++ (NSString *)currentAPPVersion;
+
+//获取当前系统UUID
++ (NSString *)UUID;
+
+//获取运营商名称
++ (NSString *)cellularProvider;
+
+//获取电池状态和等级  /********************摘录：http://blog.csdn.net/decajes/article/details/41807977
++ (NSString *)getBatteryState;
+
+//获取电量的等级，0.00~1.00
++ (float)getBatteryLevel;
+
+
 
 
 

@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 
-/// 时间格式 yyyy-MM-dd HH:mm:ss
+// 时间格式
 typedef NS_ENUM(NSInteger,DateFormatStatus) {
-	DFstatusMMdd			= 0,	// 月日			MM/dd
-	DFstatusYYYYMMdd		= 1,	// 年月日			yyyy-MM-dd
-	DFstatusHHmmss			= 2,	// 时分秒			HH:mm:ss
-	DFstatusYYYYMMddHHmmss	= 3,	// 年月日时分秒	yyyy-MM-dd HH:mm:ss
+	DFStyleMMdd             = 0,	// 月日			MM/dd
+	DFStyleYYYYMMdd         = 1,	// 年月日			yyyy-MM-dd
+	DFStyleHHmmss			= 2,	// 时分秒			HH:mm:ss
+	DFStyleYYYYMMddHHmmss	= 3,	// 年月日时分秒	yyyy-MM-dd HH:mm:ss
 };
 
 @interface NSDate (Categroy)

@@ -19,6 +19,8 @@
 		983B9AD61D7EA09F00131A82 /* TopBottomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B9AD51D7EA09F00131A82 /* TopBottomTextView.m */; };
 		983B9ADF1D7EB61F00131A82 /* LetfRightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983B9ADE1D7EB61F00131A82 /* LetfRightTextView.m */; };
 		984AFDF21D0D0B4E003E03FB /* CatchCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */; };
+		986BA7AC1D8F81B600826702 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 986BA7AB1D8F81B600826702 /* People.m */; };
+		986BA7B21D8F826100826702 /* ObjectStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986BA7B11D8F826100826702 /* ObjectStringController.m */; };
 		987E96901D0C3B5900D44CE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E968F1D0C3B5900D44CE9 /* main.m */; };
 		987E96931D0C3B5900D44CE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987E96921D0C3B5900D44CE9 /* AppDelegate.m */; };
 		987E969B1D0C3B5900D44CE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987E969A1D0C3B5900D44CE9 /* Assets.xcassets */; };
@@ -338,6 +340,10 @@
 		983B9ADE1D7EB61F00131A82 /* LetfRightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LetfRightTextView.m; path = ../../../../../../../zm/Desktop/Architecture/Architecture/Views/CustomView/OtherViews/LetfRightTextView.m; sourceTree = "<group>"; };
 		984AFDEE1D0D0B4E003E03FB /* CatchCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatchCrash.h; sourceTree = "<group>"; };
 		984AFDEF1D0D0B4E003E03FB /* CatchCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchCrash.m; sourceTree = "<group>"; };
+		986BA7AA1D8F81B600826702 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		986BA7AB1D8F81B600826702 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
+		986BA7B01D8F826100826702 /* ObjectStringController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectStringController.h; path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/ObjectStringController.h; sourceTree = "<group>"; };
+		986BA7B11D8F826100826702 /* ObjectStringController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectStringController.m; path = ../../../../../../zm/Desktop/Architecture/Architecture/ViewControllers/Home/ObjectStringController.m; sourceTree = "<group>"; };
 		987E968B1D0C3B5900D44CE9 /* Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987E968F1D0C3B5900D44CE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		987E96911D0C3B5900D44CE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1093,6 +1099,8 @@
 				987E96F61D0C3F3300D44CE9 /* HomeViewController.m */,
 				98FA87CB1D2CB0C5008F9344 /* TestViewController.h */,
 				98FA87CA1D2CB0C5008F9344 /* TestViewController.m */,
+				986BA7B01D8F826100826702 /* ObjectStringController.h */,
+				986BA7B11D8F826100826702 /* ObjectStringController.m */,
 				98EAC1D61D7438420077AD71 /* YSLocalizationString.h */,
 				98EAC1D71D7438420077AD71 /* YSLocalizationString.m */,
 				987E96F11D0C3F3300D44CE9 /* Controller */,
@@ -1162,9 +1170,9 @@
 		987E97091D0C3F3300D44CE9 /* GuidepageCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				987E970C1D0C3F3300D44CE9 /* guideImage */,
 				987E970A1D0C3F3300D44CE9 /* GuideCollectionCell.h */,
 				987E970B1D0C3F3300D44CE9 /* GuideCollectionCell.m */,
-				987E970C1D0C3F3300D44CE9 /* guideImage */,
 				987E97151D0C3F3300D44CE9 /* GuidepageViewController.h */,
 				987E97161D0C3F3300D44CE9 /* GuidepageViewController.m */,
 			);
@@ -1393,6 +1401,8 @@
 				987E97B31D0C3F4100D44CE9 /* MJExtensionConfig.m */,
 				987E97B41D0C3F4100D44CE9 /* SlimModel.h */,
 				987E97B51D0C3F4100D44CE9 /* SlimModel.m */,
+				986BA7AA1D8F81B600826702 /* People.h */,
+				986BA7AB1D8F81B600826702 /* People.m */,
 				987E97B61D0C3F4100D44CE9 /* TestModel */,
 				987E97BC1D0C3F4100D44CE9 /* User */,
 			);
@@ -2438,7 +2448,7 @@
 		987E96831D0C3B5900D44CE9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ZM;
 				TargetAttributes = {
 					987E968A1D0C3B5900D44CE9 = {
@@ -2630,6 +2640,7 @@
 				987E96D51D0C3F0300D44CE9 /* ZMMainTabBarController.m in Sources */,
 				987E98811D0C3F5000D44CE9 /* UserDefaults.m in Sources */,
 				98017E361D2D040A00F33322 /* RequestManager.m in Sources */,
+				986BA7B21D8F826100826702 /* ObjectStringController.m in Sources */,
 				987E9A421D0C3F5B00D44CE9 /* UIImage+YYAdd.m in Sources */,
 				987E9A3A1D0C3F5B00D44CE9 /* UIApplication+YYAdd.m in Sources */,
 				987E987A1D0C3F5000D44CE9 /* MBProgress.m in Sources */,
@@ -2744,6 +2755,7 @@
 				987E9A461D0C3F5B00D44CE9 /* UITextField+YYAdd.m in Sources */,
 				987E99E01D0C3F5B00D44CE9 /* AlipaySubItem.m in Sources */,
 				987E9A411D0C3F5B00D44CE9 /* UIGestureRecognizer+YYAdd.m in Sources */,
+				986BA7AC1D8F81B600826702 /* People.m in Sources */,
 				987E9A0D1D0C3F5B00D44CE9 /* MJRefreshStateHeader.m in Sources */,
 				987E99E71D0C3F5B00D44CE9 /* UIView+LayoutMethods.m in Sources */,
 				987E9A001D0C3F5B00D44CE9 /* MJRefreshAutoFooter.m in Sources */,
@@ -2824,8 +2836,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2847,7 +2861,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2869,8 +2883,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2886,7 +2902,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2903,10 +2919,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Architecture-Prefix.pch";
 				INFOPLIST_FILE = Architecture/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.td.InvestmentTDZM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a9950575-f072-4c7c-8e28-88eef155ccc4";
 			};
 			name = Debug;
 		};
@@ -2919,10 +2936,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Architecture-Prefix.pch";
 				INFOPLIST_FILE = Architecture/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.td.InvestmentTDZM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a9950575-f072-4c7c-8e28-88eef155ccc4";
 			};
 			name = Release;
 		};

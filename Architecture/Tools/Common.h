@@ -72,7 +72,7 @@ typedef enum{
 + (void)changeTextColorAndFontLab:(UILabel *)myLabel text:(NSString *)text color:(UIColor *)color font:(float)font;
 
 #pragma mark 改变label的文本的 两种以上颜色及字体
-+ (void)changeTextColorLab:(UILabel *)myLabel
++ (void)changeTextLab:(UILabel *)myLabel
                stringArray:(NSArray *)strArray
                 colorArray:(NSArray *)colorArray
                  fontArray:(NSArray *)fontArray;

@@ -10,6 +10,7 @@
 
 #import "SDWebImageManager.h"
 #import "CatchCrash.h"
+#import "APPInfoManager.h"
 
 @interface AppDelegate ()
 
@@ -51,6 +52,7 @@ static AppDelegate *_singleInstance;
         GuidepageViewController *GuideVC= [[GuidepageViewController alloc]init];
         self.window.rootViewController = GuideVC;
     }
+    
     
     return YES;
 }

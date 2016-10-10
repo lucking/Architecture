@@ -230,7 +230,7 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
 
 
 #pragma mark 改变label的文本的 两种以上颜色及字体
-+ (void)changeTextColorLab:(UILabel *)myLabel
++ (void)changeTextLab:(UILabel *)myLabel
                stringArray:(NSArray *)strArray
                 colorArray:(NSArray *)colorArray
                  fontArray:(NSArray *)fontArray {
@@ -242,7 +242,7 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     NSRange _range = NSMakeRange(0, 0);
     
     for (int i=0; i<strArray.count; i++) {
-        NSLog(@"---> strArray.count = %ld",strArray.count);
+        //NSLog(@"---> strArray.count = %ld",strArray.count);
         _str = strArray[i];
         NSUInteger location = [[mutAttStr string] rangeOfString:_str].location;
         NSUInteger length   = [[mutAttStr string] rangeOfString:_str].length;
@@ -629,8 +629,6 @@ static NSString *passwordRegex=@"^[a-zA-Z0-9]{8,17}$";
     
     return JSON_Params;
 }
-
-
 
 
 

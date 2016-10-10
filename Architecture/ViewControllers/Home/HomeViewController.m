@@ -30,6 +30,7 @@
     Ivar aa;
 
 }
+@property (nonatomic, strong) UILabel *label;
 @end
 
 @implementation HomeViewController
@@ -47,13 +48,13 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess) name:@"loginSuccess" object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess) name:@"loginSuccess" object:nil];
         
 	// 初始化UI
-	[self initUI];
+//	[self initUI];
     
 
-//    [self test];
+    [self test];
     
 //    // 添加联系人: 加号+
 //    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
@@ -67,15 +68,78 @@
     
     
     
+//    NSMutableArray *titleArray = [NSMutableArray arrayWithObjects:@"TestVC",@"ObjectStringVC",@"TestBBVC",@"StroeDataVC",@"TestTableVC",@"RegisterVC",@"77",@"88",@"99", nil];
+//    
+//    [titleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        
+//        if (idx==2) {
+//            [titleArray removeObject:obj];
+//        }
+//    }];
+//    NSLog(@"---> titleArray = %@",titleArray);
+//
+//    
+//    // UILabel
+//    _label = [[UILabel alloc] initWithFrame:CGRectMake(50, 70, 250, 100)];
+//    _label.backgroundColor = [UIColor yellowColor];
+//    _label.font = [UIFont systemFontOfSize:15];
+//    _label.text = @"hello,girl";
+//    _label.textColor = [UIColor redColor];
+//    _label.textAlignment = NSTextAlignmentCenter;
+//    [self.view addSubview:_label];
 }
+
+#pragma mark 按钮方法
+-(void)myBtnClick:(UIButton*)Btn{
+    [self.view endEditing:YES];
+    
+    _label.alpha = 0;
+    
+//    if (Btn.tag==101) {    //
+//        TestViewController* pushVC= [[TestViewController alloc] init];
+//        [self.navigationController pushViewController:pushVC animated:YES];
+//    }
+//    else if (Btn.tag==102){//
+//        ObjectStringController* pushVC= [[ObjectStringController alloc] init];
+//        [self.navigationController pushViewController:pushVC animated:YES];
+//        
+//    }
+//    else if (Btn.tag==103){//
+//        
+//        [MMBProgress hudShowMessage:@"帐户已过期，请充值！" afterDelay:3.0f];
+//        
+//    }
+//    else if (Btn.tag==104){//
+//        
+//    }
+//    else if (Btn.tag==105){//
+//        
+//    }
+//    else if (Btn.tag==106){//
+//        RegisterViewController* pushVC= [[RegisterViewController alloc] init];
+//        [self.navigationController pushViewController:pushVC animated:YES];
+//        
+//    }
+//    else if (Btn.tag==107){//
+//        
+//        
+//    }else if (Btn.tag==108){//
+//        
+//        
+//    }else if (Btn.tag==109){//
+//        
+//    }
+    
+}
+
+
+
+
 -(void)getCachefileSize:(id)object{
     
     NSString *fileSize  = (NSString*)object;
     NSLog(@"---> getCachefileSize = %@",fileSize);
 }
-
-
-
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
@@ -106,7 +170,7 @@
     //app_id：3582
     //app_key: 32815741
     // 1.回拨呼叫
-    NSString *urlStr = @"http://api.yaloe.com/webapi.php?act=call";
+//    NSString *urlStr = @"http://api.yaloe.com/webapi.php?act=call";
     
     //2.呼叫回调方法
 //    NSString *urlStr = @"http://www.callback.com/";
@@ -139,23 +203,13 @@
     NSLog(@"---> params = %@",params);
         
     
-    [NetworkManager requestCallGetURl:urlStr withParameters:params hudShow:YES success:^(id data) {
-        
-    } failure:^(NSError *error) {
-        
-    }];
+//    [NetworkManager requestCallGetURl:urlStr withParameters:params hudShow:YES success:^(id data) {
+//        
+//    } failure:^(NSError *error) {
+//        
+//    }];
     
     
-}
-
-- (void)addItem {
-    NSLog(@"---> addItem");
-
-}
-
-- (void)loginSuccess {
-    NSLog(@"---> loginSuccess");
-
 }
 
 - (void)autoSize {
@@ -212,15 +266,23 @@
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
     
-    
-//    [self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]];
-//    [label setAttributedText:[self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]]];
-//    [label setAttributedText:[self setLabelParaStr:@"boy" AllStr:label.text WithColor:[UIColor greenColor]]];
 
-    
     NSArray *colorArray = @[[UIColor greenColor],[UIColor blueColor],Orange_COLOR];
-    [Common changeTextColorLab:label stringArray:@[@"Hello",@"Boy",@"money"] colorArray:colorArray fontArray:@[@"18",@"20"]];
     
+    [Common changeTextLab:label
+                   stringArray:@[@"Hello",@"Boy",@"money"]
+                    colorArray:colorArray
+                     fontArray:@[@"18",@"20"]];
+    
+    
+    
+    [UIColor redColor];
+    
+    //    [self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]];
+    //    [label setAttributedText:[self setLabelParaStr:@"hello" AllStr:label.text WithColor:[UIColor cyanColor]]];
+    //    [label setAttributedText:[self setLabelParaStr:@"boy" AllStr:label.text WithColor:[UIColor greenColor]]];
+    
+    [UIColor redColor];
 }
 
 
@@ -311,7 +373,7 @@
 
 - (void)initUI
 {
-	titleArrayAA = @[@"TestVC",@"TestAAVC",@"TestBBVC",@"StroeDataVC",@"TestTableVC",@"RegisterVC",@"77",@"88",@"99"];
+	titleArrayAA = @[@"TestVC",@"ObjectStringVC",@"TestBBVC",@"StroeDataVC",@"TestTableVC",@"RegisterVC",@"77",@"88",@"99"];
 	float top = 80;
 	for (int i=0; i<titleArrayAA.count; i++) {
 		int _tag = 101+i;
@@ -323,46 +385,6 @@
 	[self addBgView:sscrollView title:@"车辆品牌" YY:20+HHeight*0 tag:222];
 	[self addBgView:sscrollView title:@"车型" YY:20+HHeight*0 tag:333];
 	// ....
-}
-#pragma mark 按钮方法
--(void)myBtnClick:(UIButton*)Btn{
-	[self.view endEditing:YES];
-
-	if (Btn.tag==101) {    //
-        TestViewController* pushVC= [[TestViewController alloc] init];
-        [self.navigationController pushViewController:pushVC animated:YES];
-    }
-	else if (Btn.tag==102){//
-//        TestAAViewController* pushVC= [[TestAAViewController alloc] init];
-//        [self.navigationController pushViewController:pushVC animated:YES];
-
-	}
-	else if (Btn.tag==103){//
-
-        [MMBProgress hudShowMessage:@"帐户已过期，请充值！" afterDelay:3.0f];
-
-	}
-	else if (Btn.tag==104){//
-
-	}
-	else if (Btn.tag==105){//
-
-	}
-	else if (Btn.tag==106){//
-		RegisterViewController* pushVC= [[RegisterViewController alloc] init];
-		[self.navigationController pushViewController:pushVC animated:YES];
-
-	}
-	else if (Btn.tag==107){//
-
-
-	}else if (Btn.tag==108){//
-
-
-	}else if (Btn.tag==109){//
-		
-	}
-	
 }
 // 添加视图
 - (void)addBgView:(UIView *)Bgview title:(NSString *)myTitle YY:(CGFloat)yy tag:(NSInteger)myTag {

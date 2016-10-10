@@ -65,11 +65,11 @@
 + (NSString *)dateFormatWithDate:(NSDate*)date dateFormatStatus:(DateFormatStatus)state {
 
 	NSDateFormatter *df= [[NSDateFormatter alloc] init];
-	 // 设置时间的格式
-	if (state == DFstatusMMdd) {					df.dateFormat = @"MM/dd";
-	}else if (state == DFstatusYYYYMMdd) {			df.dateFormat = @"yyyy-MM-dd";
-	}else if (state == DFstatusHHmmss ) {			df.dateFormat = @"HH:mm:ss";
-	}else if (state == DFstatusYYYYMMddHHmmss ) {	df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    // 设置时间的格式
+	if (state == DFStyleMMdd) {                 df.dateFormat = @"MM/dd";
+	}else if (state == DFStyleYYYYMMdd) {       df.dateFormat = @"yyyy-MM-dd";
+	}else if (state == DFStyleHHmmss ) {        df.dateFormat = @"HH:mm:ss";
+	}else if (state == DFStyleYYYYMMddHHmmss ) {df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
 	}
 	NSString *getDate= [df stringFromDate:date];
 	return getDate;
@@ -126,11 +126,37 @@
 // 时间戳 转换为 日期时间
 + (NSString *)changeToStandardTime:(NSTimeInterval)timeInterval
 {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *time = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
+
+    NSString *time = [dateFormatter stringFromDate:date];
     return time;
 }
+
+
+//
++ (void)timeIntervalString:(NSString *)string
+{
+    [self timeIntervalWithString:string dateFormatStatus:DFStyleYYYYMMdd];
+}
+// 时间戳 转换为 日期时间 选取不同格式
++ (NSTimeInterval)timeIntervalWithString:(NSString *)string dateFormatStatus:(DateFormatStatus)state
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    
+    //[dateFormatter setDateFormat:style];
+    // 设置时间的格式
+    if (state == DFStyleMMdd) {                 dateFormatter.dateFormat = @"MM/dd";
+    }else if (state == DFStyleYYYYMMdd) {       dateFormatter.dateFormat = @"yyyy-MM-dd";
+    }else if (state == DFStyleHHmmss ) {        dateFormatter.dateFormat = @"HH:mm:ss";
+    }else if (state == DFStyleYYYYMMddHHmmss ) {dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    }
+    NSDate *date = [dateFormatter dateFromString:string];
+    return date.timeIntervalSince1970 * 1000;
+}
+
 
 
 @end

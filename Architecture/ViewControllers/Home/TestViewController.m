@@ -41,7 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:YES];
-	[self tabBarHidden:YES];//隐藏tabBar
+//	[self tabBarHidden:YES];//隐藏tabBar
 //    [self backBtnWhiteHidden:NO];
 	//显示navBar
 	//self.navigationController.navigationBar.hidden = NO;
@@ -54,11 +54,11 @@
     [super viewDidLoad];
     //返回按钮颜色
 //    self.navigationController.navigationBar.tintColor = Green_COLOR;
-    self.navigationController.navigationBar.tintColor = Clear_COLOR;
     //标题
     [self setTitle:@"TestVC" TitleColor:[UIColor whiteColor]];
-    //返回
-    [self backBtnWhiteColor];
+    [self backBtnWhiteColor];   //返回
+    [self tabBarHidden:YES];    //隐藏tabBar
+    
     self.view.backgroundColor = BgColor;
 
     
@@ -242,10 +242,10 @@
 	// 获取当前时间
 	NSDate* currentDate = [NSDate date];
 
-	NSString* dateStr11 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFstatusMMdd];
-	NSString* dateStr22 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFstatusYYYYMMdd];
-	NSString* dateStr33 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFstatusHHmmss];
-	NSString* dateStr44 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFstatusYYYYMMddHHmmss];
+	NSString* dateStr11 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFStyleMMdd];
+	NSString* dateStr22 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFStyleYYYYMMdd];
+	NSString* dateStr33 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFStyleHHmmss];
+	NSString* dateStr44 = [NSDate dateFormatWithDate:currentDate dateFormatStatus:DFStyleYYYYMMddHHmmss];
 
 	NSLog(@"dateStr11 = %@ ",dateStr11);
 	NSLog(@"dateStr22 = %@ ",dateStr22);

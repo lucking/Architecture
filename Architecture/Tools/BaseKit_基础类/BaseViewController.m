@@ -25,8 +25,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-    [self.navigationController.navigationBar setTintColor:[UIColor clearColor]];
-    
+    self.navigationController.navigationBar.tintColor = Clear_COLOR;
     
 	// 添加单击手势
 	//   [self addTapGesture];
