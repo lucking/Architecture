@@ -112,10 +112,9 @@
 	}
 	return @"0";        // 两者时间相同
 }
-#pragma mark 3.判断时间是否相同
+// 3.判断：时间是否相同
 +(BOOL)isEqualDate1:(NSDate *)Date1 WithDate2:(NSDate *)Date2
 {
-	//是否相同日期:
 	if ([Date1 isEqualToDate: Date2]) {
 		return YES;
 	}else{
@@ -157,12 +156,6 @@
     return date.timeIntervalSince1970 * 1000;
 }
 
-
-
 @end
-
-
-
-
 
 

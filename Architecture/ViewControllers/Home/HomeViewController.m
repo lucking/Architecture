@@ -56,37 +56,64 @@
 
     [self test];
     
-//    // 添加联系人: 加号+
-//    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
+
+    
+    [self requestTest];
+    
+}
+
+
+- (void)requestTest {
+    
+    NSDictionary *params = @{@"cid":@"remen",
+                             };
+    NSString *urlStr = @"http://zhekou.yijia.com/lws/view/ichuanyi/suit_list_data_get.php?";
+    
+    [[NetworkSession sharedSessionManager] GET:urlStr parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSLog(@"---> responseObject: %@", responseObject);
+       
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"---> error: %@", error);
+    }];
+
+}
+
+- (void)test1 {
+    
+    //    // 添加联系人: 加号+
+    //    [self addBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem) tintColor:[UIColor whiteColor] isRightItem:YES];
     
     
     //获取缓存文件大小
-//    [ZMCache myClearCacheAction];
+    //    [ZMCache myClearCacheAction];
     
     [ZMCache getCachefileSizeTarget:self select:@selector(getCachefileSize:)];
-
     
     
     
-//    NSMutableArray *titleArray = [NSMutableArray arrayWithObjects:@"TestVC",@"ObjectStringVC",@"TestBBVC",@"StroeDataVC",@"TestTableVC",@"RegisterVC",@"77",@"88",@"99", nil];
-//    
-//    [titleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        
-//        if (idx==2) {
-//            [titleArray removeObject:obj];
-//        }
-//    }];
-//    NSLog(@"---> titleArray = %@",titleArray);
-//
-//    
-//    // UILabel
-//    _label = [[UILabel alloc] initWithFrame:CGRectMake(50, 70, 250, 100)];
-//    _label.backgroundColor = [UIColor yellowColor];
-//    _label.font = [UIFont systemFontOfSize:15];
-//    _label.text = @"hello,girl";
-//    _label.textColor = [UIColor redColor];
-//    _label.textAlignment = NSTextAlignmentCenter;
-//    [self.view addSubview:_label];
+    
+    //    NSMutableArray *titleArray = [NSMutableArray arrayWithObjects:@"TestVC",@"ObjectStringVC",@"TestBBVC",@"StroeDataVC",@"TestTableVC",@"RegisterVC",@"77",@"88",@"99", nil];
+    //
+    //    [titleArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    //
+    //        if (idx==2) {
+    //            [titleArray removeObject:obj];
+    //        }
+    //    }];
+    //    NSLog(@"---> titleArray = %@",titleArray);
+    //
+    //
+    //    // UILabel
+    //    _label = [[UILabel alloc] initWithFrame:CGRectMake(50, 70, 250, 100)];
+    //    _label.backgroundColor = [UIColor yellowColor];
+    //    _label.font = [UIFont systemFontOfSize:15];
+    //    _label.text = @"hello,girl";
+    //    _label.textColor = [UIColor redColor];
+    //    _label.textAlignment = NSTextAlignmentCenter;
+    //    [self.view addSubview:_label];
 }
 
 #pragma mark 按钮方法
@@ -190,7 +217,6 @@
                              @"max":@"6000",
                              @"params":@"customParams",
                              };
-    
 //    NSDictionary *params = @{@"orderid":@"28270477",
 //                             @"state":@"1",
 //                             @"fee_time":@"22",

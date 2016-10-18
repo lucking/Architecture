@@ -25,6 +25,7 @@
 		[instance.requestSerializer setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
         instance.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];
 		instance.requestSerializer.timeoutInterval = 30.f;
+        
 	});
 	return instance;
 }

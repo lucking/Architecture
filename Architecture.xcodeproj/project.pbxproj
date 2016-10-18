@@ -10,6 +10,7 @@
 		9800C9601D2B57C0002E85E1 /* YzmTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9800C95F1D2B57C0002E85E1 /* YzmTextField.m */; };
 		9800C9691D2B9FA2002E85E1 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9800C9681D2B9FA2002E85E1 /* Toast+UIView.m */; };
 		98017E361D2D040A00F33322 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98017E351D2D040A00F33322 /* RequestManager.m */; };
+		9802B9171DACCFC700C8C780 /* NetworkSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9802B9161DACCFC700C8C780 /* NetworkSessionHeader.m */; };
 		980837701D74732E0085F772 /* HomeDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9808376F1D74732E0085F772 /* HomeDataTool.m */; };
 		9809C2BB1D0DB91900FBCDE5 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9809C2BA1D0DB91900FBCDE5 /* YTKKeyValueStore.m */; };
 		98379F321D3F573B00B5701F /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 98379F311D3F573B00B5701F /* DeviceInfo.m */; };
@@ -322,6 +323,8 @@
 		9800C9681D2B9FA2002E85E1 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		98017E341D2D040A00F33322 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		98017E351D2D040A00F33322 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
+		9802B9151DACCFC700C8C780 /* NetworkSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkSessionHeader.h; path = "../../../../../../zm/Desktop/Architecture/Architecture/Tools/Network_网络/NetworkSessionHeader.h"; sourceTree = "<group>"; };
+		9802B9161DACCFC700C8C780 /* NetworkSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkSessionHeader.m; path = "../../../../../../zm/Desktop/Architecture/Architecture/Tools/Network_网络/NetworkSessionHeader.m"; sourceTree = "<group>"; };
 		9808376E1D74732E0085F772 /* HomeDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataTool.h; sourceTree = "<group>"; };
 		9808376F1D74732E0085F772 /* HomeDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataTool.m; sourceTree = "<group>"; };
 		9809C2B91D0DB91900FBCDE5 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
@@ -1645,6 +1648,8 @@
 				987E98341D0C3F5000D44CE9 /* NetworkManager.m */,
 				987E98351D0C3F5000D44CE9 /* NetworkSession.h */,
 				987E98361D0C3F5000D44CE9 /* NetworkSession.m */,
+				9802B9151DACCFC700C8C780 /* NetworkSessionHeader.h */,
+				9802B9161DACCFC700C8C780 /* NetworkSessionHeader.m */,
 			);
 			path = "Network_网络";
 			sourceTree = "<group>";
@@ -2622,6 +2627,7 @@
 				9800C9601D2B57C0002E85E1 /* YzmTextField.m in Sources */,
 				987E98791D0C3F5000D44CE9 /* KVOManager.m in Sources */,
 				987E9A4B1D0C3F5B00D44CE9 /* YYImageCoder.m in Sources */,
+				9802B9171DACCFC700C8C780 /* NetworkSessionHeader.m in Sources */,
 				987E986F1D0C3F5000D44CE9 /* GTMBase64.m in Sources */,
 				987E97921D0C3F3B00D44CE9 /* ICarouselView.m in Sources */,
 				987E98701D0C3F5000D44CE9 /* Operation.m in Sources */,

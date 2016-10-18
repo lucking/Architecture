@@ -10,6 +10,7 @@
 #import "Singleton.h"
 //#import "NetworkOperation.h"
 #import "NetworkSession.h"
+#import "NetworkSessionHeader.h"
 #import "AFNetworking.h"
 #import "MBProgress.h"
 
@@ -47,6 +48,11 @@ Singleton_Instance_method_Interface(NetworkManager)
 #pragma
 + (void)upLoadPOST:(NSDictionary *)params fileData:(NSData *)data fileDic:(NSDictionary *)fileDic withURL:(NSString *)URL hudShow:(BOOL)hudShow success:(void (^)(id data))success failure:(void (^)(NSError * error))failure ;
 
+
+/**
+ *  处理_请求错误
+ */
++ (void)errorDealWithLocalError:(NSError *)error;
 
 
 // 弹出网络错误提示框

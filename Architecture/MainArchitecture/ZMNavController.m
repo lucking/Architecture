@@ -71,7 +71,7 @@
 - (void)testSetUI {
 
     /**
-     *  UIWebView、UIScrollView 使用1和3 （不是1或3）：因为 SSHEIGHT 的高度是全屏的高度
+     *  UIWebView、UIScrollView：因为 SSHEIGHT 的高度是全屏的高度
      */
     
      UIWebView *wwebView = nil;
@@ -89,6 +89,9 @@
      self.automaticallyAdjustsScrollViewInsets = NO;
      wwebView = [[UIWebView alloc] initWithFrame:CGRectMake(5,10, SSWIDTH-10, SSHEIGHT-80)];
    
+    //用了UIWebView，顶部一直有20点的背景色的空条
+    //解决方法：controller中添加 如下
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
     
     /**
